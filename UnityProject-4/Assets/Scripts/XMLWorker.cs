@@ -41,6 +41,11 @@ public static class XMLWorker
         return res;
     }
 
+    public static void SaveSC()
+    {
+        
+    }
+
     public enum EnumGameItemType
     {
         Citadel,
