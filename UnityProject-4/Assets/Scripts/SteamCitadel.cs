@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SteamCitadel : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class SteamCitadel : MonoBehaviour
     public int TotalSMAmount;
     public int MaxTotalSchemeAmount;
     public int CurrentTotalSchemeAmount;
-    public EnumCitadelRole Role;
+    public GameModelsAndEnums.EnumCitadelRole Role;
     public float TotalRecoveryMetal;
     public float TotalRecoveryParts;
     public float TotalRecoveryEnergy;
@@ -40,6 +41,8 @@ public class SteamCitadel : MonoBehaviour
     public float TotalConversionSpeed;
     public float TotalConversionEff;
     public float TotalPotential;
+
+    public List<Module> Modules;
     // Use this for initialization
     void Start()
     {
@@ -50,12 +53,5 @@ public class SteamCitadel : MonoBehaviour
     void Update()
     {
 
-    }
-
-    public enum EnumCitadelRole
-    {
-        SMControl,
-        PilotControl,
-        SelfControl
     }
 }

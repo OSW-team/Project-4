@@ -1,0 +1,16 @@
+<items>
+    <item Name="0">
+        <HP>Scene one</HP>
+        <title>This is TITLE!</title>
+        <message actor="Joe">one</message>
+        <message actor="Dennis">two</message>
+        <message actor="Mary">three</message>
+    </item>
+    <item Name="1">
+        <HP>Scene two</HP>
+        <title>This is secondary TITLE!</title>
+        <message actor="Joe">one</message>
+        <message actor="Dennis">two</message>
+        <message actor="Mary">three</message>
+    </item>
+</items>

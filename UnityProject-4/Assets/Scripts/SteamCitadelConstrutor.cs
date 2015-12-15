@@ -11,11 +11,16 @@ public class SteamCitadelConstrutor : MonoBehaviour {
     public GameObject Platform;
 	// Use this for initialization
 	void Start () {
-	
+	Initialize();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+    void Initialize()
+    {
+        Debug.Log(XMLWorker.LoadItem(XMLWorker.EnumGameItemType.Citadel, "0", "HP"));
+    }
 }
