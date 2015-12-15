@@ -1,11 +1,45 @@
 <items>
     <item Name="0">
-        <HP>Scene one</HP>
-        <title>This is TITLE!</title>
-        <message actor="Joe">one</message>
-        <message actor="Dennis">two</message>
-        <message actor="Mary">three</message>
+      <CurrrentTotalAmontOfModules></CurrrentTotalAmontOfModules>
+      <MaxTotalAmontOfModules></MaxTotalAmontOfModules>
+      <CurrntTotalStorage></CurrntTotalStorage>
+      <MaxTotalStorage></MaxTotalStorage>
+      <TotalRadarRange></TotalRadarRange>
+      <TotalRadarAcc></TotalRadarAcc>
+      <TotalMass></TotalMass>
+      <TotalForce></TotalForce>
+      <TotalConsumption></TotalConsumption>
+      <GloabalTotalSpeed></GloabalTotalSpeed>
+      <TacticalTotalSpeedFactor></TacticalTotalSpeedFactor>
+      <TotalAcceleration></TotalAcceleration>
+      <TotalTurnSpeed></TotalTurnSpeed>
+      <MaxTotalControl></MaxTotalControl>
+      <AvailableTotalControl></AvailableTotalControl>
+      <TotalSMAmount></TotalSMAmount>
+      <MaxTotalSchemeAmount></MaxTotalSchemeAmount>
+      <CurrentTotalSchemeAmount></CurrentTotalSchemeAmount>
+      <Role></Role>
+      <TotalRecoveryMetal></TotalRecoveryMetal>
+      <TotalRecoveryParts></TotalRecoveryParts>
+      <TotalRecoveryEnergy></TotalRecoveryEnergy>
+      <MaxTotalShield></MaxTotalShield>
+      <CurrentTotalShield></CurrentTotalShield>
+      <PhysTotalConShieldArm></PhysTotalConShieldArm>
+      <EnergyTotalConShieldArm></EnergyTotalConShieldArm>
+      <HeatTotalConShieldArm></HeatTotalConShieldArm>
+      <TotalShieldPower></TotalShieldPower>
+      <OnlineFinalTotalShieldRegen></OnlineFinalTotalShieldRegen>
+      <OfflineFinalTotalShieldRegen></OfflineFinalTotalShieldRegen>
+      <TotalShieldTreshHold></TotalShieldTreshHold>
+      <TotalConstructionSpeed></TotalConstructionSpeed>
+      <MaxStorageParts></MaxStorageParts>
+      <CurrentStorageParts></CurrentStorageParts>
+      <TotalConversionSpeed></TotalConversionSpeed>
+      <TotalConversionEff></TotalConversionEff>
+      <TotalPotential></TotalPotential>
+
     </item>
+  
     <item Name="1">
         <HP>Scene two</HP>
         <title>This is secondary TITLE!</title>

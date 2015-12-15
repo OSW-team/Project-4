@@ -8,9 +8,17 @@ public static class XMLWorker
     // Use this for initialization
     public static string LoadItem(EnumGameItemType itemType, string itemName, string paramName)
     {
+        var xmlPath = "";
+        switch (itemType)
+        {
+            case EnumGameItemType.Modules:
+                xmlPath = "Modules";
+                break;
+        }
+
         var res = "";
         CitadelParams = new XmlDocument();
-        TextAsset xmlAsset = Resources.Load("CitadelParams") as TextAsset;
+        TextAsset xmlAsset = Resources.Load(xmlPath) as TextAsset;
         if (xmlAsset) CitadelParams.LoadXml(xmlAsset.text);
         XmlNodeList dataList = CitadelParams.GetElementsByTagName("item");
         foreach (XmlNode item in dataList)
@@ -35,6 +43,7 @@ public static class XMLWorker
 
     public enum EnumGameItemType
     {
-        Citadel
+        Citadel,
+        Modules
     }
 }
