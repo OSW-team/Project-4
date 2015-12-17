@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SteamCitadel : MonoBehaviour
+public class SteamCitadel
 {
     public int CurrrentTotalAmontOfModules;
     public int MaxTotalAmontOfModules;
@@ -43,15 +43,14 @@ public class SteamCitadel : MonoBehaviour
     public float TotalPotential;
 
     public List<Module> Modules;
+    public string Name;
     // Use this for initialization
-    void Start()
+    public SteamCitadel(string name)
     {
-
+        Name = name;
+        Modules = new List<Module>();
+        XMLWorker.SaveSC(name);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 }

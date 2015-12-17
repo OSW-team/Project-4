@@ -52,13 +52,14 @@ public class Module : MonoBehaviour
     public float Potential;
     public GameModelsAndEnums.ModuleMultyply Multyply;
     public GameModelsAndEnums.ModuleToModuleDrain Drain;
+
+    public List<Subsystem> Subs; 
     // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public Module(string SCWorkname, string workname)
+    {
+        Subs = new List<Subsystem>();
+        XMLWorker.SaveModule(SCWorkname, workname);
+        XMLWorker.LoadModule(workname, this);
+        
+    }
 }

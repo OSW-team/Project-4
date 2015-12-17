@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<items>
+<Items>
   <SC Workname ="PlayersSC">
   <Module>
     <Workname>Engine1</Workname>
-    <Sub>
-      <Workname>Sub1</Workname>
-      <Slot>A</Slot>
-    </Sub>
-    <Sub>
-      <Workname>Sub2</Workname>
-      <Slot>B</Slot>
-    </Sub>
-    <Slot></Slot>
+    <Workname>Bridge1</Workname>
+    <Workname>Constructor1</Workname>
+    <Workname>Radar1</Workname>
+    <Workname>Storage1</Workname>
+    <Workname>Weapon1</Workname>
+    <Workname>Platform1</Workname>
   </Module>
   <Module>
     <Workname></Workname>
@@ -38,4 +35,4 @@
       </Sub>
     </Module>
   </SC>
-</items>
+</Items>

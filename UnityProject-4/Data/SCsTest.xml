@@ -1,0 +1,61 @@
+<Items>
+  <SC WorkName="PlayersSC">
+    <Module WorkName="Platform">
+      <Sub WorkName="Tube" />
+      <Sub WorkName="Tube" />
+      <Sub WorkName="Tube" />
+    </Module>
+    <Module WorkName="Platform">
+      <Sub WorkName="Tube" />
+      <Sub WorkName="Tube" />
+      <Sub WorkName="Tube" />
+    </Module>
+    <Module WorkName="Platform">
+      <Sub WorkName="Tube" />
+      <Sub WorkName="Tube" />
+    </Module>
+    <Module WorkName="Platform">
+      <Sub WorkName="Tube" />
+    </Module>
+    <Module WorkName="Platform1">
+      <Sub WorkName="Tube" />
+      <Sub WorkName="Tube" />
+      <Sub WorkName="Tube" />
+      <Sub WorkName="Tube" />
+    </Module>
+    <Module WorkName="Platform1">
+      <Sub WorkName="Tube" />
+      <Sub WorkName="Tube" />
+      <Sub WorkName="Tube" />
+    </Module>
+    <Module WorkName="Platform1">
+      <Sub WorkName="Tube" />
+      <Sub WorkName="Tube" />
+    </Module>
+    <Module WorkName="Platform1">
+      <Sub WorkName="Tube" />
+      <Sub WorkName="Tube" />
+    </Module>
+    <Module WorkName="Platform1">
+      <Sub WorkName="Tube" />
+    </Module>
+    <Module WorkName="Platform1" />
+    <Module WorkName="Platform1" />
+    <Module WorkName="Platform1" />
+    <Module WorkName="Platform1" />
+    <Module WorkName="Platform1" />
+    <Module WorkName="Platform1" />
+    <Module WorkName="Engine1" />
+    <Module WorkName="Bridge1" />
+    <Module WorkName="Storage1" />
+    <Module WorkName="Radar1" />
+    <Module WorkName="Weapon1" />
+    <Module WorkName="Platform1" />
+    <Module WorkName="Engine1" />
+    <Module WorkName="Bridge1" />
+    <Module WorkName="Storage1" />
+    <Module WorkName="Radar1" />
+    <Module WorkName="Weapon1" />
+    <Module WorkName="Weapon1" />
+  </SC>
+</Items>

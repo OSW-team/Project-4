@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <items>
   <Module Workname ="Engine1">
-      <GameName>Yamert</GameName>
+      <GameName></GameName>
       <Description></Description>
       <ModelName>MOD_Engine_Basic</ModelName>
       <Mass></Mass>
@@ -294,7 +294,7 @@
   </Module>
 
   <Module Workname="Platform1">
-    <GameName>Yamert</GameName>
+    <GameName></GameName>
     <Description></Description>
     <ModelName>Models/Platform_Basic</ModelName>
     <Mass></Mass>
