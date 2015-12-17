@@ -51,6 +51,7 @@ public class GameModelsAndEnums : MonoBehaviour
 
     public enum EnumModuleType
     {
+        Platform,
         Constructor,
         Engine,
         Storage,
@@ -76,6 +77,9 @@ public class GameModelsAndEnums : MonoBehaviour
         var res = EnumModuleType.Hypo;
         switch (s)
         {
+            case "Platform":
+                res = EnumModuleType.Platform;
+                break;
             case "Engine":
                 res = EnumModuleType.Engine;
                 break;

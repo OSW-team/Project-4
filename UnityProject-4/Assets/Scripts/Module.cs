@@ -53,12 +53,15 @@ public class Module : MonoBehaviour
     public GameModelsAndEnums.ModuleMultyply Multyply;
     public GameModelsAndEnums.ModuleToModuleDrain Drain;
 
-    public List<Subsystem> Subs; 
+    public List<Subsystem> Subs;
+    public GameObject GO;
+    public string Slot;
     // Use this for initialization
-    public Module(string SCWorkname, string workname)
+    public Module(string SCWorkname, string workname, string slot)
     {
         Subs = new List<Subsystem>();
-        XMLWorker.SaveModule(SCWorkname, workname);
+        Slot = slot;
+        XMLWorker.SaveModule(SCWorkname, workname, slot);
         XMLWorker.LoadModule(workname, this);
         
     }

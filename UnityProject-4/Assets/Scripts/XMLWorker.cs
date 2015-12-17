@@ -62,7 +62,7 @@ public static class XMLWorker
         }
     }
 
-    public static void SaveModule(string citadelName, string moduleName)
+    public static void SaveModule(string citadelName, string moduleName, string slot)
     {
         XmlDocument doc = new XmlDocument();
         doc.Load("Data/SCsTest.xml");
@@ -75,6 +75,9 @@ public static class XMLWorker
                 XmlElement ModuleNode = doc.CreateElement("Module");
                 ModuleNode.SetAttribute("WorkName", moduleName);
                 node.AppendChild(ModuleNode);
+                XmlElement Slot = doc.CreateElement("Slot");
+                Slot.SetAttribute("Name", slot);
+                ModuleNode.AppendChild(Slot);
             }
         }
 
@@ -125,11 +128,9 @@ public static class XMLWorker
                 {
                     if (item.InnerText != "")
                     {
+                        module.Workmame = workName;
                         switch (item.Name)
                         {
-                            case "Workmame":
-                                module.Workmame = item.InnerText;
-                                break;
                             case "GameName":
                                 module.GameName = item.InnerText;
                                 break;

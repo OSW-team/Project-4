@@ -5,7 +5,7 @@
       <Description></Description>
       <ModelName>MOD_Engine_Basic</ModelName>
       <Mass></Mass>
-      <Type></Type>
+      <Type>Engine</Type>
       <MaxSlotAmount></MaxSlotAmount>
       <CurrntSlotAmount></CurrntSlotAmount>
       <MaxHP></MaxHP>
@@ -54,7 +54,7 @@
     <Description></Description>
     <ModelName>MOD_Bridge_Basic</ModelName>
     <Mass></Mass>
-    <Type></Type>
+    <Type>Bridge</Type>
     <MaxSlotAmount></MaxSlotAmount>
     <CurrntSlotAmount></CurrntSlotAmount>
     <MaxHP></MaxHP>
@@ -103,7 +103,7 @@
     <Description></Description>
     <ModelName>MOD_Constructor_basic</ModelName>
     <Mass></Mass>
-    <Type></Type>
+    <Type>Constructor</Type>
     <MaxSlotAmount></MaxSlotAmount>
     <CurrntSlotAmount></CurrntSlotAmount>
     <MaxHP></MaxHP>
@@ -151,7 +151,7 @@
     <Description></Description>
     <ModelName>MOD_Radar_Basic</ModelName>
     <Mass></Mass>
-    <Type></Type>
+    <Type>Hypo</Type>
     <MaxSlotAmount></MaxSlotAmount>
     <CurrntSlotAmount></CurrntSlotAmount>
     <MaxHP></MaxHP>
@@ -200,7 +200,7 @@
     <Description></Description>
     <ModelName>MOD_Storage_Basic</ModelName>
     <Mass></Mass>
-    <Type></Type>
+    <Type>Storage</Type>
     <MaxSlotAmount></MaxSlotAmount>
     <CurrntSlotAmount></CurrntSlotAmount>
     <MaxHP></MaxHP>
@@ -249,7 +249,7 @@
     <Description></Description>
     <ModelName>MOD_Weapon_basic</ModelName>
     <Mass></Mass>
-    <Type></Type>
+    <Type>Weapon</Type>
     <MaxSlotAmount></MaxSlotAmount>
     <CurrntSlotAmount></CurrntSlotAmount>
     <MaxHP></MaxHP>
@@ -296,9 +296,9 @@
   <Module Workname="Platform1">
     <GameName>Yamert</GameName>
     <Description></Description>
-    <ModelName>Models/Platform_Basic</ModelName>
+    <ModelName>Platform_Basic</ModelName>
     <Mass></Mass>
-    <Type></Type>
+    <Type>Platform</Type>
     <MaxSlotAmount></MaxSlotAmount>
     <CurrntSlotAmount></CurrntSlotAmount>
     <MaxHP></MaxHP>
