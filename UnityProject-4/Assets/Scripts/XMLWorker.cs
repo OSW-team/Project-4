@@ -1,7 +1,9 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml;
 
 public static class XMLWorker
@@ -62,6 +64,45 @@ public static class XMLWorker
         }
     }
 
+    public static void LoadSC(SteamCitadel citadel)
+    {
+        XmlDocument doc = new XmlDocument();
+        doc.Load("Data/SCsTest.xml");
+        XmlNodeList dataList = doc.GetElementsByTagName("SC");
+        foreach (XmlNode node in dataList)
+        {
+            var atrs = node.Attributes;
+            if (atrs["WorkName"].Value == citadel.Name)
+            {
+                XmlNodeList modules = node.ChildNodes;
+                foreach (XmlElement module in modules)
+                {
+                    var moduleSlot = "";
+                    var subs = new List<XmlNode>();
+                    foreach (XmlNode childNode in module.ChildNodes)
+                    {
+                        if (childNode.Name == "Slot") moduleSlot = childNode.Attributes["Name"].Value;
+                        if (childNode.Name == "Sub") subs.Add(childNode); 
+                    }
+                    var newModule = new Module(citadel.Name, module.Attributes["WorkName"].Value, moduleSlot);
+                    citadel.Modules.Add(newModule);
+                    foreach (XmlNode sub in subs)
+                    {
+                        var subSlot = "";
+                        foreach (XmlNode childNode in sub)
+                        {
+                            if (childNode.Name == "Slot") subSlot = childNode.Attributes["Name"].Value;
+                        }
+                        var newSub = new Subsystem(citadel.Name, module.Attributes["WorkName"].Value, sub.Attributes["WorkName"].Value, subSlot);
+                        newModule.Subs.Add(newSub);
+                    }
+
+                }
+            }
+        }
+    }
+
+
     public static void SaveModule(string citadelName, string moduleName, string slot)
     {
         XmlDocument doc = new XmlDocument();
@@ -84,7 +125,7 @@ public static class XMLWorker
         doc.Save("Data/SCsTest.xml");
     }
 
-    public static void SaveSubsystem(string citadelName, string moduleName, string subsystemName)
+    public static void SaveSubsystem(string citadelName, string moduleName, string subsystemName, string slot)
     {
         XmlDocument doc = new XmlDocument();
         doc.Load("Data/SCsTest.xml");
@@ -105,6 +146,9 @@ public static class XMLWorker
                 XmlElement SubNode = doc.CreateElement("Sub");
                 SubNode.SetAttribute("WorkName", subsystemName);
                 module.AppendChild(SubNode);
+                XmlElement Slot = doc.CreateElement("Slot");
+                Slot.SetAttribute("Name", slot);
+                SubNode.AppendChild(Slot);
             }
 
         }
@@ -115,9 +159,16 @@ public static class XMLWorker
     public static void LoadModule(string workName, Module module)
     {
         CitadelParams = new XmlDocument();
-        TextAsset xmlAsset = Resources.Load("Modules") as TextAsset;
+        var xmlPath = "Modules";
+        var itemType = "Module";
+        if (module.GetType() == typeof (Subsystem))
+        {
+            xmlPath = "Subsystems";
+            itemType = "Subsystem";
+        }
+        TextAsset xmlAsset = Resources.Load(xmlPath) as TextAsset;
         if (xmlAsset) CitadelParams.LoadXml(xmlAsset.text);
-        XmlNodeList dataList = CitadelParams.GetElementsByTagName("Module");
+        XmlNodeList dataList = CitadelParams.GetElementsByTagName(itemType);
         foreach (XmlNode node in dataList)
         {
             var atrs = node.Attributes;
@@ -269,6 +320,15 @@ public static class XMLWorker
                                 break;
                             case "Drain":
                                 module.Drain = GameModelsAndEnums.GetDrain(item.InnerText);
+                                break;
+                            case "Compatibility":
+                                ((Subsystem) module).Compatibility = GameModelsAndEnums.GetCompatibility(item.InnerText);
+                                break;
+                            case "BuildConditions":
+                                ((Subsystem)module).BuildConditions = new List<bool>();//GameModelsAndEnums.GetCompatibility(item.InnerText);
+                                break;
+                            case "Upgradeability":
+                                ((Subsystem)module).Upgradeability = GameModelsAndEnums.GetCompatibility(item.InnerText);
                                 break;
                         }
                     }

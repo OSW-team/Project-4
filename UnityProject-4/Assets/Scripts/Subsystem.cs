@@ -2,15 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Subsystem:MonoBehaviour 
+public class Subsystem:Module 
 {
-    public string Workname;
     public List<string> Compatibility;
     public List<bool> BuildConditions;  
-    public List<string> upgradeability;  
+    public List<string> Upgradeability;
+
 	// Use this for initialization
-    public Subsystem(string CitadelName, string ModuleName, string SubName)
+    public Subsystem(string CitadelName, string ModuleName, string subName, string slot)
     {
-        XMLWorker.SaveSubsystem(CitadelName, ModuleName, SubName);
+        Slot = slot;
+        //XMLWorker.SaveSubsystem(CitadelName, ModuleName, subName, slot);
+        XMLWorker.LoadModule(subName, this);
     }
 }

@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Items>
-  <SC Workname ="PlayersSC">
-  <Module>
-    <Workname>Engine1</Workname>
-    <Workname>Bridge1</Workname>
-    <Workname>Constructor1</Workname>
-    <Workname>Radar1</Workname>
-    <Workname>Storage1</Workname>
-    <Workname>Weapon1</Workname>
-    <Workname>Platform1</Workname>
-  </Module>
-  <Module>
-    <Workname></Workname>
-    <Sub>
-      <Workname></Workname>
-      <Slot></Slot>
-    </Sub>
-    <Slot></Slot>
-  </Module>
-  </SC>
-  <SC Workname ="PlayersSC">
-    <Module>
-      <Workname></Workname>
-      <Sub>
-        <Workname></Workname>
-        <Slot></Slot>
+  <SC WorkName="PlayersSC">
+    <Module WorkName="Bridge1">
+      <Slot Name="Bridge_Site" />
+    </Module>
+    <Module WorkName="Storage1">
+      <Slot Name="Storage_Site" />
+    </Module>
+    <Module WorkName="Radar1">
+      <Slot Name="Hypo_Site1" />
+    </Module>
+    <Module WorkName="Weapon1">
+      <Slot Name="Weapon_Site1" />
+    </Module>
+    <Module WorkName="Platform1">
+      <Slot Name="" />
+    </Module>
+    <Module WorkName="Constructor1">
+      <Slot Name="Constructor_Site" />
+    </Module>
+    <Module WorkName="Engine1">
+      <Slot Name="Engine_Site" />
+      <Sub WorkName="Tube1">
+        <Slot Name="Sub_Slot_A1 2" />
       </Sub>
     </Module>
-    <Module>
-      <Workname></Workname>
-      <Sub>
-        <Workname></Workname>
-        <Slot></Slot>
-      </Sub>
+    <Module WorkName="Bridge1">
+      <Slot Name="Bridge_Site" />
+    </Module>
+    <Module WorkName="Storage1">
+      <Slot Name="Storage_Site" />
+    </Module>
+    <Module WorkName="Radar1">
+      <Slot Name="Hypo_Site1" />
+    </Module>
+    <Module WorkName="Weapon1">
+      <Slot Name="Weapon_Site1" />
     </Module>
   </SC>
 </Items>

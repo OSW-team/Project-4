@@ -135,4 +135,11 @@ public class GameModelsAndEnums : MonoBehaviour
         var drain = new ModuleToModuleDrain(fromModule, fromParam, fromPercent, toModule, toParam, toPercent);
         return drain;
     }
+
+    public static List<string> GetCompatibility(string innerText)
+    {
+        var list = new List<string>();
+
+        return list;
+    }
 }

@@ -9,6 +9,8 @@ public  class SteamCitadelMeshConstrutor:MonoBehaviour {
     {
         AddModules(Citadel);
         PlaceModules(Citadel);
+        AddSubs(Citadel);
+        PlaceSubs(Citadel);
         //var modelPath = "";
         //var platform = Instantiate(Resources.Load<GameObject>(modelPath)) as GameObject;
         //Platform = platform;
@@ -27,7 +29,7 @@ public  class SteamCitadelMeshConstrutor:MonoBehaviour {
         }
     }
 
-    private static void AddSingleModule(SteamCitadel Citadel, Module module)
+    public static void AddSingleModule(SteamCitadel Citadel, Module module)
     {
         var modelPath = "Models/" + module.ModelName;
         module.GO = Instantiate(Resources.Load<GameObject>(modelPath));
@@ -42,7 +44,40 @@ public  class SteamCitadelMeshConstrutor:MonoBehaviour {
         {
             var slot = module.Slot;
             module.GO.transform.position = platform.transform.FindChild("Module_Sites").FindChild(slot).position;
+            module.GO.transform.rotation = platform.transform.FindChild("Module_Sites").FindChild(slot).rotation;
         }
 
+    }
+
+    private static void AddSubs(SteamCitadel citadel)
+    {
+        foreach (var module in citadel.Modules)
+        {
+            foreach (var subsystem in module.Subs)
+            {
+                AddSingleSubsystem(citadel, module, subsystem);
+            }
+        }
+    }
+
+    public static void AddSingleSubsystem(SteamCitadel citadel, Module module, Subsystem subsystem)
+    {
+        var modelPath = "Models/" + subsystem.ModelName;
+        subsystem.GO = Instantiate(Resources.Load<GameObject>(modelPath));
+        subsystem.GO.name = "Subsystem " + subsystem.Workmame;
+        subsystem.GO.transform.SetParent(module.GO.transform);
+    }
+
+    public static void PlaceSubs(SteamCitadel citadel)
+    {
+        foreach (var module in citadel.Modules)
+        {
+            foreach (var subsystem in module.Subs)
+            {
+                var slot = subsystem.Slot;
+                subsystem.GO.transform.position = module.GO.transform.FindChild("Subsystem_Slots").FindChild(slot).position;
+                subsystem.GO.transform.rotation = module.GO.transform.FindChild("Subsystem_Slots").FindChild(slot).rotation;
+            }
+        }
     }
 }

@@ -51,7 +51,7 @@ public class SteamCitadel
         Name = name;
         Modules = new List<Module>();
         GO = new GameObject("Citadel "+name);
-        XMLWorker.SaveSC(name);
+       // XMLWorker.SaveSC(name);
     }
 
 

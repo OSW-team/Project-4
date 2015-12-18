@@ -61,8 +61,13 @@ public class Module : MonoBehaviour
     {
         Subs = new List<Subsystem>();
         Slot = slot;
-        XMLWorker.SaveModule(SCWorkname, workname, slot);
+       // XMLWorker.SaveModule(SCWorkname, workname, slot);
         XMLWorker.LoadModule(workname, this);
+        
+    }
+
+    protected Module()
+    {
         
     }
 }
