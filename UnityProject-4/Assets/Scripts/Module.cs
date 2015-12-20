@@ -8,6 +8,7 @@ public class Module : MonoBehaviour
     public string GameName;
     public string Description;
     public string ModelName;
+    public string IconName;
     public float Mass;
     public GameModelsAndEnums.EnumModuleType Type;
     public int MaxSlotAmount;
@@ -59,11 +60,11 @@ public class Module : MonoBehaviour
     // Use this for initialization
     public Module(string SCWorkname, string workname, string slot)
     {
-        Subs = new List<Subsystem>();
+
         Slot = slot;
        // XMLWorker.SaveModule(SCWorkname, workname, slot);
         XMLWorker.LoadModule(workname, this);
-        
+        Subs = new List<Subsystem>(MaxSlotAmount);
     }
 
     protected Module()

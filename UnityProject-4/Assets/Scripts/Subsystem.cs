@@ -15,4 +15,9 @@ public class Subsystem:Module
         //XMLWorker.SaveSubsystem(CitadelName, ModuleName, subName, slot);
         XMLWorker.LoadModule(subName, this);
     }
+
+    public Subsystem(string workname)
+    {
+        XMLWorker.LoadModule(workname, this);
+    }
 }

@@ -191,6 +191,9 @@ public static class XMLWorker
                             case "ModelName":
                                 module.ModelName = item.InnerText;
                                 break;
+                            case "IconName":
+                                module.IconName = item.InnerText;
+                                break;
                             case "Mass":
                                 module.Mass = Single.Parse(item.InnerText);
                                 break;

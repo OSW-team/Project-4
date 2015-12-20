@@ -4,9 +4,10 @@
       <GameName>Yamert</GameName>
       <Description></Description>
       <ModelName>MOD_Engine_Basic</ModelName>
+	  <IconName>Icons_9</IconName>
       <Mass></Mass>
       <Type>Engine</Type>
-      <MaxSlotAmount></MaxSlotAmount>
+      <MaxSlotAmount>3</MaxSlotAmount>
       <CurrntSlotAmount></CurrntSlotAmount>
       <MaxHP></MaxHP>
       <CurrentHP></CurrentHP>
@@ -53,9 +54,10 @@
     <GameName></GameName>
     <Description></Description>
     <ModelName>MOD_Bridge_Basic</ModelName>
+		  <IconName>Icons_7</IconName>
     <Mass></Mass>
     <Type>Bridge</Type>
-    <MaxSlotAmount></MaxSlotAmount>
+    <MaxSlotAmount>2</MaxSlotAmount>
     <CurrntSlotAmount></CurrntSlotAmount>
     <MaxHP></MaxHP>
     <CurrentHP></CurrentHP>
@@ -102,6 +104,7 @@
     <GameName></GameName>
     <Description></Description>
     <ModelName>MOD_Constructor_basic</ModelName>
+		  <IconName>Icons_3</IconName>
     <Mass></Mass>
     <Type>Constructor</Type>
     <MaxSlotAmount></MaxSlotAmount>
@@ -150,6 +153,7 @@
     <GameName></GameName>
     <Description></Description>
     <ModelName>MOD_Radar_Basic</ModelName>
+		  <IconName>Icons_0</IconName>
     <Mass></Mass>
     <Type>Hypo</Type>
     <MaxSlotAmount></MaxSlotAmount>
@@ -199,6 +203,7 @@
     <GameName></GameName>
     <Description></Description>
     <ModelName>MOD_Storage_Basic</ModelName>
+		  <IconName>Icons_8</IconName>
     <Mass></Mass>
     <Type>Storage</Type>
     <MaxSlotAmount></MaxSlotAmount>
@@ -248,6 +253,7 @@
     <GameName></GameName>
     <Description></Description>
     <ModelName>MOD_Weapon_basic</ModelName>
+		  <IconName>Icons_1</IconName>
     <Mass></Mass>
     <Type>Weapon</Type>
     <MaxSlotAmount></MaxSlotAmount>
@@ -297,6 +303,7 @@
     <GameName>Yamert</GameName>
     <Description></Description>
     <ModelName>Platform_Basic</ModelName>
+		  <IconName>Icons_6</IconName>
     <Mass></Mass>
     <Type>Platform</Type>
     <MaxSlotAmount></MaxSlotAmount>

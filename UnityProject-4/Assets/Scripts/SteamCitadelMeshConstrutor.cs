@@ -63,6 +63,7 @@ public  class SteamCitadelMeshConstrutor:MonoBehaviour {
     public static void AddSingleSubsystem(SteamCitadel citadel, Module module, Subsystem subsystem)
     {
         var modelPath = "Models/" + subsystem.ModelName;
+        Debug.Log(modelPath);
         subsystem.GO = Instantiate(Resources.Load<GameObject>(modelPath));
         subsystem.GO.name = "Subsystem " + subsystem.Workmame;
         subsystem.GO.transform.SetParent(module.GO.transform);
