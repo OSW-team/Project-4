@@ -56,6 +56,7 @@ public class Module : MonoBehaviour
 
     public List<Subsystem> Subs;
     public GameObject GO;
+    public List<bool> SlotsBools;
     public string Slot;
     // Use this for initialization
     public Module(string SCWorkname, string workname, string slot)
@@ -65,6 +66,11 @@ public class Module : MonoBehaviour
        // XMLWorker.SaveModule(SCWorkname, workname, slot);
         XMLWorker.LoadModule(workname, this);
         Subs = new List<Subsystem>(MaxSlotAmount);
+        SlotsBools = new List<bool>();
+        for (var i = 0; i < MaxSlotAmount; i++)
+        {
+            SlotsBools.Add(false);
+        }
     }
 
     protected Module()

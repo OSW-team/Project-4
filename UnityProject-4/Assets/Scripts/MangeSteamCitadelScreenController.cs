@@ -106,6 +106,8 @@ public class MangeSteamCitadelScreenController : MonoBehaviour
                     break;
             }
             moduleButton.SetActive(true);
+            var module1 = module;
+            moduleButton.GetComponent<Button>().onClick.AddListener(()=> { var meshes = module1.GO.GetComponentsInChildren<MeshRenderer>();foreach (var meshRenderer in meshes){meshRenderer.material = GhostMat;} });
             moduleButton.transform.FindChild("ModuleImage").FindChild("ModuleIcon").GetComponent<Image>().sprite =sprites.FirstOrDefault(x => x.name == module.IconName);
             for (var i = 0; i < module.MaxSlotAmount; i++)
             {
@@ -119,7 +121,7 @@ public class MangeSteamCitadelScreenController : MonoBehaviour
                 {
                     moduleButton.transform.GetChild(i).GetComponent<Button>().onClick.RemoveAllListeners();
                     var i1 = i;
-                    var module1 = module;
+                    module1 = module;
                     moduleButton.transform.GetChild(i).GetComponent<Button>().onClick.AddListener(() =>
                     {
                         ShowAlowedSubsystems(module1, module1.GO.transform.FindChild("Subsystem_Slots").GetChild(i1).name);
@@ -150,13 +152,16 @@ public class MangeSteamCitadelScreenController : MonoBehaviour
 
     private void TrySubsystem(Module module, string subName, string subSlotName)
     {
+        var rotation = new Vector3(Controller.Player.Citadel.GO.transform.localEulerAngles.x, Controller.Player.Citadel.GO.transform.localEulerAngles.y, Controller.Player.Citadel.GO.transform.localEulerAngles.z);
         Destroy(Controller.Player.Citadel.GO);
         Controller.Player.Citadel.GO  = new GameObject("Citadel " + name);
         Debug.Log(module.GO.name);
         var newSub = new Subsystem(Controller.Player.Citadel.Name, module.Workmame, subName, subSlotName);
         module.Subs.Add(newSub);
+        
         SteamCitadelMeshConstrutor.BuildCitadelMesh(Controller.Player.Citadel);
         newSub.GO.GetComponent<MeshRenderer>().material = GhostMat;
         ShowCitadel(Controller.Player.Citadel);
+        Controller.Player.Citadel.GO.transform.localEulerAngles = rotation;
     }
 }
