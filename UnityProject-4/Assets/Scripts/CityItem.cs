@@ -23,7 +23,6 @@ public class CityItem : MonoBehaviour
     [SerializeField]
     public int Weight;
 
-    [SerializeField] public bool TestProp;
 
     // Use this for initialization
     void Start()

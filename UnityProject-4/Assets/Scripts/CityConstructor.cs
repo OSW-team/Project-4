@@ -27,6 +27,7 @@ public class CityConstructor : MonoBehaviour
 	{
         _locators = new List<Transform>();
         var locators = CityContainerGameObject.transform.FindChild("Locators");
+        GetPrefabs("Prefabs/");
         Iteration(locators);
 
 	}
@@ -41,7 +42,6 @@ public class CityConstructor : MonoBehaviour
             var r = Random.Range(1, 101);
             if (r <= _itemChance)
             {
-                GetPrefabs("Prefabs/");
                 SelectByFilters();
                 if (_currentPrefab != null)
                 {
