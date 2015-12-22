@@ -96,6 +96,11 @@ public class CityItemInspector : Editor
         _item.Weight = EditorGUILayout.IntField(_item.Weight);
         EditorGUILayout.EndHorizontal();
 
+        EditorGUILayout.LabelField("TestProperty", Style);
+        EditorGUILayout.BeginHorizontal();
+        _item.TestProp = EditorGUILayout.Toggle(_item.TestProp);
+        EditorGUILayout.EndHorizontal();
+
         if (GUI.changed)EditorUtility.SetDirty(_item);
     }
 

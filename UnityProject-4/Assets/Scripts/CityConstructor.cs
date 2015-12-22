@@ -26,7 +26,6 @@ public class CityConstructor : MonoBehaviour
 	void Start ()
 	{
         _locators = new List<Transform>();
-        _rotationPermission = new List<bool>(3) {false,false,false};
         var locators = CityContainerGameObject.transform.FindChild("Locators");
         Iteration(locators);
 
@@ -92,6 +91,8 @@ public class CityConstructor : MonoBehaviour
         _placemetFilter = "";
         _orientationFilter = "";
         _exposureFilter = "";
+        _itemChance = 100;
+        _rotationPermission = new List<bool>(3) {false,false,false};
         var nameParts = locatorName.Split('_').ToList();
         foreach (var namePart in nameParts)
         {
@@ -137,6 +138,7 @@ public class CityConstructor : MonoBehaviour
             if (namePart.Contains("["))
             {
                 _itemChance = Int32.Parse(namePart.Replace("[","").Replace("]",""));
+                
             }
         }
 
