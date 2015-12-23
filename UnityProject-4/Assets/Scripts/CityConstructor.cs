@@ -40,7 +40,7 @@ public class CityConstructor : MonoBehaviour
         foreach (var locator in locators)
         {
             ParseLocatorNameToFilters(locator.name);
-            if (_typeFilter == "") return;
+            if (_categoryFilter == ""&&_typeFilter == "" && _squareFilter == "" && _shapeFilter == "" && _placemetFilter == "" && _orientationFilter == "" && _floorFilter == "" ) return;
             var r = Random.Range(1, 101);
             if (r <= _itemChance)
             {
