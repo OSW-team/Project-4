@@ -90,7 +90,7 @@ public class CityItem : MonoBehaviour
         var resSt = "";
 
         if (Exposure[0] == true) resSt += "Internal,";
-        if (Exposure[0] == true) resSt += "External,";
+        if (Exposure[1] == true) resSt += "External,";
         return resSt;
     }
 
