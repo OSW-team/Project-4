@@ -16,7 +16,9 @@ public class CityItem : MonoBehaviour
     [SerializeField]
     public bool[] Orientation;
     [SerializeField]
-    public bool[] Exposure;
+    public bool[] Floor;
+    [SerializeField]
+    public bool[] Category;
     public Vector3 RandomRotation;
     [SerializeField]
     public float AllowToRepeatAtDistance;
@@ -37,7 +39,7 @@ public class CityItem : MonoBehaviour
     }
 
 
-    public string GetTypes()
+    public string GetCategories()
     {
         var resSt = "";
 
@@ -85,13 +87,26 @@ public class CityItem : MonoBehaviour
         return resSt;
     }
 
-    public string GetExposures()
+    public string GetFloors()
     {
         var resSt = "";
 
-        if (Exposure[0] == true) resSt += "Internal,";
-        if (Exposure[0] == true) resSt += "External,";
+        if (Floor[0] == true) resSt += "Ground,";
+        if (Floor[1] == true) resSt += "Upper,";
         return resSt;
     }
 
+    public string GetTypes()
+    {
+        var resSt = "";
+
+        if (Floor[0] == true) resSt += "Spike,";
+        if (Floor[1] == true) resSt += "Wall,";
+        if (Floor[2] == true) resSt += "Pipe,";
+        if (Floor[3] == true) resSt += "Outhouse,";
+        if (Floor[4] == true) resSt += "Antenna,";
+        if (Floor[5] == true) resSt += "Internal,";
+        if (Floor[6] == true) resSt += "Gear,";
+        return resSt;
+    }
 }

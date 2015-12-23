@@ -14,15 +14,17 @@ public class CityConstructor : MonoBehaviour
     private GameObject _currentPrefab;
     private GameObject _currentGameObject;
     private float _percentFilterAmount;
+    private string _categoryFilter;
     private string _typeFilter;
     private string _squareFilter;
     private string _shapeFilter;
     private string _placemetFilter;
     private string _orientationFilter;
-    private string _exposureFilter;
+    private string _floorFilter;
     private int _itemChance;
     private List<bool> _rotationPermission;
-	// Use this for initialization
+
+    // Use this for initialization
 	void Start ()
 	{
         _locators = new List<Transform>();
@@ -85,20 +87,26 @@ public class CityConstructor : MonoBehaviour
 
     public void ParseLocatorNameToFilters(string locatorName)
     {
+        _categoryFilter = "";
         _typeFilter = "";
         _squareFilter = "";
         _shapeFilter = "";
         _placemetFilter = "";
         _orientationFilter = "";
-        _exposureFilter = "";
+        _floorFilter = "";
         _itemChance = 100;
         _rotationPermission = new List<bool>(3) {false,false,false};
         var nameParts = locatorName.Split('_').ToList();
         foreach (var namePart in nameParts)
         {
-            if (namePart.Contains("Building") || namePart.Contains("Debris") || namePart.Contains("Part"))
+
+            if (namePart.Contains("Spike") || namePart.Contains("Wall") || namePart.Contains("Pipe") || namePart.Contains("Outhouse") || namePart.Contains("Antenna") || namePart.Contains("Internal") || namePart.Contains("Gear"))
             {
                 _typeFilter = namePart;
+            }
+            if (namePart.Contains("Building") || namePart.Contains("Debris") || namePart.Contains("Part"))
+            {
+                _categoryFilter = namePart;
             }
             if (namePart.Contains("Narrow") || namePart.Contains("Average") || namePart.Contains("Wide"))
             {
@@ -116,9 +124,9 @@ public class CityConstructor : MonoBehaviour
             {
                 _orientationFilter = namePart;
             }
-            if (namePart.Contains("External") || namePart.Contains("Internal"))
+            if (namePart.Contains("Ground") || namePart.Contains("Upper"))
             {
-                _exposureFilter = namePart;
+                _floorFilter = namePart;
             }
             if (namePart.Contains("RXR") || namePart.Contains("RYR") || namePart.Contains("RZR"))
             {
@@ -148,12 +156,14 @@ public class CityConstructor : MonoBehaviour
     {
         
         var candidatList  = new List<GameObject>();
-        candidatList = (from prefab in _prefabs let props = prefab.GetComponent<CityItem>() where props.GetTypes().Contains(_typeFilter) select prefab).ToList();
-        if (_squareFilter!= "") { candidatList = (from prefab in candidatList let props = prefab.GetComponent<CityItem>() where props.GetSquares().Contains(_squareFilter) select prefab).ToList(); Debug.Log("Square = " +_squareFilter);}
-        if (_shapeFilter != "") { candidatList = (from prefab in candidatList let props = prefab.GetComponent<CityItem>() where props.GetShapes().Contains(_shapeFilter)  select prefab).ToList(); Debug.Log("Shape = " + _shapeFilter); }
+
+        candidatList = (from prefab in _prefabs let props = prefab.GetComponent<CityItem>() where props.GetCategories().Contains(_categoryFilter) select prefab).ToList();
+        if (_typeFilter != "") { candidatList = (from prefab in candidatList let props = prefab.GetComponent<CityItem>() where props.GetTypes().Contains(_typeFilter) select prefab).ToList();}
+        if (_squareFilter!= "") { candidatList = (from prefab in candidatList let props = prefab.GetComponent<CityItem>() where props.GetSquares().Contains(_squareFilter) select prefab).ToList();}
+        if (_shapeFilter != "") { candidatList = (from prefab in candidatList let props = prefab.GetComponent<CityItem>() where props.GetShapes().Contains(_shapeFilter)  select prefab).ToList();}
         if (_placemetFilter != "") candidatList = (from prefab in candidatList let props = prefab.GetComponent<CityItem>() where props.GetPlacements().Contains(_placemetFilter) select prefab).ToList();
         if (_orientationFilter != "") candidatList = (from prefab in candidatList let props = prefab.GetComponent<CityItem>() where props.GetOrientations().Contains(_orientationFilter)  select prefab).ToList();
-        if (_exposureFilter != "") candidatList = (from prefab in candidatList let props = prefab.GetComponent<CityItem>() where props.GetExposures().Contains(_exposureFilter) select prefab).ToList();
+        if (_floorFilter != "") candidatList = (from prefab in candidatList let props = prefab.GetComponent<CityItem>() where props.GetFloors().Contains(_floorFilter) select prefab).ToList();
         SelectFinalPrefab(candidatList);
 
     }
