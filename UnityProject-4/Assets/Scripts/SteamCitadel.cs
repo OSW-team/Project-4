@@ -45,11 +45,13 @@ public class SteamCitadel
     public List<Module> Modules;
     public string Name;
     public GameObject GO;
+    public List<Unit> Units; 
     // Use this for initialization
     public SteamCitadel(string name)
     {
         Name = name;
         Modules = new List<Module>();
+        Units = new List<Unit>();
         GO = new GameObject("Citadel "+name);
        // XMLWorker.SaveSC(name);
     }

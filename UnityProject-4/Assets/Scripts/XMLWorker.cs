@@ -75,28 +75,47 @@ public static class XMLWorker
             if (atrs["WorkName"].Value == citadel.Name)
             {
                 XmlNodeList modules = node.ChildNodes;
-                foreach (XmlElement module in modules)
+                foreach (XmlElement item in modules)
                 {
-                    var moduleSlot = "";
-                    var subs = new List<XmlNode>();
-                    foreach (XmlNode childNode in module.ChildNodes)
+                    if (item.Name == "Module")
                     {
-                        if (childNode.Name == "Slot") moduleSlot = childNode.Attributes["Name"].Value;
-                        if (childNode.Name == "Sub") subs.Add(childNode); 
-                    }
-                    var newModule = new Module(citadel.Name, module.Attributes["WorkName"].Value, moduleSlot);
-                    citadel.Modules.Add(newModule);
-                    foreach (XmlNode sub in subs)
-                    {
-                        var subSlot = "";
-                        foreach (XmlNode childNode in sub)
+                        var moduleSlot = "";
+                        var subs = new List<XmlNode>();
+                        foreach (XmlNode childNode in item.ChildNodes)
                         {
-                            if (childNode.Name == "Slot") subSlot = childNode.Attributes["Name"].Value;
+                            if (childNode.Name == "Slot") moduleSlot = childNode.Attributes["Name"].Value;
+                            if (childNode.Name == "Sub") subs.Add(childNode);
                         }
-                        var newSub = new Subsystem(citadel.Name, module.Attributes["WorkName"].Value, sub.Attributes["WorkName"].Value, subSlot);
-                        newModule.Subs.Add(newSub);
+                        var newModule = new Module(citadel.Name, item.Attributes["WorkName"].Value, moduleSlot);
+                        citadel.Modules.Add(newModule);
+                        foreach (XmlNode sub in subs)
+                        {
+                            var subSlot = "";
+                            foreach (XmlNode childNode in sub)
+                            {
+                                if (childNode.Name == "Slot") subSlot = childNode.Attributes["Name"].Value;
+                            }
+                            var newSub = new Subsystem(citadel.Name, item.Attributes["WorkName"].Value,
+                                sub.Attributes["WorkName"].Value, subSlot);
+                            newModule.Subs.Add(newSub);
+                        }
                     }
+                    if (item.Name == "Unit")
+                    {
+                        var upgrades = new List<XmlNode>();
+                        foreach (XmlNode childNode in item.ChildNodes)
+                        {
+                            if (childNode.Name == "Upgrade") upgrades.Add(childNode);
+                        }
+                        var newUnit = new Unit(citadel.Name, item.Attributes["WorkName"].Value);
+                        citadel.Units.Add(newUnit);
+                        foreach (XmlNode upg in upgrades)
+                        {
+                            var newUpg = new UnitUpgrade(citadel.Name, item.Attributes["WorkName"].Value,upg.Attributes["Name"].Value);
+                            newUnit.Upgrades.Add(newUpg);
+                        }
 
+                    }
                 }
             }
         }
@@ -156,7 +175,31 @@ public static class XMLWorker
         doc.Save("Data/SCsTest.xml");
     }
 
-    public static void LoadModule(string workName, Module module)
+    public static void SaveUnit(string citadelName, string unitName, List<string> upgradesNames)
+    {
+        XmlDocument doc = new XmlDocument();
+        doc.Load("Data/SCsTest.xml");
+        XmlNodeList dataList = doc.GetElementsByTagName("SC");
+        foreach (XmlNode node in dataList)
+        {
+            var atrs = node.Attributes;
+            if (atrs["WorkName"].Value == citadelName)
+            {
+                XmlElement UnitNode = doc.CreateElement("Unit");
+                UnitNode.SetAttribute("WorkName", unitName);
+                node.AppendChild(UnitNode);
+                for (var i = 0; i < upgradesNames.Count; i++)
+                {
+                    XmlElement Upgrade = doc.CreateElement("Upgrade");
+                    Upgrade.SetAttribute("Name", upgradesNames[i]);
+                    UnitNode.AppendChild(Upgrade);
+                }
+            }
+        }
+        doc.Save("Data/SCsTest.xml");
+    }
+
+    public static void LoadModuleOrSub(string workName, Module module)
     {
         CitadelParams = new XmlDocument();
         var xmlPath = "Modules";
@@ -175,11 +218,13 @@ public static class XMLWorker
             if (atrs["Workname"].Value == workName)
             {
                 XmlNodeList list = node.ChildNodes;
+                module.Workname = workName;
                 foreach (XmlNode item in list)
                 {
+
                     if (item.InnerText != "")
                     {
-                        module.Workmame = workName;
+
                         switch (item.Name)
                         {
                             case "GameName":
@@ -341,6 +386,145 @@ public static class XMLWorker
             }
         }
 
+    }
+
+    public static void LoadUnit(string workName, Unit unit)
+    {
+        CitadelParams = new XmlDocument();
+        var xmlPath = "Units";
+        var itemType = "Unit";
+        TextAsset xmlAsset = Resources.Load(xmlPath) as TextAsset;
+        if (xmlAsset) CitadelParams.LoadXml(xmlAsset.text);
+        XmlNodeList dataList = CitadelParams.GetElementsByTagName(itemType);
+        var nodeList = new List<XmlNode>();
+        if (unit.GetType() == typeof(UnitUpgrade))
+        {
+            nodeList.AddRange(from XmlNode o in dataList where o.Name.Contains("Upg") select o);
+        }
+        else
+        {
+            nodeList.AddRange(from XmlNode o in dataList where !o.Name.Contains("Upg") select o);
+        }
+        unit.Workname = workName;
+        foreach (XmlNode node in nodeList)
+        {
+            var atrs = node.Attributes;
+            if (atrs["Workname"].Value == workName)
+            {
+                XmlNodeList list = node.ChildNodes;
+                foreach (XmlNode item in list)
+                {
+                    if (item.InnerText != "")
+                    {
+                        switch (item.Name)
+                        {
+                            case "UnitName":
+                                unit.UnitName= item.InnerText;
+                                break;
+                            case "UnitDescription":
+                                unit.UnitDescription = item.InnerText;
+                                break;
+                            case "ModelName":
+                                unit.ModelName = item.InnerText;
+                                break;
+                            case "IconName":
+                                unit.IconName = item.InnerText;
+                                break;
+                            case "HpMax":
+                                unit.HpMax = Single.Parse(item.InnerText);
+                                break;
+                            case "HpWreckage":
+                                unit.HpWreckage = Single.Parse(item.InnerText);
+                                break;
+                            case "HpRegen":
+                                unit.HpRegen = Int32.Parse(item.InnerText);
+                                break;
+                            case "CostParts":
+                                unit.CostParts = Int32.Parse(item.InnerText);
+                                break;
+                            case "CostEnergy":
+                                unit.CostEnergy = Single.Parse(item.InnerText);
+                                break;
+                            case "CostSM":
+                                unit.CostSM = Single.Parse(item.InnerText);
+                                break;
+                            case "BasicBuildTime":
+                                unit.BasicBuildTime = Single.Parse(item.InnerText);
+                                break;
+                            case "DeployRadius":
+                                unit.DeployRadius = Single.Parse(item.InnerText);
+                                break;
+                            case "SpeedGlobal":
+                                unit.SpeedGlobal = Single.Parse(item.InnerText);
+                                break;
+                            case "Speed":
+                                unit.Speed = Single.Parse(item.InnerText);
+                                break;
+                            case "ReverseFactor":
+                                unit.ReverseFactor = Single.Parse(item.InnerText);
+                                break;
+                            case "TurnSpeed":
+                                unit.TurnSpeed = Single.Parse(item.InnerText);
+                                break;
+                            case "Acceleration":
+                                unit.Acceleration = Single.Parse(item.InnerText);
+                                break;
+                            case "Mass":
+                                unit.Mass = Single.Parse(item.InnerText);
+                                break;
+                            case "Recovery":
+                                unit.Recovery = GameModelsAndEnums.GetUnitRecovery(item.InnerText);
+                                break;
+                            case "Class":
+                                unit.UnitClasses = GameModelsAndEnums.GetUnitClasses(item.InnerText);
+                                break;
+                            case "Priority":
+                                unit.Priorities = GameModelsAndEnums.GetUnitPriorities(item.InnerText);
+                                break;
+                            case "Sight":
+                                unit.Sight = Single.Parse(item.InnerText);
+                                break;
+                            case "OptimalDistance":
+                                unit.OptimalDistance = Single.Parse(item.InnerText);
+                                break;
+                            case "RefArmPHYS":
+                                unit.RefArmPHYS = Single.Parse(item.InnerText);
+                                break;
+                            case "RefArmEN":
+                                unit.RefArmEN = Single.Parse(item.InnerText);
+                                break;
+                            case "RefArmHEAT":
+                                unit.RefArmHEAT = Single.Parse(item.InnerText);
+                                break;
+                            case "ConArmPHYS":
+                                unit.ConArmPHYS = Single.Parse(item.InnerText);
+                                break;
+                            case "ConArmEN":
+                                unit.ConArmEN = Single.Parse(item.InnerText);
+                                break;
+                            case "ConArmHEAT":
+                                unit.ConArmHEAT = Int32.Parse(item.InnerText);
+                                break;
+                            case "UpgradeCost":
+                                unit.UpgradeCost = Single.Parse(item.InnerText);
+                                break;
+                            case "UpgradeRequirements":
+                                unit.UpgradeRequirements = GameModelsAndEnums.GetUpgradeRequirements(item.InnerText);
+                                break;
+                            case "SchemeCostMetal":
+                                unit.SchemeCostMetal = Single.Parse(item.InnerText);
+                                break;
+                            case "SchemeCostEnergy":
+                                unit.SchemeCostEnergy = Single.Parse(item.InnerText);
+                                break;
+                           
+                        }
+                    }
+
+                }
+
+            }
+        }
     }
 
     public enum EnumGameItemType

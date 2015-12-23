@@ -13,11 +13,11 @@ public class Subsystem:Module
     {
         Slot = slot;
         //XMLWorker.SaveSubsystem(CitadelName, ModuleName, subName, slot);
-        XMLWorker.LoadModule(subName, this);
+        XMLWorker.LoadModuleOrSub(subName, this);
     }
 
     public Subsystem(string workname)
     {
-        XMLWorker.LoadModule(workname, this);
+        XMLWorker.LoadModuleOrSub(workname, this);
     }
 }

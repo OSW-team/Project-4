@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Module : MonoBehaviour
 {
-    public string Workmame;
+    public string Workname;
     public string GameName;
     public string Description;
     public string ModelName;
@@ -64,7 +64,7 @@ public class Module : MonoBehaviour
 
         Slot = slot;
        // XMLWorker.SaveModule(SCWorkname, workname, slot);
-        XMLWorker.LoadModule(workname, this);
+        XMLWorker.LoadModuleOrSub(workname, this);
         Subs = new List<Subsystem>(MaxSlotAmount);
         SlotsBools = new List<bool>();
         for (var i = 0; i < MaxSlotAmount; i++)

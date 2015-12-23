@@ -1,6 +1,6 @@
 <Items>
   <SC WorkName="PlayersSC">
-	<Module WorkName="Platform1">
+    <Module WorkName="Platform1">
       <Slot Name="" />
     </Module>
     <Module WorkName="Bridge1">
@@ -15,7 +15,6 @@
     <Module WorkName="Weapon1">
       <Slot Name="Weapon_Site1" />
     </Module>
-    
     <Module WorkName="Constructor1">
       <Slot Name="Constructor_Site" />
     </Module>
@@ -25,5 +24,11 @@
         <Slot Name="Sub_Slot_A1 2" />
       </Sub>
     </Module>
+    <Unit WorkName="Unit1">
+      <Upgrade Name="UpgACC1_Unit1" />
+    </Unit>
+	  <Unit WorkName="Unit2">
+      <Upgrade Name="UpgSpd1_Unit2" />
+    </Unit>
   </SC>
 </Items>

@@ -33,7 +33,7 @@ public  class SteamCitadelMeshConstrutor:MonoBehaviour {
     {
         var modelPath = "Models/" + module.ModelName;
         module.GO = Instantiate(Resources.Load<GameObject>(modelPath));
-        module.GO.name = "Module " + module.Workmame;
+        module.GO.name = "Module " + module.Workname;
         module.GO.transform.SetParent(Citadel.GO.transform);
     }
 
@@ -65,7 +65,7 @@ public  class SteamCitadelMeshConstrutor:MonoBehaviour {
         var modelPath = "Models/" + subsystem.ModelName;
         Debug.Log(modelPath);
         subsystem.GO = Instantiate(Resources.Load<GameObject>(modelPath));
-        subsystem.GO.name = "Subsystem " + subsystem.Workmame;
+        subsystem.GO.name = "Subsystem " + subsystem.Workname;
         subsystem.GO.transform.SetParent(module.GO.transform);
     }
 

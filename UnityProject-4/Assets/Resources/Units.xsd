@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="units">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Unit">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Basic">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="UnitName" />
+                    <xs:element name="UnitDescription" />
+                    <xs:element name="HpMax" />
+                    <xs:element name="HpWreckage" />
+                    <xs:element name="HpRegen" />
+                    <xs:element name="CostParts" />
+                    <xs:element name="CostEnergy" />
+                    <xs:element name="CostSM" />
+                    <xs:element name="BasicBuildTime" />
+                    <xs:element name="DeployRadius" />
+                    <xs:element name="SpeedGlobal" />
+                    <xs:element name="Speed" />
+                    <xs:element name="ReverseFactor" />
+                    <xs:element name="TurnSpeed" />
+                    <xs:element name="Acceleration" />
+                    <xs:element name="Mass" />
+                    <xs:element name="Recovery" />
+                    <xs:element name="Class" />
+                    <xs:element name="Priority" />
+                    <xs:element name="Sight" />
+                    <xs:element name="OptimalDistance" />
+                    <xs:element name="RefArmPHYS" />
+                    <xs:element name="RefArmEN" />
+                    <xs:element name="RefArmHEAT" />
+                    <xs:element name="ConArmPHYS" />
+                    <xs:element name="ConArmEN" />
+                    <xs:element name="ConArmHEAT" />
+                    <xs:element name="UpgradeCost" />
+                    <xs:element name="UpgradeRequirements" />
+                    <xs:element name="SchemeCostMetal" />
+                    <xs:element name="SchemeCostEnergy" />
+                    <xs:element name="Animations" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Workname" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

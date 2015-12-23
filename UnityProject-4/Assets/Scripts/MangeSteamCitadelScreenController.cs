@@ -145,7 +145,7 @@ public class MangeSteamCitadelScreenController : MonoBehaviour
             sub.GetComponent<Button>().onClick.RemoveAllListeners();
             var i1 = i;
             var module1 = module;
-            sub.GetComponent<Button>().onClick.AddListener(()=> { TrySubsystem(module1, Controller.Player.Subsystems[i1].Workmame, subSlotName); });
+            sub.GetComponent<Button>().onClick.AddListener(()=> { TrySubsystem(module1, Controller.Player.Subsystems[i1].Workname, subSlotName); });
 
         }
     }
@@ -156,7 +156,7 @@ public class MangeSteamCitadelScreenController : MonoBehaviour
         Destroy(Controller.Player.Citadel.GO);
         Controller.Player.Citadel.GO  = new GameObject("Citadel " + name);
         Debug.Log(module.GO.name);
-        var newSub = new Subsystem(Controller.Player.Citadel.Name, module.Workmame, subName, subSlotName);
+        var newSub = new Subsystem(Controller.Player.Citadel.Name, module.Workname, subName, subSlotName);
         module.Subs.Add(newSub);
         
         SteamCitadelMeshConstrutor.BuildCitadelMesh(Controller.Player.Citadel);

@@ -49,6 +49,19 @@ public class GameModelsAndEnums : MonoBehaviour
         }
     }
 
+    public enum EnumUnitClass
+    {
+        Infantry,
+        LightMateriel,
+        HeavyMateriel,
+        MissileLauncher,
+        Artillery,
+        LightAir,
+        HeavyAir,
+        Building,
+        SF
+    }
+
     public enum EnumModuleType
     {
         Platform,
@@ -141,5 +154,25 @@ public class GameModelsAndEnums : MonoBehaviour
         var list = new List<string>();
 
         return list;
+    }
+
+    public static List<float> GetUnitRecovery(string innerText)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public static List<EnumUnitClass> GetUnitClasses(string innerText)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public static Dictionary<EnumUnitClass, int> GetUnitPriorities(string innerText)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public static List<string> GetUpgradeRequirements(string innerText)
+    {
+        throw new System.NotImplementedException();
     }
 }
