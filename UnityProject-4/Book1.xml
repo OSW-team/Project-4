@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Module Workname="Engine1">
+		<ModelName>MOD_Engine_Basic</ModelName>
+	</Module>
+	<Module Workname="Bridge1">
+		<ModelName>MOD_Bridge_Basic</ModelName>
+	</Module>
+	<Module Workname="Constructor1">
+		<ModelName>MOD_Constructor_basic</ModelName>
+	</Module>
+	<Module Workname="Radar1">
+		<ModelName>MOD_Radar_Basic</ModelName>
+	</Module>
+	<Module Workname="Storage1">
+		<ModelName>MOD_Storage_Basic</ModelName>
+	</Module>
+	<Module Workname="Weapon1">
+		<ModelName>MOD_Weapon_basic</ModelName>
+	</Module>
+	<Module Workname="Platform1">
+		<ModelName>Models/Platform_Basic</ModelName>
+	</Module>
+</items>

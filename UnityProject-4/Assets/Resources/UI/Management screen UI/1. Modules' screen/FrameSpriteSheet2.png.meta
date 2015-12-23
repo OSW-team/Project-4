@@ -1,0 +1,252 @@
+fileFormatVersion: 2
+guid: 86ca235fcfc4b5f46beabb40f4cd06d8
+timeCreated: 1450623562
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: FrameSpriteSheet2_0
+    21300002: FrameSpriteSheet2_1
+    21300004: FrameSpriteSheet2_2
+    21300006: FrameSpriteSheet2_3
+    21300008: FrameSpriteSheet2_4
+    21300010: FrameSpriteSheet2_5
+    21300012: FrameSpriteSheet2_6
+    21300014: FrameSpriteSheet2_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FrameSpriteSheet2_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 148
+        width: 95
+        height: 111
+      alignment: 9
+      pivot: {x: 0.3666667, y: 0.4849852}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33.166664, y: 57.16664}
+        - {x: -30.833336, y: 50.16664}
+        - {x: -34.833336, y: 36.16664}
+        - {x: -34.833336, y: -33.83336}
+        - {x: 24.166664, y: -53.83336}
+        - {x: 46.166664, y: -53.83336}
+        - {x: 60.166664, y: -41.83336}
+        - {x: 60.166664, y: 43.16664}
+        - {x: 46.166664, y: 57.16664}
+      - - {x: 32.166664, y: 41.16664}
+        - {x: 34.166664, y: 39.16664}
+        - {x: 37.166664, y: 40.16664}
+        - {x: 37.166664, y: 44.16664}
+        - {x: 35.166664, y: 46.16664}
+        - {x: 32.166664, y: 45.16664}
+    - name: FrameSpriteSheet2_1
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 148
+        width: 99
+        height: 111
+      alignment: 9
+      pivot: {x: 0.3653199, y: 0.49399424}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33.83333, y: 56.16664}
+        - {x: -32.16667, y: 50.16664}
+        - {x: -36.16667, y: 35.16664}
+        - {x: -36.16667, y: -34.83336}
+        - {x: 32.83333, y: -54.83336}
+        - {x: 47.83333, y: -54.83336}
+        - {x: 62.83333, y: -39.83336}
+        - {x: 62.83333, y: 42.16664}
+        - {x: 48.83333, y: 56.16664}
+      - - {x: 32.83333, y: 41.16664}
+        - {x: 34.83333, y: 39.16664}
+        - {x: 37.83333, y: 40.16664}
+        - {x: 37.83333, y: 43.16664}
+        - {x: 35.83333, y: 45.16664}
+        - {x: 32.83333, y: 44.16664}
+    - name: FrameSpriteSheet2_2
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 148
+        width: 108
+        height: 111
+      alignment: 9
+      pivot: {x: 0.34259287, y: 0.49099112}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.9999695, y: 56.499985}
+        - {x: -34.00003, y: 55.499985}
+        - {x: -37.00003, y: 43.499985}
+        - {x: -37.00003, y: -44.500015}
+        - {x: -31.00003, y: -49.500015}
+        - {x: 10.9999695, y: -54.500015}
+        - {x: 62.99997, y: -54.500015}
+        - {x: 70.99997, y: -40.500015}
+        - {x: 70.99997, y: 42.499985}
+        - {x: 55.99997, y: 56.499985}
+      - - {x: 32.99997, y: -33.500015}
+        - {x: 31.99997, y: -34.500015}
+        - {x: 31.99997, y: -37.500015}
+        - {x: 34.99997, y: -40.500015}
+        - {x: 39.99997, y: -40.500015}
+        - {x: 40.99997, y: -39.500015}
+        - {x: 40.99997, y: -36.500015}
+        - {x: 38.99997, y: -34.500015}
+        - {x: 34.99997, y: -33.500015}
+    - name: FrameSpriteSheet2_3
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 148
+        width: 112
+        height: 111
+      alignment: 9
+      pivot: {x: 0.34226227, y: 0.48798817}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 49.666626, y: 56.833313}
+        - {x: -27.333374, y: 40.833313}
+        - {x: -38.333374, y: 35.833313}
+        - {x: -38.333374, y: -37.166687}
+        - {x: -35.333374, y: -54.166687}
+        - {x: 58.666626, y: -54.166687}
+        - {x: 73.666626, y: -40.166687}
+        - {x: 73.666626, y: 42.833313}
+        - {x: 58.666626, y: 56.833313}
+      - - {x: 32.666626, y: -34.166687}
+        - {x: 31.666626, y: -35.166687}
+        - {x: 31.666626, y: -38.166687}
+        - {x: 34.666626, y: -41.166687}
+        - {x: 39.666626, y: -41.166687}
+        - {x: 40.666626, y: -40.166687}
+        - {x: 40.666626, y: -37.166687}
+        - {x: 38.666626, y: -35.166687}
+        - {x: 34.666626, y: -34.166687}
+    - name: FrameSpriteSheet2_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 22
+        width: 118
+        height: 111
+      alignment: 9
+      pivot: {x: 0.32768363, y: 0.50300324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54.333332, y: 55.16664}
+        - {x: -27.666668, y: 42.16664}
+        - {x: -38.666668, y: 39.16664}
+        - {x: -38.666668, y: -39.83336}
+        - {x: -34.666668, y: -54.83336}
+        - {x: -26.666668, y: -55.83336}
+        - {x: 65.33333, y: -55.83336}
+        - {x: 79.33333, y: -44.83336}
+        - {x: 79.33333, y: 44.16664}
+        - {x: 65.33333, y: 55.16664}
+    - name: FrameSpriteSheet2_5
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 22
+        width: 123
+        height: 111
+      alignment: 9
+      pivot: {x: 0.3157181, y: 0.50300324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.83333, y: -35.83336}
+        - {x: -34.83333, y: -53.83336}
+        - {x: 28.166672, y: -55.83336}
+        - {x: 70.16667, y: -55.83336}
+        - {x: 84.16667, y: -40.83336}
+        - {x: 84.16667, y: 55.16664}
+        - {x: -15.833328, y: 55.16664}
+        - {x: -38.83333, y: 45.16664}
+    - name: FrameSpriteSheet2_6
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 24
+        width: 133
+        height: 111
+      alignment: 9
+      pivot: {x: 0.30952397, y: 0.49699718}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39.166687, y: 55.833313}
+        - {x: -41.166687, y: 46.833313}
+        - {x: -41.166687, y: -46.166687}
+        - {x: 15.833313, y: -55.166687}
+        - {x: 91.83331, y: -55.166687}
+        - {x: 91.83331, y: 55.833313}
+    - name: FrameSpriteSheet2_7
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 24
+        width: 144
+        height: 111
+      alignment: 9
+      pivot: {x: 0.27546352, y: 0.49399436}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 51.333252, y: 56.166626}
+        - {x: -28.666748, y: 45.166626}
+        - {x: -39.666748, y: 42.166626}
+        - {x: -39.666748, y: -38.833374}
+        - {x: -35.666748, y: -54.833374}
+        - {x: 104.33325, y: -54.833374}
+        - {x: 104.33325, y: 51.166626}
+        - {x: 91.33325, y: 56.166626}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

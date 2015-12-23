@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Module Workname="Engine1">
+		<GameName>Yamert</GameName>
+		<ModelName>MOD_Engine_Basic</ModelName>
+		<IconName>Icons_9</IconName>
+		<Type>Engine</Type>
+		<MaxSlotAmount>3</MaxSlotAmount>
+	</Module>
+	<Module Workname="Bridge1">
+		<ModelName>MOD_Bridge_Basic</ModelName>
+		<IconName>Icons_7</IconName>
+		<Type>Bridge</Type>
+		<MaxSlotAmount>2</MaxSlotAmount>
+	</Module>
+	<Module Workname="Constructor1">
+		<ModelName>MOD_Storage_basic</ModelName>
+		<IconName>Icons_3</IconName>
+		<Type>Constructor</Type>
+	</Module>
+	<Module Workname="Radar1">
+		<ModelName>MOD_Radar_Basic</ModelName>
+		<IconName>Icons_0</IconName>
+		<Type>Hypo</Type>
+	</Module>
+	<Module Workname="Storage1">
+		<ModelName>MOD_Storage_Basic</ModelName>
+		<IconName>Icons_8</IconName>
+		<Type>Storage</Type>
+	</Module>
+	<Module Workname="Weapon1">
+		<ModelName>MOD_Weapon_basic</ModelName>
+		<IconName>Icons_1</IconName>
+		<Type>Weapon</Type>
+	</Module>
+	<Module Workname="Platform1">
+		<GameName>Yamert</GameName>
+		<ModelName>Platform_Basic</ModelName>
+		<IconName>Icons_6</IconName>
+		<Type>Platform</Type>
+	</Module>
+</items>

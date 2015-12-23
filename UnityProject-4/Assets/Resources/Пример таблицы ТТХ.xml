@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<item Name="Engine">
+		<Workmame>Ggffgf</Workmame>
+		<GameName>dfs</GameName>
+		<Description>=G9</Description>
+		<ModelName>MOD_Engine_Basic</ModelName>
+	</item>
+	<item Name="Bridge">
+		<ModelName>MOD_Bridge_Basic</ModelName>
+	</item>
+	<item Name="Constructor">
+		<ModelName>MOD_Constructor_basic</ModelName>
+	</item>
+	<item Name="Radar">
+		<ModelName>MOD_Radar_Basic</ModelName>
+	</item>
+	<item Name="Storage">
+		<ModelName>MOD_Storage_Basic</ModelName>
+	</item>
+	<item Name="Weapon">
+		<ModelName>MOD_Weapon_basic</ModelName>
+	</item>
+	<item Name="Platform">
+		<ModelName>Models/Platform_Basic</ModelName>
+	</item>
+</items>

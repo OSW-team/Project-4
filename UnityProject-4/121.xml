@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Module Workname="Engine1">
+		<Description>Good engine</Description>
+		<ModelName>MOD_Engine_Basic</ModelName>
+		<Mass>11,2</Mass>
+		<Type>Engine</Type>
+		<MaxSlotAmount>5</MaxSlotAmount>
+	</Module>
+	<Module Workname="Bridge1">
+		<Description>Basic bridge</Description>
+		<ModelName>MOD_Bridge_Basic</ModelName>
+		<Mass>13,2</Mass>
+		<Type>Bridge</Type>
+		<MaxSlotAmount>3</MaxSlotAmount>
+	</Module>
+	<Module Workname="Constructor1">
+		<Description>basic constructor</Description>
+		<ModelName>MOD_Constructor_basic</ModelName>
+		<Mass>45,8</Mass>
+		<Type>Constructor</Type>
+		<MaxSlotAmount>8</MaxSlotAmount>
+	</Module>
+	<Module Workname="Radar1">
+		<Description>Basic radar</Description>
+		<ModelName>MOD_Radar_Basic</ModelName>
+		<Mass>4</Mass>
+		<Type>Radar</Type>
+		<MaxSlotAmount>8</MaxSlotAmount>
+	</Module>
+	<Module Workname="Storage1">
+		<Description>Basic storage</Description>
+		<ModelName>MOD_Storage_Basic</ModelName>
+		<Mass>24</Mass>
+		<Type>Storage</Type>
+		<MaxSlotAmount>5</MaxSlotAmount>
+	</Module>
+	<Module Workname="Weapon1">
+		<Description>basic weapon</Description>
+		<ModelName>MOD_Weapon_basic</ModelName>
+		<Mass>2</Mass>
+		<Type>Weapon</Type>
+		<MaxSlotAmount>3</MaxSlotAmount>
+	</Module>
+	<Module Workname="Platform1">
+		<Description>Basic hypo</Description>
+		<ModelName>Models/Platform_Basic</ModelName>
+		<Mass>350</Mass>
+		<Type>Hypo</Type>
+		<MaxSlotAmount>5</MaxSlotAmount>
+	</Module>
+	<Module Workname="Hypo2">
+		<Description>Good hypo</Description>
+	</Module>
+	<Module/>
+	<Module/>
+	<Module/>
+	<Module/>
+	<Module/>
+	<Module/>
+	<Module/>
+	<Module/>
+	<Module/>
+	<Module/>
+	<Module/>
+	<Module/>
+</items>
