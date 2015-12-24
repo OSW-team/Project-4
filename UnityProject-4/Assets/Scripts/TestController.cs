@@ -2,23 +2,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 
 public class TestController : MonoBehaviour
 {
     public Player Player;
     public SteamCitadel MyCitadel;
-	// Use this for initialization
-	void Start () {
+    public Transform ScreensButtons;
+    public List<GameObject> Screens; 
+    // Use this for initialization
+    void Start () {
         //NewCitadel();
+
         Player = new Player();
         Player.Subsystems.Add(new Subsystem("Box1"));
         Player.Subsystems.Add(new Subsystem("Tube1"));
         var citadel = new SteamCitadel("PlayersSC");
         Player.Citadel = citadel;
         XMLWorker.LoadSC(citadel);
-        SteamCitadelMeshConstrutor.BuildCitadelMesh(citadel);
+
+
+        Screens = new List<GameObject>();
         var moduleScreen = FindObjectOfType<MangeSteamCitadelScreenController>();
-        moduleScreen.ShowCitadel(citadel);
+        if(moduleScreen)moduleScreen.ShowCitadel(citadel);
+        var unitScreen = FindObjectOfType<ManageUnitsScreenController>();
+        if(unitScreen)unitScreen.ShowUnit(citadel.Units[0]);
+        ScreensButtons.GetChild(0).GetComponent<Button>().onClick.RemoveAllListeners();
+        ScreensButtons.GetChild(0).GetComponent<Button>().onClick.AddListener(()=>unitScreen.ShowUnit(citadel.Units[0]));
+        ScreensButtons.GetChild(1).GetComponent<Button>().onClick.RemoveAllListeners();
+        ScreensButtons.GetChild(1).GetComponent<Button>().onClick.AddListener(() => moduleScreen.ShowCitadel(citadel));
+
         //MyCitadel.Modules[0].Subs.Add(new Subsystem(MyCitadel.Name, "Platform1", "Tube"));
     }
 

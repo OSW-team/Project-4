@@ -157,7 +157,12 @@ public class CityConstructor : MonoBehaviour
         
         var candidatList  = new List<GameObject>();
 
-        candidatList = (from prefab in _prefabs let props = prefab.GetComponent<CityItem>() where props.GetCategories().Contains(_categoryFilter) select prefab).ToList();
+        candidatList = new List<GameObject>();
+        foreach (var prefab in _prefabs)
+        {
+            CityItem props = prefab.GetComponent<CityItem>();
+            if (props.GetCategories().Contains(_categoryFilter)) candidatList.Add(prefab);
+        }
         if (_typeFilter != "") { candidatList = (from prefab in candidatList let props = prefab.GetComponent<CityItem>() where props.GetTypes().Contains(_typeFilter) select prefab).ToList();}
         if (_squareFilter!= "") { candidatList = (from prefab in candidatList let props = prefab.GetComponent<CityItem>() where props.GetSquares().Contains(_squareFilter) select prefab).ToList();}
         if (_shapeFilter != "") { candidatList = (from prefab in candidatList let props = prefab.GetComponent<CityItem>() where props.GetShapes().Contains(_shapeFilter)  select prefab).ToList();}

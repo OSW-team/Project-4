@@ -7,6 +7,7 @@ public  class SteamCitadelMeshConstrutor:MonoBehaviour {
     private static GameObject _citadel;
     public static void BuildCitadelMesh(SteamCitadel Citadel)
     {
+        Citadel.GO = new GameObject("Citadel "+ Citadel.Name);
         AddModules(Citadel);
         PlaceModules(Citadel);
         AddSubs(Citadel);

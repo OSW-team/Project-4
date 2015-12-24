@@ -4,79 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
 
-public class MangeSteamCitadelScreenController : MonoBehaviour
+public class MangeSteamCitadelScreenController : ManagementScreen
 {
-    public Camera Camera;
     public GameObject SteamCitadelManagementScreen;
-    public TestController Controller;
-    public GameObject DraggableField;
     public GameObject AlowedSubsystems;
-    public Vector3 CurrentPosition;
-    public GameObject SteamCitadel;
-    public float RotationSpeed;
-    private bool _startDrag;
     public List<GameObject> ModuleButtons;
     public Material GhostMat;
     // Use this for initialization
-    void Start ()
-    {
-        Controller = FindObjectOfType<TestController>();
-
-    }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    public void Show()
-    {
-        SteamCitadelManagementScreen.SetActive(true);
-
-    }
-
-    public void OnDraggableFieldDown()
-    {
-        if (!_startDrag)
-        {
-            _startDrag = true;
-           // var curPos = Input.mousePosition;
-            CurrentPosition = Input.mousePosition; 
-
-        } 
-    }
-
-    public void OnDraggableFieldUp()
-    {
-        _startDrag = false;
-        //var curPos = Input.mousePosition;
-        CurrentPosition = Input.mousePosition;
-
-    }
-
-
-    public void OnDrag()
-    {
-        var offset = Input.mousePosition.x - CurrentPosition.x;
-        var rotY= -1*offset*RotationSpeed;
-
-        SteamCitadel.transform.localEulerAngles = new Vector3(SteamCitadel.transform.localEulerAngles.x, SteamCitadel.transform.localEulerAngles.y+rotY, SteamCitadel.transform.localEulerAngles.z);
-    }
-
-    public enum EnumModuleScreenState
-    {
-        ModuleSelected,
-        SubsystemSelected
-    }
 
     public void ShowCitadel(SteamCitadel citadel)
     {
+        SteamCitadelMeshConstrutor.BuildCitadelMesh(citadel);
         var citadelGO = citadel.GO;
         Camera cam = FindObjectOfType<Camera>();
         var Center = new Vector3(0.056f,0.838f,-1.792f);
-        citadelGO.transform.position = Center;
-        SteamCitadel = citadelGO;
-        SteamCitadel.transform.eulerAngles = new Vector3(0,150,0);
+        CurrentManagingGameObject = citadelGO;
+        CurrentManagingGameObject.transform.position = Center;
+        CurrentManagingGameObject.transform.eulerAngles = new Vector3(0,150,0);
         var sprites = Resources.LoadAll<Sprite>("Icons");
         foreach (var module in citadel.Modules)
         {
@@ -163,5 +107,11 @@ public class MangeSteamCitadelScreenController : MonoBehaviour
         newSub.GO.GetComponent<MeshRenderer>().material = GhostMat;
         ShowCitadel(Controller.Player.Citadel);
         Controller.Player.Citadel.GO.transform.localEulerAngles = rotation;
+    }
+
+    public enum EnumModuleScreenState
+    {
+        ModuleSelected,
+        SubsystemSelected
     }
 }

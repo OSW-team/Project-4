@@ -24,7 +24,7 @@
         <Slot Name="Sub_Slot_A1 2" />
       </Sub>
     </Module>
-    <Unit WorkName="Unit1">
+    <Unit WorkName="MachLM1">
       <Upgrade Name="UpgACC1_Unit1" />
     </Unit>
 	  <Unit WorkName="Unit2">

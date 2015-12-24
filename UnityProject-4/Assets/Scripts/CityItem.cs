@@ -43,9 +43,9 @@ public class CityItem : MonoBehaviour
     {
         var resSt = "";
 
-        if (Type[0] == true) resSt += "Building,";
-        if (Type[1] == true) resSt += "Derbis,";
-        if (Type[2] == true) resSt += "Part,";
+        if (Category[0] == true) resSt += "Building,";
+        if (Category[1] == true) resSt += "Derbis,";
+        if (Category[2] == true) resSt += "Part,";
         return resSt;
     }
 
@@ -100,13 +100,13 @@ public class CityItem : MonoBehaviour
     {
         var resSt = "";
 
-        if (Floor[0] == true) resSt += "Spike,";
-        if (Floor[1] == true) resSt += "Wall,";
-        if (Floor[2] == true) resSt += "Pipe,";
-        if (Floor[3] == true) resSt += "Outhouse,";
-        if (Floor[4] == true) resSt += "Antenna,";
-        if (Floor[5] == true) resSt += "Internal,";
-        if (Floor[6] == true) resSt += "Gear,";
+        if (Type[0] == true) resSt += "Spike,";
+        if (Type[1] == true) resSt += "Wall,";
+        if (Type[2] == true) resSt += "Pipe,";
+        if (Type[3] == true) resSt += "Outhouse,";
+        if (Type[4] == true) resSt += "Antenna,";
+        if (Type[5] == true) resSt += "Internal,";
+        if (Type[6] == true) resSt += "Gear,";
         return resSt;
     }
 }

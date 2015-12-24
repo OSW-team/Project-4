@@ -39,11 +39,13 @@ public class Unit : MonoBehaviour
     public float SchemeCostMetal;
     public float SchemeCostEnergy;
 
+    public GameObject GO;
     public List<UnitUpgrade> Upgrades;
 
 
     public Unit(string CSWokname, string workName)
     {
+
         Upgrades = new List<UnitUpgrade>();
         XMLWorker.LoadUnit(workName, this);
     }
@@ -51,6 +53,12 @@ public class Unit : MonoBehaviour
     protected Unit()
     {
         
+    }
+
+    public void BuildMesh()
+    {
+        var prefab = Resources.Load<GameObject>("Prefabs/Units/" + Workname);
+        GO = Instantiate(prefab);
     }
 
     // Use this for initialization

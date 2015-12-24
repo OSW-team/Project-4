@@ -14,7 +14,7 @@
 		<MaxSlotAmount>2</MaxSlotAmount>
 	</Module>
 	<Module Workname="Constructor1">
-		<ModelName>MOD_Storage_basic</ModelName>
+		<ModelName>MOD_Constructor_basic</ModelName>
 		<IconName>Icons_3</IconName>
 		<Type>Constructor</Type>
 	</Module>
