@@ -1,203 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <units xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<Unit Workname="Snake">
-      <UnitName>Snake</UnitName>
+	<Unit Workname="MachLM1">
+      <UnitName>Tank</UnitName>
       <ModelName>MachLM1</ModelName>
       <IconName>UnitButton_1</IconName>
-      <UnitDescription>"Snake" is LigtMateriel that can be upgraded to have Speed Burst</UnitDescription>
-      <HpMax>80</HpMax>
-      <HpWreckage>50</HpWreckage>
-      <HpRegen>0</HpRegen>
-      <CostParts>12</CostParts>
-      <CostEnergy>0</CostEnergy>
-      <CostSM>1</CostSM>
-      <BasicBuildTime>2.5</BasicBuildTime>
+      <UnitDescription></UnitDescription>
+      <HpMax></HpMax>
+      <HpWreckage></HpWreckage>
+      <HpRegen></HpRegen>
+      <CostParts></CostParts>
+      <CostEnergy></CostEnergy>
+      <CostSM></CostSM>
+      <BasicBuildTime></BasicBuildTime>
       <DeployRadius></DeployRadius>
       <SpeedGlobal></SpeedGlobal>
-      <Speed>3</Speed>
-      <ReverseFactor>0.5</ReverseFactor>
-      <TurnSpeed>4</TurnSpeed>
-      <Acceleration>2</Acceleration>
-      <Accuracy></Accuracy>
-      <Mass>200</Mass>
-      <Recovery>[10_parts]_[1_energy]</Recovery>
-      <Class>LightMateriel</Class>
+      <Speed></Speed>
+      <ReverseFactor></ReverseFactor>
+      <TurnSpeed></TurnSpeed>
+      <Acceleration></Acceleration>
+      <Mass></Mass>
+      <Recovery></Recovery>
+      <Class></Class>
       <Priority></Priority>
-      <Sight>40</Sight>
-      <OptimalDistance>25</OptimalDistance>
+      <Sight></Sight>
+      <OptimalDistance></OptimalDistance>
       <RefArmPHYS></RefArmPHYS>
       <RefArmEN></RefArmEN>
       <RefArmHEAT></RefArmHEAT>
       <ConArmPHYS></ConArmPHYS>
       <ConArmEN></ConArmEN>
       <ConArmHEAT></ConArmHEAT>
-      <UpgradeCost></UpgradeCost>
-      <UpgradeRequirements></UpgradeRequirements>
+      <UnitCost></UnitCost>
+      <UnitRequirements></UnitRequirements>
       <SchemeCostMetal></SchemeCostMetal>
       <SchemeCostEnergy></SchemeCostEnergy>
       <Animations></Animations>
 	</Unit>
 
-  <Upgrade Workname="UpgShotsAmount1-Snake">
-    <UnitName>Shot amount upgrade</UnitName>
+  <Unit Workname="UpgACC_MachLM1">
+    <UnitName>HyperEngine</UnitName>
     <ModelName></ModelName>
-    <IconName>CategoryAndUpgradeIcons_10</IconName>
-    <UnitDescription>Snake is equipped with additional barrel allowing it to shoot more muzzles at once. This significantly decreases speed, however</UnitDescription>
+    <IconName>CategoryAndUnitIcons_10</IconName>
+    <UnitDescription></UnitDescription>
     <HpMax></HpMax>
     <HpWreckage></HpWreckage>
-    <HpRegen></HpRegen>
-    <CostParts></CostParts>
-    <CostEnergy></CostEnergy>
-    <CostSM></CostSM>
-    <BasicBuildTime></BasicBuildTime>
-    <DeployRadius></DeployRadius>
-    <SpeedGlobal></SpeedGlobal>
-    <Speed>-0.75</Speed>
-    <ReverseFactor></ReverseFactor>
-    <TurnSpeed></TurnSpeed>
-    <Acceleration>-0.4</Acceleration>
-    <Accuracy></Accuracy>
-    <Mass>20</Mass>
-    <Recovery></Recovery>
-    <Class></Class>
-    <Priority></Priority>
-    <Sight></Sight>
-    <OptimalDistance></OptimalDistance>
-    <RefArmPHYS></RefArmPHYS>
-    <RefArmEN></RefArmEN>
-    <RefArmHEAT></RefArmHEAT>
-    <ConArmPHYS></ConArmPHYS>
-    <ConArmEN></ConArmEN>
-    <ConArmHEAT></ConArmHEAT>
-    <UpgradeCost></UpgradeCost>
-    <UpgradeRequirements></UpgradeRequirements>
-    <UpgradeCategory>Category1</UpgradeCategory>
-    <SchemeCostMetal></SchemeCostMetal>
-    <SchemeCostEnergy></SchemeCostEnergy>
-    <Animations></Animations>
-  </Upgrade>
-
-  <Upgrade Workname="UpgSpd1-Snake">
-    <UnitName>Speed upgrade I</UnitName>
-    <ModelName></ModelName>
-    <IconName>CategoryAndUpgradeIcons_10</IconName>
-    <UnitDescription>Add a turbine to increase "Snake's" speed.</UnitDescription>
-    <HpMax></HpMax>
-    <HpWreckage></HpWreckage>
-    <HpRegen></HpRegen>
-    <CostParts></CostParts>
-    <CostEnergy></CostEnergy>
-    <CostSM></CostSM>
-    <BasicBuildTime></BasicBuildTime>
-    <DeployRadius></DeployRadius>
-    <SpeedGlobal></SpeedGlobal>
-    <Speed>0.5</Speed>
-    <ReverseFactor></ReverseFactor>
-    <TurnSpeed></TurnSpeed>
-    <Acceleration>0.3</Acceleration>
-    <Accuracy></Accuracy>
-    <Mass>15</Mass>
-    <Recovery></Recovery>
-    <Class></Class>
-    <Priority></Priority>
-    <Sight></Sight>
-    <OptimalDistance></OptimalDistance>
-    <RefArmPHYS></RefArmPHYS>
-    <RefArmEN></RefArmEN>
-    <RefArmHEAT></RefArmHEAT>
-    <ConArmPHYS></ConArmPHYS>
-    <ConArmEN></ConArmEN>
-    <ConArmHEAT></ConArmHEAT>
-    <UpgradeCost></UpgradeCost>
-    <UpgradeRequirements></UpgradeRequirements>
-    <UpgradeCategory>Category2</UpgradeCategory>
-    <SchemeCostMetal></SchemeCostMetal>
-    <SchemeCostEnergy></SchemeCostEnergy>
-    <Animations></Animations>
-  </Upgrade>
-  <Upgrade Workname="UpgSpd2-Snake">
-    <UnitName>Speed upgrade II</UnitName>
-    <ModelName></ModelName>
-    <IconName>CategoryAndUpgradeIcons_10</IconName>
-    <UnitDescription>Improve Engine to even more increase "Snake's" speed.</UnitDescription>
-    <HpMax></HpMax>
-    <HpWreckage></HpWreckage>
-    <HpRegen></HpRegen>
-    <CostParts></CostParts>
-    <CostEnergy></CostEnergy>
-    <CostSM></CostSM>
-    <BasicBuildTime></BasicBuildTime>
-    <DeployRadius></DeployRadius>
-    <SpeedGlobal></SpeedGlobal>
-    <Speed>0.3</Speed>
-    <ReverseFactor></ReverseFactor>
-    <TurnSpeed></TurnSpeed>
-    <Acceleration>0.3</Acceleration>
-    <Accuracy></Accuracy>
-    <Mass>10</Mass>
-    <Recovery></Recovery>
-    <Class></Class>
-    <Priority></Priority>
-    <Sight></Sight>
-    <OptimalDistance></OptimalDistance>
-    <RefArmPHYS></RefArmPHYS>
-    <RefArmEN></RefArmEN>
-    <RefArmHEAT></RefArmHEAT>
-    <ConArmPHYS></ConArmPHYS>
-    <ConArmEN></ConArmEN>
-    <ConArmHEAT></ConArmHEAT>
-    <UpgradeCost></UpgradeCost>
-    <UpgradeRequirements>UpgBurst1-Snake</UpgradeRequirements>
-    <UpgradeCategory>Category2</UpgradeCategory>
-    <SchemeCostMetal></SchemeCostMetal>
-    <SchemeCostEnergy></SchemeCostEnergy>
-    <Animations></Animations>
-  </Upgrade>
-  <Upgrade Workname="UpgBurst1-Snake">
-    <UnitName>Speed Boost upgrade</UnitName>
-    <ModelName></ModelName>
-    <IconName>CategoryAndUpgradeIcons_10</IconName>
-    <UnitDescription>Change turbine to more powerful, further increasing speed  and allowing "Snake" to charge up for 1 second and then drive at increased speed for 5 seconds. /n Cooldown 15 sec</UnitDescription>
-    <HpMax></HpMax>
-    <HpWreckage></HpWreckage>
-    <HpRegen></HpRegen>
-    <CostParts></CostParts>
-    <CostEnergy></CostEnergy>
-    <CostSM></CostSM>
-    <BasicBuildTime></BasicBuildTime>
-    <DeployRadius></DeployRadius>
-    <SpeedGlobal></SpeedGlobal>
-    <Speed>0.2</Speed>
-    <ReverseFactor></ReverseFactor>
-    <TurnSpeed></TurnSpeed>
-    <Acceleration>0.2</Acceleration>
-    <Accuracy></Accuracy>
-    <Mass>5</Mass>
-    <Recovery></Recovery>
-    <Class></Class>
-    <Priority></Priority>
-    <Sight></Sight>
-    <OptimalDistance></OptimalDistance>
-    <RefArmPHYS></RefArmPHYS>
-    <RefArmEN></RefArmEN>
-    <RefArmHEAT></RefArmHEAT>
-    <ConArmPHYS></ConArmPHYS>
-    <ConArmEN></ConArmEN>
-    <ConArmHEAT></ConArmHEAT>
-    <UpgradeCost></UpgradeCost>
-    <UpgradeRequirements>UpgSpd1-Snake</UpgradeRequirements>
-    <UpgradeCategory>Category3</UpgradeCategory>
-    <SchemeCostMetal></SchemeCostMetal>
-    <SchemeCostEnergy></SchemeCostEnergy>
-    <Animations></Animations>
-  </Upgrade>
-  <Upgrade Workname="UpgHP1-Snake">
-    <UnitName>Hull Upgrade</UnitName>
-    <ModelName></ModelName>
-    <IconName>CategoryAndUpgradeIcons_10</IconName>
-    <UnitDescription>Add some plating to reinforse "Snake's" structure</UnitDescription>
-    <HpMax>10</HpMax>
-    <HpWreckage>10</HpWreckage>
     <HpRegen></HpRegen>
     <CostParts></CostParts>
     <CostEnergy></CostEnergy>
@@ -208,9 +54,8 @@
     <Speed></Speed>
     <ReverseFactor></ReverseFactor>
     <TurnSpeed></TurnSpeed>
-    <Acceleration>-0.1</Acceleration>
-    <Accuracy></Accuracy>
-    <Mass>10</Mass>
+    <Acceleration></Acceleration>
+    <Mass></Mass>
     <Recovery></Recovery>
     <Class></Class>
     <Priority></Priority>
@@ -222,13 +67,162 @@
     <ConArmPHYS></ConArmPHYS>
     <ConArmEN></ConArmEN>
     <ConArmHEAT></ConArmHEAT>
-    <UpgradeCost></UpgradeCost>
-    <UpgradeRequirements></UpgradeRequirements>
-    <UpgradeCategory>Category2</UpgradeCategory>
+    <UnitCost></UnitCost>
+    <UnitRequirements></UnitRequirements>
+    <UnitCategory>Category1</UnitCategory>
     <SchemeCostMetal></SchemeCostMetal>
     <SchemeCostEnergy></SchemeCostEnergy>
     <Animations></Animations>
-  </Upgrade>
+  </Unit>
+
+  <Unit Workname="UpgACC1_MachLM1">
+    <UnitName>HyperEngine</UnitName>
+    <ModelName></ModelName>
+    <IconName>CategoryAndUnitIcons_10</IconName>
+    <UnitDescription></UnitDescription>
+    <HpMax></HpMax>
+    <HpWreckage></HpWreckage>
+    <HpRegen></HpRegen>
+    <CostParts></CostParts>
+    <CostEnergy></CostEnergy>
+    <CostSM></CostSM>
+    <BasicBuildTime></BasicBuildTime>
+    <DeployRadius></DeployRadius>
+    <SpeedGlobal></SpeedGlobal>
+    <Speed></Speed>
+    <ReverseFactor></ReverseFactor>
+    <TurnSpeed></TurnSpeed>
+    <Acceleration></Acceleration>
+    <Mass></Mass>
+    <Recovery></Recovery>
+    <Class></Class>
+    <Priority></Priority>
+    <Sight></Sight>
+    <OptimalDistance></OptimalDistance>
+    <RefArmPHYS></RefArmPHYS>
+    <RefArmEN></RefArmEN>
+    <RefArmHEAT></RefArmHEAT>
+    <ConArmPHYS></ConArmPHYS>
+    <ConArmEN></ConArmEN>
+    <ConArmHEAT></ConArmHEAT>
+    <UnitCost></UnitCost>
+    <UnitRequirements></UnitRequirements>
+    <UnitCategory>Category1</UnitCategory>
+    <SchemeCostMetal></SchemeCostMetal>
+    <SchemeCostEnergy></SchemeCostEnergy>
+    <Animations></Animations>
+  </Unit>
+  <Unit Workname="UpgACC2_MachLM1">
+    <UnitName>HyperEngine</UnitName>
+    <ModelName></ModelName>
+    <IconName>CategoryAndUnitIcons_10</IconName>
+    <UnitDescription></UnitDescription>
+    <HpMax></HpMax>
+    <HpWreckage></HpWreckage>
+    <HpRegen></HpRegen>
+    <CostParts></CostParts>
+    <CostEnergy></CostEnergy>
+    <CostSM></CostSM>
+    <BasicBuildTime></BasicBuildTime>
+    <DeployRadius></DeployRadius>
+    <SpeedGlobal></SpeedGlobal>
+    <Speed></Speed>
+    <ReverseFactor></ReverseFactor>
+    <TurnSpeed></TurnSpeed>
+    <Acceleration></Acceleration>
+    <Mass></Mass>
+    <Recovery></Recovery>
+    <Class></Class>
+    <Priority></Priority>
+    <Sight></Sight>
+    <OptimalDistance></OptimalDistance>
+    <RefArmPHYS></RefArmPHYS>
+    <RefArmEN></RefArmEN>
+    <RefArmHEAT></RefArmHEAT>
+    <ConArmPHYS></ConArmPHYS>
+    <ConArmEN></ConArmEN>
+    <ConArmHEAT></ConArmHEAT>
+    <UnitCost></UnitCost>
+    <UnitRequirements></UnitRequirements>
+    <UnitCategory>Category1</UnitCategory>
+    <SchemeCostMetal></SchemeCostMetal>
+    <SchemeCostEnergy></SchemeCostEnergy>
+    <Animations></Animations>
+  </Unit>
+  <Unit Workname="UpgACC3_MachLM1">
+    <UnitName>HyperEngine</UnitName>
+    <ModelName></ModelName>
+    <IconName>CategoryAndUnitIcons_10</IconName>
+    <UnitDescription></UnitDescription>
+    <HpMax></HpMax>
+    <HpWreckage></HpWreckage>
+    <HpRegen></HpRegen>
+    <CostParts></CostParts>
+    <CostEnergy></CostEnergy>
+    <CostSM></CostSM>
+    <BasicBuildTime></BasicBuildTime>
+    <DeployRadius></DeployRadius>
+    <SpeedGlobal></SpeedGlobal>
+    <Speed></Speed>
+    <ReverseFactor></ReverseFactor>
+    <TurnSpeed></TurnSpeed>
+    <Acceleration></Acceleration>
+    <Mass></Mass>
+    <Recovery></Recovery>
+    <Class></Class>
+    <Priority></Priority>
+    <Sight></Sight>
+    <OptimalDistance></OptimalDistance>
+    <RefArmPHYS></RefArmPHYS>
+    <RefArmEN></RefArmEN>
+    <RefArmHEAT></RefArmHEAT>
+    <ConArmPHYS></ConArmPHYS>
+    <ConArmEN></ConArmEN>
+    <ConArmHEAT></ConArmHEAT>
+    <UnitCost></UnitCost>
+    <UnitRequirements></UnitRequirements>
+    <UnitCategory>Category1</UnitCategory>
+    <SchemeCostMetal></SchemeCostMetal>
+    <SchemeCostEnergy></SchemeCostEnergy>
+    <Animations></Animations>
+  </Unit>
+  <Unit Workname="UpgACC4_MachLM1">
+    <UnitName>HyperEngine</UnitName>
+    <ModelName></ModelName>
+    <IconName>CategoryAndUnitIcons_10</IconName>
+    <UnitDescription></UnitDescription>
+    <HpMax></HpMax>
+    <HpWreckage></HpWreckage>
+    <HpRegen></HpRegen>
+    <CostParts></CostParts>
+    <CostEnergy></CostEnergy>
+    <CostSM></CostSM>
+    <BasicBuildTime></BasicBuildTime>
+    <DeployRadius></DeployRadius>
+    <SpeedGlobal></SpeedGlobal>
+    <Speed></Speed>
+    <ReverseFactor></ReverseFactor>
+    <TurnSpeed></TurnSpeed>
+    <Acceleration></Acceleration>
+    <Mass></Mass>
+    <Recovery></Recovery>
+    <Class></Class>
+    <Priority></Priority>
+    <Sight></Sight>
+    <OptimalDistance></OptimalDistance>
+    <RefArmPHYS></RefArmPHYS>
+    <RefArmEN></RefArmEN>
+    <RefArmHEAT></RefArmHEAT>
+    <ConArmPHYS></ConArmPHYS>
+    <ConArmEN></ConArmEN>
+    <ConArmHEAT></ConArmHEAT>
+    <UnitCost></UnitCost>
+    <UnitRequirements></UnitRequirements>
+    <UnitCategory>Category1</UnitCategory>
+    <SchemeCostMetal></SchemeCostMetal>
+    <SchemeCostEnergy></SchemeCostEnergy>
+    <Animations></Animations>
+  </Unit>
 
   <Unit Workname="Unit2">
     <UnitName>Moto</UnitName>
@@ -248,7 +242,6 @@
     <ReverseFactor></ReverseFactor>
     <TurnSpeed></TurnSpeed>
     <Acceleration></Acceleration>
-    <Accuracy></Accuracy>
     <Mass></Mass>
     <Recovery></Recovery>
     <Class></Class>
@@ -261,57 +254,17 @@
     <ConArmPHYS></ConArmPHYS>
     <ConArmEN></ConArmEN>
     <ConArmHEAT></ConArmHEAT>
-    <UpgradeCost></UpgradeCost>
-    <UpgradeRequirements></UpgradeRequirements>
+    <UnitCost></UnitCost>
+    <UnitRequirements></UnitRequirements>
     <SchemeCostMetal></SchemeCostMetal>
     <SchemeCostEnergy></SchemeCostEnergy>
     <Animations></Animations>
   </Unit>
 
-  <Upgrade Workname="UpgAcc1-Snake">
-    <UnitName>Accuracy Upgrage</UnitName>
-    <ModelName></ModelName>
-    <IconName>CategoryAndUpgradeIcons_8</IconName>
-    <UnitDescription>Improve Snake's accuracy</UnitDescription>
-    <HpMax></HpMax>
-    <HpWreckage></HpWreckage>
-    <HpRegen></HpRegen>
-    <CostParts></CostParts>
-    <CostEnergy></CostEnergy>
-    <CostSM></CostSM>
-    <BasicBuildTime></BasicBuildTime>
-    <DeployRadius></DeployRadius>
-    <SpeedGlobal></SpeedGlobal>
-    <Speed></Speed>
-    <ReverseFactor></ReverseFactor>
-    <TurnSpeed></TurnSpeed>
-    <Acceleration></Acceleration>
-    <Accuracy>0.1</Accuracy>
-    <Mass></Mass>
-    <Recovery></Recovery>
-    <Class></Class>
-    <Priority></Priority>
-    <Sight></Sight>
-    <OptimalDistance></OptimalDistance>
-    <RefArmPHYS></RefArmPHYS>
-    <RefArmEN></RefArmEN>
-    <RefArmHEAT></RefArmHEAT>
-    <ConArmPHYS></ConArmPHYS>
-    <ConArmEN></ConArmEN>
-    <ConArmHEAT></ConArmHEAT>
-    <UpgradeCost></UpgradeCost>
-    <UpgradeRequirements></UpgradeRequirements>
-    <UpgradeCategory>Category1</UpgradeCategory>
-    <SchemeCostMetal></SchemeCostMetal>
-    <SchemeCostEnergy></SchemeCostEnergy>
-    <Animations></Animations>
-  </Upgrade>
-
-
-  <Upgrade Workname="UpgSpd2_Viper">
+  <Unit Workname="UpgSpd1_MachLM1">
     <UnitName>SuperBlaster</UnitName>
     <ModelName></ModelName>
-    <IconName>CategoryAndUpgradeIcons_7</IconName>
+    <IconName>CategoryAndUnitIcons_8</IconName>
     <UnitDescription></UnitDescription>
     <HpMax></HpMax>
     <HpWreckage></HpWreckage>
@@ -326,7 +279,6 @@
     <ReverseFactor></ReverseFactor>
     <TurnSpeed></TurnSpeed>
     <Acceleration></Acceleration>
-    <Accuracy></Accuracy>
     <Mass></Mass>
     <Recovery></Recovery>
     <Class></Class>
@@ -339,18 +291,57 @@
     <ConArmPHYS></ConArmPHYS>
     <ConArmEN></ConArmEN>
     <ConArmHEAT></ConArmHEAT>
-    <UpgradeCost></UpgradeCost>
-    <UpgradeRequirements>UpgSpd1_Unit1</UpgradeRequirements>
-    <UpgradeCategory>Category2</UpgradeCategory>
+    <UnitCost></UnitCost>
+    <UnitRequirements></UnitRequirements>
+    <UnitCategory>Category2</UnitCategory>
     <SchemeCostMetal></SchemeCostMetal>
     <SchemeCostEnergy></SchemeCostEnergy>
     <Animations></Animations>
-  </Upgrade>
+  </Unit>
+
+
+  <Unit Workname="UpgSpd2_MachLM1">
+    <UnitName>SuperBlaster</UnitName>
+    <ModelName></ModelName>
+    <IconName>CategoryAndUnitIcons_7</IconName>
+    <UnitDescription></UnitDescription>
+    <HpMax></HpMax>
+    <HpWreckage></HpWreckage>
+    <HpRegen></HpRegen>
+    <CostParts></CostParts>
+    <CostEnergy></CostEnergy>
+    <CostSM></CostSM>
+    <BasicBuildTime></BasicBuildTime>
+    <DeployRadius></DeployRadius>
+    <SpeedGlobal></SpeedGlobal>
+    <Speed></Speed>
+    <ReverseFactor></ReverseFactor>
+    <TurnSpeed></TurnSpeed>
+    <Acceleration></Acceleration>
+    <Mass></Mass>
+    <Recovery></Recovery>
+    <Class></Class>
+    <Priority></Priority>
+    <Sight></Sight>
+    <OptimalDistance></OptimalDistance>
+    <RefArmPHYS></RefArmPHYS>
+    <RefArmEN></RefArmEN>
+    <RefArmHEAT></RefArmHEAT>
+    <ConArmPHYS></ConArmPHYS>
+    <ConArmEN></ConArmEN>
+    <ConArmHEAT></ConArmHEAT>
+    <UnitCost></UnitCost>
+    <UnitRequirements>UpgSpd1_Unit1</UnitRequirements>
+    <UnitCategory>Category2</UnitCategory>
+    <SchemeCostMetal></SchemeCostMetal>
+    <SchemeCostEnergy></SchemeCostEnergy>
+    <Animations></Animations>
+  </Unit>
   
-  <Upgrade Workname="UpgSpd3_Viper">
+  <Unit Workname="UpgSpd3_MachLM1">
     <UnitName>SuperBlaster</UnitName>
     <ModelName></ModelName>
-    <IconName>CategoryAndUpgradeIcons_5</IconName>
+    <IconName>CategoryAndUnitIcons_5</IconName>
     <UnitDescription></UnitDescription>
     <HpMax></HpMax>
     <HpWreckage></HpWreckage>
@@ -365,7 +356,6 @@
     <ReverseFactor></ReverseFactor>
     <TurnSpeed></TurnSpeed>
     <Acceleration></Acceleration>
-    <Accuracy></Accuracy>
     <Mass></Mass>
     <Recovery></Recovery>
     <Class></Class>
@@ -378,18 +368,18 @@
     <ConArmPHYS></ConArmPHYS>
     <ConArmEN></ConArmEN>
     <ConArmHEAT></ConArmHEAT>
-    <UpgradeCost></UpgradeCost>
-    <UpgradeRequirements>UpgSpd1_Unit1</UpgradeRequirements>
-    <UpgradeCategory>Category2</UpgradeCategory>
+    <UnitCost></UnitCost>
+    <UnitRequirements>UpgSpd1_Unit1</UnitRequirements>
+    <UnitCategory>Category3</UnitCategory>
     <SchemeCostMetal></SchemeCostMetal>
     <SchemeCostEnergy></SchemeCostEnergy>
     <Animations></Animations>
-  </Upgrade>
+  </Unit>
 
-  <Upgrade Workname="UpgSpd4_Viper">
+  <Unit Workname="UpgSpd4_MachLM1">
     <UnitName>SuperBlaster</UnitName>
     <ModelName></ModelName>
-    <IconName>CategoryAndUpgradeIcons_6</IconName>
+    <IconName>CategoryAndUnitIcons_6</IconName>
     <UnitDescription></UnitDescription>
     <HpMax></HpMax>
     <HpWreckage></HpWreckage>
@@ -404,7 +394,6 @@
     <ReverseFactor></ReverseFactor>
     <TurnSpeed></TurnSpeed>
     <Acceleration></Acceleration>
-    <Accuracy></Accuracy>
     <Mass></Mass>
     <Recovery></Recovery>
     <Class></Class>
@@ -417,12 +406,12 @@
     <ConArmPHYS></ConArmPHYS>
     <ConArmEN></ConArmEN>
     <ConArmHEAT></ConArmHEAT>
-    <UpgradeCost></UpgradeCost>
-    <UpgradeRequirements>UpgSpd1_Unit1</UpgradeRequirements>
-    <UpgradeCategory>Category2</UpgradeCategory>
+    <UnitCost></UnitCost>
+    <UnitRequirements>UpgSpd1_Unit1</UnitRequirements>
+    <UnitCategory>Category3</UnitCategory>
     <SchemeCostMetal></SchemeCostMetal>
     <SchemeCostEnergy></SchemeCostEnergy>
     <Animations></Animations>
-  </Upgrade>
+  </Unit>
   
 </units>

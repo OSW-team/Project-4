@@ -14,6 +14,7 @@ public class MangeSteamCitadelScreenController : ManagementScreen
 
     public void ShowCitadel(SteamCitadel citadel)
     {
+        ManagementScreenGameObject.SetActive(true);
         SteamCitadelMeshConstrutor.BuildCitadelMesh(citadel);
         var citadelGO = citadel.GO;
         Camera cam = FindObjectOfType<Camera>();
@@ -21,7 +22,7 @@ public class MangeSteamCitadelScreenController : ManagementScreen
         CurrentManagingGameObject = citadelGO;
         CurrentManagingGameObject.transform.position = Center;
         CurrentManagingGameObject.transform.eulerAngles = new Vector3(0,150,0);
-        var sprites = Resources.LoadAll<Sprite>("Icons");
+        var sprites = Resources.LoadAll<Sprite>("UI/Management screen UI/1. Modules' screen/Icons");
         foreach (var module in citadel.Modules)
         {
             var moduleButton = ModuleButtons[0];
@@ -80,7 +81,7 @@ public class MangeSteamCitadelScreenController : ManagementScreen
     private void ShowAlowedSubsystems(Module module, string subSlotName)
     {
         Debug.Log(subSlotName);
-        var sprites = Resources.LoadAll<Sprite>("Icons");
+        var sprites = Resources.LoadAll<Sprite>("UI/Management screen UI/1. Modules' screen/Icons");
         for (var i = 0; i<Controller.Player.Subsystems.Count; i++)
         {
             var sub = AlowedSubsystems.transform.GetChild(i);
@@ -107,6 +108,11 @@ public class MangeSteamCitadelScreenController : ManagementScreen
         newSub.GO.GetComponent<MeshRenderer>().material = GhostMat;
         ShowCitadel(Controller.Player.Citadel);
         Controller.Player.Citadel.GO.transform.localEulerAngles = rotation;
+    }
+
+    void OnDisable()
+    {
+        Destroy(CurrentManagingGameObject);
     }
 
     public enum EnumModuleScreenState

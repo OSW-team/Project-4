@@ -158,21 +158,22 @@ public class GameModelsAndEnums : MonoBehaviour
 
     public static List<float> GetUnitRecovery(string innerText)
     {
-        throw new System.NotImplementedException();
+        return new List<float>();
     }
 
     public static List<EnumUnitClass> GetUnitClasses(string innerText)
     {
-        throw new System.NotImplementedException();
+       return new List<EnumUnitClass>();
     }
 
     public static Dictionary<EnumUnitClass, int> GetUnitPriorities(string innerText)
     {
-        throw new System.NotImplementedException();
+        return new Dictionary<EnumUnitClass, int>();
     }
 
-    public static List<string> GetUpgradeRequirements(string innerText)
+    public static string GetUpgradeRequirements(string innerText)
     {
-        throw new System.NotImplementedException();
+        var resStr = "";
+        return resStr;
     }
 }

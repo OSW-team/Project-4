@@ -1,0 +1,139 @@
+fileFormatVersion: 2
+guid: 4d9b344035d458d46a6f24ca9f7cc47e
+timeCreated: 1451377034
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PanelBottom_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PanelBottom_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1280
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 539, y: 124}
+        - {x: 538, y: 120}
+        - {x: 535, y: 115}
+        - {x: 534, y: 110}
+        - {x: 532, y: 107}
+        - {x: 532, y: 105}
+        - {x: 530, y: 103}
+        - {x: 529, y: 98}
+        - {x: 527, y: 95}
+        - {x: 527, y: 93}
+        - {x: 525, y: 89}
+        - {x: 525, y: 86}
+        - {x: 523, y: 84}
+        - {x: 522, y: 79}
+        - {x: 520, y: 77}
+        - {x: 519, y: 73}
+        - {x: 518, y: 72}
+        - {x: 518, y: 70}
+        - {x: 515, y: 66}
+        - {x: 515, y: 64}
+        - {x: 514, y: 63}
+        - {x: 513, y: 58}
+        - {x: 511, y: 55}
+        - {x: 510, y: 50}
+        - {x: 508, y: 47}
+        - {x: 508, y: 45}
+        - {x: 506, y: 43}
+        - {x: 506, y: 41}
+        - {x: 503, y: 35}
+        - {x: 502, y: 30}
+        - {x: 501, y: 29}
+        - {x: 495, y: 29}
+        - {x: 494, y: 30}
+        - {x: -235, y: 30}
+        - {x: -236, y: 29}
+        - {x: -258, y: 29}
+        - {x: -259, y: 30}
+        - {x: -259, y: 32}
+        - {x: -262, y: 38}
+        - {x: -263, y: 43}
+        - {x: -265, y: 45}
+        - {x: -265, y: 47}
+        - {x: -267, y: 50}
+        - {x: -268, y: 55}
+        - {x: -270, y: 58}
+        - {x: -272, y: 66}
+        - {x: -275, y: 70}
+        - {x: -275, y: 72}
+        - {x: -277, y: 75}
+        - {x: -277, y: 77}
+        - {x: -279, y: 80}
+        - {x: -280, y: 81}
+        - {x: -280, y: 84}
+        - {x: -283, y: 88}
+        - {x: -338, y: 88}
+        - {x: -339, y: 92}
+        - {x: -340, y: 93}
+        - {x: -340, y: 95}
+        - {x: -342, y: 98}
+        - {x: -343, y: 103}
+        - {x: -345, y: 105}
+        - {x: -345, y: 107}
+        - {x: -347, y: 110}
+        - {x: -348, y: 115}
+        - {x: -351, y: 120}
+        - {x: -352, y: 124}
+        - {x: -640, y: 124}
+        - {x: -640, y: -124}
+        - {x: 640, y: -124}
+        - {x: 640, y: 124}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

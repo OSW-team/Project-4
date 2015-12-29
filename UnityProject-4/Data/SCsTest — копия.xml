@@ -1,9 +1,5 @@
 <Items>
   <SC WorkName="PlayersSC">
-    <Unit WorkName="Snake">
-      <Upgrade Name="UpgSpd1-Snake" />
-    </Unit>
-    <Unit WorkName="Unit2" />
     <Module WorkName="Platform1">
       <Slot Name="" />
     </Module>
@@ -28,5 +24,13 @@
         <Slot Name="Sub_Slot_A1 2" />
       </Sub>
     </Module>
+    <Unit WorkName="MachLM1">
+      <Upgrade Name="UpgACC_MachLM1" />
+      <Upgrade Name="UpgSpd2_MachLM1" />
+      <Upgrade Name="UpgSpd1_MachLM1" />
+    </Unit>
+    <Unit WorkName="Unit2">
+      <Upgrade Name="UpgSpd1_Unit2" />
+    </Unit>
   </SC>
 </Items>

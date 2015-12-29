@@ -45,14 +45,48 @@ public static class XMLWorker
         return res;
     }
 
-    public static void SaveSC(string workName)
+    public static void SaveSC(SteamCitadel citadel)
     {
         if (!Directory.Exists("Data"))
         {
             Directory.CreateDirectory("Data");
         }
+        XmlDocument doc = new XmlDocument();
         if (!File.Exists("Data/SCsTest.xml"))
         {
+            SaveSCItem(citadel.Name);
+        }
+        else
+        {
+            doc.Load("Data/SCsTest.xml");
+            XmlNodeList scs = doc.GetElementsByTagName("SC");
+            foreach (XmlNode sc in scs.Cast<XmlNode>().Where(sc => sc.Attributes["WorkName"].Value == citadel.Name))
+            {
+                sc.RemoveAll();
+                doc.Save("Data/SCsTest.xml");
+            }
+           
+        }
+        SaveSCItem(citadel.Name);
+        //Save Units
+        foreach (var unit in citadel.Units)
+        {
+            var upgradesList = unit.Upgrades.Select(upgr => upgr.Workname).ToList();
+            SaveUnit(citadel.Name, unit.Workname, upgradesList);
+        }
+        //Save Modules and Subs
+        foreach (var module in citadel.Modules)
+        {
+            SaveModule(citadel.Name,module.Workname,module.Slot);
+            foreach (var subsystem in module.Subs)
+            {
+                SaveSubsystem(citadel.Name,module.Workname,subsystem.Workname,subsystem.Slot);
+            }
+        }
+    }
+
+    public static void SaveSCItem(string workName)
+    {
             XmlDocument doc = new XmlDocument();
             XmlNode mainNode = doc.CreateElement("Items");
             doc.AppendChild(mainNode);
@@ -61,7 +95,6 @@ public static class XMLWorker
             SCNode.SetAttribute("WorkName", workName);
             mainNode.AppendChild(SCNode);
             doc.Save("Data/SCsTest.xml");
-        }
     }
 
     public static void LoadSC(SteamCitadel citadel)
@@ -393,13 +426,17 @@ public static class XMLWorker
         CitadelParams = new XmlDocument();
         var xmlPath = "Units";
         var itemType = "Unit";
-        TextAsset xmlAsset = Resources.Load(xmlPath) as TextAsset;
+        if (unit.GetType() == typeof (UnitUpgrade))
+        {
+            itemType = "Upgrade";
+        }
+            TextAsset xmlAsset = Resources.Load(xmlPath) as TextAsset;
         if (xmlAsset) CitadelParams.LoadXml(xmlAsset.text);
         XmlNodeList dataList = CitadelParams.GetElementsByTagName(itemType);
         var nodeList = new List<XmlNode>();
         if (unit.GetType() == typeof(UnitUpgrade))
         {
-            nodeList.AddRange(from XmlNode o in dataList where o.Name.Contains("Upg") select o);
+            nodeList.AddRange(dataList.Cast<XmlNode>().Where(o => o.Name.Contains("Upg")));
         }
         else
         {
@@ -466,6 +503,9 @@ public static class XMLWorker
                             case "TurnSpeed":
                                 unit.TurnSpeed = Single.Parse(item.InnerText);
                                 break;
+                            case "Accuracy":
+                                unit.Accuracy = Single.Parse(item.InnerText);
+                                break;
                             case "Acceleration":
                                 unit.Acceleration = Single.Parse(item.InnerText);
                                 break;
@@ -511,6 +551,9 @@ public static class XMLWorker
                             case "UpgradeRequirements":
                                 unit.UpgradeRequirements = GameModelsAndEnums.GetUpgradeRequirements(item.InnerText);
                                 break;
+                            case "UpgradeCategory":
+                                unit.Category = item.InnerText;
+                                break;
                             case "SchemeCostMetal":
                                 unit.SchemeCostMetal = Single.Parse(item.InnerText);
                                 break;
@@ -526,6 +569,25 @@ public static class XMLWorker
             }
         }
     }
+
+    public static List<UnitUpgrade> GetUpgardesMatchedToUnit(string unitWorkname)
+    {
+        var finalList = new List<UnitUpgrade>();
+        CitadelParams = new XmlDocument();
+        var xmlPath = "Units";
+        var itemType = "Upgrade";
+        TextAsset xmlAsset = Resources.Load(xmlPath) as TextAsset;
+        if (xmlAsset) CitadelParams.LoadXml(xmlAsset.text);
+        XmlNodeList dataList = CitadelParams.GetElementsByTagName(itemType);
+        foreach (XmlNode upgrade in dataList)
+        {
+            if (upgrade.Attributes["Workname"].Value.Contains(unitWorkname))
+            {
+                 finalList.Add(new UnitUpgrade(upgrade.Attributes["Workname"].Value));          
+            }
+        }
+        return finalList;
+    }   
 
     public enum EnumGameItemType
     {

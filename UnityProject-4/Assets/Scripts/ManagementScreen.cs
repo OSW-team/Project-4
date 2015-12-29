@@ -14,7 +14,7 @@ public class ManagementScreen : MonoBehaviour {
     public float RotationSpeed;
     protected bool _startDrag;
     // Use this for initialization
-    void Start()
+    public void Start()
     {
         Controller = FindObjectOfType<TestController>();
 
@@ -26,10 +26,6 @@ public class ManagementScreen : MonoBehaviour {
 
     }
 
-    public void Show()
-    {
-        ManagementScreenGameObject.SetActive(true);
-    }
 
     public void OnDraggableFieldDown()
     {

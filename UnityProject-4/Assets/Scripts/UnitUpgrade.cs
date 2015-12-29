@@ -9,6 +9,11 @@ public class UnitUpgrade : Unit {
         XMLWorker.LoadUnit(workname, this);
     }
 
+    public UnitUpgrade( string workname)
+    {
+        XMLWorker.LoadUnit(workname, this);
+    }
+
     void Start () {
 	
 	}

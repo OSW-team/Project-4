@@ -7,19 +7,15 @@ public  class SteamCitadelMeshConstrutor:MonoBehaviour {
     private static GameObject _citadel;
     public static void BuildCitadelMesh(SteamCitadel Citadel)
     {
-        Citadel.GO = new GameObject("Citadel "+ Citadel.Name);
+        if (Citadel.GO != null)
+        {
+            Destroy(Citadel.GO);
+        }
+        Citadel.GO = new GameObject("Citadel " + Citadel.Name);
         AddModules(Citadel);
         PlaceModules(Citadel);
         AddSubs(Citadel);
         PlaceSubs(Citadel);
-        //var modelPath = "";
-        //var platform = Instantiate(Resources.Load<GameObject>(modelPath)) as GameObject;
-        //Platform = platform;
-
-        //Platform.transform.rotation = platform.transform.rotation;
-        //Camera cam = FindObjectOfType<Camera>();
-        //var Center = cam.ScreenToWorldPoint(Vector3.zero);
-        //Platform.transform.position = Center;
     }
 
     private static void AddModules(SteamCitadel myCitadel)

@@ -9,7 +9,11 @@ public class TestController : MonoBehaviour
     public Player Player;
     public SteamCitadel MyCitadel;
     public Transform ScreensButtons;
-    public List<GameObject> Screens; 
+    public List<GameObject> Screens;
+
+    public delegate void OnUpgradeChanged();
+
+    public event OnUpgradeChanged UpgradeChanged;
     // Use this for initialization
     void Start () {
         //NewCitadel();
@@ -20,19 +24,24 @@ public class TestController : MonoBehaviour
         var citadel = new SteamCitadel("PlayersSC");
         Player.Citadel = citadel;
         XMLWorker.LoadSC(citadel);
-
-
-        Screens = new List<GameObject>();
         var moduleScreen = FindObjectOfType<MangeSteamCitadelScreenController>();
-        if(moduleScreen)moduleScreen.ShowCitadel(citadel);
+        //if(moduleScreen)moduleScreen.ShowCitadel(citadel);
         var unitScreen = FindObjectOfType<ManageUnitsScreenController>();
-        if(unitScreen)unitScreen.ShowUnit(citadel.Units[0]);
-        ScreensButtons.GetChild(0).GetComponent<Button>().onClick.RemoveAllListeners();
-        ScreensButtons.GetChild(0).GetComponent<Button>().onClick.AddListener(()=>unitScreen.ShowUnit(citadel.Units[0]));
+        //if(unitScreen)unitScreen.ShowUnit(citadel.Units[0]);
         ScreensButtons.GetChild(1).GetComponent<Button>().onClick.RemoveAllListeners();
-        ScreensButtons.GetChild(1).GetComponent<Button>().onClick.AddListener(() => moduleScreen.ShowCitadel(citadel));
+        ScreensButtons.GetChild(1).GetComponent<Button>().onClick.AddListener(()=>
+        {
+            moduleScreen.gameObject.SetActive(false);
+            unitScreen.ShowUnit(citadel.Units[0]);
+        });
+        ScreensButtons.GetChild(0).GetComponent<Button>().onClick.RemoveAllListeners();
+        ScreensButtons.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
+        {
+            unitScreen.gameObject.SetActive(false);
+            moduleScreen.ShowCitadel(citadel);
+        });
 
-        //MyCitadel.Modules[0].Subs.Add(new Subsystem(MyCitadel.Name, "Platform1", "Tube"));
+        MyCitadel = citadel;
     }
 
     public void NewCitadel()
@@ -53,6 +62,10 @@ public class TestController : MonoBehaviour
 
     }
 
+    public void UpgradeChange()
+    {
+        if (UpgradeChanged != null) UpgradeChanged();
+    }
 
     // Update is called once per frame
     void Update () {

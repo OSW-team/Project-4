@@ -52,7 +52,7 @@ public class SteamCitadel
         Name = name;
         Modules = new List<Module>();
         Units = new List<Unit>();
-       // XMLWorker.SaveSC(name);
+       // XMLWorker.SaveSCItem(name);
     }
 
 
