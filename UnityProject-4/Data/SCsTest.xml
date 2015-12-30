@@ -8,22 +8,22 @@
       <Slot Name="" />
     </Module>
     <Module WorkName="Bridge1">
-      <Slot Name="Bridge_Site" />
+      <Slot Name="Platform1_Bridge_Site" />
     </Module>
     <Module WorkName="Storage1">
-      <Slot Name="Storage_Site" />
+      <Slot Name="Platform1_Storage_Site" />
     </Module>
     <Module WorkName="Radar1">
-      <Slot Name="Hypo_Site1" />
+      <Slot Name="Platform1_Hypo_Site1" />
     </Module>
     <Module WorkName="Weapon1">
-      <Slot Name="Weapon_Site1" />
+      <Slot Name="Platform1_Weapon_Site1" />
     </Module>
     <Module WorkName="Constructor1">
-      <Slot Name="Constructor_Site" />
+      <Slot Name="Platform1_Constructor_Site" />
     </Module>
     <Module WorkName="Engine1">
-      <Slot Name="Engine_Site" />
+      <Slot Name="Platform1_Engine_Site" />
       <Sub WorkName="Tube1">
         <Slot Name="Sub_Slot_A1 2" />
       </Sub>

@@ -39,9 +39,22 @@ public  class SteamCitadelMeshConstrutor:MonoBehaviour {
         var platform = citadel.Modules.FirstOrDefault(x => x.Type == GameModelsAndEnums.EnumModuleType.Platform).GO;
         foreach (var module in citadel.Modules)
         {
-            var slot = module.Slot;
-            module.GO.transform.position = platform.transform.FindChild("Module_Sites").FindChild(slot).position;
-            module.GO.transform.rotation = platform.transform.FindChild("Module_Sites").FindChild(slot).rotation;
+            if (module.Type != GameModelsAndEnums.EnumModuleType.Platform)
+            {
+                var slot = module.Slot;
+                GameObject parentModuleGO = platform;
+                foreach (var module1 in citadel.Modules)
+                {
+                    if (slot.Contains(module1.Workname))
+                    {
+                        parentModuleGO = module1.GO;
+                        slot = slot.Replace(module1.Workname, "").Remove(0, 1);
+                    }
+                }
+                module.GO.transform.position = parentModuleGO.transform.FindChild("Module_Sites").FindChild(slot).position;
+                module.GO.transform.rotation = parentModuleGO.transform.FindChild("Module_Sites").FindChild(slot).rotation;
+            }
+           
         }
 
     }
