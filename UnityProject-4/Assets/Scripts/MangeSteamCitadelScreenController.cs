@@ -10,6 +10,7 @@ public class MangeSteamCitadelScreenController : ManagementScreen
     public GameObject AlowedSubsystems;
     public Material GhostMat;
     private List<GameObject> _moduleButtons;  
+    private List<GameObject> _subButtons;  
     // Use this for initialization
 
     public void ShowCitadel(SteamCitadel citadel)
@@ -23,7 +24,9 @@ public class MangeSteamCitadelScreenController : ManagementScreen
         CurrentManagingGameObject.transform.position = Center;
         CurrentManagingGameObject.transform.eulerAngles = new Vector3(0,150,0);
         _moduleButtons = new List<GameObject>();
+        _subButtons = new List<GameObject>();
         AddModuleButtonByMesh();
+        AddSubsystemButtonByMesh();
         foreach (var module in citadel.Modules)
         {
             FillButtonsWithModules(module);
@@ -67,6 +70,17 @@ public class MangeSteamCitadelScreenController : ManagementScreen
             Destroy(controlsTransform.GetChild(i).gameObject);
         }
         var currentMeshTransform = CurrentManagingGameObject.transform;
+        var platformButton = Instantiate(Resources.Load<GameObject>("Prefabs/ModuleButton"));
+        platformButton.name = "Platform";
+        platformButton.GetComponent<Button>().onClick.AddListener(() =>
+        {
+            Controller.MyCitadel.Modules.Add(new Module(Controller.MyCitadel.Name, "Weapon1",
+                platformButton.name));
+            ShowCitadel(Controller.MyCitadel);
+            XMLWorker.SaveSC(Controller.MyCitadel);
+        });
+        platformButton.transform.SetParent(controlsTransform);
+        _moduleButtons.Add(platformButton);
         for (var i = 0; i < CurrentManagingGameObject.transform.childCount; i++)
         {
             var childModulesTransform = currentMeshTransform.GetChild(i).FindChild("Module_Sites");
@@ -81,6 +95,7 @@ public class MangeSteamCitadelScreenController : ManagementScreen
                         Controller.MyCitadel.Modules.Add(new Module(Controller.MyCitadel.Name, "Weapon1",
                             childModuleButton.name));
                         ShowCitadel(Controller.MyCitadel);
+                        XMLWorker.SaveSC(Controller.MyCitadel);
                     });
                     childModuleButton.transform.SetParent(controlsTransform);
                     _moduleButtons.Add(childModuleButton);
@@ -94,13 +109,43 @@ public class MangeSteamCitadelScreenController : ManagementScreen
 
     }
 
+    private void AddSubsystemButtonByMesh()
+    {
+        var controlsTransform = gameObject.transform.FindChild("Controls");
+        var currentMeshTransform = CurrentManagingGameObject.transform;
+        for (var i = 0; i < CurrentManagingGameObject.transform.childCount; i++)
+        {
+            var childSubsTransform = currentMeshTransform.GetChild(i).FindChild("Subsystem_Slots");
+            //var childModulesTransform = currentMeshTransform.GetChild(i).FindChild("Modules_Slots");
+            if (childSubsTransform)
+            {
+                for (var j = 0; j < childSubsTransform.childCount; j++)
+                {
+                    var childModuleButton = Instantiate(Resources.Load<GameObject>("Prefabs/SubButton"));
+                    childModuleButton.name = currentMeshTransform.GetChild(i).name.Replace("Module ","")+ "_"+ childSubsTransform.GetChild(j).name;
+                    childModuleButton.GetComponent<Button>().onClick.AddListener(() =>
+                    {
+                        //Controller.MyCitadel.Modules.Add(new Module(Controller.MyCitadel.Name, "Weapon1",
+                        //    childModuleButton.name));
+                        //ShowCitadel(Controller.MyCitadel);
+                        //XMLWorker.SaveSC(Controller.MyCitadel);
+                    });
+                    childModuleButton.transform.SetParent(_moduleButtons[i].transform);
+                    _subButtons.Add(childModuleButton);
+
+                }
+
+            }
+        }
+    }
+
     private void FillButtonsWithModules(Module module)
     {
         var sprites = Resources.LoadAll<Sprite>("UI/Management screen UI/1. Modules' screen/Icons");
         GameObject moduleButton = module.GO;
         if (module.Type == GameModelsAndEnums.EnumModuleType.Platform)
         {
-            moduleButton = Instantiate(Resources.Load<GameObject>("Prefabs/ModuleButton"));
+            moduleButton = _moduleButtons.FirstOrDefault(x => x.name == "Platform");
         }
         else
         {
@@ -116,25 +161,36 @@ public class MangeSteamCitadelScreenController : ManagementScreen
         moduleButton.GetComponent<Button>().onClick.AddListener(() => {
             var meshes = module1.GO.GetComponentsInChildren<MeshRenderer>();foreach (var meshRenderer in meshes){meshRenderer.material = GhostMat;} });
         moduleButton.transform.FindChild("ModuleImage").FindChild("ModuleIcon").GetComponent<Image>().sprite = sprites.FirstOrDefault(x => x.name == module.IconName);
-        for (var i = 0; i < module.MaxSlotAmount; i++)
+        foreach (var sub in module1.Subs)
         {
-            if (i < module.Subs.Count)
+            foreach (var o in _subButtons)
             {
 
-                moduleButton.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite =
-                    sprites.FirstOrDefault(x => x.name == module.Subs[i].IconName);
-            }
-            else
-            {
-                moduleButton.transform.GetChild(i).GetComponent<Button>().onClick.RemoveAllListeners();
-                var i1 = i;
-                module1 = module;
-                moduleButton.transform.GetChild(i).GetComponent<Button>().onClick.AddListener(() =>
+                if (module1.Workname + sub.Slot == o.name)
                 {
-                    ShowAlowedSubsystems(module1, module1.GO.transform.FindChild("Subsystem_Slots").GetChild(i1).name);
-                });
+                    o.GetComponent<Button>().onClick.AddListener(()=>Debug.Log("Sub"+o.name));
+                }
             }
         }
+        //for (var i = 0; i < module.MaxSlotAmount; i++)
+        //{
+        //    if (i < module.Subs.Count)
+        //    {
+
+        //        moduleButton.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite =
+        //            sprites.FirstOrDefault(x => x.name == module.Subs[i].IconName);
+        //    }
+        //    else
+        //    {
+        //        moduleButton.transform.GetChild(i).GetComponent<Button>().onClick.RemoveAllListeners();
+        //        var i1 = i;
+        //        module1 = module;
+        //        moduleButton.transform.GetChild(i).GetComponent<Button>().onClick.AddListener(() =>
+        //        {
+        //            ShowAlowedSubsystems(module1, module1.GO.transform.FindChild("Subsystem_Slots").GetChild(i1).name);
+        //        });
+        //    }
+        //}
     }
 
     private void ShowAlowedSubsystems(Module module, string subSlotName)
