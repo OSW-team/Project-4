@@ -1,0 +1,8 @@
+Unity AssetStore:
+- RTP 3.2.
+- TerrainComposer
+- Tornado FX
+- Desert Stones 
+
+Other:
+http://www.turbosquid.com/FullPreview/Index.cfm/ID/635802

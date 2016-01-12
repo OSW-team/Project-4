@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: 8836e4c8a421b324e989bca9536687a6
+timeCreated: 1442416239
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: AimVector
+    100002: Chain_Tracks
+    100004: Chain_Tracks_Left
+    100006: Chain_Tracks_Left 1
+    100008: Chain_Tracks_Right
+    100010: Chain_Tracks_Right 1
+    100012: Gun
+    100014: Gun_Transformation_Group
+    100016: Horizontal_Rotation_Group
+    100018: pasted__pasted__polySurface295
+    100020: pasted__pasted__polySurface296
+    100022: pasted__pasted__polySurface306
+    100024: pasted__pasted__polySurface307
+    100026: pasted__pasted__polySurface308
+    100028: pasted__pasted__polySurface309
+    100030: pasted__pasted__polySurface310
+    100032: pasted__pasted__r_1
+    100034: pasted__pasted__r_2
+    100036: pasted__pasted__r_3
+    100038: pasted__pasted__r_4
+    100040: pasted__pasted__r_5
+    100042: pasted__pasted__spl
+    100044: pasted__pasted__spr
+    100046: //RootNode
+    100048: SpawnPoint1
+    100050: Support
+    100052: Support_Pillar_Front_Left
+    100054: Support_Pillar_Front_Right
+    100056: Support_Pillar_Rear_Left
+    100058: Support_Pillar_Rear_Right
+    100060: Torso
+    100062: Transformation_Pillars
+    100064: Vertical_Rotation_Group
+    100066: Vertical_Turret_Drive
+    400000: AimVector
+    400002: Chain_Tracks
+    400004: Chain_Tracks_Left
+    400006: Chain_Tracks_Left 1
+    400008: Chain_Tracks_Right
+    400010: Chain_Tracks_Right 1
+    400012: Gun
+    400014: Gun_Transformation_Group
+    400016: Horizontal_Rotation_Group
+    400018: pasted__pasted__polySurface295
+    400020: pasted__pasted__polySurface296
+    400022: pasted__pasted__polySurface306
+    400024: pasted__pasted__polySurface307
+    400026: pasted__pasted__polySurface308
+    400028: pasted__pasted__polySurface309
+    400030: pasted__pasted__polySurface310
+    400032: pasted__pasted__r_1
+    400034: pasted__pasted__r_2
+    400036: pasted__pasted__r_3
+    400038: pasted__pasted__r_4
+    400040: pasted__pasted__r_5
+    400042: pasted__pasted__spl
+    400044: pasted__pasted__spr
+    400046: //RootNode
+    400048: SpawnPoint1
+    400050: Support
+    400052: Support_Pillar_Front_Left
+    400054: Support_Pillar_Front_Right
+    400056: Support_Pillar_Rear_Left
+    400058: Support_Pillar_Rear_Right
+    400060: Torso
+    400062: Transformation_Pillars
+    400064: Vertical_Rotation_Group
+    400066: Vertical_Turret_Drive
+    2300000: Chain_Tracks_Left 1
+    2300002: Chain_Tracks_Right 1
+    2300004: Gun
+    2300006: pasted__pasted__polySurface295
+    2300008: pasted__pasted__polySurface296
+    2300010: pasted__pasted__polySurface306
+    2300012: pasted__pasted__polySurface307
+    2300014: pasted__pasted__polySurface308
+    2300016: pasted__pasted__polySurface309
+    2300018: pasted__pasted__polySurface310
+    2300020: pasted__pasted__r_1
+    2300022: pasted__pasted__r_2
+    2300024: pasted__pasted__r_3
+    2300026: pasted__pasted__r_4
+    2300028: pasted__pasted__r_5
+    2300030: pasted__pasted__spl
+    2300032: pasted__pasted__spr
+    2300034: Support
+    2300036: Torso
+    2300038: Vertical_Turret_Drive
+    3300000: Chain_Tracks_Left 1
+    3300002: Chain_Tracks_Right 1
+    3300004: Gun
+    3300006: pasted__pasted__polySurface295
+    3300008: pasted__pasted__polySurface296
+    3300010: pasted__pasted__polySurface306
+    3300012: pasted__pasted__polySurface307
+    3300014: pasted__pasted__polySurface308
+    3300016: pasted__pasted__polySurface309
+    3300018: pasted__pasted__polySurface310
+    3300020: pasted__pasted__r_1
+    3300022: pasted__pasted__r_2
+    3300024: pasted__pasted__r_3
+    3300026: pasted__pasted__r_4
+    3300028: pasted__pasted__r_5
+    3300030: pasted__pasted__spl
+    3300032: pasted__pasted__spr
+    3300034: Support
+    3300036: Torso
+    3300038: Vertical_Turret_Drive
+    4300000: Gun
+    4300002: Vertical_Turret_Drive
+    4300004: pasted__pasted__spl
+    4300006: pasted__pasted__spr
+    4300008: pasted__pasted__polySurface295
+    4300010: pasted__pasted__polySurface296
+    4300012: Chain_Tracks_Left
+    4300014: pasted__pasted__r_5
+    4300016: pasted__pasted__r_4
+    4300018: pasted__pasted__r_3
+    4300020: pasted__pasted__r_2
+    4300022: pasted__pasted__r_1
+    4300024: Chain_Tracks_Right
+    4300026: pasted__pasted__polySurface310
+    4300028: pasted__pasted__polySurface309
+    4300030: pasted__pasted__polySurface308
+    4300032: pasted__pasted__polySurface307
+    4300034: pasted__pasted__polySurface306
+    4300036: Torso
+    4300038: Support
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
