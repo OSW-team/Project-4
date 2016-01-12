@@ -69,7 +69,7 @@ public class MangeSteamCitadelScreenController : ManagementScreen
             Destroy(controlsTransform.GetChild(i).gameObject);
         }
         var currentMeshTransform = CurrentManagingGameObject.transform;
-        var platformButton = Instantiate(Resources.Load<GameObject>("Prefabs/ModuleButton"));
+        var platformButton = Instantiate(Resources.Load<GameObject>("Prefabs/UI/ModuleButton"));
         platformButton.name = "Platform";
         platformButton.GetComponent<Button>().onClick.AddListener(() =>
         {
@@ -87,7 +87,7 @@ public class MangeSteamCitadelScreenController : ManagementScreen
             {
                 for (var j = 0; j < childModulesTransform.childCount; j++)
                 {
-                    var childModuleButton = Instantiate(Resources.Load<GameObject>("Prefabs/ModuleButton"));
+                    var childModuleButton = Instantiate(Resources.Load<GameObject>("Prefabs/UI/ModuleButton"));
                     childModuleButton.name = currentMeshTransform.GetChild(i).name.Replace("Module ","") + "_"+childModulesTransform.GetChild(j).name;
                     childModuleButton.GetComponent<Button>().onClick.AddListener(()=>
                     {
@@ -117,7 +117,7 @@ public class MangeSteamCitadelScreenController : ManagementScreen
             {
                 for (var j = 0; j < childSubsTransform.childCount; j++)
                 {
-                    var subButton = Instantiate(Resources.Load<GameObject>("Prefabs/SubButton"));
+                    var subButton = Instantiate(Resources.Load<GameObject>("Prefabs/UI/SubButton"));
                     subButton.name = childSubsTransform.GetChild(j).name;
                     foreach (var sub in module.Subs)
                     {

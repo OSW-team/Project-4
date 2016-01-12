@@ -2,6 +2,7 @@
   <SC WorkName="PlayersSC">
     <Unit WorkName="Snake">
       <Upgrade Name="UpgSpd1-Snake" />
+      <Upgrade Name="UpgHP1-Snake" />
     </Unit>
     <Unit WorkName="Unit2" />
     <Module WorkName="Platform1">

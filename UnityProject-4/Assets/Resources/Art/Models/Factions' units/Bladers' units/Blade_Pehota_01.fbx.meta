@@ -1,0 +1,267 @@
+fileFormatVersion: 2
+guid: d55ba75a53a2e234c9c84f8b9d5aa931
+timeCreated: 1452613244
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: AimHerePoint
+    100002: AimVector
+    100004: Base
+    100006: Base_Down
+    100008: Base_Top
+    100010: Beam_Left_Front
+    100012: Beam_Left_Rear
+    100014: Beam_Right_Front
+    100016: Beam_Right_Rear
+    100018: //RootNode
+    100020: Bulova
+    100022: CenterOfMass
+    100024: Chain
+    100026: Gear_01
+    100028: Gear_02
+    100030: Gear_03
+    100032: Left_Chain
+    100034: Left_Front_Beam
+    100036: Left_Front_Wheel
+    100038: Left_Front_Wheel_end
+    100040: Left_Rear_Beam
+    100042: Left_Rear_Wheel
+    100044: Left_Rear_Wheel_end
+    100046: Right_Chain
+    100048: Right_Front_Beam
+    100050: Right_Front_Wheel
+    100052: Right_Front_Wheel_end
+    100054: Right_Rear_Beam
+    100056: Right_Rear_Wheel
+    100058: Right_Rear_Wheel_end
+    100060: SpawnPoint1
+    100062: Spring_Left_Front
+    100064: Spring_Left_Front 1
+    100066: Spring_Left_Front_end
+    100068: Spring_Left_Rear
+    100070: Spring_Left_Rear 1
+    100072: Spring_Left_Rear_end
+    100074: Spring_Right_Front
+    100076: Spring_Right_Front 1
+    100078: Spring_Right_Front_end
+    100080: Spring_Right_Rear
+    100082: Spring_Right_Rear 1
+    100084: Spring_Right_Rear_end
+    100086: Strech_Target_Left_Front
+    100088: Strech_Target_Left_Front_end
+    100090: Strech_Target_Left_Rear
+    100092: Strech_Target_Left_Rear_end
+    100094: Strech_Target_Right_Front
+    100096: Strech_Target_Right_Front_end
+    100098: Strech_Target_Right_Rear
+    100100: Strech_Target_Right_Rear_end
+    100102: Suspension
+    100104: WC_Motor_Left
+    100106: WC_Motor_Right
+    100108: WC_Spring_Left_Front
+    100110: WC_Spring_Left_Rear
+    100112: WC_Spring_Right_Front
+    100114: WC_Spring_Right_Rear
+    100116: Wheel_Left_Front
+    100118: Wheel_Left_Rear
+    100120: Wheel_Left_Top
+    100122: Wheel_Right_Front
+    100124: Wheel_Right_Rear
+    100126: Wheel_Right_Top
+    400000: AimHerePoint
+    400002: AimVector
+    400004: Base
+    400006: Base_Down
+    400008: Base_Top
+    400010: Beam_Left_Front
+    400012: Beam_Left_Rear
+    400014: Beam_Right_Front
+    400016: Beam_Right_Rear
+    400018: //RootNode
+    400020: Bulova
+    400022: CenterOfMass
+    400024: Chain
+    400026: Gear_01
+    400028: Gear_02
+    400030: Gear_03
+    400032: Left_Chain
+    400034: Left_Front_Beam
+    400036: Left_Front_Wheel
+    400038: Left_Front_Wheel_end
+    400040: Left_Rear_Beam
+    400042: Left_Rear_Wheel
+    400044: Left_Rear_Wheel_end
+    400046: Right_Chain
+    400048: Right_Front_Beam
+    400050: Right_Front_Wheel
+    400052: Right_Front_Wheel_end
+    400054: Right_Rear_Beam
+    400056: Right_Rear_Wheel
+    400058: Right_Rear_Wheel_end
+    400060: SpawnPoint1
+    400062: Spring_Left_Front
+    400064: Spring_Left_Front 1
+    400066: Spring_Left_Front_end
+    400068: Spring_Left_Rear
+    400070: Spring_Left_Rear 1
+    400072: Spring_Left_Rear_end
+    400074: Spring_Right_Front
+    400076: Spring_Right_Front 1
+    400078: Spring_Right_Front_end
+    400080: Spring_Right_Rear
+    400082: Spring_Right_Rear 1
+    400084: Spring_Right_Rear_end
+    400086: Strech_Target_Left_Front
+    400088: Strech_Target_Left_Front_end
+    400090: Strech_Target_Left_Rear
+    400092: Strech_Target_Left_Rear_end
+    400094: Strech_Target_Right_Front
+    400096: Strech_Target_Right_Front_end
+    400098: Strech_Target_Right_Rear
+    400100: Strech_Target_Right_Rear_end
+    400102: Suspension
+    400104: WC_Motor_Left
+    400106: WC_Motor_Right
+    400108: WC_Spring_Left_Front
+    400110: WC_Spring_Left_Rear
+    400112: WC_Spring_Right_Front
+    400114: WC_Spring_Right_Rear
+    400116: Wheel_Left_Front
+    400118: Wheel_Left_Rear
+    400120: Wheel_Left_Top
+    400122: Wheel_Right_Front
+    400124: Wheel_Right_Rear
+    400126: Wheel_Right_Top
+    2300000: Base_Down
+    2300002: Base_Top
+    2300004: Beam_Left_Front
+    2300006: Beam_Left_Rear
+    2300008: Beam_Right_Front
+    2300010: Beam_Right_Rear
+    2300012: Bulova
+    2300014: Chain
+    2300016: Gear_01
+    2300018: Gear_02
+    2300020: Gear_03
+    2300022: Spring_Left_Front 1
+    2300024: Spring_Left_Rear 1
+    2300026: Spring_Right_Front 1
+    2300028: Spring_Right_Rear 1
+    2300030: Wheel_Left_Front
+    2300032: Wheel_Left_Rear
+    2300034: Wheel_Left_Top
+    2300036: Wheel_Right_Front
+    2300038: Wheel_Right_Rear
+    2300040: Wheel_Right_Top
+    3300000: Base_Down
+    3300002: Base_Top
+    3300004: Beam_Left_Front
+    3300006: Beam_Left_Rear
+    3300008: Beam_Right_Front
+    3300010: Beam_Right_Rear
+    3300012: Bulova
+    3300014: Chain
+    3300016: Gear_01
+    3300018: Gear_02
+    3300020: Gear_03
+    3300022: Spring_Left_Front 1
+    3300024: Spring_Left_Rear 1
+    3300026: Spring_Right_Front 1
+    3300028: Spring_Right_Rear 1
+    3300030: Wheel_Left_Front
+    3300032: Wheel_Left_Rear
+    3300034: Wheel_Left_Top
+    3300036: Wheel_Right_Front
+    3300038: Wheel_Right_Rear
+    3300040: Wheel_Right_Top
+    4300000: Beam_Left_Front
+    4300002: Wheel_Left_Front
+    4300004: Spring_Left_Front
+    4300006: Beam_Left_Rear
+    4300008: Wheel_Left_Rear
+    4300010: Spring_Left_Rear
+    4300012: Beam_Right_Front
+    4300014: Wheel_Right_Front
+    4300016: Spring_Right_Front
+    4300018: Beam_Right_Rear
+    4300020: Wheel_Right_Rear
+    4300022: Spring_Right_Rear
+    4300024: Right_Chain
+    4300026: Left_Chain
+    4300028: Wheel_Right_Top
+    4300030: Wheel_Left_Top
+    4300032: Base_Top
+    4300034: Chain
+    4300036: Gear_03
+    4300038: Gear_02
+    4300040: Bulova
+    4300042: Base_Down
+    4300044: Gear_01
+    9500000: //RootNode
+    13700000: Left_Chain
+    13700002: Right_Chain
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
