@@ -2,7 +2,11 @@ Unity AssetStore:
 - RTP 3.2.
 - TerrainComposer
 - Tornado FX
-- Desert Stones 
+- Desert Rocks and Boulders
+- Realistic Effects Pack 1-3 
+- Realistic Water
+- Ice Shader
+- Colored Glass Shader
 
 Other:
 http://www.turbosquid.com/FullPreview/Index.cfm/ID/635802
