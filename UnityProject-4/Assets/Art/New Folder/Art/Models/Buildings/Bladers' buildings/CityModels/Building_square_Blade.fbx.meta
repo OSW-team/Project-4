@@ -1,0 +1,130 @@
+fileFormatVersion: 2
+guid: 0e98ad093aee0624c815383f3bfaf61e
+timeCreated: 1450705855
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Building_square_Blade
+    100004: edge_horizontal
+    100006: edge_horizontal.001
+    100008: edge_horizontal.002
+    100010: edge_horizontal.003
+    100012: Part_average_entrance
+    100014: Part_average_entrance.001
+    100016: Part_average_entrance.002
+    100018: Part_average_entrance.003
+    100020: Part_average_entrance.004
+    100022: Part_average_face_horizontal
+    100024: Part_average_face_horizontal.001
+    100026: Part_average_face_vertical
+    100028: Part_average_face_vertical.001
+    100030: Part_average_face_vertical.002
+    100032: Part_average_face_vertical.003
+    100034: Part_average_face_vertical.004
+    100036: Part_average_face_vertical.005
+    100038: Part_Big_entrance.001
+    100040: Part_big_face_horizontal_RHR_Always
+    100042: Part_small_face_horizontal_RHR
+    100044: Part_small_face_horizontal_RHR.001
+    100046: Part_small_face_horizontal_RHR.002
+    100048: Part_small_face_horizontal_RHR.003
+    100050: small_corner
+    100052: small_corner.001
+    100054: small_corner.002
+    400000: Building_square_Blade
+    400002: //RootNode
+    400004: edge_horizontal
+    400006: edge_horizontal.001
+    400008: edge_horizontal.002
+    400010: edge_horizontal.003
+    400012: Part_average_entrance
+    400014: Part_average_entrance.001
+    400016: Part_average_entrance.002
+    400018: Part_average_entrance.003
+    400020: Part_average_entrance.004
+    400022: Part_average_face_horizontal
+    400024: Part_average_face_horizontal.001
+    400026: Part_average_face_vertical
+    400028: Part_average_face_vertical.001
+    400030: Part_average_face_vertical.002
+    400032: Part_average_face_vertical.003
+    400034: Part_average_face_vertical.004
+    400036: Part_average_face_vertical.005
+    400038: Part_Big_entrance.001
+    400040: Part_big_face_horizontal_RHR_Always
+    400042: Part_small_face_horizontal_RHR
+    400044: Part_small_face_horizontal_RHR.001
+    400046: Part_small_face_horizontal_RHR.002
+    400048: Part_small_face_horizontal_RHR.003
+    400050: small_corner
+    400052: small_corner.001
+    400054: small_corner.002
+    2300000: Building_square_Blade
+    3300000: Building_square_Blade
+    4300000: Building_square_Blade
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

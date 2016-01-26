@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: e15baa6fe3b2dd34ca848789ccfdf3b0
+timeCreated: 1452613243
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: AimHerePoint
+    100002: AimVector
+    100004: Armor_Shield
+    100006: Base
+    100008: Beam_Front_Left
+    100010: Beam_Front_Rigth
+    100012: Beam_Rear_Left
+    100014: Beam_Rear_Rigth
+    100016: //RootNode
+    100018: CenterOfMass
+    100020: Chain_Left
+    100022: Chain_Right
+    100024: Gear_Left_01
+    100026: Gear_Right_01
+    100028: HorizontalRotationGroup
+    100030: SpawnPoint1
+    100032: SpawnPoint2
+    100034: SpawnPoint3
+    100036: VerticalRotationGroup
+    100038: WC_Motor_Left
+    100040: WC_Motor_Right
+    100042: WC_Spring_Front_Left
+    100044: WC_Spring_Front_Right
+    100046: WC_Spring_Rear_Left
+    100048: WC_Spring_Rear_Right
+    100050: Wheel_Rear_Left
+    100052: Wheel_Rear_Right
+    100054: Whel_Front_Left
+    100056: Whel_Front_Right
+    100058: Whel_Top_Left
+    100060: Whel_Top_Right
+    400000: AimHerePoint
+    400002: AimVector
+    400004: Armor_Shield
+    400006: Base
+    400008: Beam_Front_Left
+    400010: Beam_Front_Rigth
+    400012: Beam_Rear_Left
+    400014: Beam_Rear_Rigth
+    400016: //RootNode
+    400018: CenterOfMass
+    400020: Chain_Left
+    400022: Chain_Right
+    400024: Gear_Left_01
+    400026: Gear_Right_01
+    400028: HorizontalRotationGroup
+    400030: SpawnPoint1
+    400032: SpawnPoint2
+    400034: SpawnPoint3
+    400036: VerticalRotationGroup
+    400038: WC_Motor_Left
+    400040: WC_Motor_Right
+    400042: WC_Spring_Front_Left
+    400044: WC_Spring_Front_Right
+    400046: WC_Spring_Rear_Left
+    400048: WC_Spring_Rear_Right
+    400050: Wheel_Rear_Left
+    400052: Wheel_Rear_Right
+    400054: Whel_Front_Left
+    400056: Whel_Front_Right
+    400058: Whel_Top_Left
+    400060: Whel_Top_Right
+    2300000: Armor_Shield
+    2300002: Base
+    2300004: Beam_Front_Left
+    2300006: Beam_Front_Rigth
+    2300008: Beam_Rear_Left
+    2300010: Beam_Rear_Rigth
+    2300012: Chain_Left
+    2300014: Chain_Right
+    2300016: Gear_Left_01
+    2300018: Gear_Right_01
+    2300020: HorizontalRotationGroup
+    2300022: VerticalRotationGroup
+    2300024: Wheel_Rear_Left
+    2300026: Wheel_Rear_Right
+    2300028: Whel_Front_Left
+    2300030: Whel_Front_Right
+    2300032: Whel_Top_Left
+    2300034: Whel_Top_Right
+    3300000: Armor_Shield
+    3300002: Base
+    3300004: Beam_Front_Left
+    3300006: Beam_Front_Rigth
+    3300008: Beam_Rear_Left
+    3300010: Beam_Rear_Rigth
+    3300012: Chain_Left
+    3300014: Chain_Right
+    3300016: Gear_Left_01
+    3300018: Gear_Right_01
+    3300020: HorizontalRotationGroup
+    3300022: VerticalRotationGroup
+    3300024: Wheel_Rear_Left
+    3300026: Wheel_Rear_Right
+    3300028: Whel_Front_Left
+    3300030: Whel_Front_Right
+    3300032: Whel_Top_Left
+    3300034: Whel_Top_Right
+    4300000: Wheel_Rear_Right
+    4300002: Gear_Right_01
+    4300004: Whel_Top_Right
+    4300006: Whel_Top_Left
+    4300008: Whel_Front_Right
+    4300010: Whel_Front_Left
+    4300012: Chain_Right
+    4300014: Chain_Left
+    4300016: Beam_Rear_Rigth
+    4300018: Beam_Front_Rigth
+    4300020: Beam_Rear_Left
+    4300022: Gear_Left_01
+    4300024: Armor_Shield
+    4300026: Beam_Front_Left
+    4300028: HorizontalRotationGroup
+    4300030: VerticalRotationGroup
+    4300032: Wheel_Rear_Left
+    4300034: Base
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

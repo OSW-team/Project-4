@@ -29,5 +29,11 @@
         <Slot Name="Sub_Slot_A1 2" />
       </Sub>
     </Module>
+    <Module WorkName="Weapon1">
+      <Slot Name="Platform1_Weapon_Site2" />
+    </Module>
+    <Module WorkName="Weapon1">
+      <Slot Name="Storage1_Weapon_Site1" />
+    </Module>
   </SC>
 </Items>
