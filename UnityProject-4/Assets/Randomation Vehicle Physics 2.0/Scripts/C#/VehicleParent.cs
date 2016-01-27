@@ -14,7 +14,7 @@ public class VehicleParent : MonoBehaviour
 	[System.NonSerialized]
 	public Transform norm;//Normal orientation object
 
-	[System.NonSerialized]
+	//[System.NonSerialized]
 	public float accelInput;
 	[System.NonSerialized]
 	public float brakeInput;
