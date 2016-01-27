@@ -1,0 +1,13 @@
+Release Notes 1.0.1 : 27-10-2014 
+
+About:
+
+Desert Rocks and Boulders vol 1 is a set of game ready rocks to spice up your desert scenes. They have a sandstone feel to them and work well on sandy parts of your scene. They are provided colourless so that you can adapt them perfectly to the tone of your scene. The textures are in layered PSD’s so that you may remove/add/colour the 4 different Rock layers individually. All the rocks are low poly and mobile ready with 2048x2048 textures in case you need close up approaches. A custom shader tiles a sandy normal map to ensure zero texture distortion even from very close, making these rocks ideal for FPS use.
+
+Install Notes:
+
+To install Desert Rocks and Boulders vol 1 it is recommended to follow the next steps:
+
+1. Open a new scene.
+2. Import the package
+4. Open the sample scene.
