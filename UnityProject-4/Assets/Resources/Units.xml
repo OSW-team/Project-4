@@ -230,9 +230,9 @@
     <Animations></Animations>
   </Upgrade>
 
-  <Unit Workname="Unit2">
+  <Unit Workname="Mach_Hardest_Rock">
     <UnitName>Moto</UnitName>
-    <ModelName>MachLM1</ModelName>
+    <ModelName>Mach_Hardest_Rock</ModelName>
     <IconName>UnitButton_1</IconName>
     <UnitDescription></UnitDescription>
     <HpMax></HpMax>

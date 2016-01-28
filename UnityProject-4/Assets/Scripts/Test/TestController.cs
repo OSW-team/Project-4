@@ -24,24 +24,29 @@ public class TestController : MonoBehaviour
         var citadel = new SteamCitadel("PlayersSC");
         Player.Citadel = citadel;
         XMLWorker.LoadSC(citadel);
+
+        //ShowManagementScreen();
+
+
+        MyCitadel = citadel;
+    }
+
+    public void ShowManagementScreen()
+    {
         var moduleScreen = FindObjectOfType<MangeSteamCitadelScreenController>();
-        //if(moduleScreen)moduleScreen.ShowCitadel(citadel);
         var unitScreen = FindObjectOfType<ManageUnitsScreenController>();
-        //if(unitScreen)unitScreen.ShowUnit(citadel.Units[0]);
         ScreensButtons.GetChild(1).GetComponent<Button>().onClick.RemoveAllListeners();
-        ScreensButtons.GetChild(1).GetComponent<Button>().onClick.AddListener(()=>
+        ScreensButtons.GetChild(1).GetComponent<Button>().onClick.AddListener(() =>
         {
             moduleScreen.gameObject.SetActive(false);
-            unitScreen.ShowUnit(citadel.Units[0]);
+            unitScreen.ShowUnit(MyCitadel.Units[0]);
         });
         ScreensButtons.GetChild(0).GetComponent<Button>().onClick.RemoveAllListeners();
         ScreensButtons.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
         {
             unitScreen.gameObject.SetActive(false);
-            moduleScreen.ShowCitadel(citadel);
+            moduleScreen.ShowCitadel(MyCitadel);
         });
-
-        MyCitadel = citadel;
     }
 
     public void NewCitadel()

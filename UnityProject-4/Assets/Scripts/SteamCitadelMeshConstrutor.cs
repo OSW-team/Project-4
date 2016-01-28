@@ -5,7 +5,7 @@ using System.Linq;
 public  class SteamCitadelMeshConstrutor:MonoBehaviour {
 	// Use this for initialization
     private static GameObject _citadel;
-    public static void BuildCitadelMesh(SteamCitadel Citadel)
+    public static GameObject BuildCitadelMesh(SteamCitadel Citadel)
     {
         if (Citadel.GO != null)
         {
@@ -16,6 +16,7 @@ public  class SteamCitadelMeshConstrutor:MonoBehaviour {
         PlaceModules(Citadel);
         AddSubs(Citadel);
         PlaceSubs(Citadel);
+        return Citadel.GO;
     }
 
     private static void AddModules(SteamCitadel myCitadel)

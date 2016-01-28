@@ -2,18 +2,21 @@
 using System.Collections;
 
 public class SpawnUnit : MonoBehaviour {
-    public GameObject[] units;
-    public Transform spawnPoint;
-    public MasterMindNHWheels master;
-    public Transform pointDown, pointDeploy, pointMarch;
-    public GameObject enemySF;
+    public GameObject[] Units;
+    public Transform SpawnPoint;
+    public MasterMindNHWheels Master;
+    public Transform PointDown, PointDeploy, PointMarch;
+    public GameObject EnemySF;
 
-    public Transform spawnArea;
+    public Transform SpawnArea;
 
-    public int team;
+    public int Team;
 
     int layerMask = ~(1 << 8);
     // Use this for initialization
+
+
+
     void Start () {
 	
 	}
@@ -28,12 +31,12 @@ public class SpawnUnit : MonoBehaviour {
 
         Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit _hit;
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(_ray, out _hit, Mathf.Infinity, layerMask) && (_hit.point - spawnArea.position).sqrMagnitude < spawnArea.localScale.x * spawnArea.localScale.x / 4)
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(_ray, out _hit, Mathf.Infinity, layerMask) && (_hit.point - SpawnArea.position).sqrMagnitude < SpawnArea.localScale.x * SpawnArea.localScale.x / 4)
         {
-            GameObject _unit = Instantiate(units[0], spawnPoint.position, spawnPoint.rotation) as GameObject;
-            _unit.GetComponent<UnitStats>().team = team;
-            master.AddAgent(_unit, pointDown.position);
-            _unit.GetComponent<StateMachine>().SetupStateSet(pointDown.position, _hit.point, pointMarch.position, enemySF);
+            GameObject _unit = Instantiate(Units[0], SpawnPoint.position, SpawnPoint.rotation) as GameObject;
+            _unit.GetComponent<UnitStats>().team = Team;
+            Master.AddAgent(_unit, PointDown.position);
+            _unit.GetComponent<StateMachine>().SetupStateSet(PointDown.position, _hit.point, PointMarch.position, EnemySF);
         }
     }
 }
