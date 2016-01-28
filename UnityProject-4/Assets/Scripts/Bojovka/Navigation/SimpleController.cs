@@ -21,7 +21,7 @@ public abstract class SimpleController : MonoBehaviour {
     public float maxMotorTorque;
     public float maxBreaksTorque;
     public float maxSteeringAngle;
-    public Transform massCenter, trail;
+    public Transform massCenter, tail;
     public float steering, motor;
     protected Rigidbody rigBody;
     public abstract void Steering(Vector2 prefVelocity, float maxSpeed);
