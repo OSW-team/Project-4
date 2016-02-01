@@ -54,7 +54,12 @@ public class AdwancedCarController : SimpleController
 		}
 
 		tail.transform.rotation = Quaternion.LookRotation (transform.forward * Mathf.Cos(currentSteer*Mathf.Deg2Rad) + transform.right * Mathf.Sin(currentSteer*Mathf.Deg2Rad), transform.up);//Вертим хвостом туда, куда рулим.
-		VP.SetAccel (motor/maxMotorTorque);//газуем
+		if (motor > 0) {
+
+			VP.SetAccel (motor / maxMotorTorque);//газуем
+		} else {
+			VP.SetBrake (-motor / maxMotorTorque);
+		}
 			
 	}
 

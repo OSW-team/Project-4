@@ -25,7 +25,7 @@ public class CitadelSpawner : MonoBehaviour {
         PlayersCitadel.transform.localScale = PlayerSpawn.transform.localScale;
         EnemyCitadel.transform.position = EnemySpawn.transform.position;
         EnemyCitadel.transform.localScale = EnemySpawn.transform.localScale;
-
+		/*
         var playerUnitGOs = new List<GameObject>();
         foreach (var unit in _playersCitadel.Units)
         {
@@ -38,22 +38,22 @@ public class CitadelSpawner : MonoBehaviour {
         {
             unit.BuildMesh();
             enemyUnitGOs.Add(unit.GO);
-        }
+        }*/
         var playerSpawnUnit = PlayersCitadel.AddComponent<SpawnUnit>();
-            playerSpawnUnit.Units = playerUnitGOs.ToArray();
-            playerSpawnUnit.SpawnPoint = PlayerSpawn.transform;
+			playerSpawnUnit.Units = _playersCitadel.Units.ToArray ();
+			playerSpawnUnit.SpawnPoint = _playersCitadel.Modules.FirstOrDefault(x => x.Type == GameModelsAndEnums.EnumModuleType.Constructor).GO.transform.FindChild("SpawnPoint");
             playerSpawnUnit.Master = master;
-            playerSpawnUnit.PointDown = PlayerSpawn.transform;
+			playerSpawnUnit.PointDown = _playersCitadel.Modules.FirstOrDefault(x => x.Type == GameModelsAndEnums.EnumModuleType.Constructor).GO.transform.FindChild("DownPoint");
             playerSpawnUnit.PointMarch = EnemySpawn.transform;
             playerSpawnUnit.EnemySF = EnemyCitadel;
             playerSpawnUnit.SpawnArea = PlayerSpawnArea;
             playerSpawnUnit.Team = 0;
 
         var enemySpawnUnit = EnemyCitadel.AddComponent<SpawnUnit>();
-            enemySpawnUnit.Units = enemyUnitGOs.ToArray();
-            enemySpawnUnit.SpawnPoint = EnemySpawn.transform;
+			enemySpawnUnit.Units = _enemyCitadel.Units.ToArray ();
+			enemySpawnUnit.SpawnPoint = _enemyCitadel.Modules.FirstOrDefault(x => x.Type == GameModelsAndEnums.EnumModuleType.Constructor).GO.transform.FindChild("SpawnPoint");
             enemySpawnUnit.Master = master;
-            enemySpawnUnit.PointDown = EnemySpawn.transform;
+			enemySpawnUnit.PointDown = _enemyCitadel.Modules.FirstOrDefault(x => x.Type == GameModelsAndEnums.EnumModuleType.Constructor).GO.transform.FindChild("DownPoint");
             enemySpawnUnit.PointMarch = PlayerSpawn.transform;
             enemySpawnUnit.EnemySF = PlayersCitadel;
             enemySpawnUnit.SpawnArea = EnemySpawnArea;
