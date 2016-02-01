@@ -61,7 +61,7 @@ public class Unit : MonoBehaviour
 
     public void BuildMesh()
     {
-        if (GO != null) { Destroy(GO); }
+        //if (GO != null) { Destroy(GO); }
         var prefab = Resources.Load<GameObject>("Prefabs/Units/" + ModelName);
         GO = Instantiate(prefab);
     }

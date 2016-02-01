@@ -33,6 +33,7 @@ public class ManageUnitsScreenController : ManagementScreen
         ManagementScreenGameObject.SetActive(true);
         if (unit.GO == null)
         {
+            if (unit.GO != null) { Destroy(unit.GO); }
             unit.BuildMesh();
             var Center = new Vector3(-1.55f, -10.17f, 31.7f);
             if (CurrentManagingGameObject)
