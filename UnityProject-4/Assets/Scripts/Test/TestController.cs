@@ -11,9 +11,6 @@ public class TestController : MonoBehaviour
     public Transform ScreensButtons;
     public List<GameObject> Screens;
 
-    public delegate void OnUpgradeChanged();
-
-    public event OnUpgradeChanged UpgradeChanged;
     // Use this for initialization
     void Start () {
         //NewCitadel();
@@ -25,7 +22,7 @@ public class TestController : MonoBehaviour
         Player.Citadel = citadel;
         XMLWorker.LoadSC(citadel);
 
-        //ShowManagementScreen();
+        ShowManagementScreen();
 
 
         MyCitadel = citadel;
@@ -67,9 +64,14 @@ public class TestController : MonoBehaviour
 
     }
 
-    public void UpgradeChange()
+    public void UpgradeChange(Unit unit)
     {
-        if (UpgradeChanged != null) UpgradeChanged();
+
+        var upgradableParts = unit.GO.GetComponentsInChildren<UpgradeController>().ToList();
+        foreach (var part in upgradableParts)
+        {
+            part.CheckUpgrades();
+        }
     }
 
     // Update is called once per frame

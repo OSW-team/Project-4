@@ -184,7 +184,7 @@ public class ManageUnitsScreenController : ManagementScreen
             XMLWorker.SaveSC(Controller.MyCitadel);
             ShowUnit(unit);
             FirstButton.transform.GetComponentInChildren<Text>().text = "";
-            Controller.UpgradeChange();
+            Controller.UpgradeChange(unit);
             unit.RecountProps();
             RefreshInfo(unit);
             FirstButton.onClick.RemoveAllListeners();
