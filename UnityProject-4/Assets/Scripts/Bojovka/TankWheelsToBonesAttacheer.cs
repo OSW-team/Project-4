@@ -10,7 +10,7 @@ public class TankWheelsToBonesAttacheer : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         transform.position = TargetWheel.transform.position+Offset;
 	}
 }
