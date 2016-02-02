@@ -42,7 +42,7 @@ public class StateMachine : MonoBehaviour {
 [System.Serializable]
 public abstract class State
 {
-    protected float stopDistance = 30;
+    protected float stopDistance = 5;
     protected Vector3 point;
     protected NavMeshAgent agent;
     protected Transform transform;
