@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class SpawnUnit : MonoBehaviour {
-    public GameObject[] Units;
+    public Unit[] Units;
     public Transform SpawnPoint;
     public MasterMindNHWheels Master;
     public Transform PointDown, PointDeploy, PointMarch;
@@ -33,7 +33,10 @@ public class SpawnUnit : MonoBehaviour {
         RaycastHit _hit;
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(_ray, out _hit, Mathf.Infinity, layerMask) && (_hit.point - SpawnArea.position).sqrMagnitude < SpawnArea.localScale.x * SpawnArea.localScale.x / 4)
         {
-            GameObject _unit = Instantiate(Units[0], SpawnPoint.position, SpawnPoint.rotation) as GameObject;
+			Units [0].BuildMesh ();
+			GameObject _unit = Units [0].GO;
+			_unit.transform.position = SpawnPoint.transform.position;
+			_unit.transform.rotation = SpawnPoint.transform.rotation;
             _unit.GetComponent<UnitStats>().team = Team;
             Master.AddAgent(_unit, PointDown.position);
             _unit.GetComponent<StateMachine>().SetupStateSet(PointDown.position, _hit.point, PointMarch.position, EnemySF);
