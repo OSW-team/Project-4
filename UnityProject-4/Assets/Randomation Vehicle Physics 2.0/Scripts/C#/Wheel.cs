@@ -275,7 +275,15 @@ public class Wheel : MonoBehaviour
 		targetDrive = GetComponent<DriveForce>();
 		currentRPM = 0;
 	}
-	
+
+	public void SetActualTorque(float torque){
+		suspensionParent.driveEnabled = true;
+		//Debug.Log (actualTorque);
+		actualTorque = torque;
+		//Debug.Log (actualTorque);
+	}
+
+
 	void FixedUpdate()
 	{
 		upDir = tr.up;

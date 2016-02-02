@@ -61,6 +61,7 @@ public class GearboxTransmission : Transmission
 
 	void FixedUpdate()
 	{
+//		Debug.Log ("Передача "+ currentGear);
 		health = Mathf.Clamp01(health);
 		shiftTime = Mathf.Max(0, shiftTime - Time.timeScale * TimeMaster.inverseFixedTimeFactor);
 		curGearRatio = gears[currentGear].ratio;

@@ -181,7 +181,7 @@ public class StateMarsh : State
     }
     public override void Behavior()
     {
-        Debug.Log("Marsh" + " " + (point - transform.position).sqrMagnitude);
+        //Debug.Log("Marsh" + " " + (point - transform.position).sqrMagnitude);
         agent.SetDestination(point);
         if ((point - transform.position).sqrMagnitude < stopDistance * stopDistance)
         {
