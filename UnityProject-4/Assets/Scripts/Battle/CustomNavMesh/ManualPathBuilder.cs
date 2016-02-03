@@ -22,14 +22,14 @@ public class ManualPathBuilder : MonoBehaviour {
 			meshName = "new_mesh_" + Random.Range (0, 100);
 		}
 		//if (point == null) {
-		point = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/CustomMeshCreation/point.prefab");
+		point = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Resources/Prefabs/Battle/CustomNavMesh/CustomMeshCreation/point.prefab");
 		Debug.Log (point);
 		if (Prefab == null || Prefab.GetComponent<MeshSaver>() == null) {
 			Prefab = new GameObject ();
 			Prefab.AddComponent<MeshSaver> ();
-			PrefabUtility.CreatePrefab ("Assets/Prefabs/Savers/" + meshName + "_Saver.prefab", Prefab);
+			PrefabUtility.CreatePrefab ("Assets/Resources/Prefabs/Battle/CustomNavMesh/Savers/" + meshName + "_Saver.prefab", Prefab);
 			//AssetDatabase.CreateAsset (Prefab, "Assets/Prefabs/Savers/" + meshName + "_Saver.prefab");
-			Prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Savers/" + meshName + "_Saver.prefab");
+			Prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Resources/Prefabs/Battle/CustomNavMesh/Savers/" + meshName + "_Saver.prefab");
 
 		}
 
@@ -118,7 +118,7 @@ public class ManualPathBuilder : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.B)){
 			Debug.Log (AssetDatabase.GetAssetPath (0));
-			AssetDatabase.CreateAsset (mesh, "Assets/CustomMeshes/"+meshName+".asset");
+			AssetDatabase.CreateAsset (mesh, "Assets/Resources/Prefabs/Battle/CustomNavMesh/Meshes/"+meshName+".asset");
 			if (Prefab.GetComponent<MeshSaver> ().elements == null) {
 				Prefab.GetComponent<MeshSaver> ().elements = new List<MeshSaverElement> ();
 			}
