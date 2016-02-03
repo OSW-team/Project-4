@@ -42,7 +42,7 @@ public class StateMachine : MonoBehaviour {
 [System.Serializable]
 public abstract class State
 {
-    protected float stopDistance = 30;
+    protected float stopDistance = 5;
     protected Vector3 point;
     protected NavMeshAgent agent;
     protected Transform transform;
@@ -181,7 +181,7 @@ public class StateMarsh : State
     }
     public override void Behavior()
     {
-        Debug.Log("Marsh" + " " + (point - transform.position).sqrMagnitude);
+        //Debug.Log("Marsh" + " " + (point - transform.position).sqrMagnitude);
         agent.SetDestination(point);
         if ((point - transform.position).sqrMagnitude < stopDistance * stopDistance)
         {

@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-using System;
 
-public class AdwancedCarController : SimpleController
-{
+public class AdwancedTankController : SimpleController{
+
 	NavMeshAgent agent;
-	VehicleParent VP;//Ассетик
-	public float currentSteer; //Для плавного поворота хвоста
-	public float SteerSpeed;//Скорость поворота хвоста
+	VehicleParent VP;
+	public GearboxTransmission[] transMissions;
+
 	public override void Steering(Vector2 prefVelocity, float maxSpeed)//Это интерпретация вектора в руление (он передаётся из другого скрипта, где ИИ реализован)
 	{
 		Debug.DrawRay (transform.position + new Vector3 (0, 10, 0), new Vector3(prefVelocity.x, 0, prefVelocity.y));
@@ -43,20 +41,40 @@ public class AdwancedCarController : SimpleController
 		agent = GetComponentInChildren<NavMeshAgent> ();
 		VP = GetComponentInParent<VehicleParent> ();//берем контроллер
 		rigBody = GetComponent<Rigidbody> ();
-		currentSteer = 0;
 	}
 
 	void FixedUpdate()
 	{
 		agent.transform.localPosition = new Vector3 (0, agent.transform.localPosition.y, 0);
-		//rigBody.centerOfMass = massCenter.localPosition;  //Двигаем центр масс в нужную точку. От этого любим летать в космос
-		if (Mathf.Abs (currentSteer + Mathf.Sign (steering) * SteerSpeed * Time.deltaTime) < steering * maxSteeringAngle) {// Рулим
-			currentSteer = currentSteer + Mathf.Sign (steering) * SteerSpeed * Time.deltaTime;
-		} else {
-			currentSteer = currentSteer + Mathf.Sign(steering * maxSteeringAngle - currentSteer) * SteerSpeed * Time.deltaTime;
-		}
+		if (steering < 0.1 && steering > -0.1) {
+			transMissions [0].currentGear = 1;
+			transMissions [1].currentGear = 1;
+			VP.SetAccel (motor / maxMotorTorque);//газуем
+			VP.SetBrake (0);
+			Debug.Log ("forward "+transMissions [0].currentGear + " " +transMissions [1].currentGear);
 
-		tail.transform.rotation = Quaternion.LookRotation (transform.forward * Mathf.Cos(currentSteer*Mathf.Deg2Rad) + transform.right * Mathf.Sin(currentSteer*Mathf.Deg2Rad), transform.up);//Вертим хвостом туда, куда рулим.
+		} else if (motor < 0) {
+			transMissions [0].currentGear = 0;
+			transMissions [1].currentGear = 0;
+			VP.SetAccel (0);
+			VP.SetBrake (-motor / maxMotorTorque);
+			Debug.Log ("backward"+transMissions [0].currentGear + " " +transMissions [1].currentGear);
+
+		} else if (steering > 0) {
+			VP.SetAccel (motor / maxMotorTorque);//газуем
+			VP.SetBrake (0);
+			transMissions [0].currentGear = 1;
+			transMissions [1].currentGear = 0;
+			Debug.Log ("left"+transMissions [0].currentGear + " " +transMissions [1].currentGear);
+
+		} else {
+			VP.SetAccel (motor / maxMotorTorque);//газуем
+			VP.SetBrake (0);
+			transMissions [0].currentGear = 0;
+			transMissions [1].currentGear = 1;
+			Debug.Log ("right"+transMissions [0].currentGear + " " +transMissions [1].currentGear);
+		}
+		/*
 		if (motor > 0) {
 
 			VP.SetAccel (motor / maxMotorTorque);//газуем
@@ -64,8 +82,7 @@ public class AdwancedCarController : SimpleController
 		} else {
 			VP.SetAccel (0);
 			VP.SetBrake (-motor / maxMotorTorque);
-		}
-			
-	}
+		}*/
 
+	}
 }

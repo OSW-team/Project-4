@@ -52,7 +52,7 @@ public class MasterMindNHWheels : MonoBehaviour
         
     }
 
-    void SpawnUnit()
+    /*void SpawnUnit()
     {
 
         Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -62,7 +62,7 @@ public class MasterMindNHWheels : MonoBehaviour
             GameObject _unit = Instantiate(unit, _hit.point, Quaternion.identity) as GameObject;
             AddAgent(_unit, goal.position);
         }
-    }
+    }*/
     
     float CalculateError(RVO.Agent agent, float angle)
     {
@@ -76,7 +76,7 @@ public class MasterMindNHWheels : MonoBehaviour
     public void AddAgent(GameObject newAgent, Vector3 position)
     {
        
-        agents.Add(new Agent(newAgent, goal.position, liveUnits++));
+        agents.Add(new Agent(newAgent, position, liveUnits++));
 
         RVO.Agent _agent = simulator.agents_[liveUnits - 1];
         _agent.radius_ = radius;

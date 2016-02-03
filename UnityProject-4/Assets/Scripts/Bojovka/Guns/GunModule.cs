@@ -98,7 +98,9 @@ public class GunModule : MonoBehaviour {
 		//Debug.Log (V0);
 
 		if (V0.x == V0.x && V0.y == V0.y) {
-			horizontalRotationGroup.transform.rotation = Quaternion.RotateTowards (horizontalRotationGroup.rotation, Quaternion.LookRotation (Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.transform.up)), angularTargetingSpeedHorizontal * Time.deltaTime);
+			//Debug.DrawRay (horizontalRotationGroup.position, horizontalRotationGroup.forward * 100, Color.yellow);
+			//Debug.DrawRay (verticalRotationGroup.position, horizontalRotationGroup.forward * 100, Color.green);
+			horizontalRotationGroup.transform.rotation = Quaternion.RotateTowards (horizontalRotationGroup.rotation, Quaternion.LookRotation (Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.transform.up), horizontalRotationGroup.up), angularTargetingSpeedHorizontal * Time.deltaTime);
 			verticalRotationGroup.rotation = Quaternion.RotateTowards (verticalRotationGroup.rotation, Quaternion.LookRotation (Vector3.up * V0.y + Vector3.ProjectOnPlane (horizontalRotationGroup.forward, horizontalRotationGroup.up).normalized * V0.x), angularTargetingSpeedVertical * Time.deltaTime);
 		}
 
@@ -107,8 +109,11 @@ public class GunModule : MonoBehaviour {
         {
             if (Timer(barrelShootTime, shootEnable) && shootEnable )
             {
+				
                 GameObject _bullet = Instantiate(bullet, spawnPoints[currentBarrel].position, spawnPoints[currentBarrel].rotation) as GameObject;
+
                 _bullet.GetComponent<Rigidbody>().AddForce(Missing(spawnPoints[currentBarrel], accuracy) * V * correct);
+				//Debug.Log ("Bang " + _bullet.GetComponent<Rigidbody>().velocity.magnitude);
                 currentBarrel++;
             }
         }

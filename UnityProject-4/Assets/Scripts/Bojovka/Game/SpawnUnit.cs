@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SpawnUnit : MonoBehaviour {
     public Unit[] Units;
@@ -7,6 +8,7 @@ public class SpawnUnit : MonoBehaviour {
     public MasterMindNHWheels Master;
     public Transform PointDown, PointDeploy, PointMarch;
     public GameObject EnemySF;
+	int switchUnit;
 
     public Transform SpawnArea;
 
@@ -18,6 +20,10 @@ public class SpawnUnit : MonoBehaviour {
 
 
     void Start () {
+		var a = GameObject.Find ("ButtonSnake").GetComponent<Button> ();
+		a.onClick.AddListener (delegate () {this.UnitSwitch(0);} );
+		var b = GameObject.Find ("ButtonTank").GetComponent<Button> ();
+		b.onClick.AddListener (delegate () {this.UnitSwitch(1);} );
 	
 	}
 	
@@ -33,8 +39,8 @@ public class SpawnUnit : MonoBehaviour {
         RaycastHit _hit;
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(_ray, out _hit, Mathf.Infinity, layerMask) && (_hit.point - SpawnArea.position).sqrMagnitude < SpawnArea.localScale.x * SpawnArea.localScale.x / 4)
         {
-			Units [0].BuildMesh ();
-			GameObject _unit = Units [0].GO;
+			Units [switchUnit].BuildMesh ();
+			GameObject _unit = Units [switchUnit].GO;
 			_unit.transform.position = SpawnPoint.transform.position;
 			_unit.transform.rotation = SpawnPoint.transform.rotation;
             _unit.GetComponent<UnitStats>().team = Team;
@@ -42,4 +48,8 @@ public class SpawnUnit : MonoBehaviour {
             _unit.GetComponent<StateMachine>().SetupStateSet(PointDown.position, _hit.point, PointMarch.position, EnemySF);
         }
     }
+
+	public void UnitSwitch(int unitIndex){
+		switchUnit = unitIndex;
+	}
 }
