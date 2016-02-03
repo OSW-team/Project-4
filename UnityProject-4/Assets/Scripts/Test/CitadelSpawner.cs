@@ -23,8 +23,10 @@ public class CitadelSpawner : MonoBehaviour {
         EnemyCitadel =  SteamCitadelMeshConstrutor.BuildCitadelMesh(_enemyCitadel);
         PlayersCitadel.transform.position = PlayerSpawn.transform.position;
         PlayersCitadel.transform.localScale = PlayerSpawn.transform.localScale;
+		PlayersCitadel.transform.rotation = PlayerSpawn.transform.rotation;
         EnemyCitadel.transform.position = EnemySpawn.transform.position;
         EnemyCitadel.transform.localScale = EnemySpawn.transform.localScale;
+		EnemyCitadel.transform.rotation = EnemySpawn.transform.rotation;
 		/*
         var playerUnitGOs = new List<GameObject>();
         foreach (var unit in _playersCitadel.Units)

@@ -1,9 +1,9 @@
 fileFormatVersion: 2
 guid: 25fd2c766e2c01448bc82ee01be8e6b2
-timeCreated: 1449092037
-licenseType: Pro
+timeCreated: 1454498757
+licenseType: Free
 ModelImporter:
-  serializedVersion: 18
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: Big_Gear1
     100002: Big_Gear2
@@ -34,97 +34,98 @@ ModelImporter:
     100052: Mod_Storage_Body
     100054: MOD_Weapon_basic
     100056: Module_Sites
-    100058: Platform_Basic
-    100060: Platform_Body
-    100062: polySurface138
-    100064: polySurface139
-    100066: polySurface140
-    100068: polySurface141
-    100070: polySurface142
-    100072: polySurface143
-    100074: polySurface144
-    100076: polySurface145
-    100078: polySurface146
-    100080: polySurface147
-    100082: polySurface148
-    100084: polySurface149
-    100086: polySurface150
-    100088: polySurface151
-    100090: polySurface152
-    100092: polySurface153
-    100094: polySurface154
-    100096: polySurface155
-    100098: polySurface156
-    100100: polySurface157
-    100102: polySurface158
-    100104: polySurface159
-    100106: polySurface160
-    100108: polySurface161
-    100110: polySurface162
-    100112: polySurface163
-    100114: polySurface164
-    100116: polySurface165
-    100118: polySurface166
-    100120: polySurface167
-    100122: polySurface168
-    100124: polySurface169
-    100126: polySurface170
-    100128: polySurface171
-    100130: polySurface172
-    100132: polySurface173
-    100134: pTorus1
-    100136: pTorus2
-    100138: Radar_Antenn
-    100140: //RootNode
-    100142: Storage_Site
-    100144: Sub_Plat1
-    100146: Sub_Plat2
-    100148: Sub_Plat3
-    100150: Sub_Plat4
-    100152: Sub_Slot_A1
-    100154: Sub_Slot_A1 1
-    100156: Sub_Slot_A1 2
-    100158: Sub_Slot_A1 3
-    100160: Sub_Slot_A1 4
-    100162: Sub_Slot_A1 5
-    100164: Sub_Slot_A2
-    100166: Sub_Slot_A2 1
-    100168: Sub_Slot_A2 2
-    100170: Sub_Slot_A2 3
-    100172: Sub_Slot_A2 4
-    100174: Sub_Slot_A2 5
-    100176: Sub_Slot_A3
-    100178: Sub_Slot_A3 1
-    100180: Sub_Slot_A3 2
-    100182: Sub_Slot_A3 3
-    100184: Sub_Slot_A4
-    100186: Sub_Slot_B1
-    100188: Sub_Slot_B1 1
-    100190: Sub_Slot_B2
-    100192: Sub_Slot_B2 1
-    100194: Sub_Slot_C1
-    100196: Sub_Slot_C1 1
-    100198: Sub_Slot_C1 2
-    100200: Sub_Slot_C2
-    100202: Sub_Slot_C2 1
-    100204: Sub_Slot_C3
-    100206: Sub_Slot_G1
-    100208: Sub_Slot_G2
-    100210: Sub_Slot_G3
-    100212: Sub_Slot_G4
-    100214: Subsystem_Slots
-    100216: Subsystem_Slots 1
-    100218: Subsystem_Slots 2
-    100220: Subsystem_Slots 3
-    100222: Subsystem_Slots 4
-    100224: Subsystem_Slots 5
-    100226: Subsystem_Slots 6
-    100228: Vertical_Rotation_Group
-    100230: Weapon_Site1
-    100232: Weapon_Site2
-    100234: Weapon_Site_Body1
-    100236: Weapon_Site_Body2
-    100238: Wheels
+    100058: Path
+    100060: Platform_Basic
+    100062: Platform_Body
+    100064: polySurface138
+    100066: polySurface139
+    100068: polySurface140
+    100070: polySurface141
+    100072: polySurface142
+    100074: polySurface143
+    100076: polySurface144
+    100078: polySurface145
+    100080: polySurface146
+    100082: polySurface147
+    100084: polySurface148
+    100086: polySurface149
+    100088: polySurface150
+    100090: polySurface151
+    100092: polySurface152
+    100094: polySurface153
+    100096: polySurface154
+    100098: polySurface155
+    100100: polySurface156
+    100102: polySurface157
+    100104: polySurface158
+    100106: polySurface159
+    100108: polySurface160
+    100110: polySurface161
+    100112: polySurface162
+    100114: polySurface163
+    100116: polySurface164
+    100118: polySurface165
+    100120: polySurface166
+    100122: polySurface167
+    100124: polySurface168
+    100126: polySurface169
+    100128: polySurface170
+    100130: polySurface171
+    100132: polySurface172
+    100134: polySurface173
+    100136: pTorus1
+    100138: pTorus2
+    100140: Radar_Antenn
+    100142: //RootNode
+    100144: Storage_Site
+    100146: Sub_Plat1
+    100148: Sub_Plat2
+    100150: Sub_Plat3
+    100152: Sub_Plat4
+    100154: Sub_Slot_A1
+    100156: Sub_Slot_A1 1
+    100158: Sub_Slot_A1 2
+    100160: Sub_Slot_A1 3
+    100162: Sub_Slot_A1 4
+    100164: Sub_Slot_A1 5
+    100166: Sub_Slot_A2
+    100168: Sub_Slot_A2 1
+    100170: Sub_Slot_A2 2
+    100172: Sub_Slot_A2 3
+    100174: Sub_Slot_A2 4
+    100176: Sub_Slot_A2 5
+    100178: Sub_Slot_A3
+    100180: Sub_Slot_A3 1
+    100182: Sub_Slot_A3 2
+    100184: Sub_Slot_A3 3
+    100186: Sub_Slot_A4
+    100188: Sub_Slot_B1
+    100190: Sub_Slot_B1 1
+    100192: Sub_Slot_B2
+    100194: Sub_Slot_B2 1
+    100196: Sub_Slot_C1
+    100198: Sub_Slot_C1 1
+    100200: Sub_Slot_C1 2
+    100202: Sub_Slot_C2
+    100204: Sub_Slot_C2 1
+    100206: Sub_Slot_C3
+    100208: Sub_Slot_G1
+    100210: Sub_Slot_G2
+    100212: Sub_Slot_G3
+    100214: Sub_Slot_G4
+    100216: Subsystem_Slots
+    100218: Subsystem_Slots 1
+    100220: Subsystem_Slots 2
+    100222: Subsystem_Slots 3
+    100224: Subsystem_Slots 4
+    100226: Subsystem_Slots 5
+    100228: Subsystem_Slots 6
+    100230: Vertical_Rotation_Group
+    100232: Weapon_Site1
+    100234: Weapon_Site2
+    100236: Weapon_Site_Body1
+    100238: Weapon_Site_Body2
+    100240: Wheels
     400000: Big_Gear1
     400002: Big_Gear2
     400004: Bridge_Site
@@ -154,97 +155,98 @@ ModelImporter:
     400052: Mod_Storage_Body
     400054: MOD_Weapon_basic
     400056: Module_Sites
-    400058: Platform_Basic
-    400060: Platform_Body
-    400062: polySurface138
-    400064: polySurface139
-    400066: polySurface140
-    400068: polySurface141
-    400070: polySurface142
-    400072: polySurface143
-    400074: polySurface144
-    400076: polySurface145
-    400078: polySurface146
-    400080: polySurface147
-    400082: polySurface148
-    400084: polySurface149
-    400086: polySurface150
-    400088: polySurface151
-    400090: polySurface152
-    400092: polySurface153
-    400094: polySurface154
-    400096: polySurface155
-    400098: polySurface156
-    400100: polySurface157
-    400102: polySurface158
-    400104: polySurface159
-    400106: polySurface160
-    400108: polySurface161
-    400110: polySurface162
-    400112: polySurface163
-    400114: polySurface164
-    400116: polySurface165
-    400118: polySurface166
-    400120: polySurface167
-    400122: polySurface168
-    400124: polySurface169
-    400126: polySurface170
-    400128: polySurface171
-    400130: polySurface172
-    400132: polySurface173
-    400134: pTorus1
-    400136: pTorus2
-    400138: Radar_Antenn
-    400140: //RootNode
-    400142: Storage_Site
-    400144: Sub_Plat1
-    400146: Sub_Plat2
-    400148: Sub_Plat3
-    400150: Sub_Plat4
-    400152: Sub_Slot_A1
-    400154: Sub_Slot_A1 1
-    400156: Sub_Slot_A1 2
-    400158: Sub_Slot_A1 3
-    400160: Sub_Slot_A1 4
-    400162: Sub_Slot_A1 5
-    400164: Sub_Slot_A2
-    400166: Sub_Slot_A2 1
-    400168: Sub_Slot_A2 2
-    400170: Sub_Slot_A2 3
-    400172: Sub_Slot_A2 4
-    400174: Sub_Slot_A2 5
-    400176: Sub_Slot_A3
-    400178: Sub_Slot_A3 1
-    400180: Sub_Slot_A3 2
-    400182: Sub_Slot_A3 3
-    400184: Sub_Slot_A4
-    400186: Sub_Slot_B1
-    400188: Sub_Slot_B1 1
-    400190: Sub_Slot_B2
-    400192: Sub_Slot_B2 1
-    400194: Sub_Slot_C1
-    400196: Sub_Slot_C1 1
-    400198: Sub_Slot_C1 2
-    400200: Sub_Slot_C2
-    400202: Sub_Slot_C2 1
-    400204: Sub_Slot_C3
-    400206: Sub_Slot_G1
-    400208: Sub_Slot_G2
-    400210: Sub_Slot_G3
-    400212: Sub_Slot_G4
-    400214: Subsystem_Slots
-    400216: Subsystem_Slots 1
-    400218: Subsystem_Slots 2
-    400220: Subsystem_Slots 3
-    400222: Subsystem_Slots 4
-    400224: Subsystem_Slots 5
-    400226: Subsystem_Slots 6
-    400228: Vertical_Rotation_Group
-    400230: Weapon_Site1
-    400232: Weapon_Site2
-    400234: Weapon_Site_Body1
-    400236: Weapon_Site_Body2
-    400238: Wheels
+    400058: Path
+    400060: Platform_Basic
+    400062: Platform_Body
+    400064: polySurface138
+    400066: polySurface139
+    400068: polySurface140
+    400070: polySurface141
+    400072: polySurface142
+    400074: polySurface143
+    400076: polySurface144
+    400078: polySurface145
+    400080: polySurface146
+    400082: polySurface147
+    400084: polySurface148
+    400086: polySurface149
+    400088: polySurface150
+    400090: polySurface151
+    400092: polySurface152
+    400094: polySurface153
+    400096: polySurface154
+    400098: polySurface155
+    400100: polySurface156
+    400102: polySurface157
+    400104: polySurface158
+    400106: polySurface159
+    400108: polySurface160
+    400110: polySurface161
+    400112: polySurface162
+    400114: polySurface163
+    400116: polySurface164
+    400118: polySurface165
+    400120: polySurface166
+    400122: polySurface167
+    400124: polySurface168
+    400126: polySurface169
+    400128: polySurface170
+    400130: polySurface171
+    400132: polySurface172
+    400134: polySurface173
+    400136: pTorus1
+    400138: pTorus2
+    400140: Radar_Antenn
+    400142: //RootNode
+    400144: Storage_Site
+    400146: Sub_Plat1
+    400148: Sub_Plat2
+    400150: Sub_Plat3
+    400152: Sub_Plat4
+    400154: Sub_Slot_A1
+    400156: Sub_Slot_A1 1
+    400158: Sub_Slot_A1 2
+    400160: Sub_Slot_A1 3
+    400162: Sub_Slot_A1 4
+    400164: Sub_Slot_A1 5
+    400166: Sub_Slot_A2
+    400168: Sub_Slot_A2 1
+    400170: Sub_Slot_A2 2
+    400172: Sub_Slot_A2 3
+    400174: Sub_Slot_A2 4
+    400176: Sub_Slot_A2 5
+    400178: Sub_Slot_A3
+    400180: Sub_Slot_A3 1
+    400182: Sub_Slot_A3 2
+    400184: Sub_Slot_A3 3
+    400186: Sub_Slot_A4
+    400188: Sub_Slot_B1
+    400190: Sub_Slot_B1 1
+    400192: Sub_Slot_B2
+    400194: Sub_Slot_B2 1
+    400196: Sub_Slot_C1
+    400198: Sub_Slot_C1 1
+    400200: Sub_Slot_C1 2
+    400202: Sub_Slot_C2
+    400204: Sub_Slot_C2 1
+    400206: Sub_Slot_C3
+    400208: Sub_Slot_G1
+    400210: Sub_Slot_G2
+    400212: Sub_Slot_G3
+    400214: Sub_Slot_G4
+    400216: Subsystem_Slots
+    400218: Subsystem_Slots 1
+    400220: Subsystem_Slots 2
+    400222: Subsystem_Slots 3
+    400224: Subsystem_Slots 4
+    400226: Subsystem_Slots 5
+    400228: Subsystem_Slots 6
+    400230: Vertical_Rotation_Group
+    400232: Weapon_Site1
+    400234: Weapon_Site2
+    400236: Weapon_Site_Body1
+    400238: Weapon_Site_Body2
+    400240: Wheels
     2300000: Big_Gear1
     2300002: Big_Gear2
     2300004: Chain_Tracks_Left
@@ -261,52 +263,53 @@ ModelImporter:
     2300026: Mod_Engine_Body
     2300028: Mod_Radar_Body
     2300030: Mod_Storage_Body
-    2300032: Platform_Body
-    2300034: polySurface138
-    2300036: polySurface139
-    2300038: polySurface140
-    2300040: polySurface141
-    2300042: polySurface142
-    2300044: polySurface143
-    2300046: polySurface144
-    2300048: polySurface145
-    2300050: polySurface146
-    2300052: polySurface147
-    2300054: polySurface148
-    2300056: polySurface149
-    2300058: polySurface150
-    2300060: polySurface151
-    2300062: polySurface152
-    2300064: polySurface153
-    2300066: polySurface154
-    2300068: polySurface155
-    2300070: polySurface156
-    2300072: polySurface157
-    2300074: polySurface158
-    2300076: polySurface159
-    2300078: polySurface160
-    2300080: polySurface161
-    2300082: polySurface162
-    2300084: polySurface163
-    2300086: polySurface164
-    2300088: polySurface165
-    2300090: polySurface166
-    2300092: polySurface167
-    2300094: polySurface168
-    2300096: polySurface169
-    2300098: polySurface170
-    2300100: polySurface171
-    2300102: polySurface172
-    2300104: polySurface173
-    2300106: pTorus1
-    2300108: pTorus2
-    2300110: Radar_Antenn
-    2300112: Sub_Plat1
-    2300114: Sub_Plat2
-    2300116: Sub_Plat3
-    2300118: Sub_Plat4
-    2300120: Weapon_Site_Body1
-    2300122: Weapon_Site_Body2
+    2300032: Path
+    2300034: Platform_Body
+    2300036: polySurface138
+    2300038: polySurface139
+    2300040: polySurface140
+    2300042: polySurface141
+    2300044: polySurface142
+    2300046: polySurface143
+    2300048: polySurface144
+    2300050: polySurface145
+    2300052: polySurface146
+    2300054: polySurface147
+    2300056: polySurface148
+    2300058: polySurface149
+    2300060: polySurface150
+    2300062: polySurface151
+    2300064: polySurface152
+    2300066: polySurface153
+    2300068: polySurface154
+    2300070: polySurface155
+    2300072: polySurface156
+    2300074: polySurface157
+    2300076: polySurface158
+    2300078: polySurface159
+    2300080: polySurface160
+    2300082: polySurface161
+    2300084: polySurface162
+    2300086: polySurface163
+    2300088: polySurface164
+    2300090: polySurface165
+    2300092: polySurface166
+    2300094: polySurface167
+    2300096: polySurface168
+    2300098: polySurface169
+    2300100: polySurface170
+    2300102: polySurface171
+    2300104: polySurface172
+    2300106: polySurface173
+    2300108: pTorus1
+    2300110: pTorus2
+    2300112: Radar_Antenn
+    2300114: Sub_Plat1
+    2300116: Sub_Plat2
+    2300118: Sub_Plat3
+    2300120: Sub_Plat4
+    2300122: Weapon_Site_Body1
+    2300124: Weapon_Site_Body2
     3300000: Big_Gear1
     3300002: Big_Gear2
     3300004: Chain_Tracks_Left
@@ -323,52 +326,53 @@ ModelImporter:
     3300026: Mod_Engine_Body
     3300028: Mod_Radar_Body
     3300030: Mod_Storage_Body
-    3300032: Platform_Body
-    3300034: polySurface138
-    3300036: polySurface139
-    3300038: polySurface140
-    3300040: polySurface141
-    3300042: polySurface142
-    3300044: polySurface143
-    3300046: polySurface144
-    3300048: polySurface145
-    3300050: polySurface146
-    3300052: polySurface147
-    3300054: polySurface148
-    3300056: polySurface149
-    3300058: polySurface150
-    3300060: polySurface151
-    3300062: polySurface152
-    3300064: polySurface153
-    3300066: polySurface154
-    3300068: polySurface155
-    3300070: polySurface156
-    3300072: polySurface157
-    3300074: polySurface158
-    3300076: polySurface159
-    3300078: polySurface160
-    3300080: polySurface161
-    3300082: polySurface162
-    3300084: polySurface163
-    3300086: polySurface164
-    3300088: polySurface165
-    3300090: polySurface166
-    3300092: polySurface167
-    3300094: polySurface168
-    3300096: polySurface169
-    3300098: polySurface170
-    3300100: polySurface171
-    3300102: polySurface172
-    3300104: polySurface173
-    3300106: pTorus1
-    3300108: pTorus2
-    3300110: Radar_Antenn
-    3300112: Sub_Plat1
-    3300114: Sub_Plat2
-    3300116: Sub_Plat3
-    3300118: Sub_Plat4
-    3300120: Weapon_Site_Body1
-    3300122: Weapon_Site_Body2
+    3300032: Path
+    3300034: Platform_Body
+    3300036: polySurface138
+    3300038: polySurface139
+    3300040: polySurface140
+    3300042: polySurface141
+    3300044: polySurface142
+    3300046: polySurface143
+    3300048: polySurface144
+    3300050: polySurface145
+    3300052: polySurface146
+    3300054: polySurface147
+    3300056: polySurface148
+    3300058: polySurface149
+    3300060: polySurface150
+    3300062: polySurface151
+    3300064: polySurface152
+    3300066: polySurface153
+    3300068: polySurface154
+    3300070: polySurface155
+    3300072: polySurface156
+    3300074: polySurface157
+    3300076: polySurface158
+    3300078: polySurface159
+    3300080: polySurface160
+    3300082: polySurface161
+    3300084: polySurface162
+    3300086: polySurface163
+    3300088: polySurface164
+    3300090: polySurface165
+    3300092: polySurface166
+    3300094: polySurface167
+    3300096: polySurface168
+    3300098: polySurface169
+    3300100: polySurface170
+    3300102: polySurface171
+    3300104: polySurface172
+    3300106: polySurface173
+    3300108: pTorus1
+    3300110: pTorus2
+    3300112: Radar_Antenn
+    3300114: Sub_Plat1
+    3300116: Sub_Plat2
+    3300118: Sub_Plat3
+    3300120: Sub_Plat4
+    3300122: Weapon_Site_Body1
+    3300124: Weapon_Site_Body2
     4300000: Sub_Plat1
     4300002: Sub_Plat2
     4300004: Sub_Plat3
@@ -431,6 +435,7 @@ ModelImporter:
     4300118: Main_Turret_Frame
     4300120: Main_Gear
     4300122: Main_Turret_Cabine
+    4300124: Path
     7400000: Take 001
     9500000: //RootNode
   materials:
@@ -440,6 +445,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
@@ -447,9 +453,9 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations: []
@@ -473,20 +479,19 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0

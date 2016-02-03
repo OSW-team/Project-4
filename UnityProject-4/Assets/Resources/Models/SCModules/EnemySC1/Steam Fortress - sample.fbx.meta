@@ -125,6 +125,7 @@ ModelImporter:
     100234: Weapon_Site_Body1
     100236: Weapon_Site_Body2
     100238: Wheels
+    100240: Path
     400000: Big_Gear1
     400002: Big_Gear2
     400004: Bridge_Site
@@ -245,6 +246,7 @@ ModelImporter:
     400234: Weapon_Site_Body1
     400236: Weapon_Site_Body2
     400238: Wheels
+    400240: Path
     2300000: Big_Gear1
     2300002: Big_Gear2
     2300004: Chain_Tracks_Left
@@ -307,6 +309,7 @@ ModelImporter:
     2300118: Sub_Plat4
     2300120: Weapon_Site_Body1
     2300122: Weapon_Site_Body2
+    2300124: Path
     3300000: Big_Gear1
     3300002: Big_Gear2
     3300004: Chain_Tracks_Left
@@ -369,6 +372,7 @@ ModelImporter:
     3300118: Sub_Plat4
     3300120: Weapon_Site_Body1
     3300122: Weapon_Site_Body2
+    3300124: Path
     4300000: Sub_Plat1
     4300002: Sub_Plat2
     4300004: Sub_Plat3
@@ -431,6 +435,7 @@ ModelImporter:
     4300118: Main_Turret_Frame
     4300120: Main_Gear
     4300122: Main_Turret_Cabine
+    4300124: Path
     7400000: Take 001
     9500000: //RootNode
   materials:
