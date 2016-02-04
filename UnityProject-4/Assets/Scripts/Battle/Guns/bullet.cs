@@ -8,6 +8,7 @@ public class bullet : MonoBehaviour {
         UnitStats other = c.other.gameObject.GetComponentInParent<UnitStats>();
         if (other != null)
         {
+			Debug.Log ("Hit");
             other.Damage(damage);
         }
         Destroy(gameObject);

@@ -74,6 +74,7 @@ namespace RVO
         internal float timeHorizonObst_ = 0.0f;
         internal Vector2 velocity_;
         internal int id_ = 0;
+		internal bool active;
 
         internal void computeNeighbors()
         {

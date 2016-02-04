@@ -196,8 +196,10 @@ namespace RVO
             {
                 for (int i = _start; i < _end; ++i)
                 {
-                    Simulator.Instance.agents_[i].computeNeighbors();
-                    Simulator.Instance.agents_[i].computeNewVelocity();
+					if (Simulator.Instance.agents_ [i].active) {
+						Simulator.Instance.agents_ [i].computeNeighbors ();
+						Simulator.Instance.agents_ [i].computeNewVelocity ();
+					}
                 }
                 _doneEvent.Set();
             }
@@ -205,7 +207,9 @@ namespace RVO
             {
                 for (int i = _start; i < _end; ++i)
                 {
-                    Simulator.Instance.agents_[i].update();
+					if (Simulator.Instance.agents_ [i].active) {
+						Simulator.Instance.agents_ [i].update ();
+					}
                 }
                 _doneEvent.Set();
             }
@@ -288,6 +292,7 @@ namespace RVO
 
         public void processObstacles()
         {
+			
             kdTree_.buildObstacleTree();
         }
 

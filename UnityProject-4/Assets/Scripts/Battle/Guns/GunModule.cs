@@ -44,7 +44,7 @@ public class GunModule : MonoBehaviour {
 		} 
 		enemy = seeker.chosenTarget.transform;
         
-		Vector3 shootPoint = AdvanceCalculation() + new Vector3(0, 2, 0);
+		Vector3 shootPoint = AdvanceCalculation();
 		Vector3 onTarget = (shootPoint - aimVector.transform.position);
 
 		//Debug.Log(" Whatt?! = " + shootPoint);
@@ -101,7 +101,7 @@ public class GunModule : MonoBehaviour {
 			//Debug.DrawRay (horizontalRotationGroup.position, horizontalRotationGroup.forward * 100, Color.yellow);
 			//Debug.DrawRay (verticalRotationGroup.position, horizontalRotationGroup.forward * 100, Color.green);
 			horizontalRotationGroup.transform.rotation = Quaternion.RotateTowards (horizontalRotationGroup.rotation, Quaternion.LookRotation (Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.transform.up), horizontalRotationGroup.up), angularTargetingSpeedHorizontal * Time.deltaTime);
-			verticalRotationGroup.rotation = Quaternion.RotateTowards (verticalRotationGroup.rotation, Quaternion.LookRotation (Vector3.up * V0.y + Vector3.ProjectOnPlane (horizontalRotationGroup.forward, horizontalRotationGroup.up).normalized * V0.x), angularTargetingSpeedVertical * Time.deltaTime);
+			verticalRotationGroup.rotation = Quaternion.RotateTowards (verticalRotationGroup.rotation, Quaternion.LookRotation (Vector3.up * V0.y + Vector3.ProjectOnPlane (horizontalRotationGroup.forward, Vector3.up).normalized * V0.x), angularTargetingSpeedVertical * Time.deltaTime);
 		}
 
 		shootEnable = true;// ((enemy.transform.position - transform.position).sqrMagnitude < maxDistance*maxDistance&& Quaternion.RotateTowards(horizontalRotationGroup.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(onTarget, horizontalRotationGroup.up)), errorTolerance) == Quaternion.LookRotation(Vector3.ProjectOnPlane(onTarget, horizontalRotationGroup.up)) && Quaternion.RotateTowards(verticalRotationGroup.rotation, Quaternion.LookRotation(Vector3.up * Mathf.Sin(gamma) + Vector3.ProjectOnPlane(horizontalRotationGroup.forward, Vector3.up).normalized * Mathf.Cos(gamma)), errorTolerance) == Quaternion.LookRotation(Vector3.up * Mathf.Sin(gamma) + Vector3.ProjectOnPlane(horizontalRotationGroup.forward, horizontalRotationGroup.up).normalized * Mathf.Cos(gamma)));

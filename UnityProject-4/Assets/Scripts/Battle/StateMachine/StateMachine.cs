@@ -7,6 +7,8 @@ public class StateMachine : MonoBehaviour {
     public StateSet stateSet;
     public TargetSeek targetSeeker;
     public float optimalDistance;
+	public float chaseDistance;
+	public float fearDistance;
 
 	
     void Update()
@@ -35,6 +37,8 @@ public class StateMachine : MonoBehaviour {
         stateSet.assault = new StateAssault(agent, enemySF.transform.position, transform, ref stateSet);
         stateSet.agro = new StateAgro(agent, enemySF.transform.position, transform, ref stateSet);
         stateSet.agro.optimalDistance = optimalDistance;
+		stateSet.agro.chaseDistance = chaseDistance;
+		stateSet.agro.fearDistance = fearDistance;
         stateSet.currentState = stateSet.down;
     }
 }
@@ -264,6 +268,8 @@ public class StateAgro : State
     State prevState;
     Transform enemy;
     public float optimalDistance;
+	public float chaseDistance;
+	public float fearDistance;
 
     public void setEnemy(Transform _enemy)
     {
@@ -286,7 +292,11 @@ public class StateAgro : State
         //Debug.Log("Agro"+ (enemy == null));
         if (enemy != null)
         {
-            agent.SetDestination(enemy.position + (transform.position - enemy.position).normalized * optimalDistance);
+			if (((enemy.position - transform.position).sqrMagnitude > chaseDistance * chaseDistance) || ((enemy.position - transform.position).sqrMagnitude < fearDistance * fearDistance)) {
+				agent.SetDestination (enemy.position + (transform.position - enemy.position).normalized * optimalDistance);
+			} else {
+				agent.SetDestination(agent.transform.position);
+			}
         } else
         {
             set.currentState = Transition(set.marsh);

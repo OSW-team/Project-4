@@ -50,6 +50,7 @@ public class AdwancedCarController : SimpleController
 	{
 		agent.transform.localPosition = new Vector3 (0, agent.transform.localPosition.y, 0);
 		//rigBody.centerOfMass = massCenter.localPosition;  //Двигаем центр масс в нужную точку. От этого любим летать в космос
+
 		if (Mathf.Abs (currentSteer + Mathf.Sign (steering) * SteerSpeed * Time.deltaTime) < steering * maxSteeringAngle) {// Рулим
 			currentSteer = currentSteer + Mathf.Sign (steering) * SteerSpeed * Time.deltaTime;
 		} else {
@@ -57,7 +58,10 @@ public class AdwancedCarController : SimpleController
 		}
 
 		tail.transform.rotation = Quaternion.LookRotation (transform.forward * Mathf.Cos(currentSteer*Mathf.Deg2Rad) + transform.right * Mathf.Sin(currentSteer*Mathf.Deg2Rad), transform.up);//Вертим хвостом туда, куда рулим.
-		if (motor > 0) {
+		if((transform.position - agent.destination).sqrMagnitude < stopDistance * stopDistance){
+			VP.SetAccel (0);//газуем
+			VP.SetBrake (0);
+		} else if (motor > 0) {
 
 			VP.SetAccel (motor / maxMotorTorque);//газуем
 			VP.SetBrake (0);

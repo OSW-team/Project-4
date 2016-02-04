@@ -22,6 +22,7 @@ public class MasterMindNHWheels : MonoBehaviour
     public int manipulationSpheresNumber = 20;
     public int liveUnits = 0;
 	public GotTheNavMeshBorders Borderer;
+	public GameObject wreckage;
 
     float timer = 5;
 
@@ -35,6 +36,7 @@ public class MasterMindNHWheels : MonoBehaviour
         for( int i = 0; i < manipulationSpheresNumber; i++)
         {
             simulator.addAgent(new RVO.Vector2(10000, 10000));
+			simulator.agents_ [i].active = true;
         }
 
         foreach (GameObject agent in agentsInScene)
@@ -148,7 +150,10 @@ public class MasterMindNHWheels : MonoBehaviour
 			_obstacles.Clear();
 			_obstacles.Add (new RVO.Vector2 (V [i].x, V [i].z));
 			_obstacles.Add (new RVO.Vector2 (V [i+1].x, V [i+1].z));
+			//Debug.Log ("SuperBefore " + simulator.obstacles_.Count);
 			simulator.addObstacle(_obstacles);
+			//Debug.Log ("SUperAfter " + simulator.obstacles_.Count);
+
 		}
 
         simulator.processObstacles();
@@ -175,6 +180,7 @@ public class MasterMindNHWheels : MonoBehaviour
 
     public void RemoveAgent(Agent removeThis)
     {
+		GameObject _wreckage = Instantiate (wreckage, removeThis.body.transform.position, removeThis.body.transform.rotation) as GameObject;
         ExchangeAgents(simulator.agents_[liveUnits -1], simulator.agents_[removeThis.index]);
         agents.Remove(removeThis);
         liveUnits--;

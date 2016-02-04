@@ -21,6 +21,7 @@ public abstract class SimpleController : MonoBehaviour {
     public float maxMotorTorque;
     public float maxBreaksTorque;
     public float maxSteeringAngle;
+	public float stopDistance;
     public Transform massCenter, tail;
     public float steering, motor;
     protected Rigidbody rigBody;

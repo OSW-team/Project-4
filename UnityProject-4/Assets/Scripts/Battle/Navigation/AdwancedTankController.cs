@@ -46,7 +46,11 @@ public class AdwancedTankController : SimpleController{
 	void FixedUpdate()
 	{
 		agent.transform.localPosition = new Vector3 (0, agent.transform.localPosition.y, 0);
-		if (steering < 0.1 && steering > -0.1) {
+
+		if ((transform.position - agent.destination).sqrMagnitude < stopDistance * stopDistance) {
+			VP.SetAccel (0);//газуем
+			VP.SetBrake (0);
+		} else if (steering < 0.1 && steering > -0.1) {
 			transMissions [0].currentGear = 1;
 			transMissions [1].currentGear = 1;
 			VP.SetAccel (motor / maxMotorTorque);//газуем
