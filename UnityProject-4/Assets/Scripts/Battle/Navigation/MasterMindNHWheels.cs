@@ -204,7 +204,15 @@ public class Agent
         Controller = body.GetComponent<SimpleController>();
         navMeshAgent = body.GetComponentInChildren<NavMeshAgent>();
         goal = _goal;
-        navMeshAgent.SetDestination(goal);
+		int k = 0;
+
+		if (!navMeshAgent.SetDestination (goal)) {
+			navMeshAgent.enabled = false;
+			navMeshAgent.enabled = true;
+			navMeshAgent.SetDestination (goal);
+		}
+
+        
         index = _index;
 
     }

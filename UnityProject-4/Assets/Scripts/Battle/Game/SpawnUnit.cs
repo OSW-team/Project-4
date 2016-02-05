@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class SpawnUnit : MonoBehaviour {
     public Unit[] Units;
+	Camera cam;
     public Transform SpawnPoint;
     public MasterMindNHWheels Master;
     public Transform PointDown, PointDeploy, PointMarch;
@@ -24,6 +25,7 @@ public class SpawnUnit : MonoBehaviour {
 		a.onClick.AddListener (delegate () {this.UnitSwitch(0);} );
 		var b = GameObject.Find ("ButtonTank").GetComponent<Button> ();
 		b.onClick.AddListener (delegate () {this.UnitSwitch(1);} );
+		cam = GameObject.Find ("Camera").GetComponent<Camera> ();
 	
 	}
 	
@@ -35,10 +37,12 @@ public class SpawnUnit : MonoBehaviour {
     void SpawnOnClick()
     {
 
-        Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray _ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit _hit;
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(_ray, out _hit, Mathf.Infinity, layerMask) && (_hit.point - SpawnArea.position).sqrMagnitude < SpawnArea.localScale.x * SpawnArea.localScale.x / 4)
+		Debug.DrawRay (cam.transform.position, _ray.direction * 1000);
+		if (Input.GetMouseButtonDown(0) && Physics.Raycast(_ray, out _hit, Mathf.Infinity, layerMask) && (_hit.point - SpawnArea.position).sqrMagnitude < SpawnArea.localScale.x * SpawnArea.localScale.x / 4)
         {
+			Debug.Log (" Here we go! ");
 			Units [switchUnit].BuildMesh ();
 			GameObject _unit = Units [switchUnit].GO;
 			_unit.transform.position = SpawnPoint.transform.position;

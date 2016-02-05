@@ -180,7 +180,7 @@ public class ManualPathBuilder : MonoBehaviour {
 
 
 			}
-			if (Input.GetKeyDown (KeyCode.R) && hit.collider.GetComponent<ManualPoint>()!= null) {
+			if (Input.GetKeyDown (KeyCode.C) && hit.collider.GetComponent<ManualPoint>()!= null) {
 				DeleteBall ();
 				GameObject.Destroy(hit.collider.gameObject);
 			}

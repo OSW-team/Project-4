@@ -2,8 +2,12 @@
 using System.Collections;
 
 public class CameraReset : MonoBehaviour {
+	Vector3 start;
+	void Start(){
+		start = transform.position;
+	}
 
 	public void CameraResetPosition(){
-		transform.position = new Vector3(694, 200, -176);
+		transform.position = start;
 	}
 }
