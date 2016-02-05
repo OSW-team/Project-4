@@ -90,27 +90,34 @@ public class TestController : MonoBehaviour
 
     void SwitchUnitControl()
     {
-        _isCameraManual = !_isCameraManual;
 
-        Debug.Log(_isCameraManual + "isManual");
-        MainCamera.SetActive(!_isCameraManual);
-        var unit = MyCitadel.GO.GetComponent<SpawnUnit>().SpawnedUnitsGameObjects.Last();
-        if (!_isCameraManual) { unit = _lastUnitGO; }
-        ManualCamera.GetComponent<CameraControl>().target = unit.transform;
-        unit.GetComponent<BasicInput>().enabled = _isCameraManual;
-        var acc = unit.GetComponent<AdwancedCarController>();
-        if (acc != null)
+        if (MyCitadel.GO.GetComponent<SpawnUnit>().SpawnedUnitsGameObjects.Count > 0)
         {
-            acc.enabled = !_isCameraManual;
-            if (acc.tail!=null) { acc.tail.gameObject.GetComponentInChildren<TailSteering>().enabled = _isCameraManual; }
+            _isCameraManual = !_isCameraManual;
+
+            Debug.Log(_isCameraManual + "isManual");
+            MainCamera.SetActive(!_isCameraManual);
+            var unit = MyCitadel.GO.GetComponent<SpawnUnit>().SpawnedUnitsGameObjects.Last();
+            if (!_isCameraManual) { unit = _lastUnitGO; }
+            ManualCamera.GetComponent<CameraControl>().target = unit.transform;
+            unit.GetComponent<BasicInput>().enabled = _isCameraManual;
+            var acc = unit.GetComponent<AdwancedCarController>();
+            if (acc != null)
+            {
+                acc.enabled = !_isCameraManual;
+                if (acc.tail != null) { acc.tail.gameObject.GetComponentInChildren<TailSteering>().enabled = _isCameraManual; }
+            }
+            var atc = unit.GetComponent<AdwancedTankController>();
+            if (atc != null)
+            {
+                atc.enabled = !_isCameraManual;
+                unit.GetComponent<TestGears>().enabled = _isCameraManual;
+                unit.GetComponent<TestTorque>().enabled = _isCameraManual;
+            }
+            unit.GetComponent<BasicInput>().enabled = _isCameraManual;
+            _lastUnitGO = unit;
+            ManualCamera.SetActive(_isCameraManual);
         }
-        var atc = unit.GetComponent<AdwancedTankController>();
-        if (atc != null) { atc.enabled = !_isCameraManual;
-            unit.GetComponent<TestGears>().enabled = _isCameraManual;
-            unit.GetComponent<TestTorque>().enabled = _isCameraManual;
-        }
-        unit.GetComponent<BasicInput>().enabled = _isCameraManual;
-        _lastUnitGO = unit;
-        ManualCamera.SetActive(_isCameraManual);
+        
     }
 }
