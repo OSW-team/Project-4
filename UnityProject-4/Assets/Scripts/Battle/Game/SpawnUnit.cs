@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class SpawnUnit : MonoBehaviour {
     public Unit[] Units;
+    public List<GameObject> SpawnedUnitsGameObjects;
 	Camera cam;
     public Transform SpawnPoint;
     public MasterMindNHWheels Master;
@@ -30,8 +32,10 @@ public class SpawnUnit : MonoBehaviour {
 		c.onClick.AddListener (delegate () {this.UnitSwitch(2);} );
 
 		cam = GameObject.Find ("Camera").GetComponent<Camera> ();
-	
-	}
+        SpawnedUnitsGameObjects = new List<GameObject>();
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -54,6 +58,7 @@ public class SpawnUnit : MonoBehaviour {
             _unit.GetComponent<UnitStats>().team = Team;
             Master.AddAgent(_unit, PointDown.position);
             _unit.GetComponent<StateMachine>().SetupStateSet(PointDown.position, _hit.point, PointMarch.position, EnemySF);
+            SpawnedUnitsGameObjects.Add(_unit);
         }
     }
 

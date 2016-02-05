@@ -10,6 +10,10 @@ public class TestController : MonoBehaviour
     public SteamCitadel MyCitadel;
     public Transform ScreensButtons;
     public List<GameObject> Screens;
+    public GameObject MainCamera;
+    public GameObject ManualCamera;
+    private bool _isCameraManual;
+    private GameObject _lastUnitGO;
 
     // Use this for initialization
     void Start () {
@@ -76,8 +80,37 @@ public class TestController : MonoBehaviour
 
     // Update is called once per frame
     void Update () {
-	
-        
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SwitchUnitControl();
+        }
        
 	}
+
+    void SwitchUnitControl()
+    {
+        _isCameraManual = !_isCameraManual;
+
+        Debug.Log(_isCameraManual + "isManual");
+        MainCamera.SetActive(!_isCameraManual);
+        var unit = MyCitadel.GO.GetComponent<SpawnUnit>().SpawnedUnitsGameObjects.Last();
+        if (!_isCameraManual) { unit = _lastUnitGO; }
+        ManualCamera.GetComponent<CameraControl>().target = unit.transform;
+        unit.GetComponent<BasicInput>().enabled = _isCameraManual;
+        var acc = unit.GetComponent<AdwancedCarController>();
+        if (acc != null)
+        {
+            acc.enabled = !_isCameraManual;
+            if (acc.tail!=null) { acc.tail.gameObject.GetComponentInChildren<TailSteering>().enabled = _isCameraManual; }
+        }
+        var atc = unit.GetComponent<AdwancedTankController>();
+        if (atc != null) { atc.enabled = !_isCameraManual;
+            unit.GetComponent<TestGears>().enabled = _isCameraManual;
+            unit.GetComponent<TestTorque>().enabled = _isCameraManual;
+        }
+        unit.GetComponent<BasicInput>().enabled = _isCameraManual;
+        _lastUnitGO = unit;
+        ManualCamera.SetActive(_isCameraManual);
+    }
 }
