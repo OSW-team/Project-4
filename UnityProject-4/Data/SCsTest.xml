@@ -5,6 +5,7 @@
       <Upgrade Name="UpgAcc1-Snake" />
     </Unit>
     <Unit WorkName="Mach_Hardest_Rock" />
+	<Unit WorkName="Mach_Missile" />
     <Module WorkName="Platform1">
       <Slot Name="" />
     </Module>
@@ -40,6 +41,7 @@
       <Upgrade Name="UpgAcc1-Snake" />
     </Unit>
     <Unit WorkName="Mach_Hardest_Rock" />
+	<Unit WorkName="Mach_Missile" />
     <Module WorkName="Platform1">
       <Slot Name="" />
     </Module>
