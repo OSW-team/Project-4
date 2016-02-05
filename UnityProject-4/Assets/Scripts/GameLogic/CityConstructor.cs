@@ -29,7 +29,7 @@ public class CityConstructor : MonoBehaviour
 	{
         _locators = new List<Transform>();
         var locators = CityContainerGameObject.transform.FindChild("Locators");
-        GetPrefabs("Prefabs/");
+        GetPrefabs("Prefabs/City/Blade");
         Iteration(locators);
 
 	}

@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: a1bc190cb5b386645bfebed7ccb8c011
+timeCreated: 1451030739
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Outhouse_square_Blade
+    100004: Part_Average_Face_Horizontal_[50]
+    100006: Part_Average_Face_Vertical_[40].003
+    100008: Part_Average_Face_Vertical_[40].004
+    100010: Part_Average_Face_Vertical_[40].005
+    100012: Part_Edge_Horizontal_Average_[40]_
+    100014: Part_Edge_Horizontal_Wide_[40]_.002
+    100016: Part_Spike_Round_Average_[60]_
+    100018: Part_Spike_Round_Average_[60]_.001
+    100020: Part_Wall_Average_[40]_.002
+    100022: Part_Wall_Average_[40]_.003
+    100024: Part_Wall_Average_[40]_.004
+    100026: Part_Wide_Face_Horizontal_[100]
+    100028: Part_Average_Face_Horizontal_[50]_
+    100030: Part_Average_Face_Vertical_[40]_.003
+    100032: Part_Average_Face_Vertical_[40]_.004
+    100034: Part_Average_Face_Vertical_[40]_.005
+    100036: Part_Internal_Narrow_RZR_[100]_.001
+    400000: //RootNode
+    400002: Outhouse_square_Blade
+    400004: Part_Average_Face_Horizontal_[50]
+    400006: Part_Average_Face_Vertical_[40].003
+    400008: Part_Average_Face_Vertical_[40].004
+    400010: Part_Average_Face_Vertical_[40].005
+    400012: Part_Edge_Horizontal_Average_[40]_
+    400014: Part_Edge_Horizontal_Wide_[40]_.002
+    400016: Part_Spike_Round_Average_[60]_
+    400018: Part_Spike_Round_Average_[60]_.001
+    400020: Part_Wall_Average_[40]_.002
+    400022: Part_Wall_Average_[40]_.003
+    400024: Part_Wall_Average_[40]_.004
+    400026: Part_Wide_Face_Horizontal_[100]
+    400028: Part_Average_Face_Horizontal_[50]_
+    400030: Part_Average_Face_Vertical_[40]_.003
+    400032: Part_Average_Face_Vertical_[40]_.004
+    400034: Part_Average_Face_Vertical_[40]_.005
+    400036: Part_Internal_Narrow_RZR_[100]_.001
+    2300000: Outhouse_square_Blade
+    3300000: Outhouse_square_Blade
+    4300000: Outhouse_square_Blade
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

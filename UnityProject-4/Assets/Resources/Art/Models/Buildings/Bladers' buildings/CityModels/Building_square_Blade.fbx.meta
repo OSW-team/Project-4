@@ -1,69 +1,81 @@
 fileFormatVersion: 2
 guid: b8e89698daf29dc4db1f36580bda3ff2
-timeCreated: 1450705855
-licenseType: Pro
+timeCreated: 1451026598
+licenseType: Free
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Building_square_Blade
-    100004: edge_horizontal
-    100006: edge_horizontal.001
-    100008: edge_horizontal.002
-    100010: edge_horizontal.003
-    100012: Part_average_entrance
-    100014: Part_average_entrance.001
-    100016: Part_average_entrance.002
-    100018: Part_average_entrance.003
-    100020: Part_average_entrance.004
-    100022: Part_average_face_horizontal
-    100024: Part_average_face_horizontal.001
-    100026: Part_average_face_vertical
-    100028: Part_average_face_vertical.001
-    100030: Part_average_face_vertical.002
-    100032: Part_average_face_vertical.003
-    100034: Part_average_face_vertical.004
-    100036: Part_average_face_vertical.005
-    100038: Part_Big_entrance.001
-    100040: Part_big_face_horizontal_RHR_Always
-    100042: Part_small_face_horizontal_RHR
-    100044: Part_small_face_horizontal_RHR.001
-    100046: Part_small_face_horizontal_RHR.002
-    100048: Part_small_face_horizontal_RHR.003
-    100050: small_corner
-    100052: small_corner.001
-    100054: small_corner.002
-    400000: Building_square_Blade
+    100000: Building_Square_Blade
+    100002: //RootNode
+    100004: edge_horizontal.002
+    100006: edge_horizontal.003
+    100008: Part_Antenna_Average_[40]_
+    100010: Part_Antenna_Narrow_[40]_
+    100012: Part_Antenna_Narrow_[40]_.001
+    100014: Part_average_face_horizontal.001
+    100016: Part_average_face_vertical.002
+    100018: Part_average_face_vertical.003
+    100020: Part_average_face_vertical.005
+    100022: Part_Gear_Big
+    100024: Part_Internal_Small
+    100026: Part_Outhouse
+    100028: Part_Wall_Average_[40]_
+    100030: Part_Wall_Average_[40]_.001
+    100032: Part_Wall_Wide_[40]_
+    100034: small_corner
+    100036: small_corner.001
+    100038: small_corner.002
+    100040: Part_Average_Corner_[40]_
+    100042: Part_Average_Face_Vertical_[40]_
+    100044: Part_Average_Face_Vertical_[40]_.001
+    100046: Part_Edge_Horizontal_Wide_[40]_.001
+    100048: Part_Face_Horizontal_Average_[40]_
+    100050: Part_Gear_Wide_[100]_
+    100052: Part_Internal_Narrow_[100]_
+    100054: Part_Outhouse_[100]_
+    100056: Part_Wide_Corner_[40]_
+    100058: Part_Average_Corner_[40]_001
+    100060: Part_Average_Face_Vertical_[40]_.002
+    100062: Part_Edge_Horizontal_Wide_[40]_
+    100064: Part_Antenna_Average_[40]_.001
+    100066: Part_Internal_Narrow_RZR_[100]_
+    400000: Building_Square_Blade
     400002: //RootNode
-    400004: edge_horizontal
-    400006: edge_horizontal.001
-    400008: edge_horizontal.002
-    400010: edge_horizontal.003
-    400012: Part_average_entrance
-    400014: Part_average_entrance.001
-    400016: Part_average_entrance.002
-    400018: Part_average_entrance.003
-    400020: Part_average_entrance.004
-    400022: Part_average_face_horizontal
-    400024: Part_average_face_horizontal.001
-    400026: Part_average_face_vertical
-    400028: Part_average_face_vertical.001
-    400030: Part_average_face_vertical.002
-    400032: Part_average_face_vertical.003
-    400034: Part_average_face_vertical.004
-    400036: Part_average_face_vertical.005
-    400038: Part_Big_entrance.001
-    400040: Part_big_face_horizontal_RHR_Always
-    400042: Part_small_face_horizontal_RHR
-    400044: Part_small_face_horizontal_RHR.001
-    400046: Part_small_face_horizontal_RHR.002
-    400048: Part_small_face_horizontal_RHR.003
-    400050: small_corner
-    400052: small_corner.001
-    400054: small_corner.002
-    2300000: Building_square_Blade
-    3300000: Building_square_Blade
-    4300000: Building_square_Blade
+    400004: edge_horizontal.002
+    400006: edge_horizontal.003
+    400008: Part_Antenna_Average_[40]_
+    400010: Part_Antenna_Narrow_[40]_
+    400012: Part_Antenna_Narrow_[40]_.001
+    400014: Part_average_face_horizontal.001
+    400016: Part_average_face_vertical.002
+    400018: Part_average_face_vertical.003
+    400020: Part_average_face_vertical.005
+    400022: Part_Gear_Big
+    400024: Part_Internal_Small
+    400026: Part_Outhouse
+    400028: Part_Wall_Average_[40]_
+    400030: Part_Wall_Average_[40]_.001
+    400032: Part_Wall_Wide_[40]_
+    400034: small_corner
+    400036: small_corner.001
+    400038: small_corner.002
+    400040: Part_Average_Corner_[40]_
+    400042: Part_Average_Face_Vertical_[40]_
+    400044: Part_Average_Face_Vertical_[40]_.001
+    400046: Part_Edge_Horizontal_Wide_[40]_.001
+    400048: Part_Face_Horizontal_Average_[40]_
+    400050: Part_Gear_Wide_[100]_
+    400052: Part_Internal_Narrow_[100]_
+    400054: Part_Outhouse_[100]_
+    400056: Part_Wide_Corner_[40]_
+    400058: Part_Average_Corner_[40]_001
+    400060: Part_Average_Face_Vertical_[40]_.002
+    400062: Part_Edge_Horizontal_Wide_[40]_
+    400064: Part_Antenna_Average_[40]_.001
+    400066: Part_Internal_Narrow_RZR_[100]_
+    2300000: Building_Square_Blade
+    3300000: Building_Square_Blade
+    4300000: Building_Square_Blade
   materials:
     importMaterials: 1
     materialName: 0
@@ -71,7 +83,6 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
@@ -79,9 +90,9 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
-    animationRotationError: 0.5
-    animationPositionError: 0.5
-    animationScaleError: 0.5
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations: []
@@ -105,25 +116,24 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
-    armTwist: 0.5
-    foreArmTwist: 0.5
-    upperLegTwist: 0.5
-    legTwist: 0.5
-    armStretch: 0.05
-    legStretch: 0.05
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
-    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
-  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

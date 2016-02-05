@@ -1,0 +1,98 @@
+fileFormatVersion: 2
+guid: ee2b3eabb2a62584c8bd53e667d1ce32
+timeCreated: 1451275155
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Part_Spike_Round_Small.000
+    100002: Part_Spike_Round_Small.001
+    100004: Part_Spike_Round_Small.002
+    100006: Part_Spike_Round_Small.003
+    100008: Part_Spike_Round_Small.004
+    100010: Part_Spike_Round_Small.005
+    100012: Part_Spike_Round_Small.006
+    100014: Part_Spike_Round_Small.007
+    100016: Part_Spike_Round_Small.008
+    100018: Part_Spike_Round_Small.009
+    100020: Part_Spike_Round_Small.010
+    100022: Part_Spike_Round_Small.011
+    100024: //RootNode
+    400000: Part_Spike_Round_Small.000
+    400002: Part_Spike_Round_Small.001
+    400004: Part_Spike_Round_Small.002
+    400006: Part_Spike_Round_Small.003
+    400008: Part_Spike_Round_Small.004
+    400010: Part_Spike_Round_Small.005
+    400012: Part_Spike_Round_Small.006
+    400014: Part_Spike_Round_Small.007
+    400016: Part_Spike_Round_Small.008
+    400018: Part_Spike_Round_Small.009
+    400020: Part_Spike_Round_Small.010
+    400022: Part_Spike_Round_Small.011
+    400024: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Sphere
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
