@@ -56,8 +56,9 @@ public class AdwancedCarController : SimpleController
 		} else {
 			currentSteer = currentSteer + Mathf.Sign(steering * maxSteeringAngle - currentSteer) * SteerSpeed * Time.deltaTime;
 		}
-
-		tail.transform.rotation = Quaternion.LookRotation (transform.forward * Mathf.Cos(currentSteer*Mathf.Deg2Rad) + transform.right * Mathf.Sin(currentSteer*Mathf.Deg2Rad), transform.up);//Вертим хвостом туда, куда рулим.
+		if(tail != null){
+			tail.transform.rotation = Quaternion.LookRotation (transform.forward * Mathf.Cos(currentSteer*Mathf.Deg2Rad) + transform.right * Mathf.Sin(currentSteer*Mathf.Deg2Rad), transform.up);//Вертим хвостом туда, куда рулим.
+		}
 		if((transform.position - agent.destination).sqrMagnitude < stopDistance * stopDistance){
 			VP.SetAccel (0);//газуем
 			VP.SetBrake (0);

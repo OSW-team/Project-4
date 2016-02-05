@@ -104,15 +104,32 @@ public class GunModule : MonoBehaviour {
 			verticalRotationGroup.rotation = Quaternion.RotateTowards (verticalRotationGroup.rotation, Quaternion.LookRotation (Vector3.up * V0.y + Vector3.ProjectOnPlane (horizontalRotationGroup.forward, Vector3.up).normalized * V0.x), angularTargetingSpeedVertical * Time.deltaTime);
 		}
 
-		shootEnable = true;// ((enemy.transform.position - transform.position).sqrMagnitude < maxDistance*maxDistance&& Quaternion.RotateTowards(horizontalRotationGroup.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(onTarget, horizontalRotationGroup.up)), errorTolerance) == Quaternion.LookRotation(Vector3.ProjectOnPlane(onTarget, horizontalRotationGroup.up)) && Quaternion.RotateTowards(verticalRotationGroup.rotation, Quaternion.LookRotation(Vector3.up * Mathf.Sin(gamma) + Vector3.ProjectOnPlane(horizontalRotationGroup.forward, Vector3.up).normalized * Mathf.Cos(gamma)), errorTolerance) == Quaternion.LookRotation(Vector3.up * Mathf.Sin(gamma) + Vector3.ProjectOnPlane(horizontalRotationGroup.forward, horizontalRotationGroup.up).normalized * Mathf.Cos(gamma)));
+		Double x = (double)Vector3.RotateTowards (horizontalRotationGroup.forward, Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.up).normalized, errorTolerance * Mathf.Deg2Rad, 100).x;
+		Double y = (double)Vector3.RotateTowards (horizontalRotationGroup.forward, Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.up).normalized, errorTolerance * Mathf.Deg2Rad, 100).y;
+		Double z = (double)Vector3.RotateTowards (horizontalRotationGroup.forward, Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.up).normalized, errorTolerance * Mathf.Deg2Rad, 100).z;
+		Double _x = (double)onTarget.normalized.x;
+		Double _y = (double)onTarget.normalized.y;
+		Double _z = (double)onTarget.normalized.z;
+		x = Math.Round (x, 2);
+		y = Math.Round (y, 2);
+		z = Math.Round (z, 2);
+		_x = Math.Round (_x, 2);
+		_y = Math.Round (_y, 2);
+		_z = Math.Round (_z, 2);
+
+		shootEnable = ((enemy.transform.position - transform.position).sqrMagnitude < maxDistance*maxDistance && x == _x && z == _z);
+		// ((enemy.transform.position - transform.position).sqrMagnitude < maxDistance*maxDistance&& Quaternion.RotateTowards(horizontalRotationGroup.rotation, Quaternion.LookRotation(Vector3.ProjectOnPlane(onTarget, horizontalRotationGroup.up)), errorTolerance) == Quaternion.LookRotation(Vector3.ProjectOnPlane(onTarget, horizontalRotationGroup.up)) && Quaternion.RotateTowards(verticalRotationGroup.rotation, Quaternion.LookRotation(Vector3.up * Mathf.Sin(gamma) + Vector3.ProjectOnPlane(horizontalRotationGroup.forward, Vector3.up).normalized * Mathf.Cos(gamma)), errorTolerance) == Quaternion.LookRotation(Vector3.up * Mathf.Sin(gamma) + Vector3.ProjectOnPlane(horizontalRotationGroup.forward, horizontalRotationGroup.up).normalized * Mathf.Cos(gamma)));
         if (currentBarrel < spawnPoints.Length)
         {
             if (Timer(barrelShootTime, shootEnable) && shootEnable )
             {
 				
                 GameObject _bullet = Instantiate(bullet, spawnPoints[currentBarrel].position, spawnPoints[currentBarrel].rotation) as GameObject;
-
-                _bullet.GetComponent<Rigidbody>().AddForce(Missing(spawnPoints[currentBarrel], accuracy) * V * correct);
+				if (_bullet.GetComponent<Homing> () != null) {
+					_bullet.GetComponent<Homing> ().target = enemy;
+				} else {
+					_bullet.GetComponent<Rigidbody> ().AddForce (Missing (spawnPoints [currentBarrel], accuracy) * V * correct);
+				}
 				//Debug.Log ("Bang " + _bullet.GetComponent<Rigidbody>().velocity.magnitude);
                 currentBarrel++;
             }
