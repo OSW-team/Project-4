@@ -26,7 +26,6 @@ public class TesrSimpleSpring : MonoBehaviour {
 		//Debug.Log (collides);
 		if (collides) {
 			wheel.transform.localPosition =  new Vector3(0, wheel.transform.localPosition.y - Mathf.Abs( 0.1f/wheel.transform.localPosition.y) * Time.deltaTime , 0);
-			//wheel.transform.localPosition =  new Vector3(0, Mathf.Max (-0.1f,wheel.transform.localPosition.y - Time.deltaTime) , 0);
 		} else {
 			wheel.transform.localPosition = new Vector3(0, Mathf.Min (0.1f, wheel.transform.localPosition.y + Mathf.Abs( 0.1f/wheel.transform.localPosition.y) * Time.deltaTime) ,0);
 		}
