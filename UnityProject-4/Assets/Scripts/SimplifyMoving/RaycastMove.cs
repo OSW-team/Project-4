@@ -25,11 +25,11 @@ public class RaycastMove: MonoBehaviour {
 			float Min = Mathf.Min (hit [0].distance, hit [1].distance, hit [2].distance, hit [3].distance);
 
 			Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(Vector3.Cross (hit [0].point - hit [1].point, hit [2].point - hit [1].point)), angularSpeed);
-			if (Min > wheelDistance) {
+			/*if (Min > wheelDistance) {
 				transform.position += Mathf.Min(1, Mathf.Abs(Min/sprignLength - 1)) * fallSpeed * Time.deltaTime * -Vector3.up;
 			} else if (Min < wheelDistance) {
 				transform.position += Mathf.Min(1, Mathf.Abs(Min/sprignLength - 1)) * sprign * Time.deltaTime * Vector3.up;
-			}
+			}*/
 			//float Min = Mathf.Min(hit [0].point.magnitude, hit [1].point.magnitude, hit [2].point.magnitude, hit [3].point.magnitude);
 			//Mathf.Atan (Mathf.Sin (Min));
 			//Rigidbody R = GetComponent<Rigidbody> ();
