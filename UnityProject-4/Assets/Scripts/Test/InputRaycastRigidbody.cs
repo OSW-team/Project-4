@@ -13,11 +13,13 @@ public class InputRaycastRigidbody : MonoBehaviour {
     public InputField Mass;
     public InputField Drag;
     public InputField AngularDrag;
+    public InputField ShowUnitsAmount;
     public Text RaycastLengthValue;
     public Text CoefValue;
     public Text MassValue;
     public Text DragValue;
     public Text AngularDragValue;
+    public Text ShowUnitsAmountValue;
     public GameObject ShowButton;
     public GameObject HideButton;
     private List<BoxMovement> _unitsList;
@@ -29,7 +31,8 @@ public class InputRaycastRigidbody : MonoBehaviour {
         Mass.text = UnitPrefab.GetComponent<Rigidbody>().mass.ToString();
         Drag.text = UnitPrefab.GetComponent<Rigidbody>().drag.ToString();
         AngularDrag.text = UnitPrefab.GetComponent<Rigidbody>().angularDrag.ToString();
-        _unitsList = new List<BoxMovement>(EditableUnitParent.GetComponentsInChildren<BoxMovement>());
+        _unitsList = new List<BoxMovement>();
+        ShowUnitsAmount.text = 1.ToString();
     }
 	
 	// Update is called once per frame
@@ -39,8 +42,20 @@ public class InputRaycastRigidbody : MonoBehaviour {
 
     public void AcceptChanges()
     {
+        foreach (var unit in _unitsList)
+        {
+            unit.gameObject.SetActive(false);
+        }
+        _unitsList.Clear();
+        var k = Convert.ToInt32(ShowUnitsAmountValue.text);
+        for (var i = 0; i < k; i++)
+        {
+            _unitsList.Add(EditableUnitParent.GetChild(i).GetComponent<BoxMovement>());
+
+        }
         foreach (var EditableUnit in _unitsList)
         {
+            EditableUnit.gameObject.SetActive(true);
             EditableUnit.RaycastLength = Convert.ToSingle(RaycastLengthValue.text);
             EditableUnit.coef = Convert.ToSingle(CoefValue.text);
             EditableUnit.GetComponent<Rigidbody>().mass = Convert.ToSingle(MassValue.text);
@@ -64,6 +79,8 @@ public class InputRaycastRigidbody : MonoBehaviour {
         ShowButton.SetActive(!show);
         HideButton.SetActive(show);
     }
+
+    
 
     public void LoadAnotherScene()
     {

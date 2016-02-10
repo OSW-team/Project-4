@@ -39,9 +39,8 @@ public class BoxMovement : MonoBehaviour {
         {
             Vector3 dwn = Vector3.down;
             RaycastHit hit;
-            if (Physics.Raycast(tr.position, dwn, out hit, RaycastLength))
+            if (Physics.Raycast(tr.position, dwn, out hit, RaycastLength, ~(1 << 8)) )
             {
-                //print("distance to the ground = " + hit.distance);
                 var delta = RaycastLength - hit.distance;
                 RigidBody.AddForceAtPosition(-Physics.gravity.y * delta * coef * Vector3.up, tr.position);
             }

@@ -24,7 +24,7 @@ public class WheelDecorativeRaycaster : MonoBehaviour {
         Vector3 dwn = Vector3.down;
         RaycastHit hit;
         
-        if (Physics.Raycast(transform.position, dwn, out hit, RaycastLength))
+        if (Physics.Raycast(transform.position, dwn, out hit, RaycastLength, ~(1 << 8)))
         {
             if(hit.distance <= MaxWheelDistance && hit.collider.gameObject.layer!=8 && hit.distance >= WheelDiameter * WheelBoneTransform.lossyScale.y)
             {
