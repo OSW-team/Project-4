@@ -37,13 +37,13 @@ public class BoxMovement : MonoBehaviour {
 
         foreach (var tr in RayPoints)
         {
-            Vector3 dwn = tr.TransformDirection(Vector3.down);
+            Vector3 dwn = Vector3.down;
             RaycastHit hit;
             if (Physics.Raycast(tr.position, dwn, out hit, RaycastLength))
             {
                 //print("distance to the ground = " + hit.distance);
                 var delta = RaycastLength - hit.distance;
-                RigidBody.AddForceAtPosition(-Physics.gravity.y * delta * coef * tr.TransformDirection(Vector3.up), tr.position);
+                RigidBody.AddForceAtPosition(-Physics.gravity.y * delta * coef * Vector3.up, tr.position);
             }
             
         }
