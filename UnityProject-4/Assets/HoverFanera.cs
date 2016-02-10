@@ -2,10 +2,13 @@
 using System.Collections;
 
 public class HoverFanera : MonoBehaviour {
-	public float angularSpeed, speed, springspeed, suspensionLength, suspensionMin, jumpSpeed;
+	public float angularSpeed, speed, springspeed, suspensionLength, suspensionMin, jumpSpeed, g, correctSpeed;
+	Vector3 grawity;
+	public Vector3 falling = Vector3.zero;
 	// Use this for initialization
 	void Start () {
-	
+		grawity = new Vector3 (0, -g, 0);
+		angularSpeed = springspeed;
 	}
 	
 	// Update is called once per frame
@@ -33,27 +36,27 @@ public class HoverFanera : MonoBehaviour {
 			- transform.right*(transform.localScale.z / 2),
 			-Vector3.up);
 
-		Debug.DrawRay (rayRF.origin, rayRF.direction * 20, Color.black);
-		Debug.DrawRay (rayLF.origin, rayLF.direction * 20, Color.black);
-		Debug.DrawRay (rayRB.origin, rayRB.direction * 20, Color.black);
+		//Debug.DrawRay (rayRF.origin, rayRF.direction * 20, Color.black);
+		//Debug.DrawRay (rayLF.origin, rayLF.direction * 20, Color.black);
+		//Debug.DrawRay (rayRB.origin, rayRB.direction * 20, Color.black);
 
 
 
 		if (!Physics.Raycast (rayRF, out hit [0])) {
 			hit [0].distance = -100;
-			transform.position += Vector3.up * jumpSpeed * Time.deltaTime;
+			transform.position += Vector3.up * correctSpeed * Time.deltaTime;
 		}
 		if (!Physics.Raycast(rayRB, out hit[1]) ) {
 			hit [1].distance = -100;
-			transform.position +=Vector3.up * jumpSpeed * Time.deltaTime;
+			transform.position +=Vector3.up * correctSpeed * Time.deltaTime;
 		}
 		if (!Physics.Raycast(rayLF, out hit[2]) ) {
 			hit [1].distance = -100;
-			transform.position +=Vector3.up * jumpSpeed * Time.deltaTime;
+			transform.position +=Vector3.up * correctSpeed * Time.deltaTime;
 		}
 		if (!Physics.Raycast(rayLB, out hit[3])) {
 			hit [1].distance = -100;
-			transform.position += Vector3.up *jumpSpeed * Time.deltaTime;
+			transform.position += Vector3.up *correctSpeed * Time.deltaTime;
 		}
 		Vector3 upward = new Vector3();
 		float maxDist = Mathf.Max (hit [0].distance, hit [1].distance, hit [2].distance, hit [3].distance);
@@ -81,19 +84,24 @@ public class HoverFanera : MonoBehaviour {
 		Vector3 r1 = Vector3.Cross (r, upward);
 		Vector3 r2 = Vector3.Cross (r1, r);
 
-		Debug.DrawRay (transform.position, r * 20,Color.red);
-		Debug.DrawRay (transform.position, r1 * 20,Color.blue);
-		Debug.DrawRay (transform.position, r2 * 20, Color.green);
-
-
-		//transform.position += transform.forward * Input.GetAxis ("Vertical") * speed * Time.deltaTime;
-		transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.LookRotation (r1, r2), springspeed*Time.deltaTime);
-		//transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.LookRotation (transform.right, transform.up), angularSpeed * Time.deltaTime * Input.GetAxis ("Horizontal"));
+		//Debug.DrawRay (transform.position, r * 20,Color.red);
+		//Debug.DrawRay (transform.position, r1 * 20,Color.blue);
+		//Debug.DrawRay (transform.position, r2 * 20, Color.green);
 		if (minDist > suspensionLength) {
-			transform.position += Physics.gravity * Time.deltaTime;
+			falling += grawity * Time.deltaTime;
+			transform.position += falling;
+		} else {
+			falling = Vector3.zero;
 		}
 		if (minDist < suspensionMin) {
+
+			springspeed = 3 * angularSpeed;
 			transform.position += transform.up * jumpSpeed * Time.deltaTime;
+		} else {
+			springspeed = angularSpeed;
 		}
+
+		transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.LookRotation (r1, r2), springspeed*Time.deltaTime);
+
 	}
 }
