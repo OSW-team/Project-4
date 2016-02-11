@@ -41,6 +41,8 @@ public class MasterMindTranslate : MonoBehaviour {
 		{
 			AddAgent(agent, goal.transform.position);
 		}
+
+
 	}
 
 	void Update()
@@ -89,11 +91,13 @@ public class MasterMindTranslate : MonoBehaviour {
 		for(int i = 0; i < liveUnits; i ++)
 		{
 			Vector3 nullPoint = agents[i].navMeshAgent.path.corners[0];
+			agents [i].navMeshAgent.transform.position = agents [i].navMeshAgent.transform.position;
 			Vector3 prefVel = (agents[i].navMeshAgent.steeringTarget - agents[i].body.transform.position).normalized * maxSpeed;
 
 			simulator.agents_[i].prefVelocity_ = new RVO.Vector2(prefVel.x, prefVel.z);
 			simulator.agents_[i].radius_ = radius + CalculateError(simulator.agents_[i], Vector3.Angle(new Vector3(simulator.agents_[i].velocity_.x_, 0, simulator.agents_[i].velocity_.y_), agents[i].body.transform.forward));
 			simulator.agents_[i].position_ = new RVO.Vector2(agents[i].body.transform.position.x, agents[i].body.transform.position.z);
+
 
 			DebugDraw(i, nullPoint, new Vector3(simulator.agents_[i].prefVelocity_.x_, 0, simulator.agents_[i].prefVelocity_.y_), simulator.agents_[i]);
 			Steering(i);
@@ -143,6 +147,9 @@ public class MasterMindTranslate : MonoBehaviour {
 
 		}
 		Vector3[] V = Borderer.GranList.ToArray ();
+
+		Debug.Log (V.Length);
+
 		for (int i = 0; i < V.Length; i += 2) {
 			_obstacles.Clear();
 			_obstacles.Add (new RVO.Vector2 (V [i].x, V [i].z));

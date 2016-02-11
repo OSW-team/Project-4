@@ -5,6 +5,7 @@ public class TranslateCarController : TranslateController {
 	public float slowTurnSpeed = 10, speed = 0, maxsteeringAngle = 20, power = 100, breaks = 100, friction = 0.01f, maxSpeed = 100;
 
 	void Update(){
+		
 		Gas (gas);
 		SpeedSteer (steer);
 		transform.position += speed * Time.deltaTime * transform.forward;
@@ -23,10 +24,10 @@ public class TranslateCarController : TranslateController {
 		{
 			steer = Mathf.Sign(UnityEngine.Vector2.Dot(new UnityEngine.Vector2(transform.right.x, transform.right.z).normalized, new UnityEngine.Vector2(prefVelocity.x, prefVelocity.y).normalized)) * UnityEngine.Vector2.Angle(new UnityEngine.Vector2(transform.forward.x, transform.forward.z).normalized, new UnityEngine.Vector2(prefVelocity.x, prefVelocity.y).normalized) / maxsteeringAngle;
 		}
-
+		steer = Mathf.Sign (speed) * steer;
 		if (UnityEngine.Vector2.Angle(new UnityEngine.Vector2(transform.forward.x, transform.forward.z).normalized, new UnityEngine.Vector2(prefVelocity.x, prefVelocity.y).normalized) > 110)
 		{
-			gas = -1 * Mathf.Sqrt(prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) /  maxSpeed;Debug.Log ("Case 1: " + prefVelocity.y);
+			gas = -1 * Mathf.Sqrt(prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) /  maxSpeed;
 		}
 		else if (UnityEngine.Vector2.Angle(new UnityEngine.Vector2(transform.forward.x, transform.forward.z).normalized, new UnityEngine.Vector2(prefVelocity.x, prefVelocity.y).normalized) > 80)
 		{
@@ -40,7 +41,7 @@ public class TranslateCarController : TranslateController {
 
 	void Start(){
 		friction = power / (maxSpeed * maxSpeed);
-		slowTurnSpeed = maxSpeed / 5;
+		//slowTurnSpeed = maxSpeed / 5;
 		//text = GameObject.Find ("Log").GetComponent<guiText>();
 
 	}
