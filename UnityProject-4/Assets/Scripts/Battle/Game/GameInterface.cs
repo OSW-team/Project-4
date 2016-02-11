@@ -30,20 +30,20 @@ public class GameInterface : MonoBehaviour {
 
 	void CameraMoving()
 	{
-		if (Input.mousePosition.x >= 0 && Input.mousePosition.x <= Screen.width && Input.mousePosition.y >= 0 && Input.mousePosition.y <= Screen.height) {
-			if ((Input.mousePosition.x < Screen.currentResolution.width/ 50 || Input.GetKey(KeyCode.A))) {
+		//if (Input.mousePosition.x >= 0 && Input.mousePosition.x <= Screen.width && Input.mousePosition.y >= 0 && Input.mousePosition.y <= Screen.height) {
+			if ((/*Input.mousePosition.x < Screen.currentResolution.width/ 50 || */Input.GetKey(KeyCode.A))) {
 				Camera.main.transform.position -= Camera.main.transform.right * mouseSensivity;
 			}
-			if ((Screen.width - Input.mousePosition.x < Screen.currentResolution.width / 50 || Input.GetKey(KeyCode.D)) ) {
+			if ((/*Screen.width - Input.mousePosition.x < Screen.currentResolution.width / 50 || */Input.GetKey(KeyCode.D)) ) {
 				Camera.main.transform.position += Camera.main.transform.right * mouseSensivity;
 			}
-			if ((Input.mousePosition.y < 10 || Input.GetKey(KeyCode.S)) &&Camera.main.transform.position.z > cameraMaxDown) {
+			if ((/*Input.mousePosition.y < 10 || */Input.GetKey(KeyCode.S))/* &&Camera.main.transform.position.z > cameraMaxDown*/) {
 				Camera.main.transform.position -= Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up) * mouseSensivity;
 			}
-			if ((Screen.height - Input.mousePosition.y < Screen.currentResolution.height / 50 ||Input.GetKey(KeyCode.W)) ) {
+			if ((/*Screen.height - Input.mousePosition.y < Screen.currentResolution.height / 50 ||*/Input.GetKey(KeyCode.W)) ) {
 				Camera.main.transform.position += Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up) * mouseSensivity;
 			}
-		}
+		//}
 		Ray ray = new Ray(Camera.main.transform.position, Vector3.down);
 		RaycastHit hit;
 		if(Physics.Raycast(ray, out hit, Mathf.Infinity))
