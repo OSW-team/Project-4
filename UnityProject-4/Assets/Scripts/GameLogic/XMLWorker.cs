@@ -136,9 +136,11 @@ public static class XMLWorker
                     if (item.Name == "Unit")
                     {
                         var upgrades = new List<XmlNode>();
+                        var boosters = new List<XmlNode>();
                         foreach (XmlNode childNode in item.ChildNodes)
                         {
                             if (childNode.Name == "Upgrade") upgrades.Add(childNode);
+                            if (childNode.Name == "Booster") boosters.Add(childNode);
                         }
                         var newUnit = new Unit(citadel.Name, item.Attributes["WorkName"].Value);
                         citadel.Units.Add(newUnit);
@@ -149,6 +151,7 @@ public static class XMLWorker
                         }
 
                     }
+                    
                 }
             }
         }
