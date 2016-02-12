@@ -26,7 +26,7 @@ public class TestController : MonoBehaviour
         Player.Citadel = citadel;
         XMLWorker.LoadSC(citadel);
 
-        //ShowManagementScreen();
+        ShowManagementScreen();
 
 
         MyCitadel = citadel;
@@ -85,8 +85,12 @@ public class TestController : MonoBehaviour
         {
             SwitchUnitControl();
         }
-       
-	}
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            MyCitadel.Units[0].Upgrades[1].Boosters[0].Activate();
+            MyCitadel.Units[0].RecountProps();
+        }
+    }
 
     void SwitchUnitControl()
     {
