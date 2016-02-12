@@ -23,14 +23,14 @@ public class SpawnUnit : MonoBehaviour {
 
 
     void Start () {
-		/*var a = GameObject.Find ("ButtonSnake").GetComponent<Button> ();
+		var a = GameObject.Find ("ButtonSnake").GetComponent<Button> ();
 		a.onClick.AddListener (delegate () {this.UnitSwitch(0);} );
 		var b = GameObject.Find ("ButtonTank").GetComponent<Button> ();
 		b.onClick.AddListener (delegate () {this.UnitSwitch(1);} );
 
-		//var c = GameObject.Find ("ButtonMissile").GetComponent<Button> ();
-		//c.onClick.AddListener (delegate () {this.UnitSwitch(2);} );
-		*/
+		var c = GameObject.Find ("ButtonMissile").GetComponent<Button> ();
+		c.onClick.AddListener (delegate () {this.UnitSwitch(2);} );
+
 		cam = GameObject.Find ("Camera").GetComponent<Camera> ();
         SpawnedUnitsGameObjects = new List<GameObject>();
 
