@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TargetSeek : MonoBehaviour {
-    MasterMindNHWheels master;
-    List<Agent> agents;
+	MasterMindTranslate master;
+	List<MinimalPhysicAgent> agents;
     public GameObject chosenTarget;
     GunModule gun;
     UnitStats stats;
@@ -13,7 +13,7 @@ public class TargetSeek : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        master = GameObject.FindWithTag("masterMind").GetComponent<MasterMindNHWheels>();
+		master = GameObject.FindWithTag("masterMind").GetComponent<MasterMindTranslate>();
         stats = GetComponentInParent<UnitStats>();
         agents = master.agents;
         gun = GetComponent<GunModule>();
@@ -21,7 +21,7 @@ public class TargetSeek : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    foreach(Agent unit in agents)
+		foreach(MinimalPhysicAgent unit in agents)
         {
             if (unit.body.GetComponent<UnitStats>().team != stats.team && (unit.body.transform.position - transform.position).sqrMagnitude < seeDistance* seeDistance ) {
                 if (chosenTarget != null && priority[unit.body.GetComponent<UnitStats>().type] > priority[chosenTarget.GetComponent<UnitStats>().type])
