@@ -26,7 +26,7 @@ public class TestController : MonoBehaviour
         Player.Citadel = citadel;
         XMLWorker.LoadSC(citadel);
 
-        ShowManagementScreen();
+        //ShowManagementScreen();
 
 
         MyCitadel = citadel;
