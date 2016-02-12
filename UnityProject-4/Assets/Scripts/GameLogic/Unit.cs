@@ -44,12 +44,13 @@ public class Unit : MonoBehaviour
 
     public GameObject GO;
     public List<UnitUpgrade> Upgrades;
-
+    public List<UnitBooster> Boosters;
 
     public Unit(string CSWokname, string workName)
     {
 
         Upgrades = new List<UnitUpgrade>();
+        Boosters = new List<UnitBooster>();
         XMLWorker.LoadUnit(workName, this);
     }
 

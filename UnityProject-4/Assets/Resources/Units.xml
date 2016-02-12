@@ -282,7 +282,7 @@
     <BasicBuildTime></BasicBuildTime>
     <DeployRadius></DeployRadius>
     <SpeedGlobal></SpeedGlobal>
-    <Speed></Speed>
+    <Speed>0.2_[BoostHoming;7]</Speed>
     <ReverseFactor></ReverseFactor>
     <TurnSpeed></TurnSpeed>
     <Acceleration></Acceleration>

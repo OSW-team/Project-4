@@ -445,18 +445,27 @@ public static class XMLWorker
         unit.Workname = workName;
         foreach (XmlNode node in nodeList)
         {
+
             var atrs = node.Attributes;
             if (atrs["Workname"].Value == workName)
             {
                 XmlNodeList list = node.ChildNodes;
                 foreach (XmlNode item in list)
                 {
+                    
                     if (item.InnerText != "")
                     {
+                        var boosterName = "";
+                        var isBoostedField = false;
+                        var originalValue = "0";
+                        var boostValue = "0";
+                        boostValue = GameModelsAndEnums.CheckBoost(item.InnerText, ref isBoostedField, ref boosterName, ref originalValue);
+                        if (isBoostedField) item.InnerText = originalValue;
+                        var fieldName = "";
                         switch (item.Name)
                         {
-                            case "UnitName":
-                                unit.UnitName= item.InnerText;
+                            case "UnitName": 
+                                unit.UnitName = item.InnerText;
                                 break;
                             case "UnitDescription":
                                 unit.UnitDescription = item.InnerText;
@@ -468,48 +477,63 @@ public static class XMLWorker
                                 unit.IconName = item.InnerText;
                                 break;
                             case "HpMax":
+                                fieldName = "HpMax";
                                 unit.HpMax = Single.Parse(item.InnerText);
                                 break;
                             case "HpWreckage":
+                                fieldName = "HpWreckage";
                                 unit.HpWreckage = Single.Parse(item.InnerText);
                                 break;
                             case "HpRegen":
-                                unit.HpRegen = Int32.Parse(item.InnerText);
+                                fieldName = "HpRegen";
+                                unit.HpRegen = Single.Parse(item.InnerText);
                                 break;
                             case "CostParts":
-                                unit.CostParts = Int32.Parse(item.InnerText);
+                                fieldName = "CostParts";
+                                unit.CostParts = Single.Parse(item.InnerText);
                                 break;
                             case "CostEnergy":
+                                fieldName = "CostEnergy";
                                 unit.CostEnergy = Single.Parse(item.InnerText);
                                 break;
                             case "CostSM":
+                                fieldName = "CostSM";
                                 unit.CostSM = Single.Parse(item.InnerText);
                                 break;
                             case "BasicBuildTime":
+                                fieldName = "BasicBuildTime";
                                 unit.BasicBuildTime = Single.Parse(item.InnerText);
                                 break;
                             case "DeployRadius":
+                                fieldName = "DeployRadius";
                                 unit.DeployRadius = Single.Parse(item.InnerText);
                                 break;
                             case "SpeedGlobal":
+                                fieldName = "SpeedGlobal";
                                 unit.SpeedGlobal = Single.Parse(item.InnerText);
                                 break;
                             case "Speed":
+                                fieldName = "Speed";
                                 unit.Speed = Single.Parse(item.InnerText);
                                 break;
                             case "ReverseFactor":
+                                fieldName = "ReverseFactor";
                                 unit.ReverseFactor = Single.Parse(item.InnerText);
                                 break;
                             case "TurnSpeed":
+                                fieldName = "TurnSpeed";
                                 unit.TurnSpeed = Single.Parse(item.InnerText);
                                 break;
                             case "Accuracy":
+                                fieldName = "Accuracy";
                                 unit.Accuracy = Single.Parse(item.InnerText);
                                 break;
                             case "Acceleration":
+                                fieldName = "Acceleration";
                                 unit.Acceleration = Single.Parse(item.InnerText);
                                 break;
                             case "Mass":
+                                fieldName = "Mass";
                                 unit.Mass = Single.Parse(item.InnerText);
                                 break;
                             case "Recovery":
@@ -522,30 +546,39 @@ public static class XMLWorker
                                 unit.Priorities = GameModelsAndEnums.GetUnitPriorities(item.InnerText);
                                 break;
                             case "Sight":
+                                fieldName = "Sight";
                                 unit.Sight = Single.Parse(item.InnerText);
                                 break;
                             case "OptimalDistance":
+                                fieldName = "OptimalDistance";
                                 unit.OptimalDistance = Single.Parse(item.InnerText);
                                 break;
                             case "RefArmPHYS":
+                                fieldName = "RefArmPHYS";
                                 unit.RefArmPHYS = Single.Parse(item.InnerText);
                                 break;
                             case "RefArmEN":
+                                fieldName = "RefArmEN";
                                 unit.RefArmEN = Single.Parse(item.InnerText);
                                 break;
                             case "RefArmHEAT":
+                                fieldName = "RefArmHEAT";
                                 unit.RefArmHEAT = Single.Parse(item.InnerText);
                                 break;
                             case "ConArmPHYS":
+                                fieldName = "ConArmPHYS";
                                 unit.ConArmPHYS = Single.Parse(item.InnerText);
                                 break;
                             case "ConArmEN":
+                                fieldName = "ConArmEN";
                                 unit.ConArmEN = Single.Parse(item.InnerText);
                                 break;
                             case "ConArmHEAT":
-                                unit.ConArmHEAT = Int32.Parse(item.InnerText);
+                                fieldName = "ConArmHEAT";
+                                unit.ConArmHEAT = Single.Parse(item.InnerText);
                                 break;
                             case "UpgradeCost":
+                                fieldName = "UpgradeCost";
                                 unit.UpgradeCost = Single.Parse(item.InnerText);
                                 break;
                             case "UpgradeRequirements":
@@ -555,12 +588,19 @@ public static class XMLWorker
                                 unit.Category = item.InnerText;
                                 break;
                             case "SchemeCostMetal":
+                                fieldName = "SchemeCostMetal";
                                 unit.SchemeCostMetal = Single.Parse(item.InnerText);
                                 break;
                             case "SchemeCostEnergy":
+                                fieldName = "SchemeCostEnergy";
                                 unit.SchemeCostEnergy = Single.Parse(item.InnerText);
                                 break;
                            
+                        }
+                        if (isBoostedField)
+                        {                    
+                            var booster = new UnitBooster(fieldName, Single.Parse(boostValue), boosterName, unit);
+                            unit.Boosters.Add(booster);
                         }
                     }
 
