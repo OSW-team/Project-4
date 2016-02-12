@@ -29,6 +29,7 @@ public class UnitStats : MonoBehaviour {
 			master.RemoveAgent (meAgent);
 			Destroy (gameObject);
 		} else {
+			Destroy (gameObject);
 			//Debug.Log ("Oh God! You kill me!");
 		}
     }

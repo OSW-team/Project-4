@@ -91,7 +91,16 @@ public class MasterMindTranslate : MonoBehaviour {
 		for(int i = 0; i < liveUnits; i ++)
 		{
 			Vector3 nullPoint = agents[i].navMeshAgent.path.corners[0];
-			agents [i].navMeshAgent.transform.position = agents [i].navMeshAgent.transform.position;
+			/*if(agents [i].navMeshAgent.isOnNavMesh){
+				agents [i].navMeshAgent.transform.position = agents [i].body.transform.position;
+			}
+			Debug.Log (agents [i].navMeshAgent.isOnNavMesh);*/
+			if ((agents [i].navMeshAgent.transform.position.x * agents [i].navMeshAgent.transform.position.x + agents [i].navMeshAgent.transform.position.z * agents [i].navMeshAgent.transform.position.z - agents [i].body.transform.position.x * agents [i].body.transform.position.x - agents [i].body.transform.position.z * agents [i].body.transform.position.z) 
+				> 1) {
+				agents [i].body.transform.position += (new Vector3 (agents [i].navMeshAgent.transform.position.x, agents [i].body.transform.position.y, agents [i].navMeshAgent.transform.position.z) - agents [i].body.transform.position)*Time.deltaTime;
+				agents [i].navMeshAgent.transform.localPosition -= agents [i].navMeshAgent.transform.localPosition * Time.deltaTime;
+				//agents [i].body.transform.position += (agents [i].navMeshAgent.transform.position - agents [i].body.transform.position) / 2 * Time.deltaTime;
+			}
 			Vector3 prefVel = (agents[i].navMeshAgent.steeringTarget - agents[i].body.transform.position).normalized * maxSpeed;
 
 			simulator.agents_[i].prefVelocity_ = new RVO.Vector2(prefVel.x, prefVel.z);
