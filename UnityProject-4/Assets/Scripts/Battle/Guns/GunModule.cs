@@ -179,7 +179,13 @@ public class GunModule : MonoBehaviour {
     {
         Vector3 enemyVelocity, advance;
         int iterations = 0;
-        enemyVelocity = enemy.GetComponent<Rigidbody>().velocity;
+		Rigidbody enemyRB = enemy.GetComponent<Rigidbody> ();
+		if (enemyRB != null) {
+			enemyVelocity = enemyRB.velocity;
+		} else {
+			enemyVelocity = Vector3.zero;
+		}
+
         advance = enemy.position;
 
 

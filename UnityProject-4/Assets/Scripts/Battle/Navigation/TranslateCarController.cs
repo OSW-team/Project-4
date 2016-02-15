@@ -2,10 +2,11 @@
 using System.Collections;
 
 public class TranslateCarController : TranslateController {
-	public float slowTurnSpeed = 10, speed = 0, maxsteeringAngle = 20, power = 100, breaks = 100, friction = 0.01f, maxSpeed = 100;
+	public bool tank = false;
+	Rigidbody rigBody;
 
 	void Update(){
-		
+		//rigBody.velocity = Vector3.zero;
 		Gas (gas);
 		SpeedSteer (steer);
 		transform.position += speed * Time.deltaTime * transform.forward;
@@ -27,20 +28,25 @@ public class TranslateCarController : TranslateController {
 		steer = Mathf.Sign (speed) * steer;
 		if (UnityEngine.Vector2.Angle(new UnityEngine.Vector2(transform.forward.x, transform.forward.z).normalized, new UnityEngine.Vector2(prefVelocity.x, prefVelocity.y).normalized) > 110)
 		{
-			gas = -1 * Mathf.Sqrt(prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) /  maxSpeed;
+			if (tank) {
+				gas = 0;
+			} else {
+				gas = -1 * Mathf.Sqrt (prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) / maxSpeed;
+			}
 		}
 		else if (UnityEngine.Vector2.Angle(new UnityEngine.Vector2(transform.forward.x, transform.forward.z).normalized, new UnityEngine.Vector2(prefVelocity.x, prefVelocity.y).normalized) > 80)
 		{
-			gas = 1 * Mathf.Sqrt(prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) /  maxSpeed;
+			gas = (1.0f / 2.0f) * Mathf.Sqrt(prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) /  maxSpeed;
 		}
 		else
 		{
-			gas = (1.0f / 2.0f) * Mathf.Sqrt(prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) /  maxSpeed;
+			gas = 1  * Mathf.Sqrt(prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) /  maxSpeed;
 		}
 	}
 
 	void Start(){
 		friction = power / (maxSpeed * maxSpeed);
+		rigBody = GetComponentInParent<Rigidbody> ();
 		//slowTurnSpeed = maxSpeed / 5;
 		//text = GameObject.Find ("Log").GetComponent<guiText>();
 
@@ -48,24 +54,28 @@ public class TranslateCarController : TranslateController {
 
 	float Gas(float gas){
 		if (gas > 0) {
-			if (speed >= 0) {
-				speed += gas * power * Time.deltaTime;
+			if (Vector3.Dot( rigBody.velocity, transform.forward) >= 0) {
+				rigBody.AddForce (transform.forward * gas * 100 * power);
+				//speed += gas * power * Time.deltaTime;
 			} else {
-				speed += gas * power * Time.deltaTime * breaks;
+				rigBody.AddForce (transform.forward*gas * 100 * power * breaks);
+				//speed += gas * power * Time.deltaTime * breaks;
 			}
 		} else if (gas < 0) {
-			if (speed >= 0) {
-				speed += gas * power * Time.deltaTime * breaks;
+			if (Vector3.Dot( rigBody.velocity, transform.forward) >= 0) {
+				rigBody.AddForce (transform.forward*gas * 100 * power * breaks);
+				//speed += gas * power * Time.deltaTime * breaks;
 			} else {
-				speed += gas * power * Time.deltaTime;
+				rigBody.AddForce (transform.forward*gas * 100 * power);
+				//speed += gas * power * Time.deltaTime;
 			}
 		}
 		return speed;
 	}
 
 	float SpeedSteer(float steer){
-		if (Mathf.Abs(speed) <  slowTurnSpeed) {
-			return Mathf.Abs (speed) / slowTurnSpeed * maxsteeringAngle * steer;
+		if (rigBody!= null && rigBody.velocity.sqrMagnitude <  slowTurnSpeed*slowTurnSpeed) {
+			return rigBody.velocity.magnitude / slowTurnSpeed * maxsteeringAngle * steer;
 		} else {
 			return  steer * maxsteeringAngle;
 		}
