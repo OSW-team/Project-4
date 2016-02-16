@@ -90,26 +90,37 @@ public class MasterMindTranslate : MonoBehaviour {
 	{
 		for(int i = 0; i < liveUnits; i ++)
 		{
-			Vector3 nullPoint = agents[i].navMeshAgent.path.corners[0];
-			/*if(agents [i].navMeshAgent.isOnNavMesh){
-				agents [i].navMeshAgent.transform.position = agents [i].body.transform.position;
+			if (simulator.agents_ [i] != null) {
+				Vector3 nullPoint = Vector3.zero;
+				if (agents [i].navMeshAgent != null) {
+					nullPoint = agents [i].navMeshAgent.path.corners [0];
+					agents [i].navMeshAgent.transform.localPosition = Vector3.zero;
+				}
+				/*if(agents [i].navMeshAgent.isOnNavMesh){
+					
+				}
+				Debug.Log (agents [i].navMeshAgent.isOnNavMesh);*/
+				//if ((new Vector3(agents [i].body.transform.position.x, 0, agents [i].body.transform.position.z) - new Vector3(agents [i].navMeshAgent.transform.position.x, 0, agents [i].navMeshAgent.transform.position.z)).sqrMagnitude
+					//> 1) {
+					//agents [i].body.transform.position += (new Vector3 (agents [i].navMeshAgent.transform.position.x, agents [i].body.transform.position.y, agents [i].navMeshAgent.transform.position.z) - agents [i].body.transform.position);
+					//agents [i].navMeshAgent.transform.localPosition -= agents [i].navMeshAgent.transform.localPosition;
+					//agents [i].body.transform.position += (agents [i].navMeshAgent.transform.position - agents [i].body.transform.position) / 2 * Time.deltaTime;
+				//}
+				Vector3 prefVel = Vector3.zero;
+
+				if (agents [i].navMeshAgent != null) {
+
+					prefVel = (agents [i].navMeshAgent.steeringTarget - agents [i].body.transform.position).normalized * maxSpeed;
+				}
+
+					simulator.agents_ [i].prefVelocity_ = new RVO.Vector2 (prefVel.x, prefVel.z);
+					simulator.agents_ [i].radius_ = radius + CalculateError (simulator.agents_ [i], Vector3.Angle (new Vector3 (simulator.agents_ [i].velocity_.x_, 0, simulator.agents_ [i].velocity_.y_), agents [i].body.transform.forward));
+					simulator.agents_ [i].position_ = new RVO.Vector2 (agents [i].body.transform.position.x, agents [i].body.transform.position.z);
+
+
+					DebugDraw (i, nullPoint, new Vector3 (simulator.agents_ [i].prefVelocity_.x_, 0, simulator.agents_ [i].prefVelocity_.y_), simulator.agents_ [i]);
+					Steering (i);
 			}
-			Debug.Log (agents [i].navMeshAgent.isOnNavMesh);*/
-			if ((agents [i].navMeshAgent.transform.position.x * agents [i].navMeshAgent.transform.position.x + agents [i].navMeshAgent.transform.position.z * agents [i].navMeshAgent.transform.position.z - agents [i].body.transform.position.x * agents [i].body.transform.position.x - agents [i].body.transform.position.z * agents [i].body.transform.position.z) 
-				> 1) {
-				agents [i].body.transform.position += (new Vector3 (agents [i].navMeshAgent.transform.position.x, agents [i].body.transform.position.y, agents [i].navMeshAgent.transform.position.z) - agents [i].body.transform.position)*Time.deltaTime;
-				agents [i].navMeshAgent.transform.localPosition -= agents [i].navMeshAgent.transform.localPosition * Time.deltaTime;
-				//agents [i].body.transform.position += (agents [i].navMeshAgent.transform.position - agents [i].body.transform.position) / 2 * Time.deltaTime;
-			}
-			Vector3 prefVel = (agents[i].navMeshAgent.steeringTarget - agents[i].body.transform.position).normalized * maxSpeed;
-
-			simulator.agents_[i].prefVelocity_ = new RVO.Vector2(prefVel.x, prefVel.z);
-			simulator.agents_[i].radius_ = radius + CalculateError(simulator.agents_[i], Vector3.Angle(new Vector3(simulator.agents_[i].velocity_.x_, 0, simulator.agents_[i].velocity_.y_), agents[i].body.transform.forward));
-			simulator.agents_[i].position_ = new RVO.Vector2(agents[i].body.transform.position.x, agents[i].body.transform.position.z);
-
-
-			DebugDraw(i, nullPoint, new Vector3(simulator.agents_[i].prefVelocity_.x_, 0, simulator.agents_[i].prefVelocity_.y_), simulator.agents_[i]);
-			Steering(i);
 
 		}
 	}

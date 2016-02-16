@@ -23,7 +23,7 @@ public class TargetSeek : MonoBehaviour {
 	void Update () {
 		foreach(MinimalPhysicAgent unit in agents)
         {
-            if (unit.body.GetComponent<UnitStats>().team != stats.team && (unit.body.transform.position - transform.position).sqrMagnitude < seeDistance* seeDistance ) {
+			if (unit != null && unit.body != null && unit.body.GetComponent<UnitStats>().team != stats.team && (unit.body.transform.position - transform.position).sqrMagnitude < seeDistance* seeDistance ) {
                 if (chosenTarget != null && priority[unit.body.GetComponent<UnitStats>().type] > priority[chosenTarget.GetComponent<UnitStats>().type])
                 {
                     chosenTarget = unit.body;

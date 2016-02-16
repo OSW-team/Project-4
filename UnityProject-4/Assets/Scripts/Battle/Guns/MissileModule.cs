@@ -22,7 +22,7 @@ public class MissileModule : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		
 		seeker = GetComponent<TargetSeek>();
 		stats = GetComponentInParent<UnitStats>();
 		currentBarrel = 0;
@@ -41,13 +41,13 @@ public class MissileModule : MonoBehaviour {
 
 		Vector3 shootPoint = enemy.position;
 		Vector3 onTarget = (shootPoint - aimVector.transform.position);
-		horizontalRotationGroup.transform.rotation = Quaternion.RotateTowards (horizontalRotationGroup.rotation, Quaternion.LookRotation (Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.transform.up), horizontalRotationGroup.up), angularTargetingSpeedHorizontal * Time.deltaTime);
+		horizontalRotationGroup.transform.rotation = Quaternion.RotateTowards (horizontalRotationGroup.rotation, Quaternion.LookRotation (Vector3.ProjectOnPlane (onTarget, Vector3.up), horizontalRotationGroup.up), angularTargetingSpeedHorizontal * Time.deltaTime);
 		verticalRotationGroup.rotation = Quaternion.RotateTowards (verticalRotationGroup.rotation, Quaternion.LookRotation (transform.forward * (0.1f + onTarget.magnitude/maxDistance) + Vector3.up), angularTargetingSpeedVertical * Time.deltaTime);
 
-
-		Double x = (double)Vector3.RotateTowards (horizontalRotationGroup.forward, Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.up).normalized, errorTolerance * Mathf.Deg2Rad, 100).x;
-		Double y = (double)Vector3.RotateTowards (horizontalRotationGroup.forward, Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.up).normalized, errorTolerance * Mathf.Deg2Rad, 100).y;
-		Double z = (double)Vector3.RotateTowards (horizontalRotationGroup.forward, Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.up).normalized, errorTolerance * Mathf.Deg2Rad, 100).z;
+		Vector3 hitVector = Vector3.RotateTowards (horizontalRotationGroup.forward, Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.up).normalized, errorTolerance * Mathf.Deg2Rad, 100);
+		Double x = (double)hitVector.x;
+		Double y = (double)hitVector.y;
+		Double z = (double)hitVector.z;
 		Double _x = (double)onTarget.normalized.x;
 		Double _y = (double)onTarget.normalized.y;
 		Double _z = (double)onTarget.normalized.z;
