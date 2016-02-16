@@ -27,7 +27,7 @@ public class GunModule : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+		correct = 1/Time.fixedDeltaTime;
         seeker = GetComponent<TargetSeek>();
         stats = GetComponentInParent<UnitStats>();
         currentBarrel = 0;
@@ -97,16 +97,20 @@ public class GunModule : MonoBehaviour {
 		//V0.Normalize ();
 		//Debug.Log (V0);
 
+
 		if (V0.x == V0.x && V0.y == V0.y) {
-			//Debug.DrawRay (horizontalRotationGroup.position, horizontalRotationGroup.forward * 100, Color.yellow);
-			//Debug.DrawRay (verticalRotationGroup.position, horizontalRotationGroup.forward * 100, Color.green);
-			horizontalRotationGroup.transform.rotation = Quaternion.RotateTowards (horizontalRotationGroup.rotation, Quaternion.LookRotation (Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.transform.up), horizontalRotationGroup.up), angularTargetingSpeedHorizontal * Time.deltaTime);
+			horizontalRotationGroup.transform.rotation = Quaternion.RotateTowards (horizontalRotationGroup.rotation, Quaternion.LookRotation (Vector3.ProjectOnPlane (onTarget, Vector3.up), horizontalRotationGroup.up), angularTargetingSpeedHorizontal * Time.deltaTime);
 			verticalRotationGroup.rotation = Quaternion.RotateTowards (verticalRotationGroup.rotation, Quaternion.LookRotation (Vector3.up * V0.y + Vector3.ProjectOnPlane (horizontalRotationGroup.forward, Vector3.up).normalized * V0.x), angularTargetingSpeedVertical * Time.deltaTime);
+
+			//Debug.DrawRay (horizontalRotationGroup.position, horizontalRotationGroup.forward * 100, Color.yellow);
+			//Debug.DrawRay (verticalRotationGroup.position, verticalRotationGroup.forward * 100, Color.green);
 		}
 
-		Double x = (double)Vector3.RotateTowards (horizontalRotationGroup.forward, Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.up).normalized, errorTolerance * Mathf.Deg2Rad, 100).x;
-		Double y = (double)Vector3.RotateTowards (horizontalRotationGroup.forward, Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.up).normalized, errorTolerance * Mathf.Deg2Rad, 100).y;
-		Double z = (double)Vector3.RotateTowards (horizontalRotationGroup.forward, Vector3.ProjectOnPlane (onTarget, horizontalRotationGroup.up).normalized, errorTolerance * Mathf.Deg2Rad, 100).z;
+		Vector3 hitDirection = Vector3.RotateTowards (horizontalRotationGroup.forward, Vector3.ProjectOnPlane (onTarget, Vector3.up).normalized, errorTolerance * Mathf.Deg2Rad, 100);
+
+		Double x = (double)hitDirection.x;
+		Double y = (double)hitDirection.y;
+		Double z = (double)hitDirection.z;
 		Double _x = (double)onTarget.normalized.x;
 		Double _y = (double)onTarget.normalized.y;
 		Double _z = (double)onTarget.normalized.z;

@@ -45,8 +45,9 @@ public class TranslateCarController : TranslateController {
 	}
 
 	void Start(){
-		friction = power / (maxSpeed * maxSpeed);
+		force = power / Time.fixedDeltaTime;
 		rigBody = GetComponentInParent<Rigidbody> ();
+		friction = force / (maxSpeed * maxSpeed);
 		//slowTurnSpeed = maxSpeed / 5;
 		//text = GameObject.Find ("Log").GetComponent<guiText>();
 
@@ -55,18 +56,18 @@ public class TranslateCarController : TranslateController {
 	float Gas(float gas){
 		if (gas > 0) {
 			if (Vector3.Dot( rigBody.velocity, transform.forward) >= 0) {
-				rigBody.AddForce (transform.forward * gas * 100 * power);
+				rigBody.AddForce (transform.forward * gas * 100 * force);
 				//speed += gas * power * Time.deltaTime;
 			} else {
-				rigBody.AddForce (transform.forward*gas * 100 * power * breaks);
+				rigBody.AddForce (transform.forward*gas * 100 * force * breaks);
 				//speed += gas * power * Time.deltaTime * breaks;
 			}
 		} else if (gas < 0) {
 			if (Vector3.Dot( rigBody.velocity, transform.forward) >= 0) {
-				rigBody.AddForce (transform.forward*gas * 100 * power * breaks);
+				rigBody.AddForce (transform.forward*gas * 100 * force * breaks);
 				//speed += gas * power * Time.deltaTime * breaks;
 			} else {
-				rigBody.AddForce (transform.forward*gas * 100 * power);
+				rigBody.AddForce (transform.forward*gas * 100 * force);
 				//speed += gas * power * Time.deltaTime;
 			}
 		}

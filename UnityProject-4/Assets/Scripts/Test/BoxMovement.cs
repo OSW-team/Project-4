@@ -8,10 +8,13 @@ public class BoxMovement : MonoBehaviour {
     public List<Transform> RayPoints;
     public float RaycastLength;
     public float coef;
+	float correct;
+	public float power = 1;
     private Rigidbody RigidBody;
 	void Start () {
         RigidBody = GetComponent<Rigidbody>();
 
+		correct = coef /Time.fixedDeltaTime;
 
     }
 	
@@ -20,19 +23,20 @@ public class BoxMovement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.localPosition += Vector3.forward * 0.10f;
+           // transform.localPosition += Vector3.forward * 0.10f;
+			RigidBody.AddForce(transform.forward * power *coef);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.localPosition += Vector3.back * 0.10f;
+			RigidBody.AddForce(-transform.forward * power *coef);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.localPosition += Vector3.right * 0.10f;
+			RigidBody.AddForce(transform.right* power *coef);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.localPosition += Vector3.left * 0.10f;
+			RigidBody.AddForce(-transform.right* power *coef);
         }
 
         foreach (var tr in RayPoints)
@@ -42,7 +46,7 @@ public class BoxMovement : MonoBehaviour {
             if (Physics.Raycast(tr.position, dwn, out hit, RaycastLength, ~(1 << 8)) )
             {
                 var delta = RaycastLength - hit.distance;
-                RigidBody.AddForceAtPosition(-Physics.gravity.y * delta * coef * Vector3.up, tr.position);
+				RigidBody.AddForceAtPosition(-Physics.gravity.y * delta * correct * Vector3.up, tr.position);
             }
             
         }
