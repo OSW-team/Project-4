@@ -83,6 +83,8 @@ public class MasterMindTranslate : MonoBehaviour {
 		_agent.radius_ = radius;
 		_agent.maxSpeed_ = maxSpeed;
 		_agent.neighborDist_ = 100;
+		_agent.weight = newAgent.GetComponent<UnitStats> ().weight;
+		_agent.massSupermacy = newAgent.GetComponent<UnitStats> ().massSupermacy;
 		newAgent.GetComponent<UnitStats>().meAgent = agents[liveUnits-1];
 	}
 

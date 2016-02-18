@@ -375,7 +375,9 @@ namespace RVO
             {
                 for (int i = agentTree_[node].begin; i < agentTree_[node].end; ++i)
                 {
-                    agent.insertAgentNeighbor(agents_[i], ref rangeSq);
+					if (agent.weight < agents_ [i].weight+agent.massSupermacy) {
+						agent.insertAgentNeighbor (agents_ [i], ref rangeSq);
+					}
                 }
             }
             else

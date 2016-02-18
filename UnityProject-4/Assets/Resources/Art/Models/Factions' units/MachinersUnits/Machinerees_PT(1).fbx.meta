@@ -1,0 +1,386 @@
+fileFormatVersion: 2
+guid: 7d0dd9796e5dc8541b3dfa31d7c63000
+timeCreated: 1455721278
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Base
+    100002: Bedro_L
+    100004: Bedro_R
+    100006: Blade
+    100008: Bone
+    100010: Bone.001
+    100012: Bone_L
+    100014: Bone_L.001
+    100016: Bone_L.002
+    100018: Bone_L.003
+    100020: Bone_L.004
+    100022: Bone_L.005
+    100024: Bone_L.006
+    100026: Bone_R
+    100028: Bone_R.001
+    100030: Bone_R.002
+    100032: Bone_R.003
+    100034: Bone_R.004
+    100036: Bone_R.005
+    100038: Bone_R.006
+    100040: Circle.006_Pila
+    100042: Circle.007_Shesterni01
+    100044: Circle.011_Circle.013_Shesternya01
+    100046: Golen_L
+    100048: Golen_R
+    100050: //RootNode
+    100052: P2_Pivot
+    100054: Plaec_B-L
+    100056: Plaec_B-R
+    100058: Plaec_Z-L
+    100060: Plaec_Z-R
+    100062: Shesternya02
+    100064: Target_L
+    100066: Target_R
+    100068: Tulup
+    400000: Base
+    400002: Bedro_L
+    400004: Bedro_R
+    400006: Blade
+    400008: Bone
+    400010: Bone.001
+    400012: Bone_L
+    400014: Bone_L.001
+    400016: Bone_L.002
+    400018: Bone_L.003
+    400020: Bone_L.004
+    400022: Bone_L.005
+    400024: Bone_L.006
+    400026: Bone_R
+    400028: Bone_R.001
+    400030: Bone_R.002
+    400032: Bone_R.003
+    400034: Bone_R.004
+    400036: Bone_R.005
+    400038: Bone_R.006
+    400040: Circle.006_Pila
+    400042: Circle.007_Shesterni01
+    400044: Circle.011_Circle.013_Shesternya01
+    400046: Golen_L
+    400048: Golen_R
+    400050: //RootNode
+    400052: P2_Pivot
+    400054: Plaec_B-L
+    400056: Plaec_B-R
+    400058: Plaec_Z-L
+    400060: Plaec_Z-R
+    400062: Shesternya02
+    400064: Target_L
+    400066: Target_R
+    400068: Tulup
+    2300000: Base
+    2300002: Bedro_L
+    2300004: Bedro_R
+    2300006: Circle.006_Pila
+    2300008: Circle.007_Shesterni01
+    2300010: Circle.011_Circle.013_Shesternya01
+    2300012: Golen_L
+    2300014: Golen_R
+    2300016: Plaec_B-L
+    2300018: Plaec_B-R
+    2300020: Plaec_Z-L
+    2300022: Plaec_Z-R
+    2300024: Shesternya02
+    3300000: Base
+    3300002: Bedro_L
+    3300004: Bedro_R
+    3300006: Circle.006_Pila
+    3300008: Circle.007_Shesterni01
+    3300010: Circle.011_Circle.013_Shesternya01
+    3300012: Golen_L
+    3300014: Golen_R
+    3300016: Plaec_B-L
+    3300018: Plaec_B-R
+    3300020: Plaec_Z-L
+    3300022: Plaec_Z-R
+    3300024: Shesternya02
+    4300000: Shesternya02
+    4300002: Base
+    4300004: Circle.007_Shesterni01
+    4300006: Circle.011_Circle.013_Shesternya01
+    4300008: Circle.006_Pila
+    4300010: Bedro_L
+    4300012: Golen_L
+    4300014: Bedro_R
+    4300016: Golen_R
+    4300018: Plaec_Z-L
+    4300020: Plaec_B-L
+    4300022: Plaec_Z-R
+    4300024: Plaec_B-R
+    7400000: Bones|Atack
+    7400002: Bones|Walk
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Bones|Atack
+      takeName: Bones|Atack
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.2741699
+        functionName: DealDamage
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 10
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: P2_Pivot
+        weight: 1
+      - path: P2_Pivot/Bone
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Shesternya02
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Tulup
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Tulup/Base
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Tulup/Base/Circle.007_Shesterni01
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Tulup/Base/Circle.011_Circle.013_Shesternya01
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Tulup/Blade
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Tulup/Blade/Circle.006_Pila
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_L
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_L/Bone_L.001
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_L/Bone_L.001/Bedro_L
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_L/Bone_L.001/Bone_L.002
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_L/Bone_L.001/Bone_L.002/Golen_L
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_R
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_R/Bone_R.001
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_R/Bone_R.001/Bedro_R
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_R/Bone_R.001/Bone_R.002
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_R/Bone_R.001/Bone_R.002/Golen_R
+        weight: 1
+      - path: P2_Pivot/Bone_L.006
+        weight: 1
+      - path: P2_Pivot/Bone_L.006/Bone_L.003
+        weight: 1
+      - path: P2_Pivot/Bone_L.006/Bone_L.003/Bone_L.004
+        weight: 1
+      - path: P2_Pivot/Bone_L.006/Bone_L.003/Bone_L.004/Plaec_Z-L
+        weight: 1
+      - path: P2_Pivot/Bone_L.006/Bone_L.005
+        weight: 1
+      - path: P2_Pivot/Bone_L.006/Bone_L.005/Plaec_B-L
+        weight: 1
+      - path: P2_Pivot/Bone_L.006/Target_L
+        weight: 1
+      - path: P2_Pivot/Bone_R.006
+        weight: 1
+      - path: P2_Pivot/Bone_R.006/Bone_R.003
+        weight: 1
+      - path: P2_Pivot/Bone_R.006/Bone_R.003/Bone_R.004
+        weight: 1
+      - path: P2_Pivot/Bone_R.006/Bone_R.003/Bone_R.004/Plaec_Z-R
+        weight: 1
+      - path: P2_Pivot/Bone_R.006/Bone_R.005
+        weight: 1
+      - path: P2_Pivot/Bone_R.006/Bone_R.005/Plaec_B-R
+        weight: 1
+      - path: P2_Pivot/Bone_R.006/Target_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Bones|Walk
+      takeName: Bones|Walk
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: P2_Pivot
+        weight: 1
+      - path: P2_Pivot/Bone
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Shesternya02
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Tulup
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Tulup/Base
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Tulup/Base/Circle.007_Shesterni01
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Tulup/Base/Circle.011_Circle.013_Shesternya01
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Tulup/Blade
+        weight: 1
+      - path: P2_Pivot/Bone/Bone.001/Tulup/Blade/Circle.006_Pila
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_L
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_L/Bone_L.001
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_L/Bone_L.001/Bedro_L
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_L/Bone_L.001/Bone_L.002
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_L/Bone_L.001/Bone_L.002/Golen_L
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_R
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_R/Bone_R.001
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_R/Bone_R.001/Bedro_R
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_R/Bone_R.001/Bone_R.002
+        weight: 1
+      - path: P2_Pivot/Bone/Bone_R/Bone_R.001/Bone_R.002/Golen_R
+        weight: 1
+      - path: P2_Pivot/Bone_L.006
+        weight: 1
+      - path: P2_Pivot/Bone_L.006/Bone_L.003
+        weight: 1
+      - path: P2_Pivot/Bone_L.006/Bone_L.003/Bone_L.004
+        weight: 1
+      - path: P2_Pivot/Bone_L.006/Bone_L.003/Bone_L.004/Plaec_Z-L
+        weight: 1
+      - path: P2_Pivot/Bone_L.006/Bone_L.005
+        weight: 1
+      - path: P2_Pivot/Bone_L.006/Bone_L.005/Plaec_B-L
+        weight: 1
+      - path: P2_Pivot/Bone_L.006/Target_L
+        weight: 1
+      - path: P2_Pivot/Bone_R.006
+        weight: 1
+      - path: P2_Pivot/Bone_R.006/Bone_R.003
+        weight: 1
+      - path: P2_Pivot/Bone_R.006/Bone_R.003/Bone_R.004
+        weight: 1
+      - path: P2_Pivot/Bone_R.006/Bone_R.003/Bone_R.004/Plaec_Z-R
+        weight: 1
+      - path: P2_Pivot/Bone_R.006/Bone_R.005
+        weight: 1
+      - path: P2_Pivot/Bone_R.006/Bone_R.005/Plaec_B-R
+        weight: 1
+      - path: P2_Pivot/Bone_R.006/Target_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.2
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
