@@ -75,6 +75,8 @@ namespace RVO
         internal Vector2 velocity_;
         internal int id_ = 0;
 		internal bool active;
+		internal float weight = 0;
+		internal float massSupermacy = 0;
 
         internal void computeNeighbors()
         {

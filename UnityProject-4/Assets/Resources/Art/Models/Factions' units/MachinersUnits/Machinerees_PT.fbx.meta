@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: a9f1356bb510b834ab8bd50a40988486
+timeCreated: 1455630747
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Base
+    100002: Bedro_L
+    100004: Bedro_R
+    100006: Bone
+    100008: Bone.001
+    100010: Bone_L
+    100012: Bone_L.001
+    100014: Bone_L.002
+    100016: Bone_L.003
+    100018: Bone_L.004
+    100020: Bone_L.005
+    100022: Bone_L.006
+    100024: Bone_R
+    100026: Bone_R.001
+    100028: Bone_R.002
+    100030: Bone_R.003
+    100032: Bone_R.004
+    100034: Bone_R.005
+    100036: Bone_R.006
+    100038: Circle.006_Pila
+    100040: Circle.007_Shesterni01
+    100042: Circle.011_Circle.013_Shesternya01
+    100044: Golen_L
+    100046: Golen_R
+    100048: //RootNode
+    100050: P2_Pivot
+    100052: Plaec_B-L
+    100054: Plaec_B-R
+    100056: Plaec_Z-L
+    100058: Plaec_Z-R
+    100060: Shesternya02
+    100062: Target_L
+    100064: Target_R
+    100066: Tulup
+    400000: Base
+    400002: Bedro_L
+    400004: Bedro_R
+    400006: Bone
+    400008: Bone.001
+    400010: Bone_L
+    400012: Bone_L.001
+    400014: Bone_L.002
+    400016: Bone_L.003
+    400018: Bone_L.004
+    400020: Bone_L.005
+    400022: Bone_L.006
+    400024: Bone_R
+    400026: Bone_R.001
+    400028: Bone_R.002
+    400030: Bone_R.003
+    400032: Bone_R.004
+    400034: Bone_R.005
+    400036: Bone_R.006
+    400038: Circle.006_Pila
+    400040: Circle.007_Shesterni01
+    400042: Circle.011_Circle.013_Shesternya01
+    400044: Golen_L
+    400046: Golen_R
+    400048: //RootNode
+    400050: P2_Pivot
+    400052: Plaec_B-L
+    400054: Plaec_B-R
+    400056: Plaec_Z-L
+    400058: Plaec_Z-R
+    400060: Shesternya02
+    400062: Target_L
+    400064: Target_R
+    400066: Tulup
+    2300000: Base
+    2300002: Bedro_L
+    2300004: Bedro_R
+    2300006: Circle.006_Pila
+    2300008: Circle.007_Shesterni01
+    2300010: Circle.011_Circle.013_Shesternya01
+    2300012: Golen_L
+    2300014: Golen_R
+    2300016: Plaec_B-L
+    2300018: Plaec_B-R
+    2300020: Plaec_Z-L
+    2300022: Plaec_Z-R
+    2300024: Shesternya02
+    3300000: Base
+    3300002: Bedro_L
+    3300004: Bedro_R
+    3300006: Circle.006_Pila
+    3300008: Circle.007_Shesterni01
+    3300010: Circle.011_Circle.013_Shesternya01
+    3300012: Golen_L
+    3300014: Golen_R
+    3300016: Plaec_B-L
+    3300018: Plaec_B-R
+    3300020: Plaec_Z-L
+    3300022: Plaec_Z-R
+    3300024: Shesternya02
+    4300000: Shesternya02
+    4300002: Base
+    4300004: Circle.006_Pila
+    4300006: Circle.007_Shesterni01
+    4300008: Circle.011_Circle.013_Shesternya01
+    4300010: Bedro_L
+    4300012: Golen_L
+    4300014: Bedro_R
+    4300016: Golen_R
+    4300018: Plaec_Z-L
+    4300020: Plaec_B-L
+    4300022: Plaec_Z-R
+    4300024: Plaec_B-R
+    7400000: Bones|Walk
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.2
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

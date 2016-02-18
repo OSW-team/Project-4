@@ -84,7 +84,9 @@ public class MasterMindNHWheels : MonoBehaviour
         _agent.radius_ = radius;
         _agent.maxSpeed_ = maxSpeed;
         _agent.neighborDist_ = 100;
-        //НЕ УДАЛЯЙ МЕНЯ//newAgent.GetComponent<UnitStats>().meAgent = agents[liveUnits-1];
+		_agent.weight = newAgent.GetComponent<UnitStats> ().weight;
+		_agent.massSupermacy = newAgent.GetComponent<UnitStats> ().massSupermacy;
+       	//НЕ УДАЛЯТЬ//newAgent.GetComponent<UnitStats>().meAgent = agents[liveUnits-1];
     }
 
     void RVOAgentsCalculation()
