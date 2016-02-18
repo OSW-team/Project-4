@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 53133c9e28e17ba4e81993964f6c8ee0
+timeCreated: 1455296171
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BASE
+    100002: Base.044
+    100004: //RootNode
+    100006: WC_Left_Primitive
+    100008: WC_Left_Primitive.001
+    100010: WC_Left_Spring
+    100012: WC_Left_Spring.001
+    100014: WC_Left_Spring.002
+    100016: WC_Left_Spring.003
+    100018: WC_Left_Spring.004
+    100020: WC_Left_Spring.005
+    100022: WC_Left_Spring.006
+    100024: WC_Left_Spring.007
+    100026: WC_Right_Primitive
+    100028: WC_Right_Primitive.001
+    100030: WC_Right_Spring
+    100032: WC_Right_Spring.001
+    100034: WC_Right_Spring.002
+    100036: WC_Right_Spring.003
+    100038: WC_Right_Spring.004
+    100040: WC_Right_Spring.005
+    100042: WC_Right_Spring.006
+    100044: WC_Right_Spring.007
+    400000: BASE
+    400002: Base.044
+    400004: //RootNode
+    400006: WC_Left_Primitive
+    400008: WC_Left_Primitive.001
+    400010: WC_Left_Spring
+    400012: WC_Left_Spring.001
+    400014: WC_Left_Spring.002
+    400016: WC_Left_Spring.003
+    400018: WC_Left_Spring.004
+    400020: WC_Left_Spring.005
+    400022: WC_Left_Spring.006
+    400024: WC_Left_Spring.007
+    400026: WC_Right_Primitive
+    400028: WC_Right_Primitive.001
+    400030: WC_Right_Spring
+    400032: WC_Right_Spring.001
+    400034: WC_Right_Spring.002
+    400036: WC_Right_Spring.003
+    400038: WC_Right_Spring.004
+    400040: WC_Right_Spring.005
+    400042: WC_Right_Spring.006
+    400044: WC_Right_Spring.007
+    2300000: BASE
+    2300002: WC_Left_Primitive
+    2300004: WC_Left_Primitive.001
+    2300006: WC_Left_Spring
+    2300008: WC_Left_Spring.001
+    2300010: WC_Left_Spring.002
+    2300012: WC_Left_Spring.003
+    2300014: WC_Left_Spring.004
+    2300016: WC_Left_Spring.005
+    2300018: WC_Left_Spring.006
+    2300020: WC_Left_Spring.007
+    2300022: WC_Right_Primitive
+    2300024: WC_Right_Primitive.001
+    2300026: WC_Right_Spring
+    2300028: WC_Right_Spring.001
+    2300030: WC_Right_Spring.002
+    2300032: WC_Right_Spring.003
+    2300034: WC_Right_Spring.004
+    2300036: WC_Right_Spring.005
+    2300038: WC_Right_Spring.006
+    2300040: WC_Right_Spring.007
+    3300000: BASE
+    3300002: WC_Left_Primitive
+    3300004: WC_Left_Primitive.001
+    3300006: WC_Left_Spring
+    3300008: WC_Left_Spring.001
+    3300010: WC_Left_Spring.002
+    3300012: WC_Left_Spring.003
+    3300014: WC_Left_Spring.004
+    3300016: WC_Left_Spring.005
+    3300018: WC_Left_Spring.006
+    3300020: WC_Left_Spring.007
+    3300022: WC_Right_Primitive
+    3300024: WC_Right_Primitive.001
+    3300026: WC_Right_Spring
+    3300028: WC_Right_Spring.001
+    3300030: WC_Right_Spring.002
+    3300032: WC_Right_Spring.003
+    3300034: WC_Right_Spring.004
+    3300036: WC_Right_Spring.005
+    3300038: WC_Right_Spring.006
+    3300040: WC_Right_Spring.007
+    4300000: BASE
+    4300002: WC_Right_Primitive
+    4300004: WC_Right_Spring.006
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

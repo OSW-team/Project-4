@@ -1,29 +1,45 @@
 using UnityEngine;
 using System.Collections;
+
+
 /*
 Attach this script as a parent to some game objects. The script will then combine the meshes at startup.
 This is useful as a performance optimization since it is faster to render one big mesh than many small meshes. See the docs on graphics performance optimization for more info.
 
 Different materials will cause multiple meshes to be created, thus it is useful to share as many textures/material as you can.
 */
-
+//[ExecuteInEditMode()]
 [AddComponentMenu("Mesh/Combine Children")]
 public class CombineChildren : MonoBehaviour {
 	
 	/// Usually rendering with triangle strips is faster.
 	/// However when combining objects with very low triangle counts, it can be faster to use triangles.
 	/// Best is to try out which value is faster in practice.
-	public bool generateTriangleStrips = true;
+    public int frameToWait = 0;
+	public bool generateTriangleStrips = true, combineOnStart = true, destroyAfterOptimized = false, castShadow = true, receiveShadow = true, keepLayer = true;
 	
+    void Start()
+    {
+        if (combineOnStart && frameToWait == 0) Combine();
+        else StartCoroutine(CombineLate());
+    }
+
+    IEnumerator CombineLate()
+    {
+        for (int i = 0; i < frameToWait; i++ ) yield return 0;
+        Combine();
+    }
+
 	/// This option has a far longer preprocessing time at startup but leads to better runtime performance.
-	void Start () {
+    [ContextMenu ("Combine Now")]
+	void Combine () {
 		Component[] filters  = GetComponentsInChildren(typeof(MeshFilter));
 		Matrix4x4 myTransform = transform.worldToLocalMatrix;
 		Hashtable materialToMesh= new Hashtable();
 		
 		for (int i=0;i<filters.Length;i++) {
 			MeshFilter filter = (MeshFilter)filters[i];
-			MeshRenderer curRenderer  = filters[i].GetComponent <MeshRenderer>() as MeshRenderer;
+			Renderer curRenderer  = filters[i].GetComponent<Renderer>();
 			MeshCombineUtility.MeshInstance instance = new MeshCombineUtility.MeshInstance ();
 			instance.mesh = filter.sharedMesh;
 			if (curRenderer != null && curRenderer.enabled && instance.mesh != null) {
@@ -44,8 +60,13 @@ public class CombineChildren : MonoBehaviour {
 						materialToMesh.Add(materials[m], objects);
 					}
 				}
-				
-				curRenderer.enabled = false;
+                if (Application.isPlaying && destroyAfterOptimized && combineOnStart)
+                {
+                    Destroy(curRenderer.gameObject);
+                }
+
+                else if (destroyAfterOptimized) DestroyImmediate(curRenderer.gameObject);
+                else curRenderer.enabled = false;
 			}
 		}
 	
@@ -59,30 +80,32 @@ public class CombineChildren : MonoBehaviour {
 				// Make sure we have a mesh filter & renderer
 				if (GetComponent(typeof(MeshFilter)) == null)
 					gameObject.AddComponent(typeof(MeshFilter));
-
-				MeshRenderer meshRenderer = gameObject.GetComponent <MeshRenderer>();
-				if (meshRenderer == null)
-					meshRenderer = gameObject.AddComponent<MeshRenderer>();
+				if (!GetComponent("MeshRenderer"))
+					gameObject.AddComponent<MeshRenderer>();
 	
 				MeshFilter filter = (MeshFilter)GetComponent(typeof(MeshFilter));
 				filter.mesh = MeshCombineUtility.Combine(instances, generateTriangleStrips);
-				meshRenderer.material = (Material)de.Key;
-				meshRenderer.enabled = true;
+				GetComponent<Renderer>().material = (Material)de.Key;
+				GetComponent<Renderer>().enabled = true;
 			}
 			// We have multiple materials to take care of, build one mesh / gameobject for each material
 			// and parent it to this object
 			else
 			{
 				GameObject go = new GameObject("Combined mesh");
+                if (keepLayer) go.layer = gameObject.layer;
 				go.transform.parent = transform;
 				go.transform.localScale = Vector3.one;
 				go.transform.localRotation = Quaternion.identity;
 				go.transform.localPosition = Vector3.zero;
 				go.AddComponent(typeof(MeshFilter));
-				go.AddComponent<MeshRenderer>().material = (Material)de.Key;
-
+				go.AddComponent<MeshRenderer>();
+				go.GetComponent<Renderer>().material = (Material)de.Key;
 				MeshFilter filter = (MeshFilter)go.GetComponent(typeof(MeshFilter));
-				filter.mesh = MeshCombineUtility.Combine(instances, generateTriangleStrips);
+				if(Application.isPlaying)filter.mesh = MeshCombineUtility.Combine(instances, generateTriangleStrips);
+                else filter.sharedMesh = MeshCombineUtility.Combine(instances, generateTriangleStrips);
+                go.GetComponent<Renderer>().castShadows = castShadow;
+                go.GetComponent<Renderer>().receiveShadows = receiveShadow;
 			}
 		}	
 	}	

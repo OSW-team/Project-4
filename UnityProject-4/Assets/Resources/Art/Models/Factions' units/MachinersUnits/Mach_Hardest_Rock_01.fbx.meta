@@ -1,0 +1,563 @@
+fileFormatVersion: 2
+guid: 7ff927c0f2aac564f9f3a720f0e65891
+timeCreated: 1455794595
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: AimHerePoint
+    100002: AimVector
+    100004: Barell_Primitive
+    100006: BarelRot
+    100008: BASE
+    100010: Caterpillar_Long
+    100012: Caterpillar_Short
+    100014: CenterOfMass
+    100016: Gear
+    100018: Gear 1
+    100020: Gear 2
+    100022: Gear 3
+    100024: Gear-1
+    100026: Gear-2
+    100028: Gear-3
+    100030: Gear-Left-Long
+    100032: Gear-Left-Short
+    100034: Gear-Right-Long
+    100036: Gear-Right-Short
+    100038: HorizontalRotationGroup
+    100040: LeftGear-Long
+    100042: LeftGear-Short
+    100044: //RootNode
+    100046: Piston-1
+    100048: Piston-1 1
+    100050: Piston-1 2
+    100052: Piston-1 3
+    100054: Piston_01
+    100056: Piston_01.001
+    100058: Piston_01.002
+    100060: Piston_01.003
+    100062: Piston_03
+    100064: Piston_03.001
+    100066: Piston_03.002
+    100068: Piston_03.003
+    100070: Piston_2
+    100072: Piston_2 1
+    100074: Piston_2 2
+    100076: Piston_2 3
+    100078: Regen
+    100080: Regen_01
+    100082: Regen_01 1
+    100084: Regen_02
+    100086: Regen_02 1
+    100088: Regen_03
+    100090: Regen_03 1
+    100092: Regen_04
+    100094: Regen_04 1
+    100096: Regen_05
+    100098: Regen_05 1
+    100100: Regen_06
+    100102: Regen_06 1
+    100104: Regen_07
+    100106: RightGear-Long
+    100108: RightGear-Short
+    100110: SpawnPoint1
+    100112: Suspension_Long
+    100114: Suspension_Pivot
+    100116: Suspension_Pivot 1
+    100118: Suspension_Short
+    100120: UpgAcc-1
+    100122: UpgArmorShield-Long-1
+    100124: UpgArmorShield-Long-1_01
+    100126: UpgArmorShield-Long-1_02
+    100128: UpgArmorShield-Long-1_03
+    100130: UpgArmorShield-Long-1_04
+    100132: UpgArmorShield-Short-1
+    100134: UpgArmorShield-Short-1_01
+    100136: UpgArmorShield-Short-1_02
+    100138: UpgArmorShield-Short-1_03
+    100140: UpgArmorShield-Short-1_04
+    100142: UpgDMG-1
+    100144: UpgDMG-1-Primitive
+    100146: UpgHP-1
+    100148: UpgHP-2
+    100150: UpgHP-3
+    100152: UpgHP-Primitive-1
+    100154: UpgHP-Primitive-3
+    100156: UpgHP_Primitive-2
+    100158: UpgRegen-1
+    100160: UpgRegen-Long-2
+    100162: UpgRegen-Short-2
+    100164: UpgReload-1
+    100166: UpgReload_DMG-1
+    100168: UpgSP-Long-1
+    100170: UpgSP-Long-2
+    100172: UpgSP-Short-1
+    100174: UpgSP_Short-2
+    100176: VerticalRotationGroup
+    100178: WC_Left_HP2_Short_Primitive
+    100180: WC_Left_Motor_01
+    100182: WC_Left_Motor_03
+    100184: WC_Left_Primitive_01
+    100186: WC_Left_Primitive_02
+    100188: WC_Left_Spring_01
+    100190: WC_Left_Spring_02
+    100192: WC_Left_Spring_03
+    100194: WC_Left_Spring_04
+    100196: WC_Left_Spring_05
+    100198: WC_Left_Spring_06
+    100200: WC_Right_HP2_Short_Primitive
+    100202: WC_Right_Motor_01
+    100204: WC_Right_Motor_03
+    100206: WC_Right_Primitive_01
+    100208: WC_Right_Primitive_02
+    100210: WC_Right_Spring_01
+    100212: WC_Right_Spring_02
+    100214: WC_Right_Spring_03
+    100216: WC_Right_Spring_04
+    100218: WC_Right_Spring_05
+    100220: WC_Right_Spring_06
+    100222: Wheel_Right_01
+    100224: Wheel_Right_01 1
+    100226: Wheel_Right_02
+    100228: Wheel_Right_02 1
+    100230: Wheel_Right_03
+    100232: Wheel_Right_03 1
+    100234: Wheel_Right_04
+    100236: Wheel_Right_04 1
+    100238: Wheel_Right_05
+    100240: Wheel_Right_05 1
+    100242: Wheel_Right_06
+    100244: Whell_Left_01
+    100246: Whell_Left_01 1
+    100248: Whell_Left_02
+    100250: Whell_Left_02 1
+    100252: Whell_Left_03
+    100254: Whell_Left_03 1
+    100256: Whell_Left_04
+    100258: Whell_Left_04 1
+    100260: Whell_Left_05
+    100262: Whell_Left_05 1
+    100264: Whell_Left_06
+    400000: AimHerePoint
+    400002: AimVector
+    400004: Barell_Primitive
+    400006: BarelRot
+    400008: BASE
+    400010: Caterpillar_Long
+    400012: Caterpillar_Short
+    400014: CenterOfMass
+    400016: Gear
+    400018: Gear 1
+    400020: Gear 2
+    400022: Gear 3
+    400024: Gear-1
+    400026: Gear-2
+    400028: Gear-3
+    400030: Gear-Left-Long
+    400032: Gear-Left-Short
+    400034: Gear-Right-Long
+    400036: Gear-Right-Short
+    400038: HorizontalRotationGroup
+    400040: LeftGear-Long
+    400042: LeftGear-Short
+    400044: //RootNode
+    400046: Piston-1
+    400048: Piston-1 1
+    400050: Piston-1 2
+    400052: Piston-1 3
+    400054: Piston_01
+    400056: Piston_01.001
+    400058: Piston_01.002
+    400060: Piston_01.003
+    400062: Piston_03
+    400064: Piston_03.001
+    400066: Piston_03.002
+    400068: Piston_03.003
+    400070: Piston_2
+    400072: Piston_2 1
+    400074: Piston_2 2
+    400076: Piston_2 3
+    400078: Regen
+    400080: Regen_01
+    400082: Regen_01 1
+    400084: Regen_02
+    400086: Regen_02 1
+    400088: Regen_03
+    400090: Regen_03 1
+    400092: Regen_04
+    400094: Regen_04 1
+    400096: Regen_05
+    400098: Regen_05 1
+    400100: Regen_06
+    400102: Regen_06 1
+    400104: Regen_07
+    400106: RightGear-Long
+    400108: RightGear-Short
+    400110: SpawnPoint1
+    400112: Suspension_Long
+    400114: Suspension_Pivot
+    400116: Suspension_Pivot 1
+    400118: Suspension_Short
+    400120: UpgAcc-1
+    400122: UpgArmorShield-Long-1
+    400124: UpgArmorShield-Long-1_01
+    400126: UpgArmorShield-Long-1_02
+    400128: UpgArmorShield-Long-1_03
+    400130: UpgArmorShield-Long-1_04
+    400132: UpgArmorShield-Short-1
+    400134: UpgArmorShield-Short-1_01
+    400136: UpgArmorShield-Short-1_02
+    400138: UpgArmorShield-Short-1_03
+    400140: UpgArmorShield-Short-1_04
+    400142: UpgDMG-1
+    400144: UpgDMG-1-Primitive
+    400146: UpgHP-1
+    400148: UpgHP-2
+    400150: UpgHP-3
+    400152: UpgHP-Primitive-1
+    400154: UpgHP-Primitive-3
+    400156: UpgHP_Primitive-2
+    400158: UpgRegen-1
+    400160: UpgRegen-Long-2
+    400162: UpgRegen-Short-2
+    400164: UpgReload-1
+    400166: UpgReload_DMG-1
+    400168: UpgSP-Long-1
+    400170: UpgSP-Long-2
+    400172: UpgSP-Short-1
+    400174: UpgSP_Short-2
+    400176: VerticalRotationGroup
+    400178: WC_Left_HP2_Short_Primitive
+    400180: WC_Left_Motor_01
+    400182: WC_Left_Motor_03
+    400184: WC_Left_Primitive_01
+    400186: WC_Left_Primitive_02
+    400188: WC_Left_Spring_01
+    400190: WC_Left_Spring_02
+    400192: WC_Left_Spring_03
+    400194: WC_Left_Spring_04
+    400196: WC_Left_Spring_05
+    400198: WC_Left_Spring_06
+    400200: WC_Right_HP2_Short_Primitive
+    400202: WC_Right_Motor_01
+    400204: WC_Right_Motor_03
+    400206: WC_Right_Primitive_01
+    400208: WC_Right_Primitive_02
+    400210: WC_Right_Spring_01
+    400212: WC_Right_Spring_02
+    400214: WC_Right_Spring_03
+    400216: WC_Right_Spring_04
+    400218: WC_Right_Spring_05
+    400220: WC_Right_Spring_06
+    400222: Wheel_Right_01
+    400224: Wheel_Right_01 1
+    400226: Wheel_Right_02
+    400228: Wheel_Right_02 1
+    400230: Wheel_Right_03
+    400232: Wheel_Right_03 1
+    400234: Wheel_Right_04
+    400236: Wheel_Right_04 1
+    400238: Wheel_Right_05
+    400240: Wheel_Right_05 1
+    400242: Wheel_Right_06
+    400244: Whell_Left_01
+    400246: Whell_Left_01 1
+    400248: Whell_Left_02
+    400250: Whell_Left_02 1
+    400252: Whell_Left_03
+    400254: Whell_Left_03 1
+    400256: Whell_Left_04
+    400258: Whell_Left_04 1
+    400260: Whell_Left_05
+    400262: Whell_Left_05 1
+    400264: Whell_Left_06
+    2300000: Barell_Primitive
+    2300002: BarelRot
+    2300004: BASE
+    2300006: Gear-1
+    2300008: Gear-2
+    2300010: Gear-3
+    2300012: Gear-Left-Long
+    2300014: Gear-Left-Short
+    2300016: Gear-Right-Long
+    2300018: Gear-Right-Short
+    2300020: HorizontalRotationGroup
+    2300022: Piston_01
+    2300024: Piston_01.001
+    2300026: Piston_01.002
+    2300028: Piston_01.003
+    2300030: Piston_03
+    2300032: Piston_03.001
+    2300034: Piston_03.002
+    2300036: Piston_03.003
+    2300038: Regen_01 1
+    2300040: Regen_02
+    2300042: Regen_03
+    2300044: Regen_04 1
+    2300046: Regen_05 1
+    2300048: Regen_06 1
+    2300050: UpgAcc-1
+    2300052: UpgArmorShield-Long-1
+    2300054: UpgArmorShield-Long-1_01
+    2300056: UpgArmorShield-Long-1_02
+    2300058: UpgArmorShield-Long-1_03
+    2300060: UpgArmorShield-Long-1_04
+    2300062: UpgArmorShield-Short-1
+    2300064: UpgArmorShield-Short-1_01
+    2300066: UpgArmorShield-Short-1_02
+    2300068: UpgArmorShield-Short-1_03
+    2300070: UpgArmorShield-Short-1_04
+    2300072: UpgDMG-1
+    2300074: UpgDMG-1-Primitive
+    2300076: UpgHP-1
+    2300078: UpgHP-2
+    2300080: UpgHP-3
+    2300082: UpgHP-Primitive-1
+    2300084: UpgHP-Primitive-3
+    2300086: UpgHP_Primitive-2
+    2300088: UpgRegen-1
+    2300090: UpgRegen-Long-2
+    2300092: UpgRegen-Short-2
+    2300094: UpgReload-1
+    2300096: UpgReload_DMG-1
+    2300098: UpgSP-Long-1
+    2300100: UpgSP-Long-2
+    2300102: UpgSP-Short-1
+    2300104: UpgSP_Short-2
+    2300106: WC_Left_HP2_Short_Primitive
+    2300108: WC_Left_Motor_01
+    2300110: WC_Left_Motor_03
+    2300112: WC_Left_Primitive_01
+    2300114: WC_Left_Primitive_02
+    2300116: WC_Left_Spring_01
+    2300118: WC_Left_Spring_02
+    2300120: WC_Left_Spring_03
+    2300122: WC_Left_Spring_04
+    2300124: WC_Left_Spring_05
+    2300126: WC_Left_Spring_06
+    2300128: WC_Right_HP2_Short_Primitive
+    2300130: WC_Right_Motor_01
+    2300132: WC_Right_Motor_03
+    2300134: WC_Right_Primitive_01
+    2300136: WC_Right_Primitive_02
+    2300138: WC_Right_Spring_01
+    2300140: WC_Right_Spring_02
+    2300142: WC_Right_Spring_03
+    2300144: WC_Right_Spring_04
+    2300146: WC_Right_Spring_05
+    2300148: WC_Right_Spring_06
+    3300000: Barell_Primitive
+    3300002: BarelRot
+    3300004: BASE
+    3300006: Gear-1
+    3300008: Gear-2
+    3300010: Gear-3
+    3300012: Gear-Left-Long
+    3300014: Gear-Left-Short
+    3300016: Gear-Right-Long
+    3300018: Gear-Right-Short
+    3300020: HorizontalRotationGroup
+    3300022: Piston_01
+    3300024: Piston_01.001
+    3300026: Piston_01.002
+    3300028: Piston_01.003
+    3300030: Piston_03
+    3300032: Piston_03.001
+    3300034: Piston_03.002
+    3300036: Piston_03.003
+    3300038: Regen_01 1
+    3300040: Regen_02
+    3300042: Regen_03
+    3300044: Regen_04 1
+    3300046: Regen_05 1
+    3300048: Regen_06 1
+    3300050: UpgAcc-1
+    3300052: UpgArmorShield-Long-1
+    3300054: UpgArmorShield-Long-1_01
+    3300056: UpgArmorShield-Long-1_02
+    3300058: UpgArmorShield-Long-1_03
+    3300060: UpgArmorShield-Long-1_04
+    3300062: UpgArmorShield-Short-1
+    3300064: UpgArmorShield-Short-1_01
+    3300066: UpgArmorShield-Short-1_02
+    3300068: UpgArmorShield-Short-1_03
+    3300070: UpgArmorShield-Short-1_04
+    3300072: UpgDMG-1
+    3300074: UpgDMG-1-Primitive
+    3300076: UpgHP-1
+    3300078: UpgHP-2
+    3300080: UpgHP-3
+    3300082: UpgHP-Primitive-1
+    3300084: UpgHP-Primitive-3
+    3300086: UpgHP_Primitive-2
+    3300088: UpgRegen-1
+    3300090: UpgRegen-Long-2
+    3300092: UpgRegen-Short-2
+    3300094: UpgReload-1
+    3300096: UpgReload_DMG-1
+    3300098: UpgSP-Long-1
+    3300100: UpgSP-Long-2
+    3300102: UpgSP-Short-1
+    3300104: UpgSP_Short-2
+    3300106: WC_Left_HP2_Short_Primitive
+    3300108: WC_Left_Motor_01
+    3300110: WC_Left_Motor_03
+    3300112: WC_Left_Primitive_01
+    3300114: WC_Left_Primitive_02
+    3300116: WC_Left_Spring_01
+    3300118: WC_Left_Spring_02
+    3300120: WC_Left_Spring_03
+    3300122: WC_Left_Spring_04
+    3300124: WC_Left_Spring_05
+    3300126: WC_Left_Spring_06
+    3300128: WC_Right_HP2_Short_Primitive
+    3300130: WC_Right_Motor_01
+    3300132: WC_Right_Motor_03
+    3300134: WC_Right_Primitive_01
+    3300136: WC_Right_Primitive_02
+    3300138: WC_Right_Spring_01
+    3300140: WC_Right_Spring_02
+    3300142: WC_Right_Spring_03
+    3300144: WC_Right_Spring_04
+    3300146: WC_Right_Spring_05
+    3300148: WC_Right_Spring_06
+    4300000: Gear-Left-Short
+    4300002: Piston_03.003
+    4300004: Piston_01.003
+    4300006: Caterpillar_Long
+    4300008: Caterpillar_Short
+    4300010: UpgSP-Long-2
+    4300012: UpgSP_Short-2
+    4300014: UpgArmorShield-Short-1
+    4300016: UpgArmorShield-Short-1_04
+    4300018: UpgArmorShield-Short-1_03
+    4300020: UpgArmorShield-Short-1_02
+    4300022: UpgArmorShield-Short-1_01
+    4300024: WC_Right_Spring_02
+    4300026: WC_Right_Motor_01
+    4300028: UpgSP-Long-1
+    4300030: UpgHP-1
+    4300032: UpgHP_Primitive-2
+    4300034: WC_Left_Primitive_01
+    4300036: UpgRegen-1
+    4300038: Regen_02
+    4300040: Regen_03
+    4300042: Regen_06
+    4300044: Regen_01
+    4300046: Regen_04
+    4300048: Regen_05
+    4300050: WC_Right_Spring_03
+    4300052: UpgHP-2
+    4300054: WC_Right_HP2_Short_Primitive
+    4300056: WC_Right_Spring_05
+    4300058: WC_Right_Primitive_02
+    4300060: WC_Left_Spring_04
+    4300062: UpgRegen-Long-2
+    4300064: Gear-3
+    4300066: Gear-2
+    4300068: UpgSP-Short-1
+    4300070: UpgRegen-Short-2
+    4300072: WC_Left_Spring_05
+    4300074: WC_Right_Motor_03
+    4300076: BASE
+    4300078: HorizontalRotationGroup
+    4300080: UpgDMG-1
+    4300082: UpgReload-1
+    4300084: UpgReload_DMG-1
+    4300086: UpgAcc-1
+    4300088: Barell_Primitive
+    4300090: BarelRot
+    4300092: UpgDMG-1-Primitive
+    4300094: Gear-1
+    4300096: WC_Left_Primitive_02
+    4300098: UpgHP-3
+    4300100: WC_Left_Spring_01
+    4300102: UpgHP-Primitive-3
+    4300104: WC_Left_Motor_01
+    4300106: WC_Left_Spring_03
+    4300108: WC_Right_Spring_01
+    4300110: WC_Left_Motor_03
+    4300112: WC_Right_Spring_04
+    4300114: UpgArmorShield-Long-1
+    4300116: UpgArmorShield-Long-1_04
+    4300118: UpgArmorShield-Long-1_03
+    4300120: UpgArmorShield-Long-1_02
+    4300122: UpgArmorShield-Long-1_01
+    4300124: WC_Right_Primitive_01
+    4300126: WC_Left_Spring_06
+    4300128: WC_Left_Spring_02
+    4300130: WC_Left_HP2_Short_Primitive
+    4300132: WC_Right_Spring_06
+    4300134: UpgHP-Primitive-1
+    7400000: LeftGear-Short|GearRotate
+    7400002: RightGear-Short|GearRotate
+    7400004: RightGear-Long|GearRotate
+    7400006: LeftGear-Long|GearRotate
+    7400008: Regen|Repair
+    9500000: //RootNode
+    13700000: Caterpillar_Long
+    13700002: Caterpillar_Short
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
