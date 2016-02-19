@@ -5,10 +5,13 @@ public class TranslateCarController : TranslateController {
 	public bool tank = false;
 	Rigidbody rigBody;
 	public float TailSpeed;
+	BoxMovement move;
 
 	void Update(){
 		//rigBody.velocity = Vector3.zero;
-		Gas (gas);
+		if (!move._InAir) {
+			Gas (gas);
+		}
 		SpeedSteer (steer);
 		transform.position += speed * Time.deltaTime * transform.forward;
 		transform.rotation = Quaternion.RotateTowards (transform.rotation,  Quaternion.LookRotation (Mathf.Sign(speed) * transform.right), SpeedSteer(steer) * Time.deltaTime);
@@ -49,6 +52,7 @@ public class TranslateCarController : TranslateController {
 	}
 
 	void Start(){
+		move = GetComponent<BoxMovement> ();
 		force = power / Time.fixedDeltaTime;
 		rigBody = GetComponentInParent<Rigidbody> ();
 		friction = force / (maxSpeed * maxSpeed);
@@ -58,7 +62,7 @@ public class TranslateCarController : TranslateController {
 	}
 
 	float Gas(float gas){
-		if (gas > 0) {
+		if (gas > 0 ) {
 			if (Vector3.Dot( rigBody.velocity, transform.forward) >= 0) {
 				rigBody.AddForce (transform.forward * gas * 100 * force);
 				//speed += gas * power * Time.deltaTime;
