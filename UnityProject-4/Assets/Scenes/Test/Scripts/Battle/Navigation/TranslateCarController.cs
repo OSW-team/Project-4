@@ -4,6 +4,7 @@ using System.Collections;
 public class TranslateCarController : TranslateController {
 	public bool tank = false;
 	Rigidbody rigBody;
+	public float TailSpeed;
 
 	void Update(){
 		//rigBody.velocity = Vector3.zero;
@@ -26,21 +27,24 @@ public class TranslateCarController : TranslateController {
 			steer = Mathf.Sign(UnityEngine.Vector2.Dot(new UnityEngine.Vector2(transform.right.x, transform.right.z).normalized, new UnityEngine.Vector2(prefVelocity.x, prefVelocity.y).normalized)) * UnityEngine.Vector2.Angle(new UnityEngine.Vector2(transform.forward.x, transform.forward.z).normalized, new UnityEngine.Vector2(prefVelocity.x, prefVelocity.y).normalized) / maxsteeringAngle;
 		}
 		steer = Mathf.Sign (speed) * steer;
-		if (UnityEngine.Vector2.Angle(new UnityEngine.Vector2(transform.forward.x, transform.forward.z).normalized, new UnityEngine.Vector2(prefVelocity.x, prefVelocity.y).normalized) > 110)
+		if (UnityEngine.Vector2.Angle(new UnityEngine.Vector2(transform.forward.x, transform.forward.z).normalized, new UnityEngine.Vector2(prefVelocity.x, prefVelocity.y).normalized) > 80)
 		{
 			if (tank) {
 				gas = 0;
 			} else {
-				gas = -1 * Mathf.Sqrt (prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) / maxSpeed;
+				gas = -0.5f - 1.0f * Mathf.Sqrt (prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) / (2.0f*maxSpeed);
 			}
 		}
-		else if (UnityEngine.Vector2.Angle(new UnityEngine.Vector2(transform.forward.x, transform.forward.z).normalized, new UnityEngine.Vector2(prefVelocity.x, prefVelocity.y).normalized) > 80)
+		else if (UnityEngine.Vector2.Angle(new UnityEngine.Vector2(transform.forward.x, transform.forward.z).normalized, new UnityEngine.Vector2(prefVelocity.x, prefVelocity.y).normalized) > 60)
 		{
-			gas = (1.0f / 2.0f) * Mathf.Sqrt(prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) /  maxSpeed;
+			gas = 0.5f + (1.0f / 2.0f) * Mathf.Sqrt(prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) / (2.0f * maxSpeed);
 		}
 		else
 		{
-			gas = 1  * Mathf.Sqrt(prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) /  maxSpeed;
+			gas = 0.5f + 1  * Mathf.Sqrt(prefVelocity.x * prefVelocity.x + prefVelocity.y * prefVelocity.y) /  (2.0f * maxSpeed);
+		}
+		if (tail != null) {
+			tail.transform.rotation = Quaternion.RotateTowards(tail.transform.rotation, Quaternion.LookRotation (Mathf.Sign(Vector3.Dot(rigBody.velocity, transform.forward)) * -steer * transform.right + transform.forward, transform.up), TailSpeed * Time.deltaTime) ;
 		}
 	}
 

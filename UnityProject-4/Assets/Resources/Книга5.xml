@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<units xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Unit Workname="Snake">
+		<UnitName>Snake</UnitName>
+		<ModelName>MachLM1</ModelName>
+		<IconName>UnitButton_1</IconName>
+		<UnitDescription>"Snake" is LigtMateriel that can be upgraded to have Speed Burst</UnitDescription>
+		<HpMax>80</HpMax>
+		<HpWreckage>50</HpWreckage>
+		<HpRegen>0</HpRegen>
+		<CostParts>12</CostParts>
+		<CostEnergy>0</CostEnergy>
+		<CostSM>1</CostSM>
+		<BasicBuildTime>2.5</BasicBuildTime>
+		<Speed>3</Speed>
+		<ReverseFactor>0.5</ReverseFactor>
+		<TurnSpeed>4</TurnSpeed>
+		<Acceleration>2</Acceleration>
+		<Mass>200</Mass>
+		<Recovery>[10_parts]_[1_energy]</Recovery>
+		<Class>LightMateriel</Class>
+		<Sight>40</Sight>
+		<OptimalDistance>25</OptimalDistance>
+	</Unit>
+	<Unit Workname="Mach_Missile">
+		<UnitName>Missile</UnitName>
+		<ModelName>Mach_Missile</ModelName>
+		<IconName>UnitButton_1</IconName>
+		<UnitDescription>"Snake" is LigtMateriel that can be upgraded to have Speed Burst</UnitDescription>
+		<HpMax>80</HpMax>
+		<HpWreckage>50</HpWreckage>
+		<HpRegen>0</HpRegen>
+		<CostParts>12</CostParts>
+		<CostEnergy>0</CostEnergy>
+		<CostSM>1</CostSM>
+		<BasicBuildTime>2.5</BasicBuildTime>
+		<Speed>3</Speed>
+		<ReverseFactor>0.5</ReverseFactor>
+		<TurnSpeed>4</TurnSpeed>
+		<Acceleration>2</Acceleration>
+		<Mass>200</Mass>
+		<Recovery>[10_parts]_[1_energy]</Recovery>
+		<Class>LightMateriel</Class>
+		<Sight>40</Sight>
+		<OptimalDistance>25</OptimalDistance>
+	</Unit>
+</units>

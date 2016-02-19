@@ -13,8 +13,8 @@ public class DynamicNavObstacle : MonoBehaviour {
 		List<RVO.Vector2> _obstacles = new List<RVO.Vector2>();
 		GameObject obstacle = this.gameObject;
 
-		_obstacles.Add(new RVO.Vector2(obstacle.transform.position.x + obstacle.transform.localScale.x / 2, obstacle.transform.position.z + obstacle.transform.localScale.z / 2));
 		_obstacles.Add(new RVO.Vector2(obstacle.transform.position.x + obstacle.transform.localScale.x / 2, obstacle.transform.position.z - obstacle.transform.localScale.z / 2));
+		_obstacles.Add(new RVO.Vector2(obstacle.transform.position.x + obstacle.transform.localScale.x / 2, obstacle.transform.position.z + obstacle.transform.localScale.z / 2));
 
 		simulator.addObstacle(_obstacles);
 
@@ -22,8 +22,9 @@ public class DynamicNavObstacle : MonoBehaviour {
 		obstacles [1]  = simulator.obstacles_.Count - 2;
 		_obstacles.Clear();
 
-		_obstacles.Add(new RVO.Vector2(obstacle.transform.position.x + obstacle.transform.localScale.x / 2, obstacle.transform.position.z - obstacle.transform.localScale.z / 2));
+
 		_obstacles.Add(new RVO.Vector2(obstacle.transform.position.x - obstacle.transform.localScale.x / 2, obstacle.transform.position.z - obstacle.transform.localScale.z / 2));
+		_obstacles.Add(new RVO.Vector2(obstacle.transform.position.x + obstacle.transform.localScale.x / 2, obstacle.transform.position.z - obstacle.transform.localScale.z / 2));
 
 		simulator.addObstacle(_obstacles);
 
@@ -31,8 +32,8 @@ public class DynamicNavObstacle : MonoBehaviour {
 		obstacles [3]  = simulator.obstacles_.Count - 2;
 		_obstacles.Clear();
 
-		_obstacles.Add(new RVO.Vector2(obstacle.transform.position.x - obstacle.transform.localScale.x / 2, obstacle.transform.position.z - obstacle.transform.localScale.z / 2));
 		_obstacles.Add(new RVO.Vector2(obstacle.transform.position.x - obstacle.transform.localScale.x / 2, obstacle.transform.position.z + obstacle.transform.localScale.z / 2));
+		_obstacles.Add(new RVO.Vector2(obstacle.transform.position.x - obstacle.transform.localScale.x / 2, obstacle.transform.position.z - obstacle.transform.localScale.z / 2));
 
 		simulator.addObstacle(_obstacles);
 
@@ -40,8 +41,8 @@ public class DynamicNavObstacle : MonoBehaviour {
 		obstacles [5]  = simulator.obstacles_.Count - 2;
 		_obstacles.Clear();
 
-		_obstacles.Add(new RVO.Vector2(obstacle.transform.position.x - obstacle.transform.localScale.x / 2, obstacle.transform.position.z + obstacle.transform.localScale.z / 2));
 		_obstacles.Add(new RVO.Vector2(obstacle.transform.position.x + obstacle.transform.localScale.x / 2, obstacle.transform.position.z + obstacle.transform.localScale.z / 2));
+		_obstacles.Add(new RVO.Vector2(obstacle.transform.position.x - obstacle.transform.localScale.x / 2, obstacle.transform.position.z + obstacle.transform.localScale.z / 2));
 
 		simulator.addObstacle(_obstacles);
 

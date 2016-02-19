@@ -29,7 +29,7 @@ public class MasterMindTranslate : MonoBehaviour {
 	{
 		ProcessObstacles();
 
-		simulator.setAgentDefaults(0, 200, 10.0f, 5.0f, 0, 0, new RVO.Vector2(0, 0));
+		simulator.setAgentDefaults(radius*10, 20, 10.0f, 10.0f, radius, maxSpeed, new RVO.Vector2(0, 0));
 
 		for( int i = 0; i < manipulationSpheresNumber; i++)
 		{
@@ -47,6 +47,9 @@ public class MasterMindTranslate : MonoBehaviour {
 
 	void Update()
 	{
+		for(var i = 0; i < simulator.obstacles_.Count; i++){
+			Debug.DrawLine( VectorConvert( simulator.obstacles_[i].point_), VectorConvert(simulator.obstacles_[i].nextObstacle.point_), Color.green);
+		}
 		simulator.setTimeStep(Time.deltaTime);
 		RVOAgentsCalculation();
 		simulator.doStep();
@@ -113,15 +116,19 @@ public class MasterMindTranslate : MonoBehaviour {
 				if (agents [i].navMeshAgent != null) {
 
 					prefVel = (agents [i].navMeshAgent.steeringTarget - agents [i].body.transform.position).normalized * maxSpeed;
+					//Debug.Log(prefVel.magnitude);
+
 				}
 
+				if (agents [i].body != null) {
 					simulator.agents_ [i].prefVelocity_ = new RVO.Vector2 (prefVel.x, prefVel.z);
 					simulator.agents_ [i].radius_ = radius + CalculateError (simulator.agents_ [i], Vector3.Angle (new Vector3 (simulator.agents_ [i].velocity_.x_, 0, simulator.agents_ [i].velocity_.y_), agents [i].body.transform.forward));
 					simulator.agents_ [i].position_ = new RVO.Vector2 (agents [i].body.transform.position.x, agents [i].body.transform.position.z);
+				
 
-
-					DebugDraw (i, nullPoint, new Vector3 (simulator.agents_ [i].prefVelocity_.x_, 0, simulator.agents_ [i].prefVelocity_.y_), simulator.agents_ [i]);
+					DebugDraw (i, nullPoint, VectorConvert(simulator.agents_[i].prefVelocity_), simulator.agents_ [i]);
 					Steering (i);
+				}
 			}
 
 		}
@@ -186,10 +193,39 @@ public class MasterMindTranslate : MonoBehaviour {
 
 	}
 
+	public Vector3 VectorConvert(RVO.Vector2 vector){
+		return new Vector3 (vector.x_, 0, vector.y_);
+	}
+	public RVO.Vector2 VectorConvert (Vector3 vector){
+		RVO.Vector2 _vector = new RVO.Vector2 ();
+		_vector.x_ = vector.x;
+		_vector.y_ = vector.z;
+		return _vector;
+	}
+
+
 	void DebugDraw(int i, Vector3 nullPoint, Vector3 prefVel, RVO.Agent agent)
 	{
 		Debug.DrawRay(agents[i].body.transform.position, new Vector3(agent.velocity_.x_, 0, agent.velocity_.y_), Color.red);
 		Debug.DrawRay(agents[i].body.transform.position, prefVel, Color.blue);
+
+		Debug.DrawLine( new Vector3 (simulator.agents_ [i].position_.x_ + simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ + simulator.agents_ [i].radius_) , 
+			new Vector3 (simulator.agents_ [i].position_.x_ + simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ - simulator.agents_ [i].radius_),
+			Color.red);
+
+		Debug.DrawLine( new Vector3 (simulator.agents_ [i].position_.x_ + simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ - simulator.agents_ [i].radius_) , 
+			new Vector3 (simulator.agents_ [i].position_.x_ - simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ - simulator.agents_ [i].radius_),
+			Color.red);
+
+		Debug.DrawLine( new Vector3 (simulator.agents_ [i].position_.x_ - simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ - simulator.agents_ [i].radius_) , 
+			new Vector3 (simulator.agents_ [i].position_.x_ - simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ + simulator.agents_ [i].radius_),
+			Color.red);
+
+		Debug.DrawLine( new Vector3 (simulator.agents_ [i].position_.x_ - simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ + simulator.agents_ [i].radius_) , 
+			new Vector3 (simulator.agents_ [i].position_.x_ + simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ + simulator.agents_ [i].radius_),
+			Color.red);
+
+
 		foreach (Vector3 point in agents[i].navMeshAgent.path.corners)
 		{
 			Debug.DrawLine(nullPoint, point);
@@ -230,6 +266,8 @@ public class MinimalPhysicAgent
 		goal = _goal;
 		int k = 0;
 
+		navMeshAgent.enabled = false;
+		navMeshAgent.enabled = true;
 		if (!navMeshAgent.SetDestination (goal)) {
 			navMeshAgent.enabled = false;
 			navMeshAgent.enabled = true;
