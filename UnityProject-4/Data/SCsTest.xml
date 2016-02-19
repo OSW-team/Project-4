@@ -3,9 +3,10 @@
     <Unit WorkName="Snake">
       <Upgrade Name="UpgSpd1-Snake" />
       <Upgrade Name="UpgAcc1-Snake" />
+      <Booster Name="BoostSpeed" />
     </Unit>
     <Unit WorkName="Mach_Hardest_Rock" />
-	<Unit WorkName="Mach_Missile" />
+    <Unit WorkName="Mach_Missile" />
     <Module WorkName="Platform1">
       <Slot Name="" />
     </Module>
@@ -34,14 +35,14 @@
       <Slot Name="Platform1_Weapon_Site2" />
     </Module>
   </SC>
-  
-    <SC WorkName="EnemySC1">
+  <SC WorkName="EnemySC1">
     <Unit WorkName="Snake">
       <Upgrade Name="UpgSpd1-Snake" />
       <Upgrade Name="UpgAcc1-Snake" />
+      <Booster Name="BoostSpeed" />
     </Unit>
     <Unit WorkName="Mach_Hardest_Rock" />
-	<Unit WorkName="Mach_Missile" />
+    <Unit WorkName="Mach_Missile" />
     <Module WorkName="Platform1">
       <Slot Name="" />
     </Module>
