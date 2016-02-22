@@ -12,13 +12,14 @@ public class BoxMovement : MonoBehaviour {
 	float correct;
 	public float power = 1;
     private Rigidbody RigidBody;
-    private float _originalDrag = 5;
-    private float _OriginalDragAngular = 7;
+    private float _originalDrag;
+    private float _OriginalDragAngular;
     public bool _InAir;
 
     void Start () {
         RigidBody = GetComponent<Rigidbody>();
-
+		_originalDrag = RigidBody.drag;
+		_OriginalDragAngular = RigidBody.angularDrag;
 		correct = coef /Time.fixedDeltaTime;
 
     }

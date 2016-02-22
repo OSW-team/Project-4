@@ -5,12 +5,16 @@ using System.Collections.Generic;
 public class GotTheNavMeshBorders : MonoBehaviour {
 	public NavMesh NMesh1;
 	NavMeshTriangulation NMesh;
+	public Mesh _mesh;
+
 	public List<Vector3> GranList;
 	public GameObject GranPrefab;
 
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log(_mesh.vertices.Length);
+		Debug.Log(_mesh.triangles.Length);
 		if (GranPrefab.GetComponent<GotTheNavMeshBorders> ().GranList.Count == 0) {
 			NMesh = NavMesh.CalculateTriangulation ();
 

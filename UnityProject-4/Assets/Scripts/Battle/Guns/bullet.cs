@@ -8,7 +8,7 @@ public class bullet : MonoBehaviour {
     {
         UnitStats other = c.other.gameObject.GetComponentInParent<UnitStats>();
 		if (bang != null) {
-			Instantiate (bang, transform.position, transform.rotation);
+			Destroy(Instantiate (bang, transform.position, transform.rotation), 5);
 		}
         if (other != null)
         {

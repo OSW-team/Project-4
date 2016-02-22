@@ -26,7 +26,9 @@ public class UnitStats : MonoBehaviour {
     }
     void Death()
 	{	
-		Instantiate (bang, transform.position, Quaternion.identity);
+		if (bang != null) {
+			Destroy (Instantiate (bang, transform.position, Quaternion.identity), 5);
+		}
 		if (meAgent.index != 0) {
 			master.RemoveAgent (meAgent);
 			Destroy (gameObject);
