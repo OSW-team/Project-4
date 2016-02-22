@@ -17,7 +17,7 @@ public class CitadelSpawner : MonoBehaviour {
     void Start () {
 		var master = FindObjectOfType<MasterMindTranslate>();
         _playersCitadel = Controller.MyCitadel;
-        _enemyCitadel = new SteamCitadel("EnemySC1");
+        _enemyCitadel = Controller.EnemyCitadel;
         XMLWorker.LoadSC(_enemyCitadel);
         PlayersCitadel = SteamCitadelMeshConstrutor.BuildCitadelMesh(_playersCitadel);
         EnemyCitadel =  SteamCitadelMeshConstrutor.BuildCitadelMesh(_enemyCitadel);

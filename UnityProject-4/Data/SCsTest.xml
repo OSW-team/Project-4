@@ -1,8 +1,6 @@
 <Items>
   <SC WorkName="PlayersSC">
     <Unit WorkName="Snake">
-      <Upgrade Name="UpgSpd1-Snake" />
-      <Upgrade Name="UpgAcc1-Snake" />
       <Booster Name="BoostSpeed" />
     </Unit>
     <Unit WorkName="Mach_Hardest_Rock" />
@@ -37,8 +35,6 @@
   </SC>
   <SC WorkName="EnemySC1">
     <Unit WorkName="Snake">
-      <Upgrade Name="UpgSpd1-Snake" />
-      <Upgrade Name="UpgAcc1-Snake" />
       <Booster Name="BoostSpeed" />
     </Unit>
     <Unit WorkName="Mach_Hardest_Rock" />

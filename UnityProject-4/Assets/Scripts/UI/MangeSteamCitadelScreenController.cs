@@ -76,7 +76,7 @@ public class MangeSteamCitadelScreenController : ManagementScreen
             Controller.MyCitadel.Modules.Add(new Module(Controller.MyCitadel.Name, "Weapon1",
                 platformButton.name));
             ShowCitadel(Controller.MyCitadel);
-            XMLWorker.SaveSC(Controller.MyCitadel);
+            XMLWorker.SaveSC(Controller.CurrentCitadel);
         });
         platformButton.transform.SetParent(controlsTransform);
         _moduleButtons.Add(platformButton);
@@ -94,7 +94,7 @@ public class MangeSteamCitadelScreenController : ManagementScreen
                         Controller.MyCitadel.Modules.Add(new Module(Controller.MyCitadel.Name, "Weapon1",
                             childModuleButton.name));
                         ShowCitadel(Controller.MyCitadel);
-                        XMLWorker.SaveSC(Controller.MyCitadel);
+                        XMLWorker.SaveSC(Controller.CurrentCitadel);
                     });
                     childModuleButton.transform.SetParent(controlsTransform);
                     _moduleButtons.Add(childModuleButton);
