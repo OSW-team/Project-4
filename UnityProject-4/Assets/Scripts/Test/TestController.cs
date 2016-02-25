@@ -3,17 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
+using System;
+using UnityEngine.SceneManagement;
 
 public class TestController : MonoBehaviour
 {
     public Player Player;
     public SteamCitadel MyCitadel;
+    public SteamCitadel EnemyCitadel;
+    public SteamCitadel CurrentCitadel;
     public Transform ScreensButtons;
     public List<GameObject> Screens;
     public GameObject MainCamera;
     public GameObject ManualCamera;
     private bool _isCameraManual;
     private GameObject _lastUnitGO;
+    private bool citadelToogle;
 
     // Use this for initialization
     void Start () {
@@ -25,14 +30,36 @@ public class TestController : MonoBehaviour
         var citadel = new SteamCitadel("PlayersSC");
         Player.Citadel = citadel;
         XMLWorker.LoadSC(citadel);
+        EnemyCitadel = new SteamCitadel("EnemySC1");
 
-        //ShowManagementScreen();
+        XMLWorker.LoadSC(EnemyCitadel);
 
-
+        CurrentCitadel = EnemyCitadel;
         MyCitadel = citadel;
+
+
+        //ShowManagementScreen(EnemyCitadel);
+        if(Application.loadedLevelName == "ModulesSetupScreen") ShowUnitScreen();
+
     }
 
-    public void ShowManagementScreen()
+    public void ShowUnitScreen()
+    {
+        var citadel = MyCitadel;
+        CurrentCitadel = MyCitadel;
+        if (!citadelToogle)
+        {
+            citadel = EnemyCitadel;
+            CurrentCitadel = EnemyCitadel;
+        }
+        //var moduleScreen = FindObjectOfType<MangeSteamCitadelScreenController>();
+        var unitScreen = FindObjectOfType<ManageUnitsScreenController>();
+        //moduleScreen.gameObject.SetActive(false);
+        unitScreen.ShowUnit(citadel.Units[0]);
+        citadelToogle = !citadelToogle;
+    }
+
+    public void ShowManagementScreen(SteamCitadel citadel)
     {
         var moduleScreen = FindObjectOfType<MangeSteamCitadelScreenController>();
         var unitScreen = FindObjectOfType<ManageUnitsScreenController>();
@@ -40,13 +67,13 @@ public class TestController : MonoBehaviour
         ScreensButtons.GetChild(1).GetComponent<Button>().onClick.AddListener(() =>
         {
             moduleScreen.gameObject.SetActive(false);
-            unitScreen.ShowUnit(MyCitadel.Units[0]);
+            unitScreen.ShowUnit(citadel.Units[0]);
         });
         ScreensButtons.GetChild(0).GetComponent<Button>().onClick.RemoveAllListeners();
         ScreensButtons.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
         {
             unitScreen.gameObject.SetActive(false);
-            moduleScreen.ShowCitadel(MyCitadel);
+            moduleScreen.ShowCitadel(citadel);
         });
     }
 
@@ -90,7 +117,7 @@ public class TestController : MonoBehaviour
             //MyCitadel.Units[0].Upgrades[1].Boosters[0].Activate();
             //MyCitadel.Units[0].RecountProps();
             MyCitadel.Units[0].EnabledBoosters.Add("NewBooster");
-            XMLWorker.SaveSC(MyCitadel);
+            XMLWorker.SaveSC(CurrentCitadel);
         }
     }
 
@@ -124,6 +151,13 @@ public class TestController : MonoBehaviour
             _lastUnitGO = unit;
             ManualCamera.SetActive(_isCameraManual);
         }
+
+
         
+    }
+
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene("DesertMainBattleScene");
     }
 }

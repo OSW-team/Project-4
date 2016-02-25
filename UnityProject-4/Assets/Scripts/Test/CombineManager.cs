@@ -7,10 +7,10 @@ public class CombineManager : MonoBehaviour {
     private List<CombineChildren> _combiningGroups;
 	// Use this for initialization
 	void Start () {
+        gameObject.AddComponent<CombineChildren>();
         _combiningGroups = new List<CombineChildren>();
         SearchCombiningGroups(transform);
         CombineInOrder();
-        gameObject.AddComponent<CombineChildren>();
 	}
 	
 	// Update is called once per frame

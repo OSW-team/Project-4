@@ -181,14 +181,13 @@ public class GameModelsAndEnums : MonoBehaviour
     public static string CheckBoost(string text, ref bool isBooster, ref string boosterName, ref string originalvalue)
     {
         var res = text;
-        if(text.Contains("Boost"))
+        if(text.Contains("[Boost"))
         {
             var index = text.IndexOf(";");
             res = text.Remove(0, index + 1).Replace("]", "");
             isBooster = true;
             boosterName = text.Remove(index, text.Length-index).Replace("[", "");
             if (text.Contains("_")){
-
                 var originalIndex = text.IndexOf("_");
                 boosterName = text.Remove(0, originalIndex + 1);
                 originalvalue = text.Remove(originalIndex, text.Length - originalIndex);

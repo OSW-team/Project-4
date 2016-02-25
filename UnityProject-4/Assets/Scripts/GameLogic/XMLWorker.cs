@@ -62,7 +62,7 @@ public static class XMLWorker
             XmlNodeList scs = doc.GetElementsByTagName("SC");
             foreach (XmlNode sc in scs.Cast<XmlNode>().Where(sc => sc.Attributes["WorkName"].Value == citadel.Name))
             {
-                sc.RemoveAll();
+                sc.ParentNode.RemoveChild(sc);
                 doc.Save("Data/SCsTest.xml");
             }
            
@@ -88,12 +88,12 @@ public static class XMLWorker
     public static void SaveSCItem(string workName)
     {
             XmlDocument doc = new XmlDocument();
-            XmlNode mainNode = doc.CreateElement("Items");
-            doc.AppendChild(mainNode);
-
+            doc.Load("Data/SCsTest.xml");
+            XmlNode items  = doc.GetElementsByTagName("Items")[0];
+            
             XmlElement SCNode = doc.CreateElement("SC");
             SCNode.SetAttribute("WorkName", workName);
-            mainNode.AppendChild(SCNode);
+            items.AppendChild(SCNode);
             doc.Save("Data/SCsTest.xml");
     }
 
