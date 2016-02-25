@@ -30,7 +30,7 @@ public class StateMachine : MonoBehaviour {
         agent = GetComponentInChildren<NavMeshAgent>();
         targetSeeker = GetComponent<TargetSeek>();
         stateSet = new StateSet();
-        Debug.Log(pointDown);
+        //Debug.Log(pointDown);
         stateSet.down = new StateDown(agent, pointDown, transform, ref stateSet);
         stateSet.deploy = new StateDeploy(agent, pointDeploy, transform, ref stateSet);
         stateSet.marsh = new StateMarsh(agent, pointMarch, transform, ref stateSet);
@@ -46,7 +46,7 @@ public class StateMachine : MonoBehaviour {
 [System.Serializable]
 public abstract class State
 {
-    protected float stopDistance = 5;
+    protected float stopDistance = 7;
     protected Vector3 point;
     protected NavMeshAgent agent;
     protected Transform transform;
@@ -97,6 +97,8 @@ public class StateDown : State
     {
         //Debug.Log("Down"+" " + (point - transform.position).sqrMagnitude);
         agent.SetDestination(point);
+		agent.GetComponentInParent<ORCAController> ().steer = 0;
+		agent.GetComponentInParent<ORCAController> ().gas = 1;
         if((point - transform.position).sqrMagnitude < stopDistance * stopDistance)
         {
             set.currentState = Transition(set.deploy);

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+//using UnityEditor;
 
-public class ManualPathBuilder : MonoBehaviour {
+public class ManualPathBuilder : MonoBehaviour {/*
 	public Mesh mesh;
 	int index = 0;
 	public List<GameObject> mPoints;
@@ -148,7 +148,8 @@ public class ManualPathBuilder : MonoBehaviour {
 					mPoints.Add(hit.collider.gameObject);
 					index++;
 
-				}
+				}*/
+	
 				/*
 				if (hit.collider.GetComponent<ManualPoint> () == null && meshBalls.Count == 0) {
 					GameObject sphere0 = Instantiate (point, hit.point, Quaternion.identity) as GameObject;
@@ -170,6 +171,8 @@ public class ManualPathBuilder : MonoBehaviour {
 					}
 				}
 				*/
+
+	/*
 				if (index == 3)
 				{
 					meshBalls.Add (new MeshBalls (mPoints.ToArray()[0], mPoints.ToArray()[1], mPoints.ToArray()[2]));
@@ -245,7 +248,7 @@ public class ManualPathBuilder : MonoBehaviour {
 
 
 
-
+*/
 
 		/*Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		Debug.DrawRay (ray.origin, ray.direction * 100, Color.red);
@@ -296,6 +299,7 @@ public class ManualPathBuilder : MonoBehaviour {
 //			}
 
 //		}*/
+/*
 	}
 
 	public void Flip(){
@@ -317,6 +321,7 @@ public class ManualPathBuilder : MonoBehaviour {
 		}
 		return false;
 	}
+*/
 }
 
 [System.Serializable]

@@ -7,6 +7,7 @@
     </Unit>
     <Unit WorkName="Mach_Hardest_Rock" />
     <Unit WorkName="Mach_Missile" />
+	<Unit WorkName="Mach_Inf" />
     <Module WorkName="Platform1">
       <Slot Name="" />
     </Module>
@@ -43,6 +44,7 @@
     </Unit>
     <Unit WorkName="Mach_Hardest_Rock" />
     <Unit WorkName="Mach_Missile" />
+	 <Unit WorkName="Mach_Inf" />
     <Module WorkName="Platform1">
       <Slot Name="" />
     </Module>

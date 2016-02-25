@@ -462,6 +462,44 @@
       <SchemeCostEnergy></SchemeCostEnergy>
       <Animations></Animations>
 	</Unit>
+	
+	<Unit Workname="Mach_Inf">
+      <UnitName>Infantry</UnitName>
+      <ModelName>Mach_PT</ModelName>
+      <IconName>UnitButton_1</IconName>
+      <UnitDescription>"Snake" is LigtMateriel that can be upgraded to have Speed Burst</UnitDescription>
+      <HpMax>80</HpMax>
+      <HpWreckage>50</HpWreckage>
+      <HpRegen>0</HpRegen>
+      <CostParts>12</CostParts>
+      <CostEnergy>0</CostEnergy>
+      <CostSM>1</CostSM>
+      <BasicBuildTime>2.5</BasicBuildTime>
+      <DeployRadius></DeployRadius>
+      <SpeedGlobal></SpeedGlobal>
+      <Speed>3</Speed>
+      <ReverseFactor>0.5</ReverseFactor>
+      <TurnSpeed>4</TurnSpeed>
+      <Acceleration>2</Acceleration>
+      <Accuracy></Accuracy>
+      <Mass>200</Mass>
+      <Recovery>[10_parts]_[1_energy]</Recovery>
+      <Class>LightMateriel</Class>
+      <Priority></Priority>
+      <Sight>40</Sight>
+      <OptimalDistance>25</OptimalDistance>
+      <RefArmPHYS></RefArmPHYS>
+      <RefArmEN></RefArmEN>
+      <RefArmHEAT></RefArmHEAT>
+      <ConArmPHYS></ConArmPHYS>
+      <ConArmEN></ConArmEN>
+      <ConArmHEAT></ConArmHEAT>
+      <UpgradeCost></UpgradeCost>
+      <UpgradeRequirements></UpgradeRequirements>
+      <SchemeCostMetal></SchemeCostMetal>
+      <SchemeCostEnergy></SchemeCostEnergy>
+      <Animations></Animations>
+	</Unit>
 
 
 </units>

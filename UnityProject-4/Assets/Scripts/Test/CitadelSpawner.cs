@@ -15,7 +15,8 @@ public class CitadelSpawner : MonoBehaviour {
     public Transform EnemySpawnArea;
     // Use this for initialization
     void Start () {
-		var master = FindObjectOfType<MasterMindTranslate>();
+		//var master = FindObjectOfType<MasterMindTranslate>();
+		var master = FindObjectOfType<SynchronizeORCA>();
         _playersCitadel = Controller.MyCitadel;
         _enemyCitadel = new SteamCitadel("EnemySC1");
         XMLWorker.LoadSC(_enemyCitadel);
