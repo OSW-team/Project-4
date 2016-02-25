@@ -33,8 +33,10 @@ public class ManageUnitsScreenController : ManagementScreen
         ManagementScreenGameObject.SetActive(true);
         if (unit.GO == null)
         {
+
             if (unit.GO != null) { Destroy(unit.GO); }
             unit.BuildMesh();
+            DisableBattleScripts(unit);
             var Center = new Vector3(-1.55f, -10.17f, 31.7f);
             if (CurrentManagingGameObject)
             {
@@ -47,6 +49,18 @@ public class ManageUnitsScreenController : ManagementScreen
         AddUpgradesButtons(unit);
         AddUnitsToUnitsPanel();
         RefreshInfo(unit);
+    }
+
+    private void DisableBattleScripts(Unit unit)
+    {
+        var targetseeks = unit.GO.transform.GetComponentsInChildren<TargetSeek>().ToList();
+        foreach (var targetSeek in targetseeks)
+        {
+            targetSeek.enabled = false;
+        }
+        var unitStats = unit.GO.GetComponent<UnitStats>();
+        unitStats.enabled = false;
+        unit.GO.GetComponent<Rigidbody>().useGravity = false;
     }
 
     private void AddUnitsToUnitsPanel()
@@ -182,7 +196,7 @@ public class ManageUnitsScreenController : ManagementScreen
         FirstButton.onClick.RemoveAllListeners();
         FirstButton.onClick.AddListener(()=> {
             unit.Upgrades.Add(new UnitUpgrade(upgr.Workname));
-            XMLWorker.SaveSC(Controller.MyCitadel);
+            XMLWorker.SaveSC(Controller.CurrentCitadel);
             ShowUnit(unit);
             FirstButton.transform.GetComponentInChildren<Text>().text = "";
             Controller.UpgradeChange(unit);

@@ -38,7 +38,7 @@ public class SpawnUnit : MonoBehaviour {
 
 		cam = GameObject.Find ("Camera").GetComponent<Camera> ();
         SpawnedUnitsGameObjects = new List<GameObject>();
-
+        
 
     }
 	
@@ -72,7 +72,10 @@ public class SpawnUnit : MonoBehaviour {
 			GameObject _unit = Units [switchUnit].GO;
 			_unit.transform.position = SpawnPoint.transform.position;
 			_unit.transform.rotation = SpawnPoint.transform.rotation;
-            _unit.GetComponent<UnitStats>().team = Team;
+            var unitStats = _unit.GetComponent<UnitStats>();
+            unitStats.team = Team;
+            unitStats.maxHP = Units[switchUnit].HpMax;
+            unitStats.weight = Units[switchUnit].Mass;
             Master.AddAgent(_unit, PointDown.position);
             _unit.GetComponent<StateMachine>().SetupStateSet(PointDown.position, _hit.point, PointMarch.position, EnemySF);
             SpawnedUnitsGameObjects.Add(_unit);
