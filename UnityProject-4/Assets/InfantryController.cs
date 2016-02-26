@@ -8,13 +8,14 @@ public class InfantryController : MonoBehaviour {
 	Animator anim;
 	public ParticleSystem sparks;
 	TargetSeek seeker;
-	TranslateController controller;
+	ORCAController controller;
 	float controllerPower;
 	// Use this for initialization
 	void Start () {
+		agent = GetComponentInChildren<NavMeshAgent> ();
 		seeker = GetComponent<TargetSeek> ();
 		anim = GetComponent<Animator> ();
-		controller = GetComponent<TranslateController> ();
+		controller = GetComponent<ORCAController> ();
 		controllerPower = controller.power;
 
 	}

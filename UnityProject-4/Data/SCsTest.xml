@@ -1,12 +1,13 @@
 <Items>
   <SC WorkName="PlayersSC">
     <Unit WorkName="Snake">
+      <Upgrade Name="UpgSpd1-Snake" />
+      <Upgrade Name="UpgAcc1-Snake" />
       <Booster Name="BoostSpeed" />
     </Unit>
     <Unit WorkName="Mach_Hardest_Rock" />
-    <Unit WorkName="Mach_Missile">
-      <Upgrade Name="Upgrade1-Mach_Missile" />
-    </Unit>
+    <Unit WorkName="Mach_Missile" />
+	<Unit WorkName="Mach_Inf" />
     <Module WorkName="Platform1">
       <Slot Name="" />
     </Module>
@@ -37,11 +38,13 @@
   </SC>
   <SC WorkName="EnemySC1">
     <Unit WorkName="Snake">
-      <Upgrade Name="UpgSpd2-Snake" />
+      <Upgrade Name="UpgSpd1-Snake" />
+      <Upgrade Name="UpgAcc1-Snake" />
       <Booster Name="BoostSpeed" />
     </Unit>
     <Unit WorkName="Mach_Hardest_Rock" />
     <Unit WorkName="Mach_Missile" />
+	 <Unit WorkName="Mach_Inf" />
     <Module WorkName="Platform1">
       <Slot Name="" />
     </Module>

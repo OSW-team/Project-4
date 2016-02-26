@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TargetSeek : MonoBehaviour {
-	MasterMindTranslate master;
+	//MasterMindTranslate master;
+	SynchronizeORCA master;
 	List<MinimalPhysicAgent> agents;
     public GameObject chosenTarget;
     GunModule gun;
@@ -13,7 +14,8 @@ public class TargetSeek : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		master = GameObject.FindWithTag("masterMind").GetComponent<MasterMindTranslate>();
+		//master = GameObject.FindWithTag("masterMind").GetComponent<MasterMindTranslate>();
+		master = GameObject.FindWithTag("masterMind").GetComponent<SynchronizeORCA>();
         stats = GetComponentInParent<UnitStats>();
         agents = master.agents;
         gun = GetComponent<GunModule>();
