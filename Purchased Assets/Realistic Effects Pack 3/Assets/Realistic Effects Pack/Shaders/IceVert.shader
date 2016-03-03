@@ -136,10 +136,11 @@ Category {
 				
 				half4 col = tex2Dproj(_GrabTexture, UNITY_PROJ_COORD(i.proj));
 				half4 colTex =  tex2D(_MainTex, i.uv_BumpMap + offset);
-				fixed4 emission = col * _Color 
-				+ colTex.r * _MainTexAlpha* _LightColor0
-				+ (fresnel *_ReflectColor) * _Cutoff * _LightColor0;
-				//+ (fresnelRim * _RimColor) * _Cutoff * _LightColor0;
+				#if UNITY_VERSION >= 500
+				fixed4 emission = col * _Color + colTex.r * _MainTexAlpha * _LightColor0/2 + (fresnel *_ReflectColor) * _Cutoff * _LightColor0/2;
+				#else 
+				fixed4 emission = col * _Color + colTex.r * _MainTexAlpha * _LightColor0 + (fresnel *_ReflectColor) * _Cutoff * _LightColor0;
+				#endif
 				emission.a = _Color.a;
 				return emission ;
 			}

@@ -81,6 +81,15 @@ public class GameModelsAndEnums : MonoBehaviour
         SelfControl
     }
 
+    public enum EnumItemFunction
+    {
+        Goods,
+        Combat,
+        Part,
+        Utility,
+        Global
+    }
+
     public enum EnumRace
     {
 
@@ -197,6 +206,16 @@ public class GameModelsAndEnums : MonoBehaviour
         return res;
     }
 
+    public static EnumItemFunction GetItemFunction(string innerText)
+    {
+        return EnumItemFunction.Combat;
+    }
 
-
+    public static bool GetBool(string innerText)
+    {
+        var b = true;
+        if (innerText != "true")
+            b = false;
+        return b;
+    }
 }

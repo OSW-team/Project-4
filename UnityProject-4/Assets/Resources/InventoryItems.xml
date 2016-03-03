@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<inventoryItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Item Workname = "MineItem">
+    <Name>Rocket</Name>
+    <Description></Description>
+    <ItemAmount></ItemAmount>
+    <Mass></Mass>
+    <Volume></Volume>
+    <MetalCost></MetalCost>
+    <EnergyCost></EnergyCost>
+    <SupplyMax></SupplyMax>
+    <Function></Function>
+    <StacksTill></StacksTill>
+    <EcoAmount></EcoAmount>
+    <MilAmount></MilAmount>
+    <SciAmount></SciAmount>
+    <ElMagComponent></ElMagComponent>
+    <HydraulicsComponent></HydraulicsComponent>
+    <ReinforcedComponent></ReinforcedComponent>
+    <VoidComponent></VoidComponent>
+    <ChronoComponent></ChronoComponent>
+    <IsBreakable></IsBreakable>
+    <BreakPointsMax></BreakPointsMax>
+    <IsContaminatable></IsContaminatable>
+    <ContaminationPointsMax></ContaminationPointsMax>
+
+  </Item>
+  
+    <Item Workname = "Item1">
+    <Name>Gear</Name>
+    <Description></Description>
+    <ItemAmount></ItemAmount>
+    <Mass></Mass>
+    <Volume></Volume>
+    <MetalCost></MetalCost>
+    <EnergyCost></EnergyCost>
+    <SupplyMax></SupplyMax>
+    <Function></Function>
+    <StacksTill></StacksTill>
+    <EcoAmount></EcoAmount>
+    <MilAmount></MilAmount>
+    <SciAmount></SciAmount>
+    <ElMagComponent></ElMagComponent>
+    <HydraulicsComponent></HydraulicsComponent>
+    <ReinforcedComponent></ReinforcedComponent>
+    <VoidComponent></VoidComponent>
+    <ChronoComponent></ChronoComponent>
+    <IsBreakable></IsBreakable>
+    <BreakPointsMax></BreakPointsMax>
+    <IsContaminatable></IsContaminatable>
+    <ContaminationPointsMax></ContaminationPointsMax>
+
+  </Item>
+</inventoryItems>

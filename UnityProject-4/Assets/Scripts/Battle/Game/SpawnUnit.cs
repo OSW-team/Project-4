@@ -74,6 +74,7 @@ public class SpawnUnit : MonoBehaviour {
 			_unit.transform.rotation = SpawnPoint.transform.rotation;
             var unitStats = _unit.GetComponent<UnitStats>();
             unitStats.team = Team;
+            Units[switchUnit].RecountProps();
             unitStats.maxHP = Units[switchUnit].HpMax;
             unitStats.weight = Units[switchUnit].Mass;
             Master.AddAgent(_unit, PointDown.position);

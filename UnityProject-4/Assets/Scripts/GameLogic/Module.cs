@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Module : MonoBehaviour
 {
@@ -77,4 +78,26 @@ public class Module : MonoBehaviour
     {
         
     }
+
+    public void RecountProps()
+    {
+        Mass += Subs.Sum(sub => sub.Mass);
+        MaxSlotAmount += Subs.Sum(sub => sub.MaxSlotAmount);
+        CurrntSlotAmount += Subs.Sum(sub => sub.CurrntSlotAmount);
+        MaxHP += Subs.Sum(sub => sub.MaxHP);
+        CurrentHP += Subs.Sum(sub => sub.CurrentHP);
+        Exhaust += Subs.Sum(sub => sub.Exhaust);
+        ExhaustSpeed += Subs.Sum(sub => sub.ExhaustSpeed);
+        PhysycReflectArmor += Subs.Sum(sub => sub.PhysycReflectArmor);
+        EnergyReflectArmor += Subs.Sum(sub => sub.EnergyReflectArmor);
+        HeatReflectArmor += Subs.Sum(sub => sub.HeatReflectArmor);
+        PhysycConsumArmor += Subs.Sum(sub => sub.PhysycConsumArmor);
+        EnergyConsumArmor += Subs.Sum(sub => sub.EnergyConsumArmor);
+        HeatConsumArmor += Subs.Sum(sub => sub.HeatConsumArmor);
+        Vulnerability += Subs.Sum(sub => sub.Vulnerability);
+        //...
+
+    }
+
+
 }

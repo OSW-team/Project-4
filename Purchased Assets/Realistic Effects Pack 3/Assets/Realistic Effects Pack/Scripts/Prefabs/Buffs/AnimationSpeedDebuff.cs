@@ -34,6 +34,6 @@ public class AnimationSpeedDebuff : MonoBehaviour
 	void Update () {
 	  if(myAnimator==null || AnimationSpeenOnTime.length == 0) return;
 	  time += Time.deltaTime;
-    myAnimator.speed = AnimationSpeenOnTime.Evaluate(time / MaxTime) * oldSpeed;
+      myAnimator.speed = Mathf.Clamp01(AnimationSpeenOnTime.Evaluate(time / MaxTime) * oldSpeed);
 	}
 }
