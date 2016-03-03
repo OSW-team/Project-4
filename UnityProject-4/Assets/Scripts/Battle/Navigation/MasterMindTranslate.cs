@@ -34,7 +34,7 @@ public class MasterMindTranslate : MonoBehaviour {
 		for( int i = 0; i < manipulationSpheresNumber; i++)
 		{
 			simulator.addAgent(new RVO.Vector2(10000, 10000));
-			simulator.agents_ [i].active = true;
+			simulator.agents_ [i].active = false;
 		}
 
 		foreach (GameObject agent in agentsInScene)
@@ -73,29 +73,44 @@ public class MasterMindTranslate : MonoBehaviour {
 		float t = Time.deltaTime;
 		float V2 = agent.velocity_.x_ * agent.velocity_.x_ + agent.velocity_.y_ * agent.velocity_.y_;
 		float V = Mathf.Sqrt(V2);
-		return (Mathf.Sqrt(maxSpeed * maxSpeed * t * t - 2 * maxSpeed * t * Mathf.Sin(angle) / maxAngularSpeed * V + 2 * (1 - Mathf.Cos(angle)) / maxAngularSpeed / maxAngularSpeed * V2));
+		return (Mathf.Sqrt(maxSpeed * maxSpeed * t * t - 2 * maxSpeed * t * Mathf.Sin(angle) / maxAngularSpeed * V + 2 * (1 - Mathf.Cos(angle)) / maxAngularSpeed / maxAngularSpeed * V2)) * maxSpeed;
 
+	}
+
+	int FindFreeAgent(){
+		for (var i = 0; i < simulator.agents_.Count; i++) {
+			if (!simulator.agents_ [i].active) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	public void AddAgent(GameObject newAgent, Vector3 position)
 	{
+		int number = FindFreeAgent();
 
-		agents.Add(new MinimalPhysicAgent(newAgent, position, liveUnits++));
 
-		RVO.Agent _agent = simulator.agents_[liveUnits - 1];
-		_agent.radius_ = radius;
-		_agent.maxSpeed_ = maxSpeed;
-		_agent.neighborDist_ = 100;
-		_agent.weight = newAgent.GetComponent<UnitStats> ().weight;
-		_agent.massSupermacy = newAgent.GetComponent<UnitStats> ().massSupermacy;
-		newAgent.GetComponent<UnitStats>().meAgent = agents[liveUnits-1];
+
+		if (number != -1) {
+			agents.Add(new MinimalPhysicAgent(newAgent, position, number));
+			simulator.agents_[number].active = true;
+			simulator.agents_[number].radius_ = radius;
+			simulator.agents_[number].maxSpeed_ = maxSpeed;
+			simulator.agents_[number].neighborDist_ = 100;
+			simulator.agents_[number].weight = newAgent.GetComponent<UnitStats> ().weight;
+			simulator.agents_[number].massSupermacy = newAgent.GetComponent<UnitStats> ().massSupermacy;
+			newAgent.GetComponent<UnitStats> ().meAgent = agents[agents.Count - 1];
+		} else {
+			Debug.Log ("NoFreeAgent");
+		}
 	}
 
 	void RVOAgentsCalculation()
 	{
 		for(int i = 0; i < liveUnits; i ++)
 		{
-			if (simulator.agents_ [i] != null) {
+			if (simulator.agents_ [agents [i].index] != null) {
 				Vector3 nullPoint = Vector3.zero;
 				if (agents [i].navMeshAgent != null) {
 					nullPoint = agents [i].navMeshAgent.path.corners [0];
@@ -121,12 +136,12 @@ public class MasterMindTranslate : MonoBehaviour {
 				}
 
 				if (agents [i].body != null) {
-					simulator.agents_ [i].prefVelocity_ = new RVO.Vector2 (prefVel.x, prefVel.z);
-					simulator.agents_ [i].radius_ = radius + CalculateError (simulator.agents_ [i], Vector3.Angle (new Vector3 (simulator.agents_ [i].velocity_.x_, 0, simulator.agents_ [i].velocity_.y_), agents [i].body.transform.forward));
-					simulator.agents_ [i].position_ = new RVO.Vector2 (agents [i].body.transform.position.x, agents [i].body.transform.position.z);
+					simulator.agents_ [agents [i].index].prefVelocity_ = new RVO.Vector2 (prefVel.x, prefVel.z);
+					simulator.agents_ [agents [i].index].radius_ = radius + CalculateError (simulator.agents_ [agents [i].index], Vector3.Angle (new Vector3 (simulator.agents_ [agents [i].index].velocity_.x_, 0, simulator.agents_ [agents [i].index].velocity_.y_), agents [agents [i].index].body.transform.forward));
+					simulator.agents_ [agents [i].index].position_ = new RVO.Vector2 (agents [i].body.transform.position.x, agents [i].body.transform.position.z);
 				
 
-					DebugDraw (i, nullPoint, VectorConvert(simulator.agents_[i].prefVelocity_), simulator.agents_ [i]);
+					DebugDraw (i, nullPoint, VectorConvert(simulator.agents_[agents [i].index].prefVelocity_), simulator.agents_ [agents [i].index]);
 					Steering (i);
 				}
 			}
@@ -136,7 +151,7 @@ public class MasterMindTranslate : MonoBehaviour {
 
 	void Steering(int i)
 	{
-		RVO.Agent agent = simulator.agents_[i];
+		RVO.Agent agent = simulator.agents_[agents [i].index];
 		agents[i].Controller.Steering(new UnityEngine.Vector2(agent.velocity_.x_, agent.velocity_.y_), agent.maxSpeed_);
 	}
 
@@ -209,20 +224,20 @@ public class MasterMindTranslate : MonoBehaviour {
 		Debug.DrawRay(agents[i].body.transform.position, new Vector3(agent.velocity_.x_, 0, agent.velocity_.y_), Color.red);
 		Debug.DrawRay(agents[i].body.transform.position, prefVel, Color.blue);
 
-		Debug.DrawLine( new Vector3 (simulator.agents_ [i].position_.x_ + simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ + simulator.agents_ [i].radius_) , 
-			new Vector3 (simulator.agents_ [i].position_.x_ + simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ - simulator.agents_ [i].radius_),
+		Debug.DrawLine( new Vector3 (simulator.agents_ [agents[i].index].position_.x_ + simulator.agents_ [agents[i].index].radius_, 0, simulator.agents_ [agents[i].index].position_.y_ + simulator.agents_ [agents[i].index].radius_) , 
+			new Vector3 (simulator.agents_ [agents[i].index].position_.x_ + simulator.agents_ [agents[i].index].radius_, 0, simulator.agents_ [agents[i].index].position_.y_ - simulator.agents_ [agents[i].index].radius_),
 			Color.red);
 
-		Debug.DrawLine( new Vector3 (simulator.agents_ [i].position_.x_ + simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ - simulator.agents_ [i].radius_) , 
-			new Vector3 (simulator.agents_ [i].position_.x_ - simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ - simulator.agents_ [i].radius_),
+		Debug.DrawLine( new Vector3 (simulator.agents_ [agents[i].index].position_.x_ + simulator.agents_ [agents[i].index].radius_, 0, simulator.agents_ [agents[i].index].position_.y_ - simulator.agents_ [agents[i].index].radius_) , 
+			new Vector3 (simulator.agents_ [agents[i].index].position_.x_ - simulator.agents_ [agents[i].index].radius_, 0, simulator.agents_ [agents[i].index].position_.y_ - simulator.agents_ [agents[i].index].radius_),
 			Color.red);
 
-		Debug.DrawLine( new Vector3 (simulator.agents_ [i].position_.x_ - simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ - simulator.agents_ [i].radius_) , 
-			new Vector3 (simulator.agents_ [i].position_.x_ - simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ + simulator.agents_ [i].radius_),
+		Debug.DrawLine( new Vector3 (simulator.agents_ [agents[i].index].position_.x_ - simulator.agents_ [agents[i].index].radius_, 0, simulator.agents_ [agents[i].index].position_.y_ - simulator.agents_ [agents[i].index].radius_) , 
+			new Vector3 (simulator.agents_ [agents[i].index].position_.x_ - simulator.agents_ [agents[i].index].radius_, 0, simulator.agents_ [agents[i].index].position_.y_ + simulator.agents_ [agents[i].index].radius_),
 			Color.red);
 
-		Debug.DrawLine( new Vector3 (simulator.agents_ [i].position_.x_ - simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ + simulator.agents_ [i].radius_) , 
-			new Vector3 (simulator.agents_ [i].position_.x_ + simulator.agents_ [i].radius_, 0, simulator.agents_ [i].position_.y_ + simulator.agents_ [i].radius_),
+		Debug.DrawLine( new Vector3 (simulator.agents_ [agents[i].index].position_.x_ - simulator.agents_ [agents[i].index].radius_, 0, simulator.agents_ [agents[i].index].position_.y_ + simulator.agents_ [agents[i].index].radius_) , 
+			new Vector3 (simulator.agents_ [agents[i].index].position_.x_ + simulator.agents_ [agents[i].index].radius_, 0, simulator.agents_ [agents[i].index].position_.y_ + simulator.agents_ [agents[i].index].radius_),
 			Color.red);
 
 

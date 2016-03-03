@@ -8,11 +8,13 @@ public class SpawnUnit : MonoBehaviour {
     public List<GameObject> SpawnedUnitsGameObjects;
 	Camera cam;
     public Transform SpawnPoint;
-    public MasterMindTranslate Master;
+    //public MasterMindTranslate Master;
+	public SynchronizeORCA Master;
     public Transform PointDown, PointDeploy, PointMarch;
     public GameObject EnemySF;
 	int switchUnit;
-
+	float timer = 0;
+	public float spawnTime = 5;
     public Transform SpawnArea;
 
     public int Team;
@@ -31,6 +33,9 @@ public class SpawnUnit : MonoBehaviour {
 		var c = GameObject.Find ("ButtonMissile").GetComponent<Button> ();
 		c.onClick.AddListener (delegate () {this.UnitSwitch(2);} );
 
+		var d = GameObject.Find ("ButtonInf").GetComponent<Button> ();
+		d.onClick.AddListener (delegate () {this.UnitSwitch(3);} );
+
 		cam = GameObject.Find ("Camera").GetComponent<Camera> ();
         SpawnedUnitsGameObjects = new List<GameObject>();
         
@@ -39,7 +44,19 @@ public class SpawnUnit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        SpawnOnClick();
+		if (timer > 0) {
+			timer -= Time.deltaTime;
+		} else {
+			SpawnOnClick ();
+		}
+		GameObject[] wreckages = GameObject.FindGameObjectsWithTag ("wreckage");
+
+
+		for (var i = 0; i < wreckages.Length; i++) {
+			if ((wreckages [i].transform.position - SpawnPoint.position).sqrMagnitude < 625) {
+				wreckages [i].GetComponent<UnitStats> ().Damage (1000);
+			}
+		}
 	}
 
     void SpawnOnClick()
@@ -63,6 +80,7 @@ public class SpawnUnit : MonoBehaviour {
             Master.AddAgent(_unit, PointDown.position);
             _unit.GetComponent<StateMachine>().SetupStateSet(PointDown.position, _hit.point, PointMarch.position, EnemySF);
             SpawnedUnitsGameObjects.Add(_unit);
+			timer = spawnTime;
         }
     }
 
