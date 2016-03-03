@@ -36,10 +36,14 @@ public class TestController : MonoBehaviour
 
         CurrentCitadel = EnemyCitadel;
         MyCitadel = citadel;
+        // CurrentCitadel.Inventory.Items.Add(new InventoryItem("Item1"));
 
 
-        //ShowManagementScreen(EnemyCitadel);
-        if(Application.loadedLevelName == "ModulesSetupScreen") ShowUnitScreen();
+        if (Application.loadedLevelName == "ModulesSetupScreen")
+        {
+            //ShowModulesScreen(CurrentCitadel);
+            ShowUnitScreen();
+        }
 
     }
 
@@ -59,22 +63,10 @@ public class TestController : MonoBehaviour
         citadelToogle = !citadelToogle;
     }
 
-    public void ShowManagementScreen(SteamCitadel citadel)
+    public void ShowModulesScreen(SteamCitadel citadel)
     {
-        var moduleScreen = FindObjectOfType<MangeSteamCitadelScreenController>();
-        var unitScreen = FindObjectOfType<ManageUnitsScreenController>();
-        ScreensButtons.GetChild(1).GetComponent<Button>().onClick.RemoveAllListeners();
-        ScreensButtons.GetChild(1).GetComponent<Button>().onClick.AddListener(() =>
-        {
-            moduleScreen.gameObject.SetActive(false);
-            unitScreen.ShowUnit(citadel.Units[0]);
-        });
-        ScreensButtons.GetChild(0).GetComponent<Button>().onClick.RemoveAllListeners();
-        ScreensButtons.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
-        {
-            unitScreen.gameObject.SetActive(false);
-            moduleScreen.ShowCitadel(citadel);
-        });
+        var moduleScreen = FindObjectOfType<ManageModulesScreen>();
+        moduleScreen.ShowCitadel(citadel);
     }
 
     public void NewCitadel()
@@ -88,7 +80,7 @@ public class TestController : MonoBehaviour
         MyCitadel.Modules.Add(new Module(MyCitadel.Name, "Radar1", "Hypo_Site1"));
         MyCitadel.Modules.Add(new Module(MyCitadel.Name, "Weapon1", "Weapon_Site1"));
         MyCitadel.Modules.FirstOrDefault(x=>x.Workname == "Engine1").Subs.Add(new Subsystem(MyCitadel.Name, "Engine1", "Tube1", "Sub_Slot_A1 2"));
-        MyCitadel.Units.Add(new Unit(MyCitadel.Name, "Unit1"));
+        MyCitadel.Units.Add(new Unit("Unit1"));
         MyCitadel.Units[0].Upgrades.Add(new UnitUpgrade(MyCitadel.Name, "Unit1","Upg1"));
         //XMLWorker.SaveUnit(MyCitadel.Name, "Unit1", new List<string>(1) { "Upg1" });
 
@@ -116,7 +108,7 @@ public class TestController : MonoBehaviour
         {
             //MyCitadel.Units[0].Upgrades[1].Boosters[0].Activate();
             //MyCitadel.Units[0].RecountProps();
-            MyCitadel.Units[0].EnabledBoosters.Add("NewBooster");
+            //MyCitadel.Units[0].EnabledBoosters.Add("NewBooster");
             XMLWorker.SaveSC(CurrentCitadel);
         }
     }

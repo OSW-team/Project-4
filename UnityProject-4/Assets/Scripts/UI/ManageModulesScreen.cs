@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;
 
-public class MangeSteamCitadelScreenController : ManagementScreen
+public class ManageModulesScreen : ManagementScreen
 {
     public GameObject SteamCitadelManagementScreen;
     public GameObject AlowedSubsystems;

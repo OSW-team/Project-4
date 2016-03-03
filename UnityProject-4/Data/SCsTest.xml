@@ -1,39 +1,7 @@
 <Items>
-  <SC WorkName="EnemySC1">
-    <Unit WorkName="Snake">
-      <Booster Name="BoostSpeed" />
-    </Unit>
-    <Unit WorkName="Mach_Hardest_Rock" />
-    <Unit WorkName="Mach_Missile" />
-    <Module WorkName="Platform1">
-      <Slot Name="" />
-    </Module>
-    <Module WorkName="Bridge1">
-      <Slot Name="Platform1_Bridge_Site" />
-    </Module>
-    <Module WorkName="Storage1">
-      <Slot Name="Platform1_Storage_Site" />
-    </Module>
-    <Module WorkName="Radar1">
-      <Slot Name="Platform1_Hypo_Site1" />
-    </Module>
-    <Module WorkName="Weapon1">
-      <Slot Name="Platform1_Weapon_Site1" />
-    </Module>
-    <Module WorkName="Constructor1">
-      <Slot Name="Platform1_Constructor_Site" />
-    </Module>
-    <Module WorkName="Engine1">
-      <Slot Name="Platform1_Engine_Site" />
-      <Sub WorkName="Tube1">
-        <Slot Name="Sub_Slot_A1 2" />
-      </Sub>
-    </Module>
-    <Module WorkName="Weapon1">
-      <Slot Name="Platform1_Weapon_Site2" />
-    </Module>
-  </SC>
   <SC WorkName="PlayersSC">
+    <Inventory>
+    </Inventory>
     <Unit WorkName="Snake">
       <Booster Name="BoostSpeed" />
     </Unit>
@@ -67,6 +35,39 @@
     </Module>
     <Module WorkName="Weapon1">
       <Slot Name="Platform1_Weapon_Site2" />
+    </Module>
+  </SC>
+  <SC WorkName="EnemySC1">
+    <Inventory>
+      <InventoryItem WorkName="Item1" />
+    </Inventory>
+    <Unit WorkName="Snake">
+      <Upgrade Name="UpgAcc1-Snake" />
+      <Upgrade Name="UpgBurst1-Snake" />
+      <Booster Name="BoostSpeed" />
+    </Unit>
+    <Unit WorkName="Mach_Hardest_Rock" />
+    <Unit WorkName="Mach_Missile" />
+    <Module WorkName="Platform1">
+      <Slot Name="" />
+    </Module>
+    <Module WorkName="Bridge1">
+      <Slot Name="Platform1_Bridge_Site" />
+    </Module>
+    <Module WorkName="Storage1">
+      <Slot Name="Platform1_Storage_Site" />
+    </Module>
+    <Module WorkName="Radar1">
+      <Slot Name="Platform1_Hypo_Site1" />
+    </Module>
+    <Module WorkName="Weapon1">
+      <Slot Name="Platform1_Weapon_Site1" />
+    </Module>
+    <Module WorkName="Constructor1">
+      <Slot Name="Platform1_Constructor_Site" />
+    </Module>
+    <Module WorkName="Engine1">
+      <Slot Name="Platform1_Engine_Site" />
     </Module>
   </SC>
 </Items>

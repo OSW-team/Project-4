@@ -13,6 +13,7 @@ public class ManageUnitsScreenController : ManagementScreen
     public Text SchematiquesText;
     public Text CostText;
     public Button FirstButton;
+    public Button SecondButton;
     public Text HP;
     public Text HPWreck;
     public Text Acceleration;
@@ -66,15 +67,15 @@ public class ManageUnitsScreenController : ManagementScreen
     private void AddUnitsToUnitsPanel()
     {
         UnitsPanel = transform.FindChild("UnitsPanel");
-        for (var i = 0; i < Controller.MyCitadel.Units.Count; i++)
+        for (var i = 0; i < Controller.CurrentCitadel.Units.Count; i++)
         {
             var unitGO = UnitsPanel.GetChild(i).gameObject;
             var icon = unitGO.transform.GetChild(0).GetComponent<Image>();
             unitGO.GetComponent<Button>().onClick.RemoveAllListeners();
             var i1 = i;
-            unitGO.GetComponent<Button>().onClick.AddListener(() => ShowUnit(Controller.MyCitadel.Units[i1]));
+            unitGO.GetComponent<Button>().onClick.AddListener(() => ShowUnit(Controller.CurrentCitadel.Units[i1]));
 
-            icon.sprite = Resources.LoadAll<Sprite>("UI/Management screen UI/2. Units' screen/UnitButton").FirstOrDefault(x => x.name == Controller.MyCitadel.Units[i].IconName);
+            icon.sprite = Resources.LoadAll<Sprite>("UI/Management screen UI/2. Units' screen/UnitButton").FirstOrDefault(x => x.name == Controller.CurrentCitadel.Units[i].IconName);
             icon.rectTransform.sizeDelta = unitGO.GetComponent<Image>().rectTransform.sizeDelta;
             unitGO.SetActive(true);
         }
@@ -156,7 +157,9 @@ public class ManageUnitsScreenController : ManagementScreen
                     UnitOrUpgradeName.text = upgs[i1].UnitName;
                     CostText.text = "CostSM "+upgs[i1].CostSM+ " CostEnergy " + upgs[i1].CostEnergy+ " CostParts " + upgs[i1].CostParts;
                     AddFirstButtonAction(unit, upgs[i1]);
+                    AddSecondButtonAction(unit, matchedUpgrs[i1]);
                 });
+
                 var upgradesGo = parentTransform.FindChild("Upgrades").gameObject; 
                 upgrGO.transform.SetParent(upgradesGo.transform);
                 upgrGO.transform.localScale = Vector3.one*1.5f;
@@ -203,6 +206,23 @@ public class ManageUnitsScreenController : ManagementScreen
             unit.RecountProps();
             RefreshInfo(unit);
             FirstButton.onClick.RemoveAllListeners();
+        });
+
+    }
+
+    void AddSecondButtonAction(Unit unit, UnitUpgrade upgr)
+    {
+        SecondButton.transform.GetComponentInChildren<Text>().text = "Remove Upgrade";
+        SecondButton.onClick.RemoveAllListeners();
+        SecondButton.onClick.AddListener(() => {
+            unit.Upgrades.Remove(upgr);
+            //XMLWorker.RemoveUpgrade(Controller.CurrentCitadel);
+            ShowUnit(unit);
+            SecondButton.transform.GetComponentInChildren<Text>().text = "";
+            Controller.UpgradeChange(unit);
+            unit.RecountProps();
+            RefreshInfo(unit);
+            SecondButton.onClick.RemoveAllListeners();
         });
 
     }

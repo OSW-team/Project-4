@@ -5,8 +5,13 @@ using System.Linq;
 public  class SteamCitadelMeshConstrutor:MonoBehaviour {
 	// Use this for initialization
     private static GameObject _citadel;
+    private static string _modulePath;
+    private static string _subPath;
+
     public static GameObject BuildCitadelMesh(SteamCitadel Citadel)
     {
+        _modulePath = "Models/SCModules/";
+        _subPath = "Models/SCSubs/";
         if (Citadel.GO != null)
         {
             Destroy(Citadel.GO);
@@ -29,8 +34,8 @@ public  class SteamCitadelMeshConstrutor:MonoBehaviour {
 
     public static void AddSingleModule(SteamCitadel Citadel, Module module)
     {
-        var modelPath = "Models/SCModules/"+ Citadel.Name+"/" + module.ModelName;
-        module.GO = Instantiate(Resources.Load<GameObject>(modelPath));
+        var modulePath = _modulePath +  Citadel.Name+"/" + module.ModelName;
+        module.GO = Instantiate(Resources.Load<GameObject>(modulePath));
         module.GO.name = "Module " + module.Workname;
         module.GO.transform.SetParent(Citadel.GO.transform);
     }
@@ -73,9 +78,8 @@ public  class SteamCitadelMeshConstrutor:MonoBehaviour {
 
     public static void AddSingleSubsystem(SteamCitadel citadel, Module module, Subsystem subsystem)
     {
-        var modelPath = "Models/SCSubs/" + citadel.Name + "/" + subsystem.ModelName;
-        Debug.Log(modelPath);
-        subsystem.GO = Instantiate(Resources.Load<GameObject>(modelPath));
+        var subPath = _subPath + citadel.Name + "/" + subsystem.ModelName;
+        subsystem.GO = Instantiate(Resources.Load<GameObject>(subPath));
         subsystem.GO.name = "Subsystem " + subsystem.Workname;
         subsystem.GO.transform.SetParent(module.GO.transform);
     }

@@ -47,12 +47,13 @@ public class Unit : MonoBehaviour
     public List<UnitBooster> Boosters;
     public List<string> EnabledBoosters;
 
-    public Unit(string CSWokname, string workName)
+    public Unit(string workName)
     {
         EnabledBoosters = new List<string>();
         Upgrades = new List<UnitUpgrade>();
         Boosters = new List<UnitBooster>();
         XMLWorker.LoadUnit(workName, this);
+        RecountProps();
     }
 
     protected Unit()

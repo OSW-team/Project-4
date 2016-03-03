@@ -83,6 +83,11 @@ public static class XMLWorker
                 SaveSubsystem(citadel.Name,module.Workname,subsystem.Workname,subsystem.Slot);
             }
         }
+
+        foreach (var item in citadel.Inventory.Items)
+        {
+            SaveInventoryItem(citadel.Name, item.Workname);
+        }
     }
 
     public static void SaveSCItem(string workName)
@@ -94,6 +99,8 @@ public static class XMLWorker
             XmlElement SCNode = doc.CreateElement("SC");
             SCNode.SetAttribute("WorkName", workName);
             items.AppendChild(SCNode);
+            XmlElement inventory = doc.CreateElement("Inventory");
+            SCNode.AppendChild(inventory);
             doc.Save("Data/SCsTest.xml");
     }
 
@@ -131,7 +138,9 @@ public static class XMLWorker
                             var newSub = new Subsystem(citadel.Name, item.Attributes["WorkName"].Value,
                                 sub.Attributes["WorkName"].Value, subSlot);
                             newModule.Subs.Add(newSub);
+                           
                         }
+                        newModule.RecountProps();
                     }
                     if (item.Name == "Unit")
                     {
@@ -142,7 +151,7 @@ public static class XMLWorker
                             if (childNode.Name == "Upgrade") upgrades.Add(childNode);
                             if (childNode.Name == "Booster") boosters.Add(childNode);
                         }
-                        var newUnit = new Unit(citadel.Name, item.Attributes["WorkName"].Value);
+                        var newUnit = new Unit(item.Attributes["WorkName"].Value);
                         citadel.Units.Add(newUnit);
                         foreach (XmlNode upg in upgrades)
                         {
@@ -153,12 +162,20 @@ public static class XMLWorker
                         {
                             newUnit.EnabledBoosters.Add(booster.Attributes["Name"].Value);
                         }
-
+                        newUnit.RecountProps();
                     }
-                    
+                    if (item.Name == "Inventory")
+                    {
+                        foreach (XmlNode inventoryItem in item.ChildNodes)
+                        {
+                            citadel.Inventory.Items.Add(new InventoryItem(inventoryItem.Attributes["WorkName"].Value));
+                        }
+                    }
                 }
+                citadel.RecountProps();
             }
         }
+        
     }
 
 
@@ -200,7 +217,7 @@ public static class XMLWorker
         foreach (XmlNode module in dataList)
         {
             var atrs = module.Attributes;
-            if (atrs["WorkName"].Value == moduleName)
+            if (atrs["WorkName"].Value == moduleName&&atrs!=null)
             {
                 XmlElement SubNode = doc.CreateElement("Sub");
                 SubNode.SetAttribute("WorkName", subsystemName);
@@ -642,9 +659,138 @@ public static class XMLWorker
         return finalList;
     }   
 
+    public static void RemoveUpgrade()
+    {
+
+    }
+
+
+    public static void LoadInventoryItem(string workName, InventoryItem inventoryItem)
+    {
+        CitadelParams = new XmlDocument();
+        var xmlPath = "InventoryItems";
+        TextAsset xmlAsset = Resources.Load(xmlPath) as TextAsset;
+        if (xmlAsset) CitadelParams.LoadXml(xmlAsset.text);
+        XmlNodeList nodeList = CitadelParams.GetElementsByTagName("Item");
+        inventoryItem.Workname = workName;
+        foreach (XmlNode node in nodeList)
+        {
+            var atrs = node.Attributes;
+            if (atrs["Workname"].Value == workName)
+            {
+                XmlNodeList list = node.ChildNodes;
+                foreach (XmlNode item in list)
+                {
+
+                    if (item.InnerText != "")
+                        switch (item.Name)
+                        {
+                            case "Name":
+                                inventoryItem.Name = item.InnerText;
+                                break;
+                            case "Description":
+                                inventoryItem.Description = item.InnerText;
+                                break;
+                            case "ItemAmount":
+                                inventoryItem.ItemAmount = Int32.Parse(item.InnerText);
+                                break;
+                            case "IconName":
+                                inventoryItem.IconName = item.InnerText;
+                                break;
+                            case "Mass":
+                                inventoryItem.Mass = Single.Parse(item.InnerText);
+                                break;
+                            case "Volume":
+                                inventoryItem.Volume = Int32.Parse(item.InnerText);
+                                break;
+                            case "MetalCost":
+                                inventoryItem.MetalCost = Single.Parse(item.InnerText);
+                                break;
+                            case "EnergyCost":
+                                inventoryItem.EnergyCost = Single.Parse(item.InnerText);
+                                break;
+                            case "SupplyMax":
+                                inventoryItem.SupplyMax = Single.Parse(item.InnerText);
+                                break;
+                            case "Function":
+                                inventoryItem.Function = GameModelsAndEnums.GetItemFunction(item.InnerText);
+                                break;
+                            case "StacksTill":
+                                inventoryItem.StacksTill = Int32.Parse(item.InnerText);
+                                break;
+                            case "EcoAmount":
+                                inventoryItem.EcoAmount = Single.Parse(item.InnerText);
+                                break;
+                            case "MilAmount":
+                                inventoryItem.MilAmount = Single.Parse(item.InnerText);
+                                break;
+                            case "SciAmount":
+                                inventoryItem.SciAmount = Single.Parse(item.InnerText);
+                                break;
+                            case "ElMagComponent":
+                                inventoryItem.ElMagComponent = Single.Parse(item.InnerText);
+                                break;
+                            case "HydraulicsComponent":
+                                inventoryItem.HydraulicsComponent = Single.Parse(item.InnerText);
+                                break;
+                            case "ReinforcedComponent":
+                                inventoryItem.ReinforcedComponent = Single.Parse(item.InnerText);
+                                break;
+                            case "VoidComponent":
+                                inventoryItem.VoidComponent = Single.Parse(item.InnerText);
+                                break;
+                            case "ChronoComponent":
+                                inventoryItem.ChronoComponent = Single.Parse(item.InnerText);
+                                break;
+                            case "IsBreakable":
+                                inventoryItem.IsBreakable = GameModelsAndEnums.GetBool(item.InnerText);
+                                break;
+                            case "BreakPointsMax":
+                                inventoryItem.BreakPointsMax = Single.Parse(item.InnerText);
+                                break;
+                            case "IsContaminatable":
+                                inventoryItem.IsContaminatable = GameModelsAndEnums.GetBool(item.InnerText);
+                                break;
+                            case "ContaminationPointsMax":
+                                inventoryItem.ContaminationPointsMax = Single.Parse(item.InnerText);
+                                break;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    public static void SaveInventoryItem(string citadelName, string workname)
+    {
+        XmlDocument doc = new XmlDocument();
+        doc.Load("Data/SCsTest.xml");
+        XmlNodeList dataList = doc.GetElementsByTagName("SC");
+        foreach (XmlNode node in dataList)
+        {
+            var atrs = node.Attributes;
+            if (atrs["WorkName"].Value == citadelName)
+            {
+                foreach (XmlNode k in node.ChildNodes)
+                {
+                    if(k.Name == "Inventory")
+                    {
+                        XmlElement item = doc.CreateElement("InventoryItem");
+                        item.SetAttribute("WorkName", workname);
+                        k.AppendChild(item);
+                    }
+
+                }
+               
+            }
+        }
+        doc.Save("Data/SCsTest.xml");
+    }
+
     public enum EnumGameItemType
     {
         Citadel,
         Modules
     }
 }
+
